@@ -12,10 +12,21 @@ Use official sources first. Third-party aggregators may be linked for convenienc
 - JMA disaster information XML PULL feeds.
 - JMA public pages for warnings, advisories, earthquake information, tsunami warnings, volcanic warnings.
 
-Implementation note:
+JMA XML updater v1:
 
-- JMA XML is suitable for scheduled processing.
-- The dashboard should still link to live JMA pages because XML parsing can fail or be delayed.
+- Uses JMA long-term Atom feeds because they are updated hourly and include several days of incoming bulletins.
+- Fetches `https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml` for warning / advisory style extra bulletins.
+- Fetches `https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml` for earthquake and volcano bulletins.
+- Parses Atom entry title, updated time, author, content summary, and linked XML URL.
+- Matches regions by conservative Japanese keywords: Hakodate / Oshima / Hiyama / Hokkaido, Aomori area terms, and Iwate area terms.
+- Keeps only the newest three matched entries per region for phone readability.
+- Red classification is based on actual entry content, not generic JMA titles such as `気象特別警報・警報・注意報`.
+
+Implementation notes:
+
+- JMA XML is suitable for scheduled processing, but the dashboard should still link to live JMA pages because XML parsing can fail or be delayed.
+- JMA states that XML distribution may stop or be delayed during maintenance or other circumstances, and users are responsible for how they use the public XML data.
+- The updater is decision support, not an emergency alert substitute.
 
 ## Rain, Rivers, Landslides
 
