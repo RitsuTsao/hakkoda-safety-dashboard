@@ -243,6 +243,14 @@ function placeForEvent(regionId, item) {
   return { hakodate: "函館", aomori: "青森", iwate: "岩手" }[regionId] || "北東北";
 }
 
+function humanReadableUrlForItem(item) {
+  const text = `${item.title} ${item.summary}`;
+  if (text.includes("津波")) return "https://www.jma.go.jp/bosai/map.html#contents=tsunami";
+  if (text.includes("地震") || text.includes("震度")) return "https://www.jma.go.jp/bosai/map.html#contents=earthquake_map";
+  if (text.includes("火山") || text.includes("噴火") || text.includes("降灰")) return "https://www.jma.go.jp/bosai/map.html#contents=volcano";
+  return "https://www.jma.go.jp/bosai/map.html#contents=warning";
+}
+
 function buildCriticalEvents(regions) {
   return regions.flatMap((region) => {
     const items = region.jma?.items || [];
@@ -263,7 +271,8 @@ function buildCriticalEvents(regions) {
         label: placeForEvent(region.id, item),
         summary: item.summary,
         source: item.source || "JMA",
-        url: item.url
+        url: humanReadableUrlForItem(item),
+        xmlUrl: item.url
       }));
   }).slice(0, 6);
 }
