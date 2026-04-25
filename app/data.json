@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T19:51:06+09:00",
+  "generatedAt": "2026-04-25T21:44:22+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "yellow",
@@ -327,6 +327,14 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
+            "updated": "2026-04-25T11:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向、２６日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425110034_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
             "updated": "2026-04-25T08:00:00Z",
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向、２６日０９時から１２時までは火口から北東方向に降灰が予想されます。",
@@ -339,21 +347,13 @@
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向に降灰が予想されます。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260425050034_0_VFVO53_010000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-04-25T02:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425020033_0_VFVO53_010000.xml"
           }
         ]
       }
     }
   ],
   "jma": {
-    "checkedAt": "2026-04-25T19:51:06+09:00",
+    "checkedAt": "2026-04-25T21:44:22+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -361,14 +361,14 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 1793
+        "entries": 1791
       },
       {
         "id": "eqvol",
         "label": "JMA 地震火山情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml",
         "status": "ok",
-        "entries": 629
+        "entries": 623
       }
     ],
     "regions": {
@@ -439,6 +439,14 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
+            "updated": "2026-04-25T11:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向、２６日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425110034_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
             "updated": "2026-04-25T08:00:00Z",
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向、２６日０９時から１２時までは火口から北東方向に降灰が予想されます。",
@@ -451,14 +459,6 @@
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向に降灰が予想されます。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260425050034_0_VFVO53_010000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-04-25T02:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425020033_0_VFVO53_010000.xml"
           }
         ]
       }
