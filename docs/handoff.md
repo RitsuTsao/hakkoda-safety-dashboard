@@ -51,6 +51,14 @@ Implemented:
   - The card shows official-priority bear sources, a short checking order, and compact cancel / downgrade rules.
   - Aomori prioritizes `くまログあおもり`, Aomori Prefecture bear notices, and local hotel / operator notices.
   - Iwate prioritizes the user's configured Iwate `Bears（ベアーズ）` LINE / App flow and Iwaizumi Town `ツキノワグマ出没等情報マップ`; Kumamap remains auxiliary.
+- Bear Info v1.1:
+  - `scripts/update-data.mjs` now extracts official text summaries from Aomori and Iwate bear pages.
+  - Region bear cards render a `最新摘要` section before the manual workflow buttons.
+  - Sources currently parsed: `くまログあおもり`, Aomori Prefecture bear warning page, Iwate Prefecture warning page, Iwate Prefecture human-injury / sighting page, and Iwaizumi Town bird / wildlife damage category listing.
+  - Human-injury bear terms create a red `bear-injury` visual map event, without attempting precise map coordinates.
+  - Bear summary text intentionally keeps the original Japanese source language so it can be read directly or shown to local staff.
+  - A bear-injury event can appear as a red visual-map chip, but a single historical injury item should not automatically make the entire Iwate tab red unless it is relevant to the trip focus area.
+  - Visual-map event chips use icons by type: bear `🐻`, tsunami `🌊`, earthquake `🫨`, and other major events `⚠️`. Multiple chips in the same region use alternate slots to avoid overlap.
 - GitHub Actions scheduled update in `.github/workflows/update-data.yml`.
 - Workflow runs manually and on a 12-hour schedule.
 - Workflow actions have been upgraded to Node 24-compatible versions:
@@ -103,7 +111,8 @@ Updater behavior:
 - Visual Map event placement is approximate by region, not geographic coordinates.
 - General JMA warning entries can create yellow events that are useful but noisy.
 - Bear sources are currently manual links and official app / LINE setup, not automated feeds.
-- Bear Info v1 is manual workflow guidance only; it does not scrape or automate official bear sighting data.
+- Bear Info v1.1 uses conservative official-page text extraction. It is not a precise sighting map and may need parser updates if official page layouts change.
+- Bear injury summaries are surfaced as text and visual-map events only; the app does not attempt exact geocoding or map pins.
 - The app has not yet implemented Notion Inbox notifications.
 - The app is public GitHub Pages; privacy assumptions must stay conservative.
 
@@ -120,10 +129,12 @@ Updater behavior:
    - Iwate road and municipal pages.
    - Transport operator status links.
 
-3. Bear Info v1 follow-up QA.
-   - Confirm the Aomori and Iwate official bear links still open cleanly on phone.
-   - Confirm wording is short enough in installed PWA mode.
-   - Consider adding offline emergency bear behavior only if it stays concise.
+3. Bear Info v1.1 follow-up QA.
+   - Confirm the new `最新摘要` text stays readable on phone.
+   - Confirm the red `岩手 熊被害` visual-map event opens the official Iwate human-injury page.
+   - Confirm Iwate remains yellow when the bear injury item is historical or not clearly tied to the user's focus route.
+   - Confirm multiple Iwate chips, such as `🐻 岩手 熊被害` and `⚠️ 岩手山`, do not overlap on the visual map.
+   - Monitor whether official page layout changes break summary extraction.
 
 4. Offline Emergency Mode.
    - Add a compact section for signal-poor moments:

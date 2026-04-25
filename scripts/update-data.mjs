@@ -21,6 +21,43 @@ const regionKeywords = {
   iwate: ["岩手県", "岩手", "盛岡", "久慈", "釜石", "大船渡", "花巻", "岩泉", "沿岸北部", "沿岸南部"]
 };
 
+const bearSources = {
+  aomori: [
+    {
+      id: "kumalog-news",
+      label: "くまログあおもり",
+      url: "https://kumalog-aomori.info/",
+      parser: parseAomoriKumalogNews
+    },
+    {
+      id: "aomori-pref",
+      label: "青森県 クマ情報",
+      url: "https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html",
+      parser: parseAomoriPrefBearPage
+    }
+  ],
+  iwate: [
+    {
+      id: "iwate-warning",
+      label: "岩手県 警報",
+      url: "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1043255.html",
+      parser: parseIwateWarningPage
+    },
+    {
+      id: "iwate-injury",
+      label: "岩手県 人身被害",
+      url: "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1056087.html",
+      parser: parseIwateInjuryPage
+    },
+    {
+      id: "iwaizumi-news",
+      label: "岩泉町 鳥獣被害対策",
+      url: "https://www.town.iwaizumi.lg.jp/category/attribute/life/chouju/",
+      parser: parseIwaizumiBearNews
+    }
+  ]
+};
+
 const redTerms = [
   "大津波警報",
   "津波警報",
@@ -68,43 +105,43 @@ const eventProfiles = [
   {
     type: "earthquake",
     rank: 95,
-    icon: "⏱",
+    icon: "🫨",
     terms: ["震度７", "震度7", "震度６", "震度6", "震度５", "震度5", "震度４", "震度4", "地震情報", "地震"]
   },
   {
     type: "volcano",
     rank: 90,
-    icon: "⛰",
+    icon: "⚠️",
     terms: ["噴火警戒レベル", "噴火", "火山", "降灰"]
   },
   {
     type: "landslide",
     rank: 85,
-    icon: "⚠",
+    icon: "⚠️",
     terms: ["土砂災害警戒情報", "土砂災害", "土砂"]
   },
   {
     type: "heavy-rain",
     rank: 80,
-    icon: "☔",
+    icon: "⚠️",
     terms: ["大雨", "洪水", "氾濫", "浸水"]
   },
   {
     type: "storm",
     rank: 70,
-    icon: "💨",
+    icon: "⚠️",
     terms: ["暴風", "強風", "波浪", "高潮"]
   },
   {
     type: "snow",
     rank: 62,
-    icon: "❄",
+    icon: "⚠️",
     terms: ["大雪", "暴風雪", "なだれ", "雪崩"]
   },
   {
     type: "fog-thunder",
     rank: 45,
-    icon: "⚠",
+    icon: "⚠️",
     terms: ["濃霧", "雷"]
   }
 ];
@@ -115,6 +152,23 @@ const lowImpactAdvisoryTerms = [
   "霜",
   "農作物",
   "火の取り扱い"
+];
+
+const bearInjuryTerms = [
+  "人身被害",
+  "死亡事故",
+  "亡くなり",
+  "襲われ",
+  "負傷",
+  "けが",
+  "怪我"
+];
+
+const bearWarningTerms = [
+  "出没警報",
+  "出没注意報",
+  "警報",
+  "注意報"
 ];
 
 function nowInJapan() {
@@ -143,6 +197,149 @@ function decodeXml(value = "") {
 
 function stripTags(value = "") {
   return decodeXml(value).replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function stripHtml(value = "") {
+  return decodeXml(value)
+    .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
+    .replace(/<br\s*\/?>/gi, "。")
+    .replace(/<\/(p|div|h[1-6]|li|tr)>/gi, "。")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/。+/g, "。")
+    .trim();
+}
+
+function firstHtmlMatch(html, pattern) {
+  const match = html.match(pattern);
+  return match ? stripHtml(match[1]) : "";
+}
+
+function firstDateText(html) {
+  return (
+    firstHtmlMatch(html, /更新日(?:付)?\s*(?:<\/span>)?\s*([^<。]+(?:日)?)/)
+    || firstHtmlMatch(html, /data-publish-date="([^"]+)"/)
+    || firstHtmlMatch(html, /<span class="update_date">([\s\S]*?)<\/span>/)
+  ).replace(/^[:：\s]+/, "");
+}
+
+function compactText(value = "", maxLength = 150) {
+  const text = stripHtml(value).replace(/\s+/g, " ").trim();
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, maxLength - 3)}...`;
+}
+
+function levelForBearText(text) {
+  if (includesAny(text, bearInjuryTerms)) return "red";
+  if (includesAny(text, bearWarningTerms) || text.includes("出没") || text.includes("目撃")) return "yellow";
+  return "green";
+}
+
+function kindForBearText(text) {
+  if (includesAny(text, bearInjuryTerms)) return "human-injury";
+  if (includesAny(text, bearWarningTerms)) return "warning";
+  return "sighting";
+}
+
+function makeBearItem({ title, summary, updated, source, url }) {
+  const text = `${title} ${summary}`;
+  return {
+    level: levelForBearText(text),
+    kind: kindForBearText(text),
+    title: compactText(title || source, 86),
+    updated,
+    source,
+    summary: compactText(summary || title || "公式ページで熊関連情報を確認してください。"),
+    url
+  };
+}
+
+function parseAomoriKumalogNews(html, source) {
+  const title = firstHtmlMatch(html, /<h4[^>]*>([\s\S]*?)<\/h4>/)
+    || firstHtmlMatch(html, /<meta property="og:title" content="([^"]+)"/);
+  const summary = firstHtmlMatch(html, /<div id="news_comment"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/)
+    || firstHtmlMatch(html, /<meta property="og:description" content="([^"]+)"/);
+  if (!title && !summary) return [];
+  return [
+    makeBearItem({
+      title,
+      summary,
+      updated: firstDateText(html),
+      source: source.label,
+      url: source.url
+    })
+  ];
+}
+
+function parseAomoriPrefBearPage(html, source) {
+  const title = firstHtmlMatch(html, /<h2>ツキノワグマ出没警報を発表します<\/h2>/)
+    || firstHtmlMatch(html, /<h1>([\s\S]*?)<\/h1>/);
+  const summary = firstHtmlMatch(html, /<div class="section1 sectionred">\s*<h2>ツキノワグマ出没警報を発表します<\/h2>[\s\S]*?<span class="bbb">([\s\S]*?)<\/span>/)
+    || firstHtmlMatch(html, /<meta property="og:description" content="([^"]+)"/);
+  if (!title && !summary) return [];
+  return [
+    makeBearItem({
+      title: title || "青森県 クマ情報",
+      summary,
+      updated: firstDateText(html),
+      source: source.label,
+      url: source.url
+    })
+  ];
+}
+
+function parseIwateWarningPage(html, source) {
+  const title = firstHtmlMatch(html, /<h3>([\s\S]*?警報[\s\S]*?)<\/h3>/)
+    || firstHtmlMatch(html, /<h1>([\s\S]*?)<\/h1>/);
+  const summary = firstHtmlMatch(html, /<div class="boxnotice">([\s\S]*?)<\/div>/);
+  if (!title && !summary) return [];
+  return [
+    makeBearItem({
+      title,
+      summary,
+      updated: firstDateText(html),
+      source: source.label,
+      url: source.url
+    })
+  ];
+}
+
+function parseIwateInjuryPage(html, source) {
+  const title = firstHtmlMatch(html, /<h2>([\s\S]*?人身被害[\s\S]*?)<\/h2>/)
+    || firstHtmlMatch(html, /<h1>([\s\S]*?)<\/h1>/);
+  const summary = firstHtmlMatch(html, /<h2>[\s\S]*?人身被害[\s\S]*?<\/h2>\s*<div class="boxnotice">([\s\S]*?)<\/div>/)
+    || firstHtmlMatch(html, /<p>\s*<strong>([\s\S]*?人身被害[\s\S]*?)<\/strong>\s*<\/p>/);
+  if (!title && !summary) return [];
+  return [
+    makeBearItem({
+      title,
+      summary,
+      updated: firstDateText(html),
+      source: source.label,
+      url: source.url
+    })
+  ];
+}
+
+function parseIwaizumiBearNews(html, source) {
+  const matches = [...html.matchAll(/<span class="update_date">([\s\S]*?)<\/span>\s*<span class="title_link"><a href="([^"]+)">([\s\S]*?)<\/a><\/span>/g)];
+  return matches
+    .map(([, updated, path, title]) => ({
+      updated: stripHtml(updated),
+      title: stripHtml(title),
+      url: new URL(path, source.url).toString()
+    }))
+    .filter((item) => /ツキノワグマ|クマ|熊|出没|被害|警報|注意報/.test(item.title))
+    .slice(0, 3)
+    .map((item) => makeBearItem({
+      title: item.title,
+      summary: item.title,
+      updated: item.updated,
+      source: source.label,
+      url: item.url
+    }));
 }
 
 function firstMatch(xml, pattern) {
@@ -263,12 +460,75 @@ async function fetchJmaSummaries() {
   };
 }
 
+async function fetchBearSummaries() {
+  const byRegion = {};
+  const sourceResults = [];
+
+  for (const [regionId, sources] of Object.entries(bearSources)) {
+    const items = [];
+
+    for (const source of sources) {
+      try {
+        const html = await fetchText(source.url);
+        const parsedItems = source.parser(html, source);
+        sourceResults.push({
+          regionId,
+          id: source.id,
+          label: source.label,
+          url: source.url,
+          status: "ok",
+          items: parsedItems.length
+        });
+        items.push(...parsedItems);
+      } catch (error) {
+        sourceResults.push({
+          regionId,
+          id: source.id,
+          label: source.label,
+          url: source.url,
+          status: "failed",
+          error: error.message
+        });
+      }
+    }
+
+    const sortedItems = items
+      .sort((a, b) => {
+        if (a.level !== b.level) return a.level === "red" ? -1 : b.level === "red" ? 1 : 0;
+        return String(b.updated || "").localeCompare(String(a.updated || ""));
+      })
+      .slice(0, 4);
+
+    byRegion[regionId] = {
+      level: sortedItems.length ? highestLevel(sortedItems) : "yellow",
+      checkedAt: nowInJapan(),
+      summary: sortedItems.length
+        ? `公式熊情報 ${sortedItems.length} 件を確認。`
+        : "公式熊情報を自動抽出できませんでした。手動で公式リンクを確認してください。",
+      items: sortedItems
+    };
+  }
+
+  return {
+    checkedAt: nowInJapan(),
+    status: sourceResults.every((source) => source.status === "ok") ? "ok" : "partial",
+    sources: sourceResults,
+    regions: byRegion
+  };
+}
+
 function mergeRegionLevels(region, jmaRegion, jmaStatus) {
   if (jmaStatus !== "ok" && jmaStatus !== "partial") return "yellow";
   if (!jmaRegion) return region.level || "yellow";
   if (jmaRegion.level === "red") return "red";
   if (jmaRegion.level === "yellow") return "yellow";
   return region.level === "red" || region.level === "yellow" ? region.level : "green";
+}
+
+function mergeBearLevel(level, bearRegion) {
+  if (!bearRegion) return level;
+  if (bearRegion.level === "yellow" && level !== "red") return "yellow";
+  return level;
 }
 
 function overallLevel(regions, jmaStatus) {
@@ -291,7 +551,7 @@ function profileForItem(item) {
   return eventProfiles.find((profile) => includesAny(text, profile.terms)) || {
     type: "other",
     rank: 30,
-    icon: "⚠"
+    icon: "⚠️"
   };
 }
 
@@ -312,10 +572,7 @@ function mapPriorityForItem(item) {
 function iconForItem(item) {
   const profile = profileForItem(item);
   if (profile.type !== "other") return profile.icon;
-  const text = `${item.title} ${item.summary}`;
-  if (text.includes("雪") || text.includes("なだれ")) return "❄";
-  if (text.includes("強風") || text.includes("暴風")) return "💨";
-  return "⚠";
+  return "⚠️";
 }
 
 function placeForEvent(regionId, item) {
@@ -344,6 +601,28 @@ function normalizedEventKey(regionId, item) {
     .replace(/[０-９0-9]+時/g, "")
     .replace(/\s+/g, "");
   return `${regionId}:${profileForItem(item).type}:${placeForEvent(regionId, item)}:${summary.slice(0, 80)}`;
+}
+
+function buildBearCriticalEvents(regions) {
+  return regions.flatMap((region) => {
+    const items = region.bearWorkflow?.latest?.items || [];
+    const injuryItems = items.filter((item) => item.level === "red" && item.kind === "human-injury");
+    const preferred = injuryItems.find((item) => item.source?.includes("人身被害"))
+      || injuryItems.find((item) => item.title.includes("発生"))
+      || injuryItems[0];
+    return (preferred ? [preferred] : [])
+      .map((item) => ({
+        regionId: region.id,
+        level: "red",
+        icon: "🐻",
+        label: `${region.title} 熊被害`,
+        summary: item.summary,
+        source: item.source || "公式熊情報",
+        type: "bear-injury",
+        priority: 1088,
+        url: item.url
+      }));
+  });
 }
 
 function buildCriticalEvents(regions) {
@@ -386,6 +665,7 @@ function buildCriticalEvents(regions) {
   });
 
   return byRegion
+    .concat(buildBearCriticalEvents(regions))
     .sort((a, b) => b.priority - a.priority)
     .slice(0, 6);
 }
@@ -393,13 +673,22 @@ function buildCriticalEvents(regions) {
 async function main() {
   const existing = JSON.parse(await readFile(dataPath, "utf8"));
   const jma = await fetchJmaSummaries();
+  const bear = await fetchBearSummaries();
 
   const regions = existing.regions.map((region) => {
     const jmaRegion = jma.regions[region.id];
+    const bearRegion = bear.regions[region.id];
+    const mergedLevel = mergeRegionLevels(region, jmaRegion, jma.status);
     return {
       ...region,
-      level: mergeRegionLevels(region, jmaRegion, jma.status),
-      jma: jmaRegion
+      level: mergeBearLevel(mergedLevel, bearRegion),
+      jma: jmaRegion,
+      bearWorkflow: region.bearWorkflow
+        ? {
+            ...region.bearWorkflow,
+            latest: bearRegion
+          }
+        : region.bearWorkflow
     };
   });
 
@@ -415,6 +704,7 @@ async function main() {
     generatedAt: nowInJapan(),
     sourceMode: `JMA XML updater v1; ${feedStatusNote}`,
     jma,
+    bear,
     criticalEvents: buildCriticalEvents(regions),
     overall: {
       ...existing.overall,

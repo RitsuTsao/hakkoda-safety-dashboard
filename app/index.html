@@ -350,6 +350,12 @@
       .event-chip.hakodate { grid-column: 1 / 4; grid-row: 2; }
       .event-chip.aomori { grid-column: 4 / 7; grid-row: 2; }
       .event-chip.iwate { grid-column: 3 / 7; grid-row: 5; }
+      .event-chip.slot-2.hakodate { grid-column: 1 / 4; grid-row: 1; }
+      .event-chip.slot-2.aomori { grid-column: 4 / 7; grid-row: 3; }
+      .event-chip.slot-2.iwate { grid-column: 3 / 7; grid-row: 4; }
+      .event-chip.slot-3.hakodate { grid-column: 1 / 4; grid-row: 3; }
+      .event-chip.slot-3.aomori { grid-column: 3 / 6; grid-row: 1; }
+      .event-chip.slot-3.iwate { grid-column: 1 / 4; grid-row: 5; }
 
       .event-list {
         display: grid;
@@ -400,6 +406,11 @@
       .bear-steps {
         margin: 0;
         padding-left: 22px;
+      }
+
+      .bear-latest {
+        display: grid;
+        gap: 8px;
       }
 
       .decision-list {
@@ -543,6 +554,8 @@
         const sources = workflow.sources || [];
         const steps = workflow.steps || [];
         const decisions = workflow.decisions || [];
+        const latest = workflow.latest;
+        const latestItems = latest?.items || [];
 
         return `
           <article class="panel" style="grid-column: 1 / -1;">
@@ -552,6 +565,26 @@
             </div>
             <div class="bear-workflow">
               <p>${escapeHtml(workflow.summary)}</p>
+              <section>
+                <div class="section-head">
+                  <h3>最新摘要</h3>
+                  <span class="muted">${escapeHtml(latest?.checkedAt || "未檢查")}</span>
+                </div>
+                ${latestItems.length ? `
+                  <div class="bear-latest">
+                    ${latestItems.map((item) => `
+                      <a class="jma-item" href="${encodeURI(item.url)}" target="_blank" rel="noopener">
+                        <div class="scenario-title">
+                          <span class="severity ${severityClass[item.level] || "yellow"}">${labelFor(item.level)}</span>
+                          <h3>${escapeHtml(item.title)}</h3>
+                        </div>
+                        <p>${escapeHtml(item.summary)}</p>
+                        <span class="jma-meta">${escapeHtml(item.updated || "")} / ${escapeHtml(item.source || "官方熊資訊")}</span>
+                      </a>
+                    `).join("")}
+                  </div>
+                ` : `<p class="muted">${escapeHtml(latest?.summary || "熊資訊摘要尚未建立。請使用下方官方來源手動確認。")}</p>`}
+              </section>
               <div class="bear-source-grid">
                 ${sources.map(renderQuickLink).join("")}
               </div>
@@ -587,18 +620,23 @@
           return;
         }
 
-        layer.innerHTML = events.map((event) => `
-          <a class="event-chip ${event.level} ${event.regionId}" href="${encodeURI(event.url)}" target="_blank" rel="noopener" title="${escapeHtml(event.summary)}">
+        const regionCounts = {};
+        layer.innerHTML = events.map((event) => {
+          regionCounts[event.regionId] = (regionCounts[event.regionId] || 0) + 1;
+          const slot = regionCounts[event.regionId] > 1 ? `slot-${regionCounts[event.regionId]}` : "";
+          return `
+          <a class="event-chip ${event.level} ${event.regionId} ${slot}" href="${encodeURI(event.url)}" target="_blank" rel="noopener" title="${escapeHtml(event.summary)}">
             ${escapeHtml(event.icon)} ${escapeHtml(event.label)}
           </a>
-        `).join("");
+        `;
+        }).join("");
 
         list.innerHTML = events.map((event) => `
           <div class="event-row">
             <strong>${escapeHtml(event.icon)} ${escapeHtml(event.label)}</strong>
             <span class="muted">${escapeHtml(event.source)} / ${labelFor(event.level)}</span>
             <span class="event-actions">
-              <a href="${encodeURI(event.url)}" target="_blank" rel="noopener">JMA 頁</a>
+              <a href="${encodeURI(event.url)}" target="_blank" rel="noopener">${event.type?.startsWith("bear") ? "官方頁" : "JMA 頁"}</a>
               ${event.xmlUrl ? `<a href="${encodeURI(event.xmlUrl)}" target="_blank" rel="noopener">XML</a>` : ""}
             </span>
           </div>
