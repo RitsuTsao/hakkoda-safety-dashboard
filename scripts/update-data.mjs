@@ -23,12 +23,7 @@ async function main() {
   const updated = {
     ...existing,
     generatedAt: nowInJapan(),
-    sourceMode: "scheduled placeholder; official fetchers not implemented yet",
-    overall: {
-      ...existing.overall,
-      level: "yellow",
-      message: "排程已執行，但目前仍是佔位資料。下一階段會接上官方資料來源。"
-    }
+    sourceMode: "scheduled placeholder; official fetchers not implemented yet"
   };
 
   await writeFile(dataPath, `${JSON.stringify(updated, null, 2)}\n`);
