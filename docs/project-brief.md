@@ -27,6 +27,7 @@ The Notion source page is titled `2026/6 八甲田山`.
 ## Main Risks
 
 - Bears around Aomori / Hakkoda / Oirase and Iwate mountain areas.
+- Iwate bear information should prioritize Iwate Prefecture `Bears（ベアーズ）` and Iwaizumi Town's bear sighting map; Kumamap Iwate is only an auxiliary manual map.
 - Earthquakes and secondary impacts: road closures, landslides, power outages, transport disruption.
 - Tsunami risk on the Miyako / Jodogahama coastal segment.
 - Rainy season impacts: heavy rain, low visibility, stream trail risk, landslides.
