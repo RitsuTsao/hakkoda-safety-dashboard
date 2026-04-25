@@ -4,6 +4,12 @@ Offline-first regional safety dashboard for a June 2026 trip through northern To
 
 This project is intentionally small and practical. It is not an emergency alert replacement. Official mobile alerts and local instructions remain the primary safety channel.
 
+## Disclosure
+
+This repository's initial planning documents, PWA scaffold, sample data structure, and GitHub Actions placeholder were generated with OpenAI Codex, GPT-5, in Codex desktop on 2026-04-25.
+
+The project direction, requirements, and publication decision were reviewed and approved by Ritsu. Approved by Ritsu.
+
 ## Goals
 
 - Provide a phone-friendly PWA that can be added to the home screen.
