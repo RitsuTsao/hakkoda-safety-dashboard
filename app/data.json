@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-04-25T18:10:39+09:00",
+  "sourceMode": "scheduled placeholder; official fetchers not implemented yet",
+  "overall": {
+    "level": "yellow",
+    "message": "排程已執行，但目前仍是佔位資料。下一階段會接上官方資料來源。",
+    "notes": [
+      "手機即時警報仍以 Safety tips、Yahoo! 防災速報、JMA 與現地指示為準。",
+      "熊資訊先以官方與人工快速連結確認，不自動抓 Kumamap。",
+      "若資料超過 18 小時未更新，請手動開官方連結確認。"
+    ]
+  },
+  "urgentLinks": [
+    {
+      "title": "JMA 防災情報",
+      "url": "https://www.jma.go.jp/bosai/",
+      "note": "天氣、地震、津波"
+    },
+    {
+      "title": "Safety tips",
+      "url": "https://www.jnto.go.jp/safety-tips/eng/app.html",
+      "note": "旅客即時通知"
+    },
+    {
+      "title": "くまログあおもり",
+      "url": "https://kumalog-aomori.info/",
+      "note": "青森熊資訊"
+    },
+    {
+      "title": "Kumamap",
+      "url": "https://kumamap.com/ja/map",
+      "note": "手動輔助地圖"
+    },
+    {
+      "title": "JARTIC",
+      "url": "https://www.jartic.or.jp/top.html",
+      "note": "道路交通"
+    }
+  ],
+  "regions": [
+    {
+      "title": "函館",
+      "level": "yellow",
+      "guidance": "入境與沿海城市區域。地震時要同步確認津波資訊、避難方向、機場與市內交通。",
+      "links": [
+        {
+          "title": "函館市 防災",
+          "url": "https://www.city.hakodate.hokkaido.jp/docs/2014012800310/",
+          "note": "市政防災"
+        },
+        {
+          "title": "函館空港",
+          "url": "https://airport.ne.jp/",
+          "note": "機場資訊"
+        }
+      ]
+    },
+    {
+      "title": "青森",
+      "level": "yellow",
+      "guidance": "涵蓋弘前、大鰐、青森、酸湯、八甲田、奧入瀨、十和田、八戶。重點是熊、豪雨土砂、山區道路與巴士狀態。",
+      "links": [
+        {
+          "title": "青森県 防災",
+          "url": "https://www.pref.aomori.lg.jp/soshiki/kikikanri/bosaikikikanri/",
+          "note": "縣級防災"
+        },
+        {
+          "title": "くまログあおもり",
+          "url": "https://kumalog-aomori.info/",
+          "note": "熊資訊"
+        },
+        {
+          "title": "八甲田ロープウェー",
+          "url": "https://hakkoda-ropeway.jp/",
+          "note": "山區營運"
+        },
+        {
+          "title": "JR Bus 東北 十和田湖・奥入瀬",
+          "url": "https://www.jrbustohoku.co.jp/towadako-oirase/",
+          "note": "巴士運行"
+        },
+        {
+          "title": "十和田湖国立公園協会",
+          "url": "https://towadako.or.jp/",
+          "note": "觀光與步道"
+        }
+      ]
+    },
+    {
+      "title": "岩手",
+      "level": "yellow",
+      "guidance": "涵蓋龍泉洞、岩泉、宮古、淨土之濱、花卷。重點是地震後交通、土砂、龍泉洞營運、宮古沿海津波與花卷返程。",
+      "links": [
+        {
+          "title": "岩手県 防災ポータル",
+          "url": "https://iwate.secure.force.com/",
+          "note": "縣級防災"
+        },
+        {
+          "title": "龍泉洞",
+          "url": "https://www.iwate-ryusendo.jp/",
+          "note": "營運狀態"
+        },
+        {
+          "title": "岩手県道路情報",
+          "url": "https://www.douro.com/index.shtml",
+          "note": "道路狀態"
+        },
+        {
+          "title": "JMA 津波情報",
+          "url": "https://www.jma.go.jp/bosai/map.html#contents=tsunami",
+          "note": "津波警報"
+        },
+        {
+          "title": "宮古市",
+          "url": "https://www.city.miyako.iwate.jp/",
+          "note": "市政與防災"
+        }
+      ]
+    }
+  ]
+}
