@@ -44,6 +44,14 @@ Preferred:
 - Iwate Prefecture `Bears（ベアーズ）`, a bear sighting posting and viewing app accessed from the official Iwate LINE account.
 - Iwaizumi Town `ツキノワグマ出没等情報マップ` for the Ryusendo / Iwaizumi area.
 
+Dashboard implementation:
+
+- Bear Info v1 is a manual workflow in the regional dashboard, not an automated bear feed.
+- Aomori workflow checks `くまログあおもり`, Aomori Prefecture bear notices, and local operator / hotel notices before optional auxiliary map checks.
+- Iwate workflow prioritizes the user's configured Iwate Bears LINE / App flow, then Iwaizumi Town's bear map for the Ryusendo / Iwaizumi segment.
+- Cancel / downgrade rules are intentionally short: nearby recent sightings or official/local warnings cancel walks; weaker or older signals downgrade to short, daytime, managed-facility movement.
+- Kumamap remains auxiliary and must not override official or local instructions.
+
 Iwate implementation notes:
 
 - `Bears（ベアーズ）` is a good manual source, but currently should not be treated as a clean automated API.

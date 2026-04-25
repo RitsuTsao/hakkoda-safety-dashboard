@@ -379,6 +379,47 @@
         font-size: 0.86rem;
         font-weight: 750;
       }
+
+      .bear-workflow {
+        display: grid;
+        gap: 12px;
+      }
+
+      .bear-source-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      @media (min-width: 620px) {
+        .bear-source-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      .bear-steps {
+        margin: 0;
+        padding-left: 22px;
+      }
+
+      .decision-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .decision {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 8px;
+        align-items: start;
+        padding: 9px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .decision:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
     </style>
   </head>
   <body>
@@ -495,6 +536,47 @@
         `;
       }
 
+      function renderBearWorkflow(region) {
+        const workflow = region.bearWorkflow;
+        if (!workflow) return "";
+
+        const sources = workflow.sources || [];
+        const steps = workflow.steps || [];
+        const decisions = workflow.decisions || [];
+
+        return `
+          <article class="panel" style="grid-column: 1 / -1;">
+            <div class="section-head">
+              <h2>熊資訊</h2>
+              <span class="muted">官方來源優先</span>
+            </div>
+            <div class="bear-workflow">
+              <p>${escapeHtml(workflow.summary)}</p>
+              <div class="bear-source-grid">
+                ${sources.map(renderQuickLink).join("")}
+              </div>
+              <section>
+                <h3>確認順序</h3>
+                <ol class="bear-steps">
+                  ${steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}
+                </ol>
+              </section>
+              <section>
+                <h3>取消 / 降級判斷</h3>
+                <div class="decision-list">
+                  ${decisions.map((decision) => `
+                    <div class="decision">
+                      <span class="severity ${severityClass[decision.level] || "yellow"}">${labelFor(decision.level || "yellow")}</span>
+                      <p>${escapeHtml(decision.text)}</p>
+                    </div>
+                  `).join("")}
+                </div>
+              </section>
+            </div>
+          </article>
+        `;
+      }
+
       function renderVisualMap() {
         const events = dashboardData.criticalEvents || [];
         const layer = document.getElementById("eventLayer");
@@ -577,6 +659,8 @@
             </div>
             ${renderJmaSummary(region)}
           </article>
+
+          ${renderBearWorkflow(region)}
 
           <article class="panel" style="grid-column: 1 / -1;">
             <div class="section-head">

@@ -46,6 +46,11 @@ Implemented:
   - Map events now use an explicit priority model: red first, then tsunami, earthquake, volcano, landslide, heavy rain / flood, storm, and snow / avalanche.
   - Low-impact dry-air / frost / agricultural advisories are kept in JMA summaries but hidden from the visual map.
   - Visual event rows expose both the human-readable JMA page and the raw XML source.
+- Bear Info v1:
+  - Aomori and Iwate region pages now render a dedicated `bearWorkflow` card.
+  - The card shows official-priority bear sources, a short checking order, and compact cancel / downgrade rules.
+  - Aomori prioritizes `くまログあおもり`, Aomori Prefecture bear notices, and local hotel / operator notices.
+  - Iwate prioritizes the user's configured Iwate `Bears（ベアーズ）` LINE / App flow and Iwaizumi Town `ツキノワグマ出没等情報マップ`; Kumamap remains auxiliary.
 - GitHub Actions scheduled update in `.github/workflows/update-data.yml`.
 - Workflow runs manually and on a 12-hour schedule.
 - Workflow actions have been upgraded to Node 24-compatible versions:
@@ -98,6 +103,7 @@ Updater behavior:
 - Visual Map event placement is approximate by region, not geographic coordinates.
 - General JMA warning entries can create yellow events that are useful but noisy.
 - Bear sources are currently manual links and official app / LINE setup, not automated feeds.
+- Bear Info v1 is manual workflow guidance only; it does not scrape or automate official bear sighting data.
 - The app has not yet implemented Notion Inbox notifications.
 - The app is public GitHub Pages; privacy assumptions must stay conservative.
 
@@ -114,10 +120,10 @@ Updater behavior:
    - Iwate road and municipal pages.
    - Transport operator status links.
 
-3. Bear Info v1: improve manual bear workflow.
-   - Keep official Aomori and Iwate bear links prominent.
-   - Document that Ritsu has configured Iwate official LINE push notifications.
-   - Add a compact checklist for bear-related downgrade / cancel decisions.
+3. Bear Info v1 follow-up QA.
+   - Confirm the Aomori and Iwate official bear links still open cleanly on phone.
+   - Confirm wording is short enough in installed PWA mode.
+   - Consider adding offline emergency bear behavior only if it stays concise.
 
 4. Offline Emergency Mode.
    - Add a compact section for signal-poor moments:
