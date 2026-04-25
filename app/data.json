@@ -1,142 +1,262 @@
 {
-  "generatedAt": "2026-04-25T18:10:39+09:00",
+  "generatedAt": "2026-04-25T18:46:11+09:00",
   "sourceMode": "scheduled placeholder; official fetchers not implemented yet",
   "overall": {
     "level": "yellow",
-    "message": "排程已執行，但目前仍是佔位資料。下一階段會接上官方資料來源。",
+    "message": "目前仍是佔位資料。請把本頁當作官方連結與離線判斷卡，不要當作即時警報。",
     "notes": [
-      "手機即時警報仍以 Safety tips、Yahoo! 防災速報、JMA 與現地指示為準。",
-      "熊資訊先以官方與人工快速連結確認，不自動抓 Kumamap。",
-      "岩手熊資訊以岩手県 Bears 與岩泉町出沒地圖為優先確認來源。",
-      "若資料超過 18 小時未更新，請手動開官方連結確認。"
+      "手機即時警報以 Safety tips、Yahoo! 防災速報、JMA 與現地指示為準。",
+      "熊資訊以官方推播或自治體地圖優先；Kumamap 僅作人工輔助。",
+      "資料超過 18 小時未更新時，頁面會提示舊資料，請手動開官方來源確認。"
     ]
   },
   "urgentLinks": [
     {
       "title": "JMA 防災情報",
       "url": "https://www.jma.go.jp/bosai/",
-      "note": "天氣、地震、津波"
+      "category": "氣象 / 地震 / 津波",
+      "note": "日本氣象廳"
     },
     {
       "title": "Safety tips",
       "url": "https://www.jnto.go.jp/safety-tips/eng/app.html",
-      "note": "旅客即時通知"
-    },
-    {
-      "title": "くまログあおもり",
-      "url": "https://kumalog-aomori.info/",
-      "note": "青森熊資訊"
-    },
-    {
-      "title": "岩手県 Bears",
-      "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1096154.html",
-      "note": "岩手熊資訊"
-    },
-    {
-      "title": "Kumamap",
-      "url": "https://kumamap.com/ja/map",
-      "note": "手動輔助地圖"
+      "category": "旅客通知",
+      "note": "訪日旅客 App"
     },
     {
       "title": "JARTIC",
       "url": "https://www.jartic.or.jp/top.html",
+      "category": "道路",
       "note": "道路交通"
+    },
+    {
+      "title": "Kumamap",
+      "url": "https://kumamap.com/ja/map",
+      "category": "熊",
+      "note": "人工輔助地圖"
     }
   ],
   "regions": [
     {
+      "id": "hakodate",
       "title": "函館",
       "level": "yellow",
-      "guidance": "入境與沿海城市區域。地震時要同步確認津波資訊、避難方向、機場與市內交通。",
-      "links": [
+      "guidance": "入境與沿海城市區域。地震時同步確認津波、避難方向、機場與市內交通。",
+      "focus": [
+        "沿海活動前先確認津波資訊與高地方向。",
+        "入境日體力與資訊狀態不穩，優先保守移動。",
+        "交通異常時先確認機場、JR 與市內巴士。"
+      ],
+      "quickLinks": [
+        {
+          "title": "JMA 函館",
+          "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
+          "category": "氣象警報",
+          "note": "警報 / 注意報"
+        },
+        {
+          "title": "JMA 津波",
+          "url": "https://www.jma.go.jp/bosai/map.html#contents=tsunami",
+          "category": "津波",
+          "note": "沿海優先"
+        },
         {
           "title": "函館市 防災",
           "url": "https://www.city.hakodate.hokkaido.jp/docs/2014012800310/",
-          "note": "市政防災"
+          "category": "自治體",
+          "note": "避難 / 防災"
         },
         {
           "title": "函館空港",
           "url": "https://airport.ne.jp/",
+          "category": "交通",
           "note": "機場資訊"
+        },
+        {
+          "title": "JR北海道",
+          "url": "https://www.jrhokkaido.co.jp/",
+          "category": "鐵道",
+          "note": "列車資訊"
+        }
+      ],
+      "scenarios": [
+        {
+          "title": "地震後有津波注意報或警報",
+          "severity": "red",
+          "action": "不要靠近海邊或拍照，直接往高處或指定避難方向移動。"
+        },
+        {
+          "title": "入境日遇交通大亂",
+          "severity": "yellow",
+          "action": "取消非必要移動，先保留住宿、現金、充電與官方資訊確認。"
         }
       ]
     },
     {
+      "id": "aomori",
       "title": "青森",
       "level": "yellow",
       "guidance": "涵蓋弘前、大鰐、青森、酸湯、八甲田、奧入瀨、十和田、八戶。重點是熊、豪雨土砂、山區道路與巴士狀態。",
-      "links": [
+      "focus": [
+        "八甲田與酸湯周邊以旅館公告、天氣、熊目擊與道路狀態共同判斷。",
+        "奧入瀨溪流遇豪雨、濃霧、低溫或步道不穩時直接降級。",
+        "青森山區交通不穩時，優先撤回青森側或鐵道主線。"
+      ],
+      "quickLinks": [
         {
           "title": "青森県 防災",
           "url": "https://www.pref.aomori.lg.jp/soshiki/kikikanri/bosaikikikanri/",
+          "category": "自治體",
           "note": "縣級防災"
+        },
+        {
+          "title": "JMA 青森",
+          "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
+          "category": "氣象警報",
+          "note": "警報 / 注意報"
         },
         {
           "title": "くまログあおもり",
           "url": "https://kumalog-aomori.info/",
-          "note": "熊資訊"
+          "category": "熊",
+          "note": "官方熊資訊"
+        },
+        {
+          "title": "青森土砂",
+          "url": "https://www.pref.aomori.lg.jp/soshiki/kendo/kasensabo/dosha_keikai_itiran.html",
+          "category": "土砂",
+          "note": "警戒情報"
         },
         {
           "title": "八甲田ロープウェー",
           "url": "https://hakkoda-ropeway.jp/",
-          "note": "山區營運"
+          "category": "山區",
+          "note": "營運 / 天候"
         },
         {
-          "title": "JR Bus 東北 十和田湖・奥入瀬",
+          "title": "酸湯温泉",
+          "url": "https://sukayu.jp/",
+          "category": "現地",
+          "note": "旅館公告"
+        },
+        {
+          "title": "JR Bus 奥入瀬",
           "url": "https://www.jrbustohoku.co.jp/towadako-oirase/",
-          "note": "巴士運行"
+          "category": "巴士",
+          "note": "十和田 / 奥入瀬"
         },
         {
           "title": "十和田湖国立公園協会",
           "url": "https://towadako.or.jp/",
-          "note": "觀光與步道"
+          "category": "步道",
+          "note": "觀光 / 步道"
+        }
+      ],
+      "scenarios": [
+        {
+          "title": "八甲田周邊有熊目擊或旅館提醒",
+          "severity": "red",
+          "action": "取消散步與健行，不單獨外出，改以旅館或交通移動為主。"
+        },
+        {
+          "title": "大雨、土砂警戒或山路封閉",
+          "severity": "red",
+          "action": "取消山區與溪流步行，先確認道路、巴士與旅館建議。"
+        },
+        {
+          "title": "奧入瀨當天低溫、濃霧或步道不明",
+          "severity": "yellow",
+          "action": "保留轉場，放棄溪流健行。不要用完成景點作為決策目標。"
         }
       ]
     },
     {
+      "id": "iwate",
       "title": "岩手",
       "level": "yellow",
       "guidance": "涵蓋龍泉洞、岩泉、宮古、淨土之濱、花卷。重點是地震後交通、土砂、熊出沒、龍泉洞營運、宮古沿海津波與花卷返程。",
-      "links": [
+      "focus": [
+        "岩手熊資訊以官方 Bears LINE 推播與岩泉町地圖為優先。",
+        "龍泉洞段重點是能不能移動、能不能入洞，不是硬完成景點。",
+        "宮古與淨土之濱要把津波與高地方向放在第一順位。"
+      ],
+      "quickLinks": [
         {
-          "title": "岩手県 防災ポータル",
+          "title": "岩手県 防災",
           "url": "https://iwate.secure.force.com/",
+          "category": "自治體",
           "note": "縣級防災"
+        },
+        {
+          "title": "JMA 岩手",
+          "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
+          "category": "氣象警報",
+          "note": "警報 / 注意報"
+        },
+        {
+          "title": "JMA 津波",
+          "url": "https://www.jma.go.jp/bosai/map.html#contents=tsunami",
+          "category": "津波",
+          "note": "宮古沿海"
         },
         {
           "title": "岩手県 Bears",
           "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1096154.html",
-          "note": "官方熊出沒 App"
+          "category": "熊",
+          "note": "官方 LINE / App"
         },
         {
           "title": "岩泉町 熊出没マップ",
           "url": "https://www.town.iwaizumi.lg.jp/docs/2025120800017/",
+          "category": "熊",
           "note": "龍泉洞周邊"
         },
         {
           "title": "Kumamap 岩手",
           "url": "https://kumamap.com/ja/areas/iwate",
-          "note": "手動輔助地圖"
+          "category": "熊",
+          "note": "人工輔助"
         },
         {
           "title": "龍泉洞",
           "url": "https://www.iwate-ryusendo.jp/",
-          "note": "營運狀態"
+          "category": "營運",
+          "note": "洞窟狀態"
         },
         {
           "title": "岩手県道路情報",
           "url": "https://www.douro.com/index.shtml",
-          "note": "道路狀態"
-        },
-        {
-          "title": "JMA 津波情報",
-          "url": "https://www.jma.go.jp/bosai/map.html#contents=tsunami",
-          "note": "津波警報"
+          "category": "道路",
+          "note": "通行規制"
         },
         {
           "title": "宮古市",
           "url": "https://www.city.miyako.iwate.jp/",
-          "note": "市政與防災"
+          "category": "自治體",
+          "note": "防災 / 市政"
+        },
+        {
+          "title": "三陸鉄道",
+          "url": "https://www.sanrikutetsudou.com/",
+          "category": "鐵道",
+          "note": "沿岸交通"
+        }
+      ],
+      "scenarios": [
+        {
+          "title": "宮古沿海有明顯搖晃或津波警報",
+          "severity": "red",
+          "action": "不觀察海面，不等待完整資訊，直接往高處或避難方向移動。"
+        },
+        {
+          "title": "龍泉洞前後有地震、豪雨或道路異常",
+          "severity": "red",
+          "action": "重查營運與交通。若接續變脆弱，直接把龍泉洞降級為放棄點。"
+        },
+        {
+          "title": "岩泉或山區熊推播接近活動區",
+          "severity": "red",
+          "action": "取消步行與臨時散策，優先留在有人管理的設施或旅館。"
         }
       ]
     }
