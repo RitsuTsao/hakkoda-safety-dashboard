@@ -7,7 +7,366 @@
     <link rel="manifest" href="./manifest.webmanifest">
     <title>Hakkoda Safety Dashboard</title>
     <style>
-      :root{color-scheme:light;--bg:#f5f2ec;--panel:#fff;--text:#17201d;--muted:#60706b;--line:#d8ddd7;--green:#247a52;--yellow:#9a6a00;--red:#b3261e;--blue:#245d8f;--ink:#1f4f46}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}main{width:min(1040px,100%);margin:0 auto;padding:16px}header{display:grid;gap:10px;padding:8px 0 14px}h1,h2,h3{margin:0;letter-spacing:0}h1{font-size:1.55rem;line-height:1.15}h2{font-size:1.03rem}h3{font-size:.96rem}p{margin:0}a{color:inherit;text-decoration:none}button{font:inherit}.muted{color:var(--muted);font-size:.9rem}.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}.grid{display:grid;gap:12px}@media (min-width:820px){.grid.overview{grid-template-columns:1fr 1fr}.grid.region-layout{grid-template-columns:minmax(0,1fr)330px;align-items:start}}.badge{display:inline-flex;align-items:center;justify-content:center;min-width:48px;min-height:30px;border-radius:6px;color:#fff;font-weight:750}.green{background:var(--green)}.yellow{background:var(--yellow)}.red{background:var(--red)}.stale{border-color:#d39a27;background:#fff8e5}.tabs{position:sticky;top:0;z-index:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:8px 0;background:var(--bg)}.tab{min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);font-weight:750}.tab[aria-selected=true]{border-color:var(--ink);background:var(--ink);color:#fff}.section-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px}.focus-list,.notes-list{margin:8px 0 0;padding-left:18px}.quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}@media (min-width:620px){.quick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}.quick-link{display:grid;gap:3px;min-height:72px;padding:10px;border:1px solid var(--line);border-radius:8px;background:#fff}.quick-link strong{color:var(--blue);font-size:.96rem}.quick-link span{color:var(--muted);font-size:.82rem}.scenario,.jma-item{display:grid;gap:6px;padding:12px 0;border-top:1px solid var(--line)}.scenario:first-child,.jma-item:first-child{border-top:0;padding-top:0}.scenario-title{display:flex;align-items:center;gap:8px}.severity{min-width:42px;padding:3px 7px;border-radius:5px;color:#fff;font-size:.78rem;font-weight:750;text-align:center}.jma-list{display:grid;gap:8px}.jma-meta{color:var(--muted);font-size:.82rem}.footer-note{margin-top:12px;color:var(--muted);font-size:.84rem}
+      :root {
+        color-scheme: light;
+        --bg: #f5f2ec;
+        --panel: #ffffff;
+        --panel-soft: #eef4f1;
+        --text: #17201d;
+        --muted: #60706b;
+        --line: #d8ddd7;
+        --green: #247a52;
+        --yellow: #9a6a00;
+        --red: #b3261e;
+        --blue: #245d8f;
+        --ink: #1f4f46;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      main {
+        width: min(1040px, 100%);
+        margin: 0 auto;
+        padding: 16px;
+      }
+
+      header {
+        display: grid;
+        gap: 10px;
+        padding: 8px 0 14px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        font-size: 1.55rem;
+        line-height: 1.15;
+      }
+
+      h2 {
+        font-size: 1.03rem;
+      }
+
+      h3 {
+        font-size: 0.96rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .muted {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      @media (min-width: 820px) {
+        .grid.overview {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .grid.region-layout {
+          grid-template-columns: minmax(0, 1fr) 330px;
+          align-items: start;
+        }
+      }
+
+      .status-line {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 48px;
+        min-height: 30px;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 750;
+      }
+
+      .green {
+        background: var(--green);
+      }
+
+      .yellow {
+        background: var(--yellow);
+      }
+
+      .red {
+        background: var(--red);
+      }
+
+      .stale {
+        border-color: #d39a27;
+        background: #fff8e5;
+      }
+
+      .tabs {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        padding: 8px 0;
+        background: var(--bg);
+      }
+
+      .tab {
+        min-height: 44px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--text);
+        font-weight: 750;
+      }
+
+      .tab[aria-selected="true"] {
+        border-color: var(--ink);
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .focus-list,
+      .notes-list {
+        margin: 8px 0 0;
+        padding-left: 18px;
+      }
+
+      .quick-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      @media (min-width: 620px) {
+        .quick-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      .quick-link {
+        display: grid;
+        gap: 3px;
+        min-height: 72px;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .quick-link strong {
+        color: var(--blue);
+        font-size: 0.96rem;
+      }
+
+      .quick-link span {
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .scenario {
+        display: grid;
+        gap: 6px;
+        padding: 12px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .scenario:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .scenario-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .severity {
+        min-width: 42px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 0.78rem;
+        font-weight: 750;
+        text-align: center;
+      }
+
+      .footer-note {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+
+      .jma-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .jma-item {
+        display: grid;
+        gap: 4px;
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .jma-item:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .jma-meta {
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .map-panel {
+        margin-top: 12px;
+      }
+
+      .pixel-map {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: repeat(5, 54px);
+        gap: 6px;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(90deg, rgba(31,79,70,.06) 1px, transparent 1px),
+          linear-gradient(rgba(31,79,70,.06) 1px, transparent 1px),
+          #fbfaf6;
+        background-size: 18px 18px;
+      }
+
+      .map-region {
+        display: grid;
+        align-content: end;
+        padding: 8px;
+        border: 2px solid #9fb5ad;
+        background: rgba(238,244,241,.88);
+        font-weight: 750;
+        color: var(--ink);
+      }
+
+      .map-region.hakodate {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+      }
+
+      .map-region.aomori {
+        grid-column: 3 / 7;
+        grid-row: 1 / 4;
+      }
+
+      .map-region.iwate {
+        grid-column: 2 / 7;
+        grid-row: 4 / 6;
+      }
+
+      .event-layer {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: repeat(5, 54px);
+        gap: 6px;
+        pointer-events: none;
+      }
+
+      .event-chip {
+        pointer-events: auto;
+        align-self: center;
+        justify-self: center;
+        max-width: 150px;
+        padding: 7px 9px;
+        border: 2px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 2px 0 rgba(23,32,29,.12);
+        font-weight: 750;
+        font-size: .88rem;
+      }
+
+      .event-chip.red {
+        border-color: var(--red);
+        background: #fff0ef;
+      }
+
+      .event-chip.yellow {
+        border-color: #d39a27;
+        background: #fff8e5;
+      }
+
+      .event-chip.hakodate { grid-column: 1 / 4; grid-row: 2; }
+      .event-chip.aomori { grid-column: 4 / 7; grid-row: 2; }
+      .event-chip.iwate { grid-column: 3 / 7; grid-row: 5; }
+
+      .event-list {
+        display: grid;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .event-row {
+        display: grid;
+        gap: 2px;
+        padding: 9px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .event-row:first-child {
+        border-top: 0;
+      }
     </style>
   </head>
   <body>
@@ -16,36 +375,254 @@
         <h1>Hakkoda Safety Dashboard</h1>
         <p class="muted">北東北區域風險儀表板。即時警報以官方 App、旅館與現地指示為準。</p>
       </header>
+
       <section class="grid overview">
         <article class="panel" id="overallPanel">
-          <div class="section-head"><h2>總覽</h2><span id="overallBadge" class="badge yellow">待查</span></div>
+          <div class="section-head">
+            <h2>總覽</h2>
+            <span id="overallBadge" class="badge yellow">待查</span>
+          </div>
           <p id="overallText">等待資料載入。</p>
           <p id="updated" class="muted">讀取資料中...</p>
           <ul id="summary" class="notes-list"></ul>
         </article>
+
         <article class="panel">
-          <div class="section-head"><h2>立即確認</h2></div>
+          <div class="section-head">
+            <h2>立即確認</h2>
+          </div>
           <div id="urgentLinks" class="quick-grid"></div>
         </article>
       </section>
+
+      <section class="panel map-panel">
+        <div class="section-head">
+          <h2>態勢圖</h2>
+          <span class="muted">點事件開官方來源</span>
+        </div>
+        <div class="pixel-map" aria-label="北東北態勢圖">
+          <div class="map-region hakodate">函館</div>
+          <div class="map-region aomori">青森</div>
+          <div class="map-region iwate">岩手</div>
+          <div id="eventLayer" class="event-layer"></div>
+        </div>
+        <div id="eventList" class="event-list"></div>
+      </section>
+
       <nav id="regionTabs" class="tabs" aria-label="區域"></nav>
+
       <section id="regionPanel" class="grid region-layout"></section>
+
       <p class="footer-note">這個頁面會嘗試讀取最新資料；離線時會保留最後一次成功快取的內容。</p>
     </main>
+
     <script>
-      const badgeClass={green:"green",yellow:"yellow",red:"red"};
-      const severityClass={green:"green",yellow:"yellow",red:"red"};
-      let dashboardData;let activeRegionId;
-      function labelFor(level){if(level==="green")return"綠";if(level==="red")return"紅";return"黃"}
-      function escapeHtml(value){return String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;")}
-      function renderQuickLink(link){return `<a class="quick-link" href="${encodeURI(link.url)}" target="_blank" rel="noopener"><strong>${escapeHtml(link.title)}</strong><span>${escapeHtml(link.note||link.category||"")}</span></a>`}
-      function renderJmaSummary(region){const jma=region.jma;if(!jma)return '<p class="muted">JMA XML 摘要尚未建立。請使用上方 JMA 快速按鈕手動確認。</p>';if(!jma.items||jma.items.length===0)return `<p>${escapeHtml(jma.summary)}</p>`;return `<div class="jma-list">${jma.items.map((item)=>`<a class="jma-item" href="${encodeURI(item.url)}" target="_blank" rel="noopener"><div class="scenario-title"><span class="severity ${severityClass[item.level]||"yellow"}">${labelFor(item.level)}</span><h3>${escapeHtml(item.title)}</h3></div><p>${escapeHtml(item.summary)}</p><span class="jma-meta">${escapeHtml(item.updated||"")} / ${escapeHtml(item.source||"JMA")}</span></a>`).join("")}</div>`}
-      function renderTabs(){const tabs=document.getElementById("regionTabs");tabs.innerHTML=dashboardData.regions.map((region)=>`<button class="tab" type="button" data-region="${escapeHtml(region.id)}" aria-selected="${region.id===activeRegionId?"true":"false"}">${escapeHtml(region.title)}</button>`).join("");tabs.querySelectorAll("button").forEach((button)=>{button.addEventListener("click",()=>{activeRegionId=button.dataset.region;location.hash=activeRegionId;renderTabs();renderRegion()})})}
-      function renderRegion(){const region=dashboardData.regions.find((item)=>item.id===activeRegionId)||dashboardData.regions[0];const panel=document.getElementById("regionPanel");const quickLinks=region.quickLinks||region.links||[];const scenarios=region.scenarios||[];const focus=region.focus||[];panel.innerHTML=`<article class="panel"><div class="section-head"><h2>${escapeHtml(region.title)}</h2><span class="badge ${badgeClass[region.level]||"yellow"}">${labelFor(region.level)}</span></div><p>${escapeHtml(region.guidance)}</p><ul class="focus-list">${focus.map((item)=>`<li>${escapeHtml(item)}</li>`).join("")}</ul></article><article class="panel"><div class="section-head"><h2>快速按鈕</h2></div><div class="quick-grid">${quickLinks.map(renderQuickLink).join("")}</div></article><article class="panel" style="grid-column:1 / -1;"><div class="section-head"><h2>JMA 官方摘要</h2><span class="badge ${badgeClass[region.jma?.level]||"yellow"}">${labelFor(region.jma?.level||"yellow")}</span></div>${renderJmaSummary(region)}</article><article class="panel" style="grid-column:1 / -1;"><div class="section-head"><h2>紅色情境</h2></div>${scenarios.map((scenario)=>`<section class="scenario"><div class="scenario-title"><span class="severity ${severityClass[scenario.severity]||"red"}">${labelFor(scenario.severity||"red")}</span><h3>${escapeHtml(scenario.title)}</h3></div><p>${escapeHtml(scenario.action)}</p></section>`).join("")}</article>`}
-      function isStale(generatedAt){const parsed=Date.parse(generatedAt);if(Number.isNaN(parsed))return true;return Date.now()-parsed>18*60*60*1000}
-      async function loadData(){const response=await fetch("./data.json",{cache:"no-store"});dashboardData=await response.json();activeRegionId=location.hash.replace("#","")||dashboardData.regions[0].id;const stale=isStale(dashboardData.generatedAt);document.getElementById("overallPanel").classList.toggle("stale",stale);document.getElementById("updated").textContent=stale?`最後更新：${dashboardData.generatedAt} / 舊資料，請手動確認官方來源`:`最後更新：${dashboardData.generatedAt} / ${dashboardData.sourceMode}`;const badge=document.getElementById("overallBadge");badge.className=`badge ${badgeClass[dashboardData.overall.level]||"yellow"}`;badge.textContent=labelFor(dashboardData.overall.level);document.getElementById("overallText").textContent=dashboardData.overall.message;document.getElementById("summary").innerHTML=dashboardData.overall.notes.map((note)=>`<li>${escapeHtml(note)}</li>`).join("");document.getElementById("urgentLinks").innerHTML=dashboardData.urgentLinks.map(renderQuickLink).join("");renderTabs();renderRegion()}
-      if("serviceWorker" in navigator){navigator.serviceWorker.register("./service-worker.js")}
-      loadData().catch(()=>{document.getElementById("updated").textContent="資料讀取失敗。若離線，請稍後再開；若在線，請重新整理。"})
+      const badgeClass = {
+        green: "green",
+        yellow: "yellow",
+        red: "red"
+      };
+
+      const severityClass = {
+        green: "green",
+        yellow: "yellow",
+        red: "red"
+      };
+
+      let dashboardData;
+      let activeRegionId;
+
+      function labelFor(level) {
+        if (level === "green") return "綠";
+        if (level === "red") return "紅";
+        return "黃";
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;");
+      }
+
+      function renderQuickLink(link) {
+        const safeTitle = escapeHtml(link.title);
+        const safeNote = escapeHtml(link.note || link.category || "");
+        return `
+          <a class="quick-link" href="${encodeURI(link.url)}" target="_blank" rel="noopener">
+            <strong>${safeTitle}</strong>
+            <span>${safeNote}</span>
+          </a>
+        `;
+      }
+
+      function renderJmaSummary(region) {
+        const jma = region.jma;
+        if (!jma) {
+          return "<p class=\"muted\">JMA XML 摘要尚未建立。請使用上方 JMA 快速按鈕手動確認。</p>";
+        }
+
+        if (!jma.items || jma.items.length === 0) {
+          return `<p>${escapeHtml(jma.summary)}</p>`;
+        }
+
+        return `
+          <div class="jma-list">
+            ${jma.items.map((item) => `
+              <a class="jma-item" href="${encodeURI(item.url)}" target="_blank" rel="noopener">
+                <div class="scenario-title">
+                  <span class="severity ${severityClass[item.level] || "yellow"}">${labelFor(item.level)}</span>
+                  <h3>${escapeHtml(item.title)}</h3>
+                </div>
+                <p>${escapeHtml(item.summary)}</p>
+                <span class="jma-meta">${escapeHtml(item.updated || "")} / ${escapeHtml(item.source || "JMA")}</span>
+              </a>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      function renderVisualMap() {
+        const events = dashboardData.criticalEvents || [];
+        const layer = document.getElementById("eventLayer");
+        const list = document.getElementById("eventList");
+        if (!events.length) {
+          layer.innerHTML = "";
+          list.innerHTML = "<p class=\"muted\">目前沒有要凸顯的重大事件。仍請以官方 App 與現地指示為準。</p>";
+          return;
+        }
+
+        layer.innerHTML = events.map((event) => `
+          <a class="event-chip ${event.level} ${event.regionId}" href="${encodeURI(event.url)}" target="_blank" rel="noopener" title="${escapeHtml(event.summary)}">
+            ${escapeHtml(event.icon)} ${escapeHtml(event.label)}
+          </a>
+        `).join("");
+
+        list.innerHTML = events.map((event) => `
+          <a class="event-row" href="${encodeURI(event.url)}" target="_blank" rel="noopener">
+            <strong>${escapeHtml(event.icon)} ${escapeHtml(event.label)}</strong>
+            <span class="muted">${escapeHtml(event.source)} / ${labelFor(event.level)}</span>
+          </a>
+        `).join("");
+      }
+
+      function renderTabs() {
+        const tabs = document.getElementById("regionTabs");
+        tabs.innerHTML = dashboardData.regions
+          .map((region) => {
+            const selected = region.id === activeRegionId ? "true" : "false";
+            return `<button class="tab" type="button" data-region="${escapeHtml(region.id)}" aria-selected="${selected}">${escapeHtml(region.title)}</button>`;
+          })
+          .join("");
+
+        tabs.querySelectorAll("button").forEach((button) => {
+          button.addEventListener("click", () => {
+            activeRegionId = button.dataset.region;
+            location.hash = activeRegionId;
+            renderTabs();
+            renderRegion();
+          });
+        });
+      }
+
+      function renderRegion() {
+        const region = dashboardData.regions.find((item) => item.id === activeRegionId) || dashboardData.regions[0];
+        const panel = document.getElementById("regionPanel");
+        const quickLinks = region.quickLinks || region.links || [];
+        const scenarios = region.scenarios || [];
+        const focus = region.focus || [];
+
+        panel.innerHTML = `
+          <article class="panel">
+            <div class="section-head">
+              <h2>${escapeHtml(region.title)}</h2>
+              <span class="badge ${badgeClass[region.level] || "yellow"}">${labelFor(region.level)}</span>
+            </div>
+            <p>${escapeHtml(region.guidance)}</p>
+            <ul class="focus-list">
+              ${focus.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+            </ul>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <h2>快速按鈕</h2>
+            </div>
+            <div class="quick-grid">
+              ${quickLinks.map(renderQuickLink).join("")}
+            </div>
+          </article>
+
+          <article class="panel" style="grid-column: 1 / -1;">
+            <div class="section-head">
+              <h2>JMA 官方摘要</h2>
+              <span class="badge ${badgeClass[region.jma?.level] || "yellow"}">${labelFor(region.jma?.level || "yellow")}</span>
+            </div>
+            ${renderJmaSummary(region)}
+          </article>
+
+          <article class="panel" style="grid-column: 1 / -1;">
+            <div class="section-head">
+              <h2>紅色情境</h2>
+            </div>
+            ${scenarios.map((scenario) => `
+              <section class="scenario">
+                <div class="scenario-title">
+                  <span class="severity ${severityClass[scenario.severity] || "red"}">${labelFor(scenario.severity || "red")}</span>
+                  <h3>${escapeHtml(scenario.title)}</h3>
+                </div>
+                <p>${escapeHtml(scenario.action)}</p>
+              </section>
+            `).join("")}
+          </article>
+        `;
+      }
+
+      function isStale(generatedAt) {
+        const parsed = Date.parse(generatedAt);
+        if (Number.isNaN(parsed)) return true;
+        return Date.now() - parsed > 18 * 60 * 60 * 1000;
+      }
+
+      async function loadData() {
+        const response = await fetch("./data.json", { cache: "no-store" });
+        dashboardData = await response.json();
+        activeRegionId = location.hash.replace("#", "") || dashboardData.regions[0].id;
+
+        const stale = isStale(dashboardData.generatedAt);
+        const overallPanel = document.getElementById("overallPanel");
+        overallPanel.classList.toggle("stale", stale);
+
+        document.getElementById("updated").textContent = stale
+          ? `最後更新：${dashboardData.generatedAt} / 舊資料，請手動確認官方來源`
+          : `最後更新：${dashboardData.generatedAt} / ${dashboardData.sourceMode}`;
+
+        const badge = document.getElementById("overallBadge");
+        badge.className = `badge ${badgeClass[dashboardData.overall.level] || "yellow"}`;
+        badge.textContent = labelFor(dashboardData.overall.level);
+        document.getElementById("overallText").textContent = dashboardData.overall.message;
+
+        document.getElementById("summary").innerHTML = dashboardData.overall.notes
+          .map((note) => `<li>${escapeHtml(note)}</li>`)
+          .join("");
+
+        document.getElementById("urgentLinks").innerHTML = dashboardData.urgentLinks
+          .map(renderQuickLink)
+          .join("");
+
+        renderVisualMap();
+        renderTabs();
+        renderRegion();
+      }
+
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./service-worker.js");
+      }
+
+      loadData().catch(() => {
+        document.getElementById("updated").textContent = "資料讀取失敗。若離線，請稍後再開；若在線，請重新整理。";
+      });
     </script>
   </body>
 </html>
