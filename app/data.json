@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2026-04-25T18:46:11+09:00",
-  "sourceMode": "scheduled placeholder; official fetchers not implemented yet",
+  "generatedAt": "2026-04-25T19:51:06+09:00",
+  "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "yellow",
-    "message": "目前仍是佔位資料。請把本頁當作官方連結與離線判斷卡，不要當作即時警報。",
+    "message": "JMA XML 已更新或部分更新。請把本頁當作官方連結與離線判斷卡。",
     "notes": [
+      "JMA XML 長期 feed 已更新。",
       "手機即時警報以 Safety tips、Yahoo! 防災速報、JMA 與現地指示為準。",
       "熊資訊以官方推播或自治體地圖優先；Kumamap 僅作人工輔助。",
       "資料超過 18 小時未更新時，頁面會提示舊資料，請手動開官方來源確認。"
@@ -90,7 +91,37 @@
           "severity": "yellow",
           "action": "取消非必要移動，先保留住宿、現金、充電與官方資訊確認。"
         }
-      ]
+      ],
+      "jma": {
+        "level": "yellow",
+        "summary": "JMA 近期相關電文 3 件。",
+        "items": [
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-04-25T00:52:43Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに、２６日朝は霜に対する農作物の管理に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425005244_0_VPWW54_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-25T00:52:43Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに、２６日朝は霜に対する農作物の管理に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425005244_0_VPWW53_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-24T18:49:45Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260424184946_0_VPWW53_017000.xml"
+          }
+        ]
+      }
     },
     {
       "id": "aomori",
@@ -168,7 +199,37 @@
           "severity": "yellow",
           "action": "保留轉場，放棄溪流健行。不要用完成景點作為決策目標。"
         }
-      ]
+      ],
+      "jma": {
+        "level": "yellow",
+        "summary": "JMA 近期相關電文 3 件。",
+        "items": [
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-04-25T00:43:32Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】青森県では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに、２６日朝は霜に対する農作物の管理に注意してください。津軽、三八上北では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425004332_0_VPWW54_020000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-25T00:43:32Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】青森県では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに、２６日朝は霜に対する農作物の管理に注意してください。津軽、三八上北では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425004332_0_VPWW53_020000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-04-24T21:23:36Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】青森県では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。津軽、三八上北では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260424212337_0_VPWW54_020000.xml"
+          }
+        ]
+      }
     },
     {
       "id": "iwate",
@@ -258,7 +319,149 @@
           "severity": "red",
           "action": "取消步行與臨時散策，優先留在有人管理的設施或旅館。"
         }
-      ]
+      ],
+      "jma": {
+        "level": "yellow",
+        "summary": "JMA 近期相關電文 3 件。",
+        "items": [
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-04-25T08:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向、２６日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425080034_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-04-25T05:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425050034_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-04-25T02:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425020033_0_VFVO53_010000.xml"
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "jma": {
+    "checkedAt": "2026-04-25T19:51:06+09:00",
+    "status": "ok",
+    "feeds": [
+      {
+        "id": "extra",
+        "label": "JMA 随時情報",
+        "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
+        "status": "ok",
+        "entries": 1793
+      },
+      {
+        "id": "eqvol",
+        "label": "JMA 地震火山情報",
+        "url": "https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml",
+        "status": "ok",
+        "entries": 629
+      }
+    ],
+    "regions": {
+      "hakodate": {
+        "level": "yellow",
+        "summary": "JMA 近期相關電文 3 件。",
+        "items": [
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-04-25T00:52:43Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに、２６日朝は霜に対する農作物の管理に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425005244_0_VPWW54_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-25T00:52:43Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに、２６日朝は霜に対する農作物の管理に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425005244_0_VPWW53_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-24T18:49:45Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260424184946_0_VPWW53_017000.xml"
+          }
+        ]
+      },
+      "aomori": {
+        "level": "yellow",
+        "summary": "JMA 近期相關電文 3 件。",
+        "items": [
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-04-25T00:43:32Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】青森県では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに、２６日朝は霜に対する農作物の管理に注意してください。津軽、三八上北では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425004332_0_VPWW54_020000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-25T00:43:32Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】青森県では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに、２６日朝は霜に対する農作物の管理に注意してください。津軽、三八上北では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425004332_0_VPWW53_020000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-04-24T21:23:36Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】青森県では、２６日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。津軽、三八上北では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260424212337_0_VPWW54_020000.xml"
+          }
+        ]
+      },
+      "iwate": {
+        "level": "yellow",
+        "summary": "JMA 近期相關電文 3 件。",
+        "items": [
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-04-25T08:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向、２６日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425080034_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-04-25T05:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425050034_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-04-25T02:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260425020033_0_VFVO53_010000.xml"
+          }
+        ]
+      }
+    }
+  }
 }
