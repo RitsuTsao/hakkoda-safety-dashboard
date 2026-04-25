@@ -2,28 +2,150 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const dataPath = new URL("../app/data.json", import.meta.url);
 
+const jmaFeeds = [
+  { id: "extra", label: "JMA 随時情報", url: "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml" },
+  { id: "eqvol", label: "JMA 地震火山情報", url: "https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml" }
+];
+
+const regionKeywords = {
+  hakodate: ["函館", "渡島", "檜山", "北海道"],
+  aomori: ["青森", "津軽", "下北", "三八上北"],
+  iwate: ["岩手", "盛岡", "宮古", "久慈", "釜石", "大船渡", "花巻", "岩泉", "沿岸北部", "沿岸南部"]
+};
+
+const redTerms = ["大津波警報", "津波警報", "特別警報", "土砂災害警戒情報", "噴火警戒レベル５", "噴火警戒レベル5", "噴火警戒レベル４", "噴火警戒レベル4", "噴火警戒レベル３", "噴火警戒レベル3", "震度７", "震度7", "震度６", "震度6", "震度５", "震度5"];
+const yellowTerms = ["津波注意報", "警報", "注意報", "震度４", "震度4", "地震情報", "大雨", "洪水", "暴風", "強風", "波浪", "高潮", "濃霧", "雷", "火山"];
+
 function nowInJapan() {
-  const date = new Date();
-  const formatter = new Intl.DateTimeFormat("sv-SE", {
-    timeZone: "Asia/Tokyo",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false
+  const formatter = new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+  return `${formatter.format(new Date()).replace(" ", "T")}+09:00`;
+}
+
+function decodeXml(value = "") {
+  return value.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&quot;", '"').replaceAll("&apos;", "'").replaceAll("&amp;", "&");
+}
+
+function stripTags(value = "") {
+  return decodeXml(value).replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function firstMatch(xml, pattern) {
+  const match = xml.match(pattern);
+  return match ? decodeXml(match[1].trim()) : "";
+}
+
+function parseAtomEntries(xml, feed) {
+  return [...xml.matchAll(/<entry\b[\s\S]*?<\/entry>/g)].map(([entry]) => {
+    const linkMatch = entry.match(/<link\b[^>]*href="([^"]+)"/);
+    return {
+      feed: feed.label,
+      title: firstMatch(entry, /<title[^>]*>([\s\S]*?)<\/title>/),
+      updated: firstMatch(entry, /<updated[^>]*>([\s\S]*?)<\/updated>/),
+      author: stripTags(firstMatch(entry, /<author[^>]*>([\s\S]*?)<\/author>/)),
+      content: stripTags(firstMatch(entry, /<content[^>]*>([\s\S]*?)<\/content>/)),
+      url: linkMatch ? decodeXml(linkMatch[1]) : feed.url
+    };
   });
-  return `${formatter.format(date).replace(" ", "T")}+09:00`;
+}
+
+function classifyEntry(entry) {
+  const titleText = entry.title || "";
+  const contentText = entry.content || "";
+  if (redTerms.some((term) => contentText.includes(term))) return "red";
+  if (yellowTerms.some((term) => `${titleText} ${contentText}`.includes(term))) return "yellow";
+  return "green";
+}
+
+function entryMatchesRegion(entry, regionId) {
+  const text = `${entry.title} ${entry.content} ${entry.author}`;
+  return regionKeywords[regionId].some((keyword) => text.includes(keyword));
+}
+
+function summarizeEntry(entry) {
+  return {
+    level: classifyEntry(entry),
+    title: entry.title || entry.feed,
+    updated: entry.updated,
+    source: entry.feed,
+    summary: entry.content.length > 120 ? `${entry.content.slice(0, 117)}...` : entry.content || "JMA feed entry matched this region.",
+    url: entry.url
+  };
+}
+
+function highestLevel(items) {
+  if (items.some((item) => item.level === "red")) return "red";
+  if (items.some((item) => item.level === "yellow")) return "yellow";
+  return "green";
+}
+
+async function fetchText(url) {
+  const response = await fetch(url, { headers: { "User-Agent": "hakkoda-safety-dashboard/0.1 (GitHub Actions)" } });
+  if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
+  return response.text();
+}
+
+async function fetchJmaSummaries() {
+  const feedResults = [];
+  const allEntries = [];
+
+  for (const feed of jmaFeeds) {
+    try {
+      const xml = await fetchText(feed.url);
+      const entries = parseAtomEntries(xml, feed);
+      feedResults.push({ id: feed.id, label: feed.label, url: feed.url, status: "ok", entries: entries.length });
+      allEntries.push(...entries);
+    } catch (error) {
+      feedResults.push({ id: feed.id, label: feed.label, url: feed.url, status: "failed", error: error.message });
+    }
+  }
+
+  const byRegion = Object.fromEntries(Object.keys(regionKeywords).map((regionId) => {
+    const summaries = allEntries
+      .filter((entry) => entryMatchesRegion(entry, regionId))
+      .map(summarizeEntry)
+      .sort((a, b) => Date.parse(b.updated || 0) - Date.parse(a.updated || 0))
+      .slice(0, 6);
+    return [regionId, { level: summaries.length ? highestLevel(summaries) : "green", summary: summaries.length ? `JMA 近期相關電文 ${summaries.length} 件。` : "JMA 長期 feed 未找到近期區域相關電文。", items: summaries }];
+  }));
+
+  const failedCount = feedResults.filter((feed) => feed.status === "failed").length;
+  return { checkedAt: nowInJapan(), status: failedCount === 0 ? "ok" : failedCount === jmaFeeds.length ? "failed" : "partial", feeds: feedResults, regions: byRegion };
+}
+
+function mergeRegionLevels(region, jmaRegion, jmaStatus) {
+  if (jmaStatus !== "ok" && jmaStatus !== "partial") return "yellow";
+  if (!jmaRegion) return region.level || "yellow";
+  if (jmaRegion.level === "red") return "red";
+  if (jmaRegion.level === "yellow") return "yellow";
+  return region.level === "red" || region.level === "yellow" ? region.level : "green";
+}
+
+function overallLevel(regions, jmaStatus) {
+  if (jmaStatus === "failed") return "yellow";
+  if (regions.some((region) => region.level === "red")) return "red";
+  if (regions.some((region) => region.level === "yellow")) return "yellow";
+  return "green";
 }
 
 async function main() {
   const existing = JSON.parse(await readFile(dataPath, "utf8"));
+  const jma = await fetchJmaSummaries();
+  const regions = existing.regions.map((region) => ({ ...region, level: mergeRegionLevels(region, jma.regions[region.id], jma.status), jma: jma.regions[region.id] }));
+  const level = overallLevel(regions, jma.status);
+  const feedStatusNote = jma.status === "ok" ? "JMA XML 長期 feed 已更新。" : jma.status === "partial" ? "JMA XML 部分 feed 抓取失敗，請手動確認官方頁。" : "JMA XML 抓取失敗，請手動確認官方頁。";
 
   const updated = {
     ...existing,
     generatedAt: nowInJapan(),
-    sourceMode: "scheduled placeholder; official fetchers not implemented yet"
+    sourceMode: `JMA XML updater v1; ${feedStatusNote}`,
+    jma,
+    overall: {
+      ...existing.overall,
+      level,
+      message: level === "red" ? "JMA XML 摘要偵測到紅色層級項目。請立刻開官方連結確認。" : level === "yellow" ? "JMA XML 已更新或部分更新。請把本頁當作官方連結與離線判斷卡。" : "JMA XML 未找到近期區域相關警戒電文；仍請以官方 App 與現地指示為準。",
+      notes: [feedStatusNote, "手機即時警報以 Safety tips、Yahoo! 防災速報、JMA 與現地指示為準。", "熊資訊以官方推播或自治體地圖優先；Kumamap 僅作人工輔助。", "資料超過 18 小時未更新時，頁面會提示舊資料，請手動開官方來源確認。"]
+    },
+    regions
   };
 
   await writeFile(dataPath, `${JSON.stringify(updated, null, 2)}\n`);
