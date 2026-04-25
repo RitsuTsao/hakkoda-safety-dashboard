@@ -359,13 +359,25 @@
 
       .event-row {
         display: grid;
-        gap: 2px;
+        gap: 5px;
         padding: 9px 0;
         border-top: 1px solid var(--line);
       }
 
       .event-row:first-child {
         border-top: 0;
+      }
+
+      .event-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .event-actions a {
+        color: var(--blue);
+        font-size: 0.86rem;
+        font-weight: 750;
       }
     </style>
   </head>
@@ -500,10 +512,14 @@
         `).join("");
 
         list.innerHTML = events.map((event) => `
-          <a class="event-row" href="${encodeURI(event.url)}" target="_blank" rel="noopener">
+          <div class="event-row">
             <strong>${escapeHtml(event.icon)} ${escapeHtml(event.label)}</strong>
             <span class="muted">${escapeHtml(event.source)} / ${labelFor(event.level)}</span>
-          </a>
+            <span class="event-actions">
+              <a href="${encodeURI(event.url)}" target="_blank" rel="noopener">JMA 頁</a>
+              ${event.xmlUrl ? `<a href="${encodeURI(event.xmlUrl)}" target="_blank" rel="noopener">XML</a>` : ""}
+            </span>
+          </div>
         `).join("");
       }
 
