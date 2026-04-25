@@ -1,25 +1,143 @@
 # Handoff Notes for Future Codex Sessions
 
-If a new conversation starts, read these files first:
+This is the primary handoff file. If a new conversation starts, read these files in order:
 
-1. `README.md`
-2. `docs/project-brief.md`
-3. `docs/data-sources.md`
-4. `docs/implementation-plan.md`
+1. `docs/handoff.md`
+2. `README.md`
+3. `docs/project-brief.md`
+4. `docs/data-sources.md`
+5. `docs/implementation-plan.md`
 
-## Current State
+## User Context
 
-This repo is an initial handoff skeleton. It should become a GitHub Pages PWA with a scheduled GitHub Actions update job.
+Ritsu is planning a June 2026 northern Tohoku trip. The dashboard is organized by region instead of by daily itinerary:
 
-## Important Decisions Already Made
+- Hakodate
+- Aomori
+- Iwate
 
-- Use GitHub-first deployment for MVP.
-- Avoid Cloudflare until the first working version exists.
-- Treat the dashboard as risk decision support, not emergency alert replacement.
-- Organize dashboard content by region: Hakodate, Aomori, Iwate.
-- Put Kumamap in the dashboard as a manual link first; do not scrape it yet.
-- Keep public repo privacy in mind.
+The product is a phone-first PWA for decision support during disruption. It is not an emergency alert authority. Official phone alerts, JMA, local government instructions, hotel staff, transport operators, and emergency broadcasts remain primary.
 
-## Suggested Next Conversation Prompt
+## Repo And Deployment
 
-Continue this project from the repo. Please read `README.md`, `docs/project-brief.md`, `docs/data-sources.md`, and `docs/implementation-plan.md`, then build the first working PWA dashboard and GitHub Actions scheduled updater.
+- GitHub repo: `RitsuTsao/hakkoda-safety-dashboard`
+- Live page: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`
+- GitHub Pages source: `main` branch, `/(root)`.
+- Root `index.html` redirects to `app/index.html`.
+- The app is intentionally dependency-free: static HTML, CSS, JS, JSON, service worker.
+
+## Current Implementation
+
+Implemented:
+
+- Mobile-first PWA shell in `app/index.html`.
+- PWA manifest in `app/manifest.webmanifest`.
+- Service worker in `app/service-worker.js`.
+- Offline cache for the app shell and `app/data.json`.
+- Region tabs for Hakodate, Aomori, Iwate.
+- Overall green / yellow / red status.
+- Region-specific quick links and red-condition decision prompts.
+- JMA XML summaries per region.
+- Visual Map v1:
+  - A simple grid map for Hakodate, Aomori, Iwate.
+  - Critical event chips generated from `app/data.json`.
+  - Tapping a visual event opens a human-readable JMA page, not raw XML.
+- GitHub Actions scheduled update in `.github/workflows/update-data.yml`.
+- Workflow runs manually and on a 12-hour schedule.
+- Workflow actions have been upgraded to Node 24-compatible versions:
+  - `actions/checkout@v6`
+  - `actions/setup-node@v6`
+  - `stefanzweifel/git-auto-commit-action@v7`
+
+## Data Update Pipeline
+
+Main updater:
+
+- File: `scripts/update-data.mjs`
+- Output: `app/data.json`
+- Current version: JMA XML updater v1 plus Visual Map event generation.
+
+Current JMA feeds:
+
+- `https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml`
+- `https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml`
+
+Updater behavior:
+
+- Fetches JMA long-term Atom feeds.
+- Parses entry title, updated time, author, content summary, and XML URL.
+- Matches entries to Hakodate, Aomori, and Iwate by conservative Japanese keywords.
+- Keeps the newest three matched JMA items per region.
+- Classifies status as green / yellow / red.
+- Red classification is based on actual content, not generic JMA titles.
+- Generates `criticalEvents` for the visual map.
+- Visual events keep the raw XML URL as `xmlUrl`, but `url` points to a human-readable JMA page:
+  - tsunami: `https://www.jma.go.jp/bosai/map.html#contents=tsunami`
+  - earthquake: `https://www.jma.go.jp/bosai/map.html#contents=earthquake_map`
+  - volcano / ashfall: `https://www.jma.go.jp/bosai/map.html#contents=volcano`
+  - other warnings: `https://www.jma.go.jp/bosai/map.html#contents=warning`
+
+## Important Decisions
+
+- Use GitHub Pages and GitHub Actions for MVP.
+- Avoid Cloudflare until a clear need appears.
+- Keep the repo public-safe: no passport numbers, full emergency contacts, booking numbers, room details, or private notes.
+- Prefer official sources over aggregators.
+- Use Kumamap only as a manual auxiliary link unless a stable public API or clear permission is found.
+- Iwate bear information should prioritize the official Iwate `Bears（ベアーズ）` LINE flow and Iwaizumi Town information.
+- For phone use, Visual Map event taps should open human-readable official pages, not raw XML.
+
+## Known Limitations
+
+- JMA XML matching is keyword-based and intentionally conservative.
+- Visual Map event placement is approximate by region, not geographic coordinates.
+- General JMA warning entries can create yellow events that are useful but noisy.
+- Bear sources are currently manual links and official app / LINE setup, not automated feeds.
+- The app has not yet implemented Notion Inbox notifications.
+- The app is public GitHub Pages; privacy assumptions must stay conservative.
+
+## Suggested Next Iterations
+
+1. Visual Map v1.1: reduce noise and improve event priority.
+   - Prefer red over yellow.
+   - Prefer tsunami, earthquake, volcano, landslide, heavy rain over routine advisories.
+   - Consider hiding low-impact dry-air / frost advisories from the map while keeping them in JMA summaries.
+
+2. Data Source v2: add better human-readable official links.
+   - MLIT river / road disaster pages.
+   - Aomori landslide warning page.
+   - Iwate road and municipal pages.
+   - Transport operator status links.
+
+3. Bear Info v1: improve manual bear workflow.
+   - Keep official Aomori and Iwate bear links prominent.
+   - Document that Ritsu has configured Iwate official LINE push notifications.
+   - Add a compact checklist for bear-related downgrade / cancel decisions.
+
+4. Offline Emergency Mode.
+   - Add a compact section for signal-poor moments:
+     - what to check first,
+     - what to do for tsunami,
+     - what to do for landslide / road disruption,
+     - what to do for bear reports.
+
+5. Notification Layer.
+   - Only after dashboard signal quality improves.
+   - Consider Notion Inbox digest for red or high-confidence yellow events.
+   - Avoid noisy notifications.
+
+## Suggested Prompt For New Project
+
+Use this prompt in the new Project conversation:
+
+> Please continue development of `RitsuTsao/hakkoda-safety-dashboard`. First read `docs/handoff.md`, then inspect the current repo state. The app is already deployed as a GitHub Pages PWA at `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`. Continue from the current implementation; do not restart from scratch. The next likely task is Visual Map v1.1 noise reduction and source-link refinement.
+
+## Quick Verification Checklist
+
+Before making further changes, a new Codex session should check:
+
+- `app/index.html` contains `renderVisualMap`.
+- `scripts/update-data.mjs` contains `buildCriticalEvents` and `humanReadableUrlForItem`.
+- `.github/workflows/update-data.yml` uses Node 24-compatible action versions.
+- `app/service-worker.js` cache version is current enough to force PWA refresh after UI changes.
+- The live site still opens on desktop and phone.
