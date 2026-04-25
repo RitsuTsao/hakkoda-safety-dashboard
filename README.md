@@ -8,7 +8,7 @@ This project is intentionally small and practical. It is not an emergency alert 
 
 This repository's initial planning documents, PWA scaffold, sample data structure, and GitHub Actions placeholder were generated with OpenAI Codex, GPT-5, in Codex desktop on 2026-04-25.
 
-The project direction, requirements, and publication decision were reviewed and approved by Ritsu. Approved by Ritsu.
+The project direction, requirements, and publication decision were reviewed and approved by Ritsu.
 
 ## Goals
 
