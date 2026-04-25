@@ -7,6 +7,7 @@
     "notes": [
       "手機即時警報仍以 Safety tips、Yahoo! 防災速報、JMA 與現地指示為準。",
       "熊資訊先以官方與人工快速連結確認，不自動抓 Kumamap。",
+      "岩手熊資訊以岩手県 Bears 與岩泉町出沒地圖為優先確認來源。",
       "若資料超過 18 小時未更新，請手動開官方連結確認。"
     ]
   },
@@ -25,6 +26,11 @@
       "title": "くまログあおもり",
       "url": "https://kumalog-aomori.info/",
       "note": "青森熊資訊"
+    },
+    {
+      "title": "岩手県 Bears",
+      "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1096154.html",
+      "note": "岩手熊資訊"
     },
     {
       "title": "Kumamap",
@@ -90,12 +96,27 @@
     {
       "title": "岩手",
       "level": "yellow",
-      "guidance": "涵蓋龍泉洞、岩泉、宮古、淨土之濱、花卷。重點是地震後交通、土砂、龍泉洞營運、宮古沿海津波與花卷返程。",
+      "guidance": "涵蓋龍泉洞、岩泉、宮古、淨土之濱、花卷。重點是地震後交通、土砂、熊出沒、龍泉洞營運、宮古沿海津波與花卷返程。",
       "links": [
         {
           "title": "岩手県 防災ポータル",
           "url": "https://iwate.secure.force.com/",
           "note": "縣級防災"
+        },
+        {
+          "title": "岩手県 Bears",
+          "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1096154.html",
+          "note": "官方熊出沒 App"
+        },
+        {
+          "title": "岩泉町 熊出没マップ",
+          "url": "https://www.town.iwaizumi.lg.jp/docs/2025120800017/",
+          "note": "龍泉洞周邊"
+        },
+        {
+          "title": "Kumamap 岩手",
+          "url": "https://kumamap.com/ja/areas/iwate",
+          "note": "手動輔助地圖"
         },
         {
           "title": "龍泉洞",
