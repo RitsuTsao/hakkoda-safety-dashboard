@@ -10,7 +10,7 @@ const jmaFeeds = [
 const regionKeywords = {
   hakodate: ["函館", "渡島", "檜山", "北海道"],
   aomori: ["青森", "津軽", "下北", "三八上北"],
-  iwate: ["岩手", "盛岡", "宮古", "久慈", "釜石", "大船渡", "花巻", "岩泉", "沿岸北部", "沿岸南部"]
+  iwate: ["岩手県", "岩手", "盛岡", "久慈", "釜石", "大船渡", "花巻", "岩泉", "沿岸北部", "沿岸南部"]
 };
 
 const redTerms = ["大津波警報", "津波警報", "特別警報", "土砂災害警戒情報", "噴火警戒レベル５", "噴火警戒レベル5", "噴火警戒レベル４", "噴火警戒レベル4", "噴火警戒レベル３", "噴火警戒レベル3", "震度７", "震度7", "震度６", "震度6", "震度５", "震度5"];
@@ -87,7 +87,6 @@ async function fetchText(url) {
 async function fetchJmaSummaries() {
   const feedResults = [];
   const allEntries = [];
-
   for (const feed of jmaFeeds) {
     try {
       const xml = await fetchText(feed.url);
@@ -104,7 +103,7 @@ async function fetchJmaSummaries() {
       .filter((entry) => entryMatchesRegion(entry, regionId))
       .map(summarizeEntry)
       .sort((a, b) => Date.parse(b.updated || 0) - Date.parse(a.updated || 0))
-      .slice(0, 6);
+      .slice(0, 3);
     return [regionId, { level: summaries.length ? highestLevel(summaries) : "green", summary: summaries.length ? `JMA 近期相關電文 ${summaries.length} 件。` : "JMA 長期 feed 未找到近期區域相關電文。", items: summaries }];
   }));
 
@@ -147,7 +146,6 @@ async function main() {
     },
     regions
   };
-
   await writeFile(dataPath, `${JSON.stringify(updated, null, 2)}\n`);
 }
 
