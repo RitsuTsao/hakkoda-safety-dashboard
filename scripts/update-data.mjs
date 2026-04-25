@@ -58,6 +58,65 @@ const yellowTerms = [
   "火山"
 ];
 
+const eventProfiles = [
+  {
+    type: "tsunami",
+    rank: 100,
+    icon: "🌊",
+    terms: ["大津波警報", "津波警報", "津波注意報", "津波"]
+  },
+  {
+    type: "earthquake",
+    rank: 95,
+    icon: "⏱",
+    terms: ["震度７", "震度7", "震度６", "震度6", "震度５", "震度5", "震度４", "震度4", "地震情報", "地震"]
+  },
+  {
+    type: "volcano",
+    rank: 90,
+    icon: "⛰",
+    terms: ["噴火警戒レベル", "噴火", "火山", "降灰"]
+  },
+  {
+    type: "landslide",
+    rank: 85,
+    icon: "⚠",
+    terms: ["土砂災害警戒情報", "土砂災害", "土砂"]
+  },
+  {
+    type: "heavy-rain",
+    rank: 80,
+    icon: "☔",
+    terms: ["大雨", "洪水", "氾濫", "浸水"]
+  },
+  {
+    type: "storm",
+    rank: 70,
+    icon: "💨",
+    terms: ["暴風", "強風", "波浪", "高潮"]
+  },
+  {
+    type: "snow",
+    rank: 62,
+    icon: "❄",
+    terms: ["大雪", "暴風雪", "なだれ", "雪崩"]
+  },
+  {
+    type: "fog-thunder",
+    rank: 45,
+    icon: "⚠",
+    terms: ["濃霧", "雷"]
+  }
+];
+
+const lowImpactAdvisoryTerms = [
+  "乾燥",
+  "空気の乾燥",
+  "霜",
+  "農作物",
+  "火の取り扱い"
+];
+
 function nowInJapan() {
   const date = new Date();
   const formatter = new Intl.DateTimeFormat("sv-SE", {
@@ -219,13 +278,41 @@ function overallLevel(regions, jmaStatus) {
   return "green";
 }
 
+function textForItem(item) {
+  return `${item.title || ""} ${item.summary || ""}`;
+}
+
+function includesAny(text, terms) {
+  return terms.some((term) => text.includes(term));
+}
+
+function profileForItem(item) {
+  const text = textForItem(item);
+  return eventProfiles.find((profile) => includesAny(text, profile.terms)) || {
+    type: "other",
+    rank: 30,
+    icon: "⚠"
+  };
+}
+
+function isLowImpactAdvisory(item) {
+  const text = textForItem(item);
+  const hasOnlyLowImpactTerms = includesAny(text, lowImpactAdvisoryTerms)
+    && !eventProfiles.some((profile) => profile.rank >= 60 && includesAny(text, profile.terms));
+  return item.level !== "red" && hasOnlyLowImpactTerms;
+}
+
+function mapPriorityForItem(item) {
+  if (isLowImpactAdvisory(item)) return 0;
+  const profile = profileForItem(item);
+  const levelBoost = item.level === "red" ? 1000 : item.level === "yellow" ? 100 : 0;
+  return levelBoost + profile.rank;
+}
+
 function iconForItem(item) {
+  const profile = profileForItem(item);
+  if (profile.type !== "other") return profile.icon;
   const text = `${item.title} ${item.summary}`;
-  if (text.includes("津波")) return "🌊";
-  if (text.includes("地震") || text.includes("震度")) return "⏱";
-  if (text.includes("火山") || text.includes("噴火") || text.includes("降灰")) return "⛰";
-  if (text.includes("大雨") || text.includes("洪水")) return "☔";
-  if (text.includes("土砂")) return "⚠";
   if (text.includes("雪") || text.includes("なだれ")) return "❄";
   if (text.includes("強風") || text.includes("暴風")) return "💨";
   return "⚠";
@@ -251,30 +338,56 @@ function humanReadableUrlForItem(item) {
   return "https://www.jma.go.jp/bosai/map.html#contents=warning";
 }
 
+function normalizedEventKey(regionId, item) {
+  const summary = (item.summary || "")
+    .replace(/[０-９0-9]+日/g, "")
+    .replace(/[０-９0-9]+時/g, "")
+    .replace(/\s+/g, "");
+  return `${regionId}:${profileForItem(item).type}:${placeForEvent(regionId, item)}:${summary.slice(0, 80)}`;
+}
+
 function buildCriticalEvents(regions) {
-  return regions.flatMap((region) => {
+  const byRegion = regions.flatMap((region) => {
     const items = region.jma?.items || [];
     const seen = new Set();
-    return items
+    const prioritized = items
       .filter((item) => item.level === "red" || item.level === "yellow")
+      .map((item) => ({
+        item,
+        priority: mapPriorityForItem(item),
+        profile: profileForItem(item)
+      }))
+      .filter((event) => event.priority > 0)
+      .sort((a, b) => {
+        if (b.priority !== a.priority) return b.priority - a.priority;
+        return Date.parse(b.item.updated || 0) - Date.parse(a.item.updated || 0);
+      })
       .filter((item) => {
-        const key = `${region.id}:${iconForItem(item)}:${placeForEvent(region.id, item)}`;
+        const key = normalizedEventKey(region.id, item.item);
         if (seen.has(key)) return false;
         seen.add(key);
         return true;
-      })
-      .slice(0, 2)
-      .map((item) => ({
+      });
+    const redCount = prioritized.filter((event) => event.item.level === "red").length;
+    return prioritized
+      .slice(0, redCount > 0 ? 2 : 1)
+      .map(({ item, priority, profile }) => ({
         regionId: region.id,
         level: item.level,
         icon: iconForItem(item),
         label: placeForEvent(region.id, item),
         summary: item.summary,
         source: item.source || "JMA",
+        type: profile.type,
+        priority,
         url: humanReadableUrlForItem(item),
         xmlUrl: item.url
       }));
-  }).slice(0, 6);
+  });
+
+  return byRegion
+    .sort((a, b) => b.priority - a.priority)
+    .slice(0, 6);
 }
 
 async function main() {

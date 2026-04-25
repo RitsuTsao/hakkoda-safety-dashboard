@@ -42,6 +42,10 @@ Implemented:
   - A simple grid map for Hakodate, Aomori, Iwate.
   - Critical event chips generated from `app/data.json`.
   - Tapping a visual event opens a human-readable JMA page, not raw XML.
+- Visual Map v1.1:
+  - Map events now use an explicit priority model: red first, then tsunami, earthquake, volcano, landslide, heavy rain / flood, storm, and snow / avalanche.
+  - Low-impact dry-air / frost / agricultural advisories are kept in JMA summaries but hidden from the visual map.
+  - Visual event rows expose both the human-readable JMA page and the raw XML source.
 - GitHub Actions scheduled update in `.github/workflows/update-data.yml`.
 - Workflow runs manually and on a 12-hour schedule.
 - Workflow actions have been upgraded to Node 24-compatible versions:
@@ -55,7 +59,7 @@ Main updater:
 
 - File: `scripts/update-data.mjs`
 - Output: `app/data.json`
-- Current version: JMA XML updater v1 plus Visual Map event generation.
+- Current version: JMA XML updater v1 plus Visual Map v1.1 event generation.
 
 Current JMA feeds:
 
@@ -71,6 +75,7 @@ Updater behavior:
 - Classifies status as green / yellow / red.
 - Red classification is based on actual content, not generic JMA titles.
 - Generates `criticalEvents` for the visual map.
+- `criticalEvents` are filtered and sorted by map priority, so routine advisories do not crowd the map.
 - Visual events keep the raw XML URL as `xmlUrl`, but `url` points to a human-readable JMA page:
   - tsunami: `https://www.jma.go.jp/bosai/map.html#contents=tsunami`
   - earthquake: `https://www.jma.go.jp/bosai/map.html#contents=earthquake_map`
@@ -98,10 +103,10 @@ Updater behavior:
 
 ## Suggested Next Iterations
 
-1. Visual Map v1.1: reduce noise and improve event priority.
-   - Prefer red over yellow.
-   - Prefer tsunami, earthquake, volcano, landslide, heavy rain over routine advisories.
-   - Consider hiding low-impact dry-air / frost advisories from the map while keeping them in JMA summaries.
+1. Continue Visual Map v1.1 QA and refinements.
+   - Confirm the priority model with live data during a few scheduled updates.
+   - Consider whether snow / avalanche should stay visible in shoulder-season prep mode or be hidden outside winter mountain travel.
+   - Add source-specific links for landslide / river / road events when the signal quality is good enough.
 
 2. Data Source v2: add better human-readable official links.
    - MLIT river / road disaster pages.
