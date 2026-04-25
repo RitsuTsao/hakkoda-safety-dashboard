@@ -1,4 +1,4 @@
-const CACHE_NAME = "hakkoda-safety-v6";
+const CACHE_NAME = "hakkoda-safety-v7";
 const APP_SHELL = [
   "./",
   "./index.html",

@@ -229,6 +229,54 @@
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260424212337_0_VPWW54_020000.xml"
           }
         ]
+      },
+      "bearWorkflow": {
+        "summary": "青森熊資訊以官方頁與現地公告優先；八甲田、酸湯、奧入瀨、十和田段若資訊不完整，就把步行行程降級。",
+        "sources": [
+          {
+            "title": "くまログあおもり",
+            "url": "https://kumalog-aomori.info/",
+            "category": "熊",
+            "note": "先看最新目擊"
+          },
+          {
+            "title": "青森県 クマ情報",
+            "url": "https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html",
+            "category": "熊",
+            "note": "縣官方注意"
+          },
+          {
+            "title": "酸湯温泉",
+            "url": "https://sukayu.jp/",
+            "category": "現地",
+            "note": "旅館公告"
+          },
+          {
+            "title": "八甲田ロープウェー",
+            "url": "https://hakkoda-ropeway.jp/",
+            "category": "山區",
+            "note": "營運 / 天候"
+          }
+        ],
+        "steps": [
+          "出門前先看くまログあおもり，再看旅館或設施公告。",
+          "若要進八甲田、酸湯周邊、奧入瀨溪流，現場再問旅館或站務人員。",
+          "資訊互相矛盾時，以官方公告與現地人員說法為準，不用 Kumamap 覆蓋官方判斷。"
+        ],
+        "decisions": [
+          {
+            "level": "red",
+            "text": "今日或昨日在住宿、步道、巴士站、停車場附近有目擊：取消散步、健行與清晨 / 傍晚外出。"
+          },
+          {
+            "level": "red",
+            "text": "旅館、ロープウェー、警察或自治體提醒不要接近：取消該區步行，改成有人管理的室內或交通移動。"
+          },
+          {
+            "level": "yellow",
+            "text": "只有較遠或較舊目擊，但天候差、視線差、路上人少：降級為短距離、有人同行、白天移動。"
+          }
+        ]
       }
     },
     {
@@ -347,6 +395,54 @@
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北東方向、２６日０９時から１２時までは火口から北東方向に降灰が予想されます。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260425080034_0_VFVO53_010000.xml"
+          }
+        ]
+      },
+      "bearWorkflow": {
+        "summary": "岩手熊資訊以 Bears LINE / App 與岩泉町熊出沒地圖優先；龍泉洞、岩泉、宮古前後若有接近目擊，直接取消非必要步行。",
+        "sources": [
+          {
+            "title": "岩手県 Bears",
+            "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1096154.html",
+            "category": "熊",
+            "note": "官方 LINE / App"
+          },
+          {
+            "title": "岩泉町 熊出没マップ",
+            "url": "https://www.town.iwaizumi.lg.jp/docs/2025120800017/",
+            "category": "熊",
+            "note": "龍泉洞周邊"
+          },
+          {
+            "title": "Kumamap 岩手",
+            "url": "https://kumamap.com/ja/areas/iwate",
+            "category": "熊",
+            "note": "人工輔助"
+          },
+          {
+            "title": "龍泉洞",
+            "url": "https://www.iwate-ryusendo.jp/",
+            "category": "營運",
+            "note": "入洞 / 交通"
+          }
+        ],
+        "steps": [
+          "先確認已設定的岩手 Bears LINE 推播，再開 Bears / App 看目的地周邊。",
+          "龍泉洞與岩泉町段一定加看岩泉町熊出沒地圖。",
+          "Kumamap 只作輔助定位；若和 Bears 或岩泉町地圖不同，以官方來源優先。"
+        ],
+        "decisions": [
+          {
+            "level": "red",
+            "text": "Bears LINE / App 或岩泉町地圖顯示龍泉洞、岩泉町移動路線、住宿周邊有近期目擊：取消散策與臨時下車。"
+          },
+          {
+            "level": "red",
+            "text": "熊資訊加上豪雨、土砂、道路異常或地震後交通不穩：把龍泉洞或山區段降級為放棄點。"
+          },
+          {
+            "level": "yellow",
+            "text": "只有較遠目擊且官方未要求避開：保留主要交通與有人管理設施，刪掉路邊停留、清晨 / 傍晚步行。"
           }
         ]
       }
