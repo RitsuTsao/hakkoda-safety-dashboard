@@ -8,7 +8,7 @@ This project is intentionally small and practical. It is not an emergency alert 
 
 This repository's initial planning documents, PWA scaffold, sample data structure, and GitHub Actions placeholder were generated with OpenAI Codex, GPT-5, in Codex desktop on 2026-04-25.
 
-The project direction, requirements, and publication decision were reviewed and approved by Ritsu.
+The project direction, requirements, and publication decision were reviewed and approved by Ritsu. Approved by Ritsu.
 
 ## Goals
 
@@ -26,9 +26,19 @@ The project direction, requirements, and publication decision were reviewed and 
 
 ## Current Recommendation
 
-Start with GitHub Pages and GitHub Actions because the user already has a GitHub account and does not yet use Cloudflare.
+The current MVP runs on GitHub Pages and GitHub Actions.
 
 Later, consider Cloudflare Pages + Workers Cron if private deployment, KV storage, webhook notifications, or cleaner scheduled updates become important.
+
+## Current Status
+
+- Live PWA: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`
+- GitHub Pages serves the static app from `main`.
+- The phone PWA can be installed and read offline.
+- GitHub Actions updates `app/data.json` every 12 hours and can be run manually.
+- JMA XML updater v1 fetches JMA long-term Atom feeds and summarizes relevant entries for Hakodate, Aomori, and Iwate.
+- Visual Map v1 shows high-attention events and links to human-readable JMA pages.
+- Bear information is currently handled through official/manual sources, not automated scraping.
 
 ## Safety Model
 
@@ -40,9 +50,12 @@ Use three layers:
 
 ## Next Steps
 
-1. Build the first dashboard UI in `app/`.
-2. Fill `app/data.json` with realistic sample data.
-3. Implement `scripts/update-data.mjs` to fetch official sources and write `app/data.json`.
-4. Enable GitHub Pages.
-5. Enable GitHub Actions workflow in `.github/workflows/update-data.yml`.
-6. Test installation on phone as a PWA.
+1. Visual Map v1.1: reduce low-impact warning noise and improve event priority.
+2. Data Source v2: add better human-readable links for landslide, road, river, and transport status.
+3. Bear Info v1: document official Aomori and Iwate bear-check workflow inside the dashboard.
+4. Offline Emergency Mode: add a compact signal-poor checklist for tsunami, landslide, road disruption, and bear reports.
+5. Notification Layer: later, add Notion Inbox or similar digest only for high-signal events.
+
+## Handoff
+
+Future Codex sessions should start with `docs/handoff.md`.
