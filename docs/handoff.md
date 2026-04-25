@@ -117,9 +117,11 @@ Updater behavior:
 4. Offline Emergency Mode.
    - Add a compact section for signal-poor moments:
      - what to check first,
+     - what to check after a strong earthquake,
      - what to do for tsunami,
      - what to do for landslide / road disruption,
      - what to do for bear reports.
+   - Include JMA earthquake information as a core check, especially because the 2026-04-20 Sanriku offshore earthquake and the JMA `北海道・三陸沖後発地震注意情報` make follow-on earthquake awareness relevant for this route.
 
 5. Notification Layer.
    - Only after dashboard signal quality improves.
