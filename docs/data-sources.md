@@ -30,11 +30,19 @@ Preferred:
 
 - `くまログあおもり` for Aomori bear sightings and warnings.
 - Aomori Prefecture official bear notices.
-- Iwate Prefecture / Iwaizumi municipal bear pages where available.
+- Iwate Prefecture `Bears（ベアーズ）`, a bear sighting posting and viewing app accessed from the official Iwate LINE account.
+- Iwaizumi Town `ツキノワグマ出没等情報マップ` for the Ryusendo / Iwaizumi area.
+
+Iwate implementation notes:
+
+- `Bears（ベアーズ）` is a good manual source, but currently should not be treated as a clean automated API.
+- Iwaizumi Town provides a municipal bear sighting map page; this is especially relevant to the Ryusendo segment.
+- For urgent danger, Iwate Prefecture instructs users to contact police / emergency services or municipal offices; a dashboard link is not a substitute for reporting.
 
 Kumamap:
 
 - `https://kumamap.com/ja/map` is useful as a fast manual map link.
+- `https://kumamap.com/ja/areas/iwate` is useful as an Iwate-specific auxiliary view.
 - Do not automate scraping unless a stable public API or clear permission is found.
 - The map page is JavaScript-driven, so raw HTML is not enough for reliable data extraction.
 
