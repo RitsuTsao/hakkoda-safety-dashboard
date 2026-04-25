@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1f4f46">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <title>Hakkoda Safety Dashboard</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f3ed;
+        --panel: #ffffff;
+        --text: #17201d;
+        --muted: #63706b;
+        --line: #d8ddd7;
+        --green: #247a52;
+        --yellow: #9a6a00;
+        --red: #b3261e;
+        --blue: #245d8f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      main {
+        width: min(960px, 100%);
+        margin: 0 auto;
+        padding: 18px;
+      }
+
+      header {
+        display: grid;
+        gap: 8px;
+        padding: 14px 0 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1.65rem;
+        line-height: 1.15;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 1rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      @media (min-width: 760px) {
+        .grid.two {
+          grid-template-columns: 1.1fr 0.9fr;
+        }
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+      }
+
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 54px;
+        min-height: 32px;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .green {
+        background: var(--green);
+      }
+
+      .yellow {
+        background: var(--yellow);
+      }
+
+      .red {
+        background: var(--red);
+      }
+
+      ul {
+        margin: 8px 0 0;
+        padding-left: 20px;
+      }
+
+      a {
+        color: var(--blue);
+        font-weight: 650;
+        text-decoration: none;
+      }
+
+      a:focus,
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .links {
+        display: grid;
+        gap: 8px;
+      }
+
+      .link-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 9px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .link-row:first-child {
+        border-top: 0;
+      }
+
+      .small {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Hakkoda Safety Dashboard</h1>
+        <p class="meta">離線可讀的北東北旅程風險儀表板。即時警報仍以官方 App、旅館與現地指示為準。</p>
+        <p id="updated" class="meta">讀取資料中...</p>
+      </header>
+
+      <section class="grid two">
+        <article class="panel">
+          <h2>今日總覽</h2>
+          <div class="status">
+            <span id="overallBadge" class="badge yellow">待查</span>
+            <p id="overallText">等待資料載入。</p>
+          </div>
+          <ul id="summary"></ul>
+        </article>
+
+        <article class="panel">
+          <h2>立即確認</h2>
+          <div id="urgentLinks" class="links"></div>
+        </article>
+      </section>
+
+      <section class="panel" style="margin-top: 12px;">
+        <h2>區域風險卡</h2>
+        <div id="regions" class="grid"></div>
+      </section>
+
+      <section class="panel" style="margin-top: 12px;">
+        <h2>離線提醒</h2>
+        <p class="small">如果這頁的更新時間超過 18 小時，請把內容視為舊資料，只用它開啟官方連結，不要用舊燈號做決策。</p>
+      </section>
+    </main>
+
+    <script>
+      const badgeClass = {
+        green: "green",
+        yellow: "yellow",
+        red: "red"
+      };
+
+      function labelFor(level) {
+        if (level === "green") return "綠";
+        if (level === "red") return "紅";
+        return "黃";
+      }
+
+      function renderLink(link) {
+        const row = document.createElement("div");
+        row.className = "link-row";
+        row.innerHTML = `<a href="${link.url}" target="_blank" rel="noopener">${link.title}</a><span class="small">${link.note || ""}</span>`;
+        return row;
+      }
+
+      async function loadData() {
+        const response = await fetch("./data.json", { cache: "no-store" });
+        const data = await response.json();
+
+        document.getElementById("updated").textContent = `最後更新：${data.generatedAt} / ${data.sourceMode}`;
+
+        const badge = document.getElementById("overallBadge");
+        badge.className = `badge ${badgeClass[data.overall.level] || "yellow"}`;
+        badge.textContent = labelFor(data.overall.level);
+        document.getElementById("overallText").textContent = data.overall.message;
+
+        const summary = document.getElementById("summary");
+        summary.innerHTML = "";
+        data.overall.notes.forEach((note) => {
+          const item = document.createElement("li");
+          item.textContent = note;
+          summary.appendChild(item);
+        });
+
+        const urgentLinks = document.getElementById("urgentLinks");
+        urgentLinks.innerHTML = "";
+        data.urgentLinks.forEach((link) => urgentLinks.appendChild(renderLink(link)));
+
+        const regions = document.getElementById("regions");
+        regions.innerHTML = "";
+        data.regions.forEach((region) => {
+          const card = document.createElement("article");
+          card.className = "panel";
+          card.innerHTML = `
+            <div class="status">
+              <span class="badge ${badgeClass[region.level] || "yellow"}">${labelFor(region.level)}</span>
+              <div>
+                <strong>${region.title}</strong>
+                <p class="small">${region.guidance}</p>
+              </div>
+            </div>
+          `;
+          const links = document.createElement("div");
+          links.className = "links";
+          region.links.forEach((link) => links.appendChild(renderLink(link)));
+          card.appendChild(links);
+          regions.appendChild(card);
+        });
+      }
+
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./service-worker.js");
+      }
+
+      loadData().catch(() => {
+        document.getElementById("updated").textContent = "資料讀取失敗。請確認網路或重新整理。";
+      });
+    </script>
+  </body>
+</html>
