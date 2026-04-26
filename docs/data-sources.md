@@ -52,6 +52,19 @@ Dashboard implementation:
 - Cancel / downgrade rules are intentionally short: nearby recent sightings or official/local warnings cancel walks; weaker or older signals downgrade to short, daytime, managed-facility movement.
 - Kumamap remains auxiliary and must not override official or local instructions.
 
+Bear Info v1.1 implementation:
+
+- The scheduled updater extracts short text summaries from official bear pages where the HTML is readable.
+- Aomori summary sources:
+  - `くまログあおもり` front-page prefectural notice.
+  - Aomori Prefecture `クマの出没に注意してください！`.
+- Iwate summary sources:
+  - Iwate Prefecture `ツキノワグマの出没に関する警報について`.
+  - Iwate Prefecture `ツキノワグマによる人身被害状況・出没状況`.
+  - Iwaizumi Town `鳥獣被害対策` listing for bear-related official notices.
+- A red bear event is added to the visual map only when an official text item contains human-injury style terms such as `人身被害`, `襲われ`, or `死亡事故`.
+- This is still text extraction, not a precise geospatial map. If an official page layout changes, the dashboard should show manual links and the parsing should be adjusted.
+
 Iwate implementation notes:
 
 - `Bears（ベアーズ）` is a good manual source, but currently should not be treated as a clean automated API.
