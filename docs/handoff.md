@@ -72,6 +72,20 @@ Implemented:
   - `actions/setup-node@v6`
   - `stefanzweifel/git-auto-commit-action@v7`
 
+## Latest Completed Iteration
+
+2026-05-01: Offline Emergency Mode v1 is complete and deployed.
+
+- Merged PR: `https://github.com/RitsuTsao/hakkoda-safety-dashboard/pull/6`
+- Merge commit: `97f843b Add offline emergency mode`
+- Live page verified: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html#aomori`
+- Verified behavior:
+  - `離線緊急判斷` is collapsed by default.
+  - Opening the toggle shows earthquake, tsunami, landslide / road disruption, and `熊遭遇` first actions.
+  - Bear encounter wording focuses on direct emergency response, not routine bear-sighting information.
+  - Live service worker is `hakkoda-safety-v10`.
+- No manual GitHub Actions workflow run was needed because this iteration changed static UI and app shell cache only, not the data updater.
+
 ## Data Update Pipeline
 
 Main updater:
@@ -142,10 +156,9 @@ Updater behavior:
    - Confirm multiple Iwate chips, such as `🐻 岩手 熊被害` and `⚠️ 岩手山`, do not overlap on the visual map.
    - Monitor whether official page layout changes break summary extraction.
 
-4. Offline Emergency Mode follow-up QA.
-   - Confirm wording is short enough on the user's phone.
+4. Offline Emergency Mode follow-up refinements.
    - Consider adding region-specific offline evacuation references only if they can stay public-safe and not become stale.
-   - During post-deploy checks, confirm the installed PWA refreshes from cache v10.
+   - Keep the emergency section compact and collapsed by default so daily risk summaries remain prominent.
 
 5. Notification Layer.
    - Only after dashboard signal quality improves.
@@ -156,7 +169,7 @@ Updater behavior:
 
 Use this prompt in the new Project conversation:
 
-> Please continue development of `RitsuTsao/hakkoda-safety-dashboard`. First read `docs/handoff.md`, then inspect the current repo state. The app is already deployed as a GitHub Pages PWA at `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`. Continue from the current implementation; do not restart from scratch. The next likely task is Visual Map v1.1 noise reduction and source-link refinement.
+> Please continue development of `RitsuTsao/hakkoda-safety-dashboard`. First read `docs/handoff.md`, then inspect the current repo state. The app is already deployed as a GitHub Pages PWA at `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`. Continue from the current implementation; do not restart from scratch. Offline Emergency Mode v1 was completed and deployed on 2026-05-01. The next likely task is Visual Map v1.1 noise reduction, source-link refinement, or Data Source v2.
 
 ## Quick Verification Checklist
 
