@@ -65,6 +65,16 @@ Implemented:
   - It covers the first action for post-earthquake, tsunami, landslide / road disruption, and direct bear-encounter situations.
   - JMA earthquake and tsunami links are included as core checks, with Safety tips, JARTIC, Environment Ministry bear guidance, and Aomori Prefecture bear guidance for manual confirmation when signal returns.
   - `app/service-worker.js` cache is bumped to `hakkoda-safety-v10` so installed PWAs refresh the app shell.
+- Data Source v2:
+  - Quick-link cards now show a compact source category badge so official source types are easier to scan on phone.
+  - Quick-link cards are grouped by source type, with distinct backgrounds for earthquake / tsunami, bear, and weather / river-rain sources.
+  - Quick links were pruned for phone use: total overview now has 4 buttons; Hakodate has 5; Aomori has 7; Iwate has 8.
+  - The remaining quick links prioritize JMA / tsunami, bear, weather / river-rain, landslide / road, and a few trip-critical operators such as Hakkoda Ropeway, JR Bus Oirase, Ryusendo, JR Hokkaido, and Hakodate Airport.
+  - Secondary or duplicate sources such as broad prefectural portals, duplicate road pages, generic rail status, Kumamap Iwate, Sanriku Railway, and local notice pages were removed from the phone quick-link grid for this iteration.
+  - Iwate bear source buttons were also pruned to official Bears and Iwaizumi Town bear map only; Kumamap remains documented as an auxiliary source but is not surfaced as a primary phone button.
+  - Iwate now includes a static `宮古 津波避難點陣` panel with selected Miyako City tsunami evacuation buildings, lightweight local landmarks, high-ground / sea-side orientation, and an official Miyako evacuation-list link.
+  - The Miyako dot diagram is approximate and non-navigational; it is a fast reminder to move to high ground or an official evacuation building and then confirm with Miyako City / local instructions.
+  - `app/service-worker.js` cache is bumped to `hakkoda-safety-v11` so installed PWAs refresh the app shell and new source links.
 - GitHub Actions scheduled update in `.github/workflows/update-data.yml`.
 - Workflow runs manually and on a 12-hour schedule.
 - Workflow actions have been upgraded to Node 24-compatible versions:
@@ -73,6 +83,32 @@ Implemented:
   - `stefanzweifel/git-auto-commit-action@v7`
 
 ## Latest Completed Iteration
+
+2026-05-01: Data Source v2 is implemented locally and awaiting final PR / merge confirmation.
+
+- Branch: `codex/data-source-v2`
+- Changed files:
+  - `app/data.json`
+  - `app/index.html`
+  - `app/service-worker.js`
+  - `docs/data-sources.md`
+  - `docs/handoff.md`
+- Scope:
+  - Strengthened human-readable official links and visible source categories.
+  - Added source-type button color and grouping for earthquake / tsunami, weather / river-rain, and bear sources.
+  - Added and then pruned source buttons so the phone quick-link grid stays focused on high-priority field decisions.
+  - Remaining quick links cover MLIT river, MLIT Tohoku road for Aomori, Aomori landslide, Iwate road, JARTIC in the overview, JR Hokkaido, Hakkoda Ropeway, JR Bus Oirase, Ryusendo, and Miyako evacuation sources.
+  - Added Miyako tsunami evacuation static dot diagram under Iwate, including relative landmarks and an explicit escape-direction hint.
+  - No new automated scraping was added.
+- Local verification:
+  - `app/data.json` parses successfully.
+  - `git diff --check` passes.
+  - `scripts/update-data.mjs` was run with network access; JMA and bear source statuses returned `ok`, and the new `staticMaps` field was preserved.
+  - Local preview served at `http://127.0.0.1:8000/app/index.html#iwate`.
+  - In-app browser check found no console errors and confirmed the Iwate links plus `宮古 津波避難點陣` render on a phone-width view.
+- Still needed before merge:
+  - Confirm with Ritsu that the single PR scope is complete.
+  - Open one PR, merge it, and verify GitHub Pages after deployment.
 
 2026-05-01: Offline Emergency Mode v1 is complete and deployed.
 
@@ -144,10 +180,9 @@ Updater behavior:
    - Add source-specific links for landslide / river / road events when the signal quality is good enough.
 
 2. Data Source v2: add better human-readable official links.
-   - MLIT river / road disaster pages.
-   - Aomori landslide warning page.
-   - Iwate road and municipal pages.
-   - Transport operator status links.
+   - Local implementation is in progress on `codex/data-source-v2`.
+   - Next step is QA / PR / merge / live verification, not rebuilding the source list.
+   - Later refinement can add source-specific parsers only after signal quality is clear.
 
 3. Bear Info v1.1 follow-up QA.
    - Confirm the new `最新摘要` text stays readable on phone.
@@ -178,5 +213,5 @@ Before making further changes, a new Codex session should check:
 - `app/index.html` contains `renderVisualMap`.
 - `scripts/update-data.mjs` contains `buildCriticalEvents` and `humanReadableUrlForItem`.
 - `.github/workflows/update-data.yml` uses Node 24-compatible action versions.
-- `app/service-worker.js` cache version is current enough to force PWA refresh after UI changes. Current UI cache version after Offline Emergency Mode v1: `hakkoda-safety-v10`.
+- `app/service-worker.js` cache version is current enough to force PWA refresh after UI changes. Current UI cache version after Data Source v2 local implementation: `hakkoda-safety-v11`.
 - The live site still opens on desktop and phone.

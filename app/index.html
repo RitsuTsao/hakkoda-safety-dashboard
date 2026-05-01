@@ -203,6 +203,21 @@
         background: #fff;
       }
 
+      .quick-link.topic-quake {
+        border-color: #9fb8d5;
+        background: #eef6ff;
+      }
+
+      .quick-link.topic-bear {
+        border-color: #d4b58f;
+        background: #fff6ea;
+      }
+
+      .quick-link.topic-weather {
+        border-color: #9fc7b5;
+        background: #edf8f2;
+      }
+
       .quick-link strong {
         color: var(--blue);
         font-size: 0.96rem;
@@ -211,6 +226,17 @@
       .quick-link span {
         color: var(--muted);
         font-size: 0.82rem;
+      }
+
+      .link-category {
+        width: fit-content;
+        padding: 2px 6px;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        background: var(--panel-soft);
+        color: var(--ink);
+        font-size: 0.74rem;
+        font-weight: 750;
       }
 
       .offline-emergency {
@@ -511,6 +537,140 @@
         border-top: 0;
         padding-top: 0;
       }
+
+      .static-map {
+        display: grid;
+        gap: 12px;
+      }
+
+      .static-map-viewport {
+        position: relative;
+        min-height: 250px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(36,93,143,.14), transparent 38%),
+          linear-gradient(90deg, rgba(31,79,70,.08) 1px, transparent 1px),
+          linear-gradient(rgba(31,79,70,.08) 1px, transparent 1px),
+          #fbfaf6;
+        background-size: auto, 22px 22px, 22px 22px, auto;
+      }
+
+      .static-map-label {
+        position: absolute;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 750;
+      }
+
+      .static-map-label.coast {
+        top: 12px;
+        right: 14px;
+        color: var(--blue);
+      }
+
+      .static-map-label.station {
+        left: 14px;
+        bottom: 14px;
+      }
+
+      .static-map-label.high-ground {
+        left: 14px;
+        top: 14px;
+        color: var(--green);
+      }
+
+      .static-map-label.river {
+        left: 48%;
+        top: 42%;
+        transform: rotate(-18deg);
+        color: var(--blue);
+        opacity: .75;
+      }
+
+      .static-landmark {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        max-width: 112px;
+        transform: translate(-50%, -50%);
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 750;
+        text-align: center;
+      }
+
+      .static-landmark::before {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        margin: 0 auto 2px;
+        border-radius: 50%;
+        background: var(--ink);
+        opacity: .45;
+      }
+
+      .static-point {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        transform: translate(-50%, -50%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        color: var(--text);
+        font-size: 0;
+        font-weight: 750;
+        text-align: center;
+      }
+
+      .static-point::before {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        background: var(--red);
+        box-shadow: 0 0 0 2px var(--red);
+      }
+
+      .static-point::after {
+        content: attr(data-index);
+        position: relative;
+        color: #fff;
+        font-size: 0.72rem;
+        line-height: 1;
+      }
+
+      .static-map-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .static-map-list a {
+        display: grid;
+        gap: 3px;
+        padding-top: 8px;
+        border-top: 1px solid var(--line);
+      }
+
+      .static-map-list a:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .escape-hint {
+        padding: 10px;
+        border: 1px solid #c8d8cf;
+        border-radius: 8px;
+        background: var(--panel-soft);
+        color: var(--ink);
+        font-weight: 750;
+      }
     </style>
   </head>
   <body>
@@ -661,12 +821,37 @@
       function renderQuickLink(link) {
         const safeTitle = escapeHtml(link.title);
         const safeNote = escapeHtml(link.note || link.category || "");
+        const safeCategory = escapeHtml(link.category || "來源");
         return `
-          <a class="quick-link" href="${encodeURI(link.url)}" target="_blank" rel="noopener">
+          <a class="quick-link ${topicClassForLink(link)}" href="${encodeURI(link.url)}" target="_blank" rel="noopener">
+            <span class="link-category">${safeCategory}</span>
             <strong>${safeTitle}</strong>
             <span>${safeNote}</span>
           </a>
         `;
+      }
+
+      function topicForLink(link) {
+        const text = `${link.title || ""} ${link.category || ""} ${link.note || ""}`;
+        if (text.includes("津波") || text.includes("地震")) return "quake";
+        if (text.includes("熊") || text.includes("クマ") || text.includes("Bears") || text.includes("Kumamap")) return "bear";
+        if (text.includes("氣象警報") || text.includes("気象") || text.includes("河川") || text.includes("雨量")) return "weather";
+        return "other";
+      }
+
+      function topicClassForLink(link) {
+        return `topic-${topicForLink(link)}`;
+      }
+
+      function sortQuickLinks(links) {
+        const order = { quake: 0, weather: 1, bear: 2, other: 3 };
+        return [...links].sort((a, b) => compareQuickLinks(a, b, order));
+      }
+
+      function compareQuickLinks(a, b, order = { quake: 0, weather: 1, bear: 2, other: 3 }) {
+        const topicDiff = order[topicForLink(a)] - order[topicForLink(b)];
+        if (topicDiff !== 0) return topicDiff;
+        return String(a.category || "").localeCompare(String(b.category || ""), "zh-Hant");
       }
 
       function renderJmaSummary(region) {
@@ -758,6 +943,51 @@
         `;
       }
 
+      function renderStaticMaps(region) {
+        const maps = region.staticMaps || [];
+        if (!maps.length) return "";
+
+        return maps.map((map) => `
+          <article class="panel" style="grid-column: 1 / -1;">
+            <div class="section-head">
+              <h2>${escapeHtml(map.title)}</h2>
+              <span class="muted">${escapeHtml(map.category || "靜態參考")}</span>
+            </div>
+            <div class="static-map">
+              <p>${escapeHtml(map.summary)}</p>
+              <div class="static-map-viewport" aria-label="${escapeHtml(map.title)}">
+                <span class="static-map-label high-ground">高台方向</span>
+                <span class="static-map-label coast">海側 / 港</span>
+                <span class="static-map-label station">宮古駅側</span>
+                <span class="static-map-label river">閉伊川</span>
+                ${(map.landmarks || []).map((mark) => `
+                  <span class="static-landmark" style="--x:${Number(mark.x)}%; --y:${Number(mark.y)}%;">${escapeHtml(mark.label)}</span>
+                `).join("")}
+                ${(map.points || []).map((point, index) => `
+                  <a class="static-point" data-index="${index + 1}" href="${encodeURI(point.url || map.sourceUrl)}" target="_blank" rel="noopener" style="--x:${Number(point.x)}%; --y:${Number(point.y)}%;" title="${escapeHtml(point.note || point.label)}">
+                    ${escapeHtml(point.label)}
+                  </a>
+                `).join("")}
+              </div>
+              ${map.escapeHint ? `<p class="escape-hint">${escapeHtml(map.escapeHint)}</p>` : ""}
+              <div class="static-map-list">
+                ${(map.points || []).map((point, index) => `
+                  <a href="${encodeURI(point.url || map.sourceUrl)}" target="_blank" rel="noopener">
+                    <strong>${index + 1}. ${escapeHtml(point.label)}</strong>
+                    <span class="muted">${escapeHtml(point.area || "")} / ${escapeHtml(point.note || "")}</span>
+                  </a>
+                `).join("")}
+              </div>
+              <a class="quick-link" href="${encodeURI(map.sourceUrl)}" target="_blank" rel="noopener">
+                <span class="link-category">官方總表</span>
+                <strong>${escapeHtml(map.sourceTitle || "官方來源")}</strong>
+                <span>${escapeHtml(map.sourceNote || "以官方頁與現地指示為準")}</span>
+              </a>
+            </div>
+          </article>
+        `).join("");
+      }
+
       function renderVisualMap() {
         const events = dashboardData.criticalEvents || [];
         const layer = document.getElementById("eventLayer");
@@ -813,7 +1043,7 @@
       function renderRegion() {
         const region = dashboardData.regions.find((item) => item.id === activeRegionId) || dashboardData.regions[0];
         const panel = document.getElementById("regionPanel");
-        const quickLinks = region.quickLinks || region.links || [];
+        const quickLinks = sortQuickLinks(region.quickLinks || region.links || []);
         const scenarios = region.scenarios || [];
         const focus = region.focus || [];
 
@@ -847,6 +1077,8 @@
           </article>
 
           ${renderBearWorkflow(region)}
+
+          ${renderStaticMaps(region)}
 
           <article class="panel" style="grid-column: 1 / -1;">
             <div class="section-head">
@@ -894,6 +1126,7 @@
           .join("");
 
         document.getElementById("urgentLinks").innerHTML = dashboardData.urgentLinks
+          .sort(compareQuickLinks)
           .map(renderQuickLink)
           .join("");
 
