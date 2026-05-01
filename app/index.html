@@ -213,6 +213,86 @@
         font-size: 0.82rem;
       }
 
+      .offline-emergency {
+        margin-top: 12px;
+      }
+
+      .offline-emergency summary {
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .offline-emergency summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .offline-emergency .section-head {
+        margin-bottom: 0;
+      }
+
+      .offline-emergency[open] .section-head {
+        margin-bottom: 10px;
+      }
+
+      .toggle-label::before {
+        content: "展開";
+      }
+
+      .offline-emergency[open] .toggle-label::before {
+        content: "收合";
+      }
+
+      .emergency-priority {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 12px;
+        padding: 10px;
+        border: 1px solid #e2c36b;
+        border-radius: 8px;
+        background: #fff8e5;
+      }
+
+      .emergency-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      @media (min-width: 720px) {
+        .emergency-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .emergency-card {
+        display: grid;
+        gap: 7px;
+        padding: 11px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .emergency-card strong {
+        color: var(--red);
+      }
+
+      .emergency-steps {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .emergency-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .emergency-links a {
+        color: var(--blue);
+        font-size: 0.86rem;
+        font-weight: 750;
+      }
+
       .scenario {
         display: grid;
         gap: 6px;
@@ -458,6 +538,74 @@
           <div id="urgentLinks" class="quick-grid"></div>
         </article>
       </section>
+
+      <details class="panel offline-emergency">
+        <summary class="section-head">
+          <h2 id="offlineEmergencyTitle">離線緊急判斷</h2>
+          <span class="muted"><span class="toggle-label"></span>：事故時使用</span>
+        </summary>
+        <div class="emergency-priority">
+          <strong>第一順位：保命，不查證景點。</strong>
+          <p>有搖晃、警報、廣播、旅館或交通人員指示時，先停止移動，離開海邊 / 河川 / 崖邊 / 林道，再用官方 App 或現地人員確認。</p>
+        </div>
+        <div class="emergency-grid">
+          <article class="emergency-card">
+            <h3>地震後</h3>
+            <strong>第一步：保護頭部，遠離玻璃與落物。</strong>
+            <ol class="emergency-steps">
+              <li>搖晃停止後穿鞋、拿手機與外套。</li>
+              <li>在沿海或河口，立刻確認津波方向。</li>
+              <li>暫停搭電梯、山路、橋梁、洞穴與海邊行程。</li>
+            </ol>
+            <div class="emergency-links">
+              <a href="https://www.jma.go.jp/bosai/map.html#contents=earthquake_map" target="_blank" rel="noopener">JMA 地震</a>
+              <a href="https://www.jma.go.jp/bosai/information/" target="_blank" rel="noopener">JMA 資訊</a>
+            </div>
+          </article>
+
+          <article class="emergency-card">
+            <h3>津波</h3>
+            <strong>第一步：不要等確認，往高處或避難建物走。</strong>
+            <ol class="emergency-steps">
+              <li>函館、宮古、淨土之濱等沿海地點直接離開海邊。</li>
+              <li>不要回去拍照、拿行李或查看港口。</li>
+              <li>直到官方解除前，不返回低地與海岸。</li>
+            </ol>
+            <div class="emergency-links">
+              <a href="https://www.jma.go.jp/bosai/map.html#contents=tsunami" target="_blank" rel="noopener">JMA 津波</a>
+              <a href="https://www.jnto.go.jp/safety-tips/eng/app.html" target="_blank" rel="noopener">Safety tips</a>
+            </div>
+          </article>
+
+          <article class="emergency-card">
+            <h3>土砂 / 道路中斷</h3>
+            <strong>第一步：取消山區、溪流、洞穴與林道移動。</strong>
+            <ol class="emergency-steps">
+              <li>八甲田、酸湯、奧入瀨、龍泉洞周邊先降級。</li>
+              <li>不穿越積水、落石、崩塌、封閉或無人確認的路段。</li>
+              <li>優先回到住宿、車站、主幹道或有人值守的設施。</li>
+            </ol>
+            <div class="emergency-links">
+              <a href="https://www.jma.go.jp/bosai/map.html#contents=warning" target="_blank" rel="noopener">JMA 警報</a>
+              <a href="https://www.jartic.or.jp/top.html" target="_blank" rel="noopener">JARTIC 道路</a>
+            </div>
+          </article>
+
+          <article class="emergency-card">
+            <h3>熊遭遇</h3>
+            <strong>第一步：不跑、不喊、不背對，面向熊慢慢後退。</strong>
+            <ol class="emergency-steps">
+              <li>不要靠近拍照、投擲物品、揮打或刺激熊。</li>
+              <li>熊接近時看著熊慢慢後退，能進建物或車內就進入。</li>
+              <li>若已被攻擊且無法脫離，趴下保護頸部、臉與腹部。</li>
+            </ol>
+            <div class="emergency-links">
+              <a href="https://www.env.go.jp/nature/nationalparks/about/bear/" target="_blank" rel="noopener">環境省 熊遭遇</a>
+              <a href="https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html" target="_blank" rel="noopener">青森県 熊注意</a>
+            </div>
+          </article>
+        </div>
+      </details>
 
       <section class="panel map-panel">
         <div class="section-head">

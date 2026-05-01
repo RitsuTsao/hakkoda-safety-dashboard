@@ -59,6 +59,12 @@ Implemented:
   - Bear summary text intentionally keeps the original Japanese source language so it can be read directly or shown to local staff.
   - A bear-injury event can appear as a red visual-map chip, but a single historical injury item should not automatically make the entire Iwate tab red unless it is relevant to the trip focus area.
   - Visual-map event chips use icons by type: bear `🐻`, tsunami `🌊`, earthquake `🫨`, and other major events `⚠️`. Multiple chips in the same region use alternate slots to avoid overlap.
+- Offline Emergency Mode v1:
+  - `app/index.html` now includes a static, collapsed-by-default `離線緊急判斷` panel immediately below the overview.
+  - The section is part of the app shell, so it remains readable even if `app/data.json` cannot refresh.
+  - It covers the first action for post-earthquake, tsunami, landslide / road disruption, and direct bear-encounter situations.
+  - JMA earthquake and tsunami links are included as core checks, with Safety tips, JARTIC, Environment Ministry bear guidance, and Aomori Prefecture bear guidance for manual confirmation when signal returns.
+  - `app/service-worker.js` cache is bumped to `hakkoda-safety-v10` so installed PWAs refresh the app shell.
 - GitHub Actions scheduled update in `.github/workflows/update-data.yml`.
 - Workflow runs manually and on a 12-hour schedule.
 - Workflow actions have been upgraded to Node 24-compatible versions:
@@ -136,14 +142,10 @@ Updater behavior:
    - Confirm multiple Iwate chips, such as `🐻 岩手 熊被害` and `⚠️ 岩手山`, do not overlap on the visual map.
    - Monitor whether official page layout changes break summary extraction.
 
-4. Offline Emergency Mode.
-   - Add a compact section for signal-poor moments:
-     - what to check first,
-     - what to check after a strong earthquake,
-     - what to do for tsunami,
-     - what to do for landslide / road disruption,
-     - what to do for bear reports.
-   - Include JMA earthquake information as a core check, especially because the 2026-04-20 Sanriku offshore earthquake and the JMA `北海道・三陸沖後発地震注意情報` make follow-on earthquake awareness relevant for this route.
+4. Offline Emergency Mode follow-up QA.
+   - Confirm wording is short enough on the user's phone.
+   - Consider adding region-specific offline evacuation references only if they can stay public-safe and not become stale.
+   - During post-deploy checks, confirm the installed PWA refreshes from cache v10.
 
 5. Notification Layer.
    - Only after dashboard signal quality improves.
@@ -163,5 +165,5 @@ Before making further changes, a new Codex session should check:
 - `app/index.html` contains `renderVisualMap`.
 - `scripts/update-data.mjs` contains `buildCriticalEvents` and `humanReadableUrlForItem`.
 - `.github/workflows/update-data.yml` uses Node 24-compatible action versions.
-- `app/service-worker.js` cache version is current enough to force PWA refresh after UI changes.
+- `app/service-worker.js` cache version is current enough to force PWA refresh after UI changes. Current UI cache version after Offline Emergency Mode v1: `hakkoda-safety-v10`.
 - The live site still opens on desktop and phone.
