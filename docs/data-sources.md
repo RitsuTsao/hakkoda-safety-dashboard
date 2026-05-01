@@ -32,8 +32,19 @@ Implementation notes:
 
 - MLIT `川の防災情報`.
 - MLIT disaster information portal.
+- MLIT Tohoku road traffic / road weather information.
 - Aomori landslide warning system.
 - Iwate and municipal hazard maps where relevant.
+
+Data Source v2 implementation:
+
+- Add human-readable official links first; do not automate these sources yet.
+- Keep the phone-facing quick links precise. Data Source v2 intentionally prunes duplicate / secondary buttons so the user can scan the page under stress.
+- Global quick links include JMA, Safety tips, MLIT `川の防災情報`, and JARTIC.
+- Aomori quick links include JMA, `くまログあおもり`, Aomori landslide information, MLIT river information, MLIT Tohoku road information, Hakkoda Ropeway, and JR Bus Oirase.
+- Iwate quick links include JMA warning / tsunami pages, Iwate Bears, Iwaizumi bear map, MLIT river information, Iwate road information, Ryusendo, and Miyako evacuation information.
+- Secondary sources such as generic prefectural portals, duplicate road pages, broad rail status pages, and auxiliary aggregator links can remain documented, but should not crowd the phone quick-link grid unless they become trip-critical.
+- These links are manual confirmation sources. They should not change region status automatically until a stable parser and signal-quality rule are designed.
 
 ## Bears
 
@@ -96,3 +107,10 @@ Each region should include direct links to:
 - Bear map / official bear source.
 - Road and transport status.
 - Relevant city, transport, hotel, or operator notice page.
+
+For coastal Iwate:
+
+- The dashboard includes a static `宮古 津波避難點陣` panel based on Miyako City official tsunami evacuation building / evacuation place pages.
+- The point diagram is intentionally approximate and is not a navigation map.
+- The dot diagram may include lightweight relative landmarks such as Miyako Station, Miyako Port, the Hei River, and high-ground direction. Keep these as orientation cues only; do not imply turn-by-turn navigation or precise coordinates.
+- In a real tsunami situation, the first action remains immediate movement to nearby high ground or an official evacuation building; the official Miyako City list and local instructions remain authoritative.
