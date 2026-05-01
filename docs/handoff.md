@@ -84,9 +84,12 @@ Implemented:
 
 ## Latest Completed Iteration
 
-2026-05-01: Data Source v2 is implemented locally and awaiting final PR / merge confirmation.
+2026-05-01: Data Source v2 is complete and deployed.
 
 - Branch: `codex/data-source-v2`
+- Merged PR: `https://github.com/RitsuTsao/hakkoda-safety-dashboard/pull/7`
+- Merge commit: `95c61e9 Add Data Source v2 links`
+- Live page verified: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html#iwate`
 - Changed files:
   - `app/data.json`
   - `app/index.html`
@@ -106,9 +109,13 @@ Implemented:
   - `scripts/update-data.mjs` was run with network access; JMA and bear source statuses returned `ok`, and the new `staticMaps` field was preserved.
   - Local preview served at `http://127.0.0.1:8000/app/index.html#iwate`.
   - In-app browser check found no console errors and confirmed the Iwate links plus `宮古 津波避難點陣` render on a phone-width view.
-- Still needed before merge:
-  - Confirm with Ritsu that the single PR scope is complete.
-  - Open one PR, merge it, and verify GitHub Pages after deployment.
+- Post-merge verification:
+  - GitHub Pages deployment completed successfully after merge.
+  - Live service worker is `hakkoda-safety-v11`.
+  - Live `app/index.html` contains Data Source v2 UI (`topic-quake` and `renderStaticMaps`).
+  - Live `app/data.json` has Iwate quick links pruned to 8, includes `宮古 津波避難點陣`, and keeps Iwate bear source buttons to `岩手県 Bears` and `岩泉町 熊出没マップ`.
+  - Ritsu checked the phone live page and confirmed the data presentation is OK.
+- No manual GitHub Actions workflow run was needed because this iteration changed static source links, UI, and app-shell cache only. The existing scheduled update workflow can refresh live data on its normal cadence.
 
 2026-05-01: Offline Emergency Mode v1 is complete and deployed.
 
@@ -179,9 +186,9 @@ Updater behavior:
    - Consider whether snow / avalanche should stay visible in shoulder-season prep mode or be hidden outside winter mountain travel.
    - Add source-specific links for landslide / river / road events when the signal quality is good enough.
 
-2. Data Source v2: add better human-readable official links.
-   - Local implementation is in progress on `codex/data-source-v2`.
-   - Next step is QA / PR / merge / live verification, not rebuilding the source list.
+2. Data Source follow-up after v2.
+   - Data Source v2 is already merged and deployed.
+   - Do not add more phone quick-link buttons by default; the current intent is a precise field-use grid.
    - Later refinement can add source-specific parsers only after signal quality is clear.
 
 3. Bear Info v1.1 follow-up QA.
@@ -204,7 +211,7 @@ Updater behavior:
 
 Use this prompt in the new Project conversation:
 
-> Please continue development of `RitsuTsao/hakkoda-safety-dashboard`. First read `docs/handoff.md`, then inspect the current repo state. The app is already deployed as a GitHub Pages PWA at `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`. Continue from the current implementation; do not restart from scratch. Offline Emergency Mode v1 was completed and deployed on 2026-05-01. The next likely task is Visual Map v1.1 noise reduction, source-link refinement, or Data Source v2.
+> Please continue development of `RitsuTsao/hakkoda-safety-dashboard`. First read `docs/handoff.md`, then inspect the current repo state. The app is already deployed as a GitHub Pages PWA at `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`. Continue from the current implementation; do not restart from scratch. Offline Emergency Mode v1 and Data Source v2 were completed and deployed on 2026-05-01. The next likely task is Visual Map v1.1 noise reduction, Bear Info v1.1 follow-up QA, or carefully scoped source-link/parser refinement.
 
 ## Quick Verification Checklist
 
@@ -213,5 +220,5 @@ Before making further changes, a new Codex session should check:
 - `app/index.html` contains `renderVisualMap`.
 - `scripts/update-data.mjs` contains `buildCriticalEvents` and `humanReadableUrlForItem`.
 - `.github/workflows/update-data.yml` uses Node 24-compatible action versions.
-- `app/service-worker.js` cache version is current enough to force PWA refresh after UI changes. Current UI cache version after Data Source v2 local implementation: `hakkoda-safety-v11`.
+- `app/service-worker.js` cache version is current enough to force PWA refresh after UI changes. Current UI cache version after Data Source v2: `hakkoda-safety-v11`.
 - The live site still opens on desktop and phone.
