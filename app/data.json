@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T22:25:30+09:00",
+  "generatedAt": "2026-05-01T11:15:25+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "yellow",
@@ -98,27 +98,27 @@
         "items": [
           {
             "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-01T01:14:10Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、１日夕方から高波に注意してください。渡島、檜山地方では、１日昼過ぎから２日明け方まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011411_0_VPWW54_017000.xml"
+          },
+          {
+            "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-04-30T00:50:11Z",
+            "updated": "2026-05-01T01:14:10Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430005012_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、１日夕方から高波に注意してください。渡島、檜山地方では、１日昼過ぎから２日明け方まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011411_0_VPWW53_017000.xml"
           },
           {
             "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-04-30T00:50:11Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-30T21:18:30Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430005012_0_VPWW54_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-04-29T19:06:16Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】注意報を解除します。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260429190616_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１日昼過ぎから２日明け方まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430211831_0_VPWW53_017000.xml"
           }
         ]
       }
@@ -206,27 +206,27 @@
         "items": [
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-04-30T11:44:03Z",
-            "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、三八上北では、ここしばらくなだれに注意してください。青森県では、１日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430114404_0_VPWW53_020000.xml"
-          },
-          {
-            "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-04-30T11:44:03Z",
+            "updated": "2026-05-01T01:13:37Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、三八上北では、ここしばらくなだれに注意してください。青森県では、１日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430114404_0_VPWW54_020000.xml"
+            "summary": "【青森県気象警報・注意報】下北、三八上北では、高波に注意してください。津軽、下北では、濃霧による視程障害に注意してください。津軽、三八上北では、なだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011338_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
-            "title": "府県気象情報",
-            "updated": "2026-04-30T07:30:35Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-01T01:13:37Z",
             "source": "JMA 随時情報",
-            "summary": "【強風に関する青森県気象情報】青森県では、発達する低気圧の影響により、気圧の傾きが大きくなり、西よりの強い風となる見込みです。三八上北の陸上では、５月２日は、西よりの強い風による交通障害や建物への被害に注意・警戒してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430073035_0_VPFJ50_020000.xml"
+            "summary": "【青森県気象警報・注意報】下北、三八上北では、高波に注意してください。津軽、下北では、濃霧による視程障害に注意してください。津軽、三八上北では、なだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011338_0_VPWW53_020000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-30T21:25:28Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】津軽、下北では、１日昼過ぎから２日明け方まで濃霧による視程障害に注意してください。津軽、三八上北では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430212529_0_VPWW53_020000.xml"
           }
         ]
       },
@@ -279,7 +279,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-04-30T22:25:27+09:00",
+          "checkedAt": "2026-05-01T11:15:21+09:00",
           "summary": "公式熊情報 2 件を確認。",
           "items": [
             {
@@ -400,26 +400,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-04-30T11:00:00Z",
+            "updated": "2026-05-01T02:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３０日２１時から２４時までは火口から北方向、１日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430110033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１日２１時から２４時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501020033_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-04-30T08:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３０日２１時から２４時までは火口から北方向、１日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430080034_0_VFVO53_010000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "府県気象情報",
-            "updated": "2026-04-30T07:34:11Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-01T01:19:46Z",
             "source": "JMA 随時情報",
-            "summary": "【暴風に関する岩手県気象情報】岩手県の海上では、発達する低気圧の影響により、西よりの非常に強い風が吹く見込みです。５月２日は、西よりの暴風に警戒してください。また、内陸と沿岸北部や沿岸南部の陸上でも、西よりのやや強い風に注意・警戒して...",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430073411_0_VPFJ50_030000.xml"
+            "summary": "【岩手県気象警報・注意報】岩手県では、１日夕方から強風や高波に、１日夕方から２日明け方まで急な強い雨や落雷に注意してください。内陸では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011948_0_VPWW53_030000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-01T01:19:46Z",
+            "source": "JMA 随時情報",
+            "summary": "【岩手県気象警報・注意報】岩手県では、１日夕方から強風や高波に、１日夕方から２日明け方まで急な強い雨や落雷に注意してください。内陸では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011947_0_VPWW54_030000.xml"
           }
         ]
       },
@@ -472,7 +472,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-04-30T22:25:30+09:00",
+          "checkedAt": "2026-05-01T11:15:25+09:00",
           "summary": "公式熊情報 4 件を確認。",
           "items": [
             {
@@ -517,7 +517,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-04-30T22:25:25+09:00",
+    "checkedAt": "2026-05-01T11:15:19+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -525,7 +525,7 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 1716
+        "entries": 1803
       },
       {
         "id": "eqvol",
@@ -542,27 +542,27 @@
         "items": [
           {
             "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-01T01:14:10Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、１日夕方から高波に注意してください。渡島、檜山地方では、１日昼過ぎから２日明け方まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011411_0_VPWW54_017000.xml"
+          },
+          {
+            "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-04-30T00:50:11Z",
+            "updated": "2026-05-01T01:14:10Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430005012_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、１日夕方から高波に注意してください。渡島、檜山地方では、１日昼過ぎから２日明け方まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011411_0_VPWW53_017000.xml"
           },
           {
             "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-04-30T00:50:11Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-30T21:18:30Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430005012_0_VPWW54_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-04-29T19:06:16Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】注意報を解除します。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260429190616_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１日昼過ぎから２日明け方まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430211831_0_VPWW53_017000.xml"
           }
         ]
       },
@@ -572,27 +572,27 @@
         "items": [
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-04-30T11:44:03Z",
-            "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、三八上北では、ここしばらくなだれに注意してください。青森県では、１日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430114404_0_VPWW53_020000.xml"
-          },
-          {
-            "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-04-30T11:44:03Z",
+            "updated": "2026-05-01T01:13:37Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、三八上北では、ここしばらくなだれに注意してください。青森県では、１日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430114404_0_VPWW54_020000.xml"
+            "summary": "【青森県気象警報・注意報】下北、三八上北では、高波に注意してください。津軽、下北では、濃霧による視程障害に注意してください。津軽、三八上北では、なだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011338_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
-            "title": "府県気象情報",
-            "updated": "2026-04-30T07:30:35Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-01T01:13:37Z",
             "source": "JMA 随時情報",
-            "summary": "【強風に関する青森県気象情報】青森県では、発達する低気圧の影響により、気圧の傾きが大きくなり、西よりの強い風となる見込みです。三八上北の陸上では、５月２日は、西よりの強い風による交通障害や建物への被害に注意・警戒してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430073035_0_VPFJ50_020000.xml"
+            "summary": "【青森県気象警報・注意報】下北、三八上北では、高波に注意してください。津軽、下北では、濃霧による視程障害に注意してください。津軽、三八上北では、なだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011338_0_VPWW53_020000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-04-30T21:25:28Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】津軽、下北では、１日昼過ぎから２日明け方まで濃霧による視程障害に注意してください。津軽、三八上北では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430212529_0_VPWW53_020000.xml"
           }
         ]
       },
@@ -603,26 +603,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-04-30T11:00:00Z",
+            "updated": "2026-05-01T02:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３０日２１時から２４時までは火口から北方向、１日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430110033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１日２１時から２４時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501020033_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-04-30T08:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３０日２１時から２４時までは火口から北方向、１日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430080034_0_VFVO53_010000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "府県気象情報",
-            "updated": "2026-04-30T07:34:11Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-01T01:19:46Z",
             "source": "JMA 随時情報",
-            "summary": "【暴風に関する岩手県気象情報】岩手県の海上では、発達する低気圧の影響により、西よりの非常に強い風が吹く見込みです。５月２日は、西よりの暴風に警戒してください。また、内陸と沿岸北部や沿岸南部の陸上でも、西よりのやや強い風に注意・警戒して...",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260430073411_0_VPFJ50_030000.xml"
+            "summary": "【岩手県気象警報・注意報】岩手県では、１日夕方から強風や高波に、１日夕方から２日明け方まで急な強い雨や落雷に注意してください。内陸では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011948_0_VPWW53_030000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-01T01:19:46Z",
+            "source": "JMA 随時情報",
+            "summary": "【岩手県気象警報・注意報】岩手県では、１日夕方から強風や高波に、１日夕方から２日明け方まで急な強い雨や落雷に注意してください。内陸では、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260501011947_0_VPWW54_030000.xml"
           }
         ]
       }
@@ -645,40 +645,40 @@
       "level": "yellow",
       "icon": "⚠️",
       "label": "岩手山",
-      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３０日２１時から２４時までは火口から北方向、１日０９時から１２時までは火口から北方向に降灰が予想されます。",
+      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１日２１時から２４時までは火口から北東方向に降灰が予想されます。",
       "source": "JMA 地震火山情報",
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260430110033_0_VFVO53_010000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260501020033_0_VFVO53_010000.xml"
     },
     {
       "regionId": "aomori",
       "level": "yellow",
       "icon": "⚠️",
       "label": "青森",
-      "summary": "【強風に関する青森県気象情報】青森県では、発達する低気圧の影響により、気圧の傾きが大きくなり、西よりの強い風となる見込みです。三八上北の陸上では、５月２日は、西よりの強い風による交通障害や建物への被害に注意・警戒してください。",
+      "summary": "【青森県気象警報・注意報】下北、三八上北では、高波に注意してください。津軽、下北では、濃霧による視程障害に注意してください。津軽、三八上北では、なだれに注意してください。",
       "source": "JMA 随時情報",
-      "type": "storm",
-      "priority": 170,
+      "type": "snow",
+      "priority": 162,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260430073035_0_VPFJ50_020000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260501011338_0_VPWW54_020000.xml"
     },
     {
       "regionId": "hakodate",
       "level": "yellow",
       "icon": "⚠️",
       "label": "函館周邊",
-      "summary": "【渡島・檜山地方気象警報・注意報】注意報を解除します。",
+      "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、１日夕方から高波に注意してください。渡島、檜山地方では、１日昼過ぎから２日明け方まで濃霧による視程障害に注意してください。",
       "source": "JMA 随時情報",
-      "type": "other",
-      "priority": 130,
+      "type": "fog-thunder",
+      "priority": 145,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260429190616_0_VPWW54_017000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260501011411_0_VPWW54_017000.xml"
     }
   ],
   "bear": {
-    "checkedAt": "2026-04-30T22:25:30+09:00",
+    "checkedAt": "2026-05-01T11:15:25+09:00",
     "status": "ok",
     "sources": [
       {
@@ -725,7 +725,7 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-04-30T22:25:27+09:00",
+        "checkedAt": "2026-05-01T11:15:21+09:00",
         "summary": "公式熊情報 2 件を確認。",
         "items": [
           {
@@ -750,7 +750,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-04-30T22:25:30+09:00",
+        "checkedAt": "2026-05-01T11:15:25+09:00",
         "summary": "公式熊情報 4 件を確認。",
         "items": [
           {
