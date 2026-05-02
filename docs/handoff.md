@@ -79,6 +79,13 @@ Implemented:
   - Iwate now includes a static `宮古 津波避難點陣` panel with selected Miyako City tsunami evacuation buildings, lightweight local landmarks, high-ground / sea-side orientation, and an official Miyako evacuation-list link.
   - The Miyako dot diagram is approximate and non-navigational; it is a fast reminder to move to high ground or an official evacuation building and then confirm with Miyako City / local instructions.
   - `app/service-worker.js` cache is bumped to `hakkoda-safety-v11` so installed PWAs refresh the app shell and new source links.
+- Precision Sources v1:
+  - Aomori and Iwate region pages now render a dedicated `土砂災害` card near the JMA summary.
+  - Aomori uses the Aomori landslide danger system, Aomori prefectural landslide warning list, and JMA Aomori warnings as primary manual checks.
+  - Iwate uses the Iwate landslide danger system, JMA Iwate warnings, and MLIT rain / river information as supporting checks.
+  - Hakkoda Ropeway, JR Bus Tohoku, and Ryusendo operation sources are moved into collapsed `營運狀態` panels so trip-operation checks do not crowd the main disaster-information scroll.
+  - `scripts/update-data.mjs` extracts operation summaries from Hakkoda Ropeway, JR Bus Tohoku `運行情報`, and Ryusendo `INFORMATION`, but these operation items do not feed the Visual Map or global critical-event list.
+  - `app/service-worker.js` cache is bumped to `hakkoda-safety-v13` so installed PWAs refresh after the UI change.
 - GitHub Actions scheduled update in `.github/workflows/update-data.yml`.
 - Workflow runs manually and on a 12-hour schedule.
 - Workflow actions have been upgraded to Node 24-compatible versions:
@@ -87,6 +94,31 @@ Implemented:
   - `stefanzweifel/git-auto-commit-action@v7`
 
 ## Latest Completed Iteration
+
+2026-05-03: Precision Sources v1 is in progress on branch `codex/precision-sources-v1`.
+
+- Branch: `codex/precision-sources-v1`
+- Changed files so far:
+  - `app/data.json`
+  - `app/index.html`
+  - `app/service-worker.js`
+  - `scripts/update-data.mjs`
+  - `docs/data-sources.md`
+  - `docs/handoff.md`
+- Scope:
+  - Add dedicated Aomori / Iwate `土砂災害` cards for official landslide danger systems and short cancel / downgrade rules.
+  - Move Hakkoda Ropeway, JR Bus Tohoku, and Ryusendo operation checks into collapsed `營運狀態` panels so disaster information remains primary.
+  - Add operation extraction for Hakkoda Ropeway status / mountain weather, JR Bus current status and route-relevant notices, and Ryusendo operation-related information notices.
+  - Keep operation items out of Visual Map `criticalEvents`, even when an operation source is red, because these are trip decisions rather than disaster alerts.
+- Local verification so far:
+  - `scripts/update-data.mjs` ran successfully with network access.
+  - Operation source statuses returned `ok` for Hakkoda Ropeway, JR Bus Tohoku, Ryusendo INFORMATION, and JR Bus Tohoku for Iwate.
+  - Aomori operation latest includes Hakkoda Ropeway as red when the official page says `終日運休`, plus JR Bus current status and GW general-route notice.
+  - Iwate operation latest includes JR Bus general-route notice, Ryusendo INFORMATION items, and JR Bus current status.
+  - Live-data Visual Map remains focused on disaster events only: `岩手 熊被害` and `岩手山`; operation items are not promoted to the map.
+  - `app/data.json` parses successfully and `git diff --check` passes.
+  - Local preview server is available at `http://127.0.0.1:8003/app/index.html#aomori`; HTTP checks confirm `app/index.html` returns `text/html` and `app/data.json` includes the Hakkoda suspended-operation summary.
+  - Browser automation was limited in this desktop environment: Chrome was visible through Computer Use, but system `open` and Playwright browser launch were not available. Use the local preview URL or Safari / Chrome manually for final visual QA before PR.
 
 2026-05-02: Visual Map v1.2 is complete and deployed.
 

@@ -70,6 +70,37 @@ const bearSources = {
   ]
 };
 
+const operationSources = {
+  aomori: [
+    {
+      id: "hakkoda-ropeway",
+      label: "八甲田ロープウェー",
+      url: "https://hakkoda-ropeway.jp/",
+      parser: parseHakkodaRopeway
+    },
+    {
+      id: "jrbus-tohoku",
+      label: "JR Bus 東北 運行情報",
+      url: "https://www.jrbustohoku.co.jp/service/",
+      parser: parseJrBusTohokuService
+    }
+  ],
+  iwate: [
+    {
+      id: "ryusendo-info",
+      label: "龍泉洞 INFORMATION",
+      url: "https://www.iwate-ryusendo.jp/information/",
+      parser: parseRyusendoInformation
+    },
+    {
+      id: "jrbus-tohoku",
+      label: "JR Bus 東北 運行情報",
+      url: "https://www.jrbustohoku.co.jp/service/",
+      parser: parseJrBusTohokuService
+    }
+  ]
+};
+
 const redTerms = [
   "大津波警報",
   "津波警報",
@@ -213,6 +244,8 @@ function nowInJapan() {
 
 function decodeXml(value = "") {
   return value
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)))
+    .replace(/&#([0-9]+);/g, (_, code) => String.fromCodePoint(Number.parseInt(code, 10)))
     .replaceAll("&lt;", "<")
     .replaceAll("&gt;", ">")
     .replaceAll("&quot;", '"')
@@ -279,6 +312,119 @@ function makeBearItem({ title, summary, updated, source, url }) {
     summary: compactText(summary || title || "公式ページで熊関連情報を確認してください。"),
     url
   };
+}
+
+const operationRedTerms = [
+  "終日運休",
+  "運休",
+  "見合わせ",
+  "閉洞",
+  "休洞",
+  "臨時休業",
+  "増水",
+  "封鎖",
+  "中止"
+];
+
+const operationYellowTerms = [
+  "遅延",
+  "変更",
+  "一方通行",
+  "観光ルート",
+  "混雑",
+  "満席",
+  "強風",
+  "視界不良",
+  "天候",
+  "重要"
+];
+
+function levelForOperationText(text) {
+  if (includesAny(text, operationRedTerms)) return "red";
+  if (includesAny(text, operationYellowTerms)) return "yellow";
+  if (text.includes("平常")) return "green";
+  return "yellow";
+}
+
+function makeOperationItem({ title, summary, updated, source, url }) {
+  const text = `${title} ${summary}`;
+  return {
+    level: levelForOperationText(text),
+    title: compactText(title || source, 86),
+    updated,
+    source,
+    summary: compactText(summary || title || "公式ページで運行・営業情報を確認してください。"),
+    url
+  };
+}
+
+function parseHakkodaRopeway(html, source) {
+  const status = firstHtmlMatch(html, /<p[^>]*>(山頂駅付近[\s\S]*?終日運休[\s\S]*?)<\/p>/)
+    || firstHtmlMatch(html, /<p[^>]*>([\s\S]*?終日運休[\s\S]*?)<\/p>/)
+    || firstHtmlMatch(html, /<h2[^>]*>[\s\S]*?ロープウェー運行状況[\s\S]*?<\/h2>[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/)
+    || firstHtmlMatch(html, /現在のロープウェー運行状況[\s\S]*?<span>([\s\S]*?)<\/span>/);
+  const weatherTable = firstHtmlMatch(html, /<h2[^>]*>\s*<strong>山頂天候状況<\/strong>\s*<\/h2>[\s\S]*?<table[^>]*>([\s\S]*?)<\/table>/);
+  if (!status && !weatherTable) return [];
+  return [
+    makeOperationItem({
+      title: "現在のロープウェー運行状況",
+      summary: [status, weatherTable].filter(Boolean).join(" / "),
+      updated: firstHtmlMatch(html, /<time[^>]*datetime="([^"]+)"/) || nowInJapan(),
+      source: source.label,
+      url: source.url
+    })
+  ];
+}
+
+function parseJrBusTohokuService(html, source) {
+  const currentStatus = firstHtmlMatch(html, /<h2><span class="line">現在の運行情報<\/span><\/h2>\s*<p>([\s\S]*?)<\/p>/);
+  const relevantNoticeTerms = /みずうみ|おいらせ|奥入瀬|十和田|青森|一般路線|盛岡・岩泉・龍泉洞|早坂高原|龍泉洞/;
+  const notices = [...html.matchAll(/<h3>\s*<span class="date">([\s\S]*?)<\/span>\s*([\s\S]*?)<\/h3>\s*<div>([\s\S]*?)<\/div>/g)]
+    .map(([, updated, title, body]) => ({
+      updated: stripHtml(updated),
+      title: stripHtml(title),
+      summary: stripHtml(body)
+    }))
+    .filter((item) => relevantNoticeTerms.test(`${item.title} ${item.summary}`))
+    .slice(0, 2);
+
+  const items = [];
+  if (currentStatus) {
+    items.push(makeOperationItem({
+      title: "現在の運行情報",
+      summary: currentStatus,
+      updated: nowInJapan(),
+      source: source.label,
+      url: source.url
+    }));
+  }
+
+  return items.concat(notices.map((notice) => makeOperationItem({
+    title: notice.title,
+    summary: notice.summary,
+    updated: notice.updated,
+    source: source.label,
+    url: source.url
+  })));
+}
+
+function parseRyusendoInformation(html, source) {
+  const entries = [...html.matchAll(/<dt[^>]*>([\s\S]*?)<\/dt>\s*<dd[^>]*>\s*<a href="([^"]+)">([\s\S]*?)<\/a><\/dd>/g)]
+    .map(([, updated, url, title]) => ({
+      updated: stripHtml(updated),
+      url,
+      title: stripHtml(title)
+    }));
+  const importantTerms = /閉洞|休洞|再開|増水|営業|営業時間|観光ルート|一方通行|封鎖|重要|龍泉洞/;
+  const important = entries.filter((entry) => importantTerms.test(entry.title));
+  const selected = (important.length ? important : entries).slice(0, 3);
+  return selected.map((entry) => makeOperationItem({
+    title: entry.title,
+    summary: entry.title,
+    updated: entry.updated,
+    source: source.label,
+    url: entry.url
+  }));
 }
 
 function parseAomoriKumalogNews(html, source) {
@@ -573,6 +719,68 @@ async function fetchBearSummaries() {
   };
 }
 
+async function fetchOperationSummaries() {
+  const byRegion = {};
+  const sourceResults = [];
+
+  for (const [regionId, sources] of Object.entries(operationSources)) {
+    const items = [];
+
+    for (const source of sources) {
+      try {
+        const html = await fetchText(source.url);
+        const parsedItems = source.parser(html, source);
+        sourceResults.push({
+          regionId,
+          id: source.id,
+          label: source.label,
+          url: source.url,
+          status: "ok",
+          items: parsedItems.length
+        });
+        items.push(...parsedItems);
+      } catch (error) {
+        sourceResults.push({
+          regionId,
+          id: source.id,
+          label: source.label,
+          url: source.url,
+          status: "failed",
+          error: error.message
+        });
+      }
+    }
+
+    const sortedItems = items
+      .sort((a, b) => {
+        if (a.level !== b.level) {
+          if (a.level === "red") return -1;
+          if (b.level === "red") return 1;
+          if (a.level === "yellow") return -1;
+          if (b.level === "yellow") return 1;
+        }
+        return String(b.updated || "").localeCompare(String(a.updated || ""));
+      })
+      .slice(0, 5);
+
+    byRegion[regionId] = {
+      level: sortedItems.length ? highestLevel(sortedItems) : "yellow",
+      checkedAt: nowInJapan(),
+      summary: sortedItems.length
+        ? `公式營運情報 ${sortedItems.length} 件を確認。`
+        : "公式營運情報を自動抽出できませんでした。手動で公式リンクを確認してください。",
+      items: sortedItems
+    };
+  }
+
+  return {
+    checkedAt: nowInJapan(),
+    status: sourceResults.every((source) => source.status === "ok") ? "ok" : "partial",
+    sources: sourceResults,
+    regions: byRegion
+  };
+}
+
 function mergeRegionLevels(region, jmaRegion, jmaStatus) {
   if (jmaStatus !== "ok" && jmaStatus !== "partial") return "yellow";
   if (!jmaRegion) return region.level || "yellow";
@@ -759,10 +967,12 @@ async function main() {
   const existing = JSON.parse(await readFile(dataPath, "utf8"));
   const jma = await fetchJmaSummaries();
   const bear = await fetchBearSummaries();
+  const operation = await fetchOperationSummaries();
 
   const regions = existing.regions.map((region) => {
     const jmaRegion = jma.regions[region.id];
     const bearRegion = bear.regions[region.id];
+    const operationRegion = operation.regions[region.id];
     const mergedLevel = mergeRegionLevels(region, jmaRegion, jma.status);
     return {
       ...region,
@@ -773,7 +983,13 @@ async function main() {
             ...region.bearWorkflow,
             latest: bearRegion
           }
-        : region.bearWorkflow
+        : region.bearWorkflow,
+      operationWorkflow: region.operationWorkflow
+        ? {
+            ...region.operationWorkflow,
+            latest: operationRegion
+          }
+        : region.operationWorkflow
     };
   });
 
@@ -790,6 +1006,7 @@ async function main() {
     sourceMode: `JMA XML updater v1; ${feedStatusNote}`,
     jma,
     bear,
+    operation,
     criticalEvents: buildCriticalEvents(regions),
     overall: {
       ...existing.overall,
