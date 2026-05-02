@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-02T21:52:51+09:00",
+  "generatedAt": "2026-05-03T00:01:58+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "yellow",
@@ -127,11 +127,11 @@
       "id": "aomori",
       "title": "青森",
       "level": "yellow",
-      "guidance": "涵蓋弘前、大鰐、青森、酸湯、八甲田、奧入瀨、十和田、八戶。重點是熊、豪雨土砂、山區道路與巴士狀態。",
+      "guidance": "涵蓋弘前、大鰐、青森、酸湯、八甲田、奧入瀨、十和田、八戶。重點是熊、豪雨土砂、山區健行與營運狀態。",
       "focus": [
-        "八甲田與酸湯周邊以旅館公告、天氣、熊目擊與道路狀態共同判斷。",
+        "八甲田與酸湯周邊停留期間，即使天氣好，也要同時確認熊推播、旅館公告、ロープウェー與巴士營運。",
         "奧入瀨溪流遇豪雨、濃霧、低溫或步道不穩時直接降級。",
-        "青森山區交通不穩時，優先撤回青森側或鐵道主線。"
+        "青森山區交通或設施營運不穩時，優先撤回青森側或有人管理的設施。"
       ],
       "quickLinks": [
         {
@@ -144,7 +144,19 @@
           "title": "くまログあおもり",
           "url": "https://kumalog-aomori.info/",
           "category": "熊",
-          "note": "官方熊資訊"
+          "note": "地圖 / email 通知"
+        },
+        {
+          "title": "青森県 LINE",
+          "url": "https://www.pref.aomori.lg.jp/soshiki/soumu/koho/aomoripref_line.html",
+          "category": "熊推播",
+          "note": "設定クマ情報"
+        },
+        {
+          "title": "青森市 クマ情報",
+          "url": "https://www.city.aomori.aomori.jp/kurashi_kankyo/kankyo/1002085/1010230.html",
+          "category": "熊",
+          "note": "市 LINE / SNS"
         },
         {
           "title": "青森土砂",
@@ -153,16 +165,10 @@
           "note": "警戒情報"
         },
         {
-          "title": "MLIT 川の防災情報",
-          "url": "https://www.river.go.jp/",
-          "category": "河川 / 雨量",
-          "note": "奥入瀬 / 河川"
-        },
-        {
-          "title": "MLIT 東北道路",
-          "url": "https://www.thr.mlit.go.jp/road/koutsu/index.html",
-          "category": "道路",
-          "note": "規制 / 路面"
+          "title": "酸湯温泉 周辺情報",
+          "url": "https://sukayu.jp/information3/",
+          "category": "現地",
+          "note": "熊 / 天候 / 周辺"
         },
         {
           "title": "八甲田ロープウェー",
@@ -179,9 +185,9 @@
       ],
       "scenarios": [
         {
-          "title": "八甲田周邊有熊目擊或旅館提醒",
+          "title": "八甲田周邊有熊目擊、推播或旅館提醒",
           "severity": "red",
-          "action": "取消散步與健行，不單獨外出，改以旅館或交通移動為主。"
+          "action": "取消散步與健行，不單獨外出，改以旅館、ロープウェー山麓側或交通移動為主。"
         },
         {
           "title": "大雨、土砂警戒或山路封閉",
@@ -189,9 +195,9 @@
           "action": "取消山區與溪流步行，先確認道路、巴士與旅館建議。"
         },
         {
-          "title": "奧入瀨當天低溫、濃霧或步道不明",
+          "title": "ロープウェー、酸湯或 JR Bus 顯示營運不穩",
           "severity": "yellow",
-          "action": "保留轉場，放棄溪流健行。不要用完成景點作為決策目標。"
+          "action": "不要進山上步道；保留轉場或改成有人管理的短停留。"
         }
       ],
       "jma": {
@@ -225,13 +231,25 @@
         ]
       },
       "bearWorkflow": {
-        "summary": "青森熊資訊以官方頁與現地公告優先；八甲田、酸湯、奧入瀨、十和田段若資訊不完整，就把步行行程降級。",
+        "summary": "八甲田、酸湯周邊停留期間，青森熊資訊要以くまログ、青森県 LINE、市官方來源與現地公告交叉確認；資訊不足時不要把「沒有看到資料」解讀成安全。",
         "sources": [
           {
             "title": "くまログあおもり",
             "url": "https://kumalog-aomori.info/",
             "category": "熊",
-            "note": "先看最新目擊"
+            "note": "註冊後設定青森市 / 十和田市 / 黒石市等通知"
+          },
+          {
+            "title": "青森県 LINE",
+            "url": "https://www.pref.aomori.lg.jp/soshiki/soumu/koho/aomoripref_line.html",
+            "category": "熊推播",
+            "note": "メニューのクマ情報から市町村別に設定"
+          },
+          {
+            "title": "青森市 クマ情報",
+            "url": "https://www.city.aomori.aomori.jp/kurashi_kankyo/kankyo/1002085/1010230.html",
+            "category": "熊",
+            "note": "市 LINE / SNS / 出沒統計"
           },
           {
             "title": "青森県 クマ情報",
@@ -240,10 +258,10 @@
             "note": "縣官方注意"
           },
           {
-            "title": "酸湯温泉",
-            "url": "https://sukayu.jp/",
+            "title": "酸湯温泉 周辺情報",
+            "url": "https://sukayu.jp/information3/",
             "category": "現地",
-            "note": "旅館公告"
+            "note": "熊 / 天候 / 周辺公告"
           },
           {
             "title": "八甲田ロープウェー",
@@ -253,14 +271,15 @@
           }
         ],
         "steps": [
-          "出門前先看くまログあおもり，再看旅館或設施公告。",
-          "若要進八甲田、酸湯周邊、奧入瀨溪流，現場再問旅館或站務人員。",
-          "資訊互相矛盾時，以官方公告與現地人員說法為準，不用 Kumamap 覆蓋官方判斷。"
+          "旅行前先加入青森県 LINE，從「クマ情報」設定青森市、十和田市、黒石市等相關市町村；くまログ也設定希望地域 email 通知。",
+          "每天早上先看推播，再看くまログ地圖與青森市 / 縣官方頁，確認是否有八甲田、酸湯、ロープウェー山麓駅、国道103号、奥入瀬、十和田湖周邊訊號。",
+          "進山前再看酸湯温泉與八甲田ロープウェー公告；若要健行，現場詢問旅館、站務或導覽人員。",
+          "資訊互相矛盾時，以官方公告與現地人員說法為準；Kumamap 只能作人工輔助，不覆蓋官方判斷。"
         ],
         "decisions": [
           {
             "level": "red",
-            "text": "今日或昨日在住宿、步道、巴士站、停車場附近有目擊：取消散步、健行與清晨 / 傍晚外出。"
+            "text": "今日或昨日在住宿、步道、ロープウェー山麓駅、酸湯、国道103号、巴士站或停車場附近有目擊：取消健行與清晨 / 傍晚外出。"
           },
           {
             "level": "red",
@@ -268,14 +287,23 @@
           },
           {
             "level": "yellow",
-            "text": "只有較遠或較舊目擊，但天候差、視線差、路上人少：降級為短距離、有人同行、白天移動。"
+            "text": "沒有周邊目擊，但全縣警報期間、天候差、視線差、路上人少或現地說不清楚：不進無人步道，降級為短距離、白天、有人管理的範圍。"
           }
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-02T21:52:48+09:00",
-          "summary": "公式熊情報 2 件を確認。",
+          "checkedAt": "2026-05-03T00:01:57+09:00",
+          "summary": "公式熊情報 4 件を確認。",
           "items": [
+            {
+              "level": "yellow",
+              "kind": "sighting",
+              "title": "クマ等の出没情報",
+              "updated": "2026年4月7日",
+              "source": "青森市 クマ情報",
+              "summary": "青森市では、下記SNS・市公式LINEにおいて有害鳥獣に関する情報を発信していますので、ご参照ください。 青森県のクマ出没情報管理システム「くまログあおもり」では1件ごとに出没マップなどの詳細を確認できますので、こちらもご活用ください。 青森県クマ出没情報管理システム「くまログあおもり」 （外...",
+              "url": "https://www.city.aomori.aomori.jp/kurashi_kankyo/kankyo/1002085/1010230.html"
+            },
             {
               "level": "yellow",
               "kind": "warning",
@@ -284,6 +312,15 @@
               "source": "青森県 クマ情報",
               "summary": "直近５日間の出没件数が15件を上回ったため、ツキノワグマ出没警報を発表します。 。 １ 期間。 令和８年4月20日（月）～令和8年11月30日（月）。 。 ２ 区域。 県内全域。 。 ３ 県民の皆様へのお願い。 ・ クマの出没状況に気を配り、出没が相次いでいる場所には近づかないようにしてくださ...",
               "url": "https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html"
+            },
+            {
+              "level": "yellow",
+              "kind": "warning",
+              "title": "ツキノワグマ出没情報管理システムのご案内",
+              "updated": "2026/04/29",
+              "source": "酸湯温泉 周辺情報",
+              "summary": "青森県内全域で今年度もツキノワグマ出没警報が発表されています。（期間：令和８年４月２０日㈪～１１月３０日㈪）酸ヶ湯周辺での目撃情報は出ておりませんが、お客様に安心してご滞在いただくため、青森県で管理している 「ツキノワグマ出没情報管理システム」 のご利用をおすすめしております。本システムでは、...",
+              "url": "https://sukayu.jp/information3/"
             },
             {
               "level": "yellow",
@@ -381,6 +418,14 @@
         "items": [
           {
             "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-05-02T14:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502140033_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
             "title": "気象特別警報・警報・注意報",
             "updated": "2026-05-02T12:16:05Z",
             "source": "JMA 随時情報",
@@ -394,14 +439,6 @@
             "source": "JMA 随時情報",
             "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。内陸、沿岸北部では、３日朝は霜に対する農作物の管理に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260502121606_0_VPWW54_030000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-05-02T11:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２日２１時から２４時までは火口から東方向、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502110033_0_VFVO53_010000.xml"
           }
         ]
       },
@@ -442,7 +479,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-02T21:52:51+09:00",
+          "checkedAt": "2026-05-03T00:01:58+09:00",
           "summary": "公式熊情報 4 件を確認。",
           "items": [
             {
@@ -571,7 +608,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-05-02T21:52:46+09:00",
+    "checkedAt": "2026-05-03T00:01:55+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -579,14 +616,14 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 2314
+        "entries": 2310
       },
       {
         "id": "eqvol",
         "label": "JMA 地震火山情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml",
         "status": "ok",
-        "entries": 515
+        "entries": 514
       }
     ],
     "regions": {
@@ -656,6 +693,14 @@
         "items": [
           {
             "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-05-02T14:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502140033_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
             "title": "気象特別警報・警報・注意報",
             "updated": "2026-05-02T12:16:05Z",
             "source": "JMA 随時情報",
@@ -669,14 +714,6 @@
             "source": "JMA 随時情報",
             "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。内陸、沿岸北部では、３日朝は霜に対する農作物の管理に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260502121606_0_VPWW54_030000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-05-02T11:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２日２１時から２４時までは火口から東方向、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502110033_0_VFVO53_010000.xml"
           }
         ]
       }
@@ -699,40 +736,16 @@
       "level": "yellow",
       "icon": "⚠️",
       "label": "岩手山",
-      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２日２１時から２４時までは火口から東方向、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
       "source": "JMA 地震火山情報",
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260502110033_0_VFVO53_010000.xml"
-    },
-    {
-      "regionId": "hakodate",
-      "level": "yellow",
-      "icon": "⚠️",
-      "label": "函館周邊",
-      "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２日夕方まで強風や高波に、３日朝は霜に対する農作物の管理に注意してください。",
-      "source": "JMA 随時情報",
-      "type": "storm",
-      "priority": 170,
-      "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260502011206_0_VPWW53_017000.xml"
-    },
-    {
-      "regionId": "aomori",
-      "level": "yellow",
-      "icon": "⚠️",
-      "label": "青森",
-      "summary": "【暴風に関する青森県気象情報】三八上北の陸上では、暴風のおそれはなくなりましたが、２日夜のはじめ頃にかけて、西よりの強風に注意してください。",
-      "source": "JMA 随時情報",
-      "type": "storm",
-      "priority": 170,
-      "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260502071443_0_VPFJ50_020000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260502140033_0_VFVO53_010000.xml"
     }
   ],
   "bear": {
-    "checkedAt": "2026-05-02T21:52:51+09:00",
+    "checkedAt": "2026-05-03T00:01:58+09:00",
     "status": "ok",
     "sources": [
       {
@@ -748,6 +761,22 @@
         "id": "aomori-pref",
         "label": "青森県 クマ情報",
         "url": "https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html",
+        "status": "ok",
+        "items": 1
+      },
+      {
+        "regionId": "aomori",
+        "id": "aomori-city",
+        "label": "青森市 クマ情報",
+        "url": "https://www.city.aomori.aomori.jp/kurashi_kankyo/kankyo/1002085/1010230.html",
+        "status": "ok",
+        "items": 1
+      },
+      {
+        "regionId": "aomori",
+        "id": "sukayu-info",
+        "label": "酸湯温泉 周辺情報",
+        "url": "https://sukayu.jp/information3/",
         "status": "ok",
         "items": 1
       },
@@ -779,9 +808,18 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-02T21:52:48+09:00",
-        "summary": "公式熊情報 2 件を確認。",
+        "checkedAt": "2026-05-03T00:01:57+09:00",
+        "summary": "公式熊情報 4 件を確認。",
         "items": [
+          {
+            "level": "yellow",
+            "kind": "sighting",
+            "title": "クマ等の出没情報",
+            "updated": "2026年4月7日",
+            "source": "青森市 クマ情報",
+            "summary": "青森市では、下記SNS・市公式LINEにおいて有害鳥獣に関する情報を発信していますので、ご参照ください。 青森県のクマ出没情報管理システム「くまログあおもり」では1件ごとに出没マップなどの詳細を確認できますので、こちらもご活用ください。 青森県クマ出没情報管理システム「くまログあおもり」 （外...",
+            "url": "https://www.city.aomori.aomori.jp/kurashi_kankyo/kankyo/1002085/1010230.html"
+          },
           {
             "level": "yellow",
             "kind": "warning",
@@ -790,6 +828,15 @@
             "source": "青森県 クマ情報",
             "summary": "直近５日間の出没件数が15件を上回ったため、ツキノワグマ出没警報を発表します。 。 １ 期間。 令和８年4月20日（月）～令和8年11月30日（月）。 。 ２ 区域。 県内全域。 。 ３ 県民の皆様へのお願い。 ・ クマの出没状況に気を配り、出没が相次いでいる場所には近づかないようにしてくださ...",
             "url": "https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html"
+          },
+          {
+            "level": "yellow",
+            "kind": "warning",
+            "title": "ツキノワグマ出没情報管理システムのご案内",
+            "updated": "2026/04/29",
+            "source": "酸湯温泉 周辺情報",
+            "summary": "青森県内全域で今年度もツキノワグマ出没警報が発表されています。（期間：令和８年４月２０日㈪～１１月３０日㈪）酸ヶ湯周辺での目撃情報は出ておりませんが、お客様に安心してご滞在いただくため、青森県で管理している 「ツキノワグマ出没情報管理システム」 のご利用をおすすめしております。本システムでは、...",
+            "url": "https://sukayu.jp/information3/"
           },
           {
             "level": "yellow",
@@ -804,7 +851,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-05-02T21:52:51+09:00",
+        "checkedAt": "2026-05-03T00:01:58+09:00",
         "summary": "公式熊情報 4 件を確認。",
         "items": [
           {
