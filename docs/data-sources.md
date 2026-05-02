@@ -46,6 +46,14 @@ Data Source v2 implementation:
 - Secondary sources such as generic prefectural portals, duplicate road pages, broad rail status pages, and auxiliary aggregator links can remain documented, but should not crowd the phone quick-link grid unless they become trip-critical.
 - These links are manual confirmation sources. They should not change region status automatically until a stable parser and signal-quality rule are designed.
 
+Precision Sources v1 implementation:
+
+- Landslide / debris-flow information is treated as a primary disaster source and gets a dedicated regional `土砂災害` card.
+- Aomori uses the official Aomori landslide danger system as the main phone link, with the prefectural warning-list page and JMA warnings as cross-checks.
+- Iwate uses the official Iwate landslide danger system as the main phone link, with JMA warnings and MLIT rain / river information as supporting checks.
+- Landslide systems are map-heavy and should remain official manual confirmation links for now; do not promote them into automatic region-level status until the signal can be parsed by municipality or trip focus area.
+- Trip-operation sources such as Hakkoda Ropeway, JR Bus, and Ryusendo are intentionally moved out of primary quick links and into collapsed regional `營運狀態` panels so they do not crowd disaster scrolling.
+
 ## Bears
 
 Preferred:
@@ -104,6 +112,13 @@ Kumamap:
 - Sanriku Railway for coastal transfer.
 - Hakkoda Ropeway and Sukayu Onsen for local mountain operations.
 - Ryusendo official page for cave operation status.
+
+Precision Sources v1 transport / operation extraction:
+
+- Hakkoda Ropeway official homepage is parsed for ropeway operation status and summit weather / wind / visibility. This is trip-critical for Hakkoda hiking, but should not create a visual-map disaster event.
+- JR Bus Tohoku `運行情報` is parsed for the current operation statement and route-relevant notices. The parser filters for route terms such as Oirase / Towada / Aomori and Morioka-Iwaizumi-Ryusendo.
+- Ryusendo `INFORMATION` listing is parsed for recent operation-related notices such as closure, reopening, increased water, one-way tourist routes, operating hours, and event crowding.
+- Operation summaries may be red inside the collapsed operation panel, but should not change `criticalEvents` or the visual map. This keeps disaster information first while still preserving offline trip-critical context.
 
 ## Dashboard Link Policy
 

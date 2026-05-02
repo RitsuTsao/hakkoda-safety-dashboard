@@ -218,6 +218,11 @@
         background: #edf8f2;
       }
 
+      .quick-link.topic-operation {
+        border-color: #b7bdc6;
+        background: #f5f6f8;
+      }
+
       .quick-link strong {
         color: var(--blue);
         font-size: 0.96rem;
@@ -243,29 +248,50 @@
         margin-top: 12px;
       }
 
+      .toggle-panel summary,
       .offline-emergency summary {
         cursor: pointer;
         list-style: none;
       }
 
+      .toggle-panel summary::-webkit-details-marker,
       .offline-emergency summary::-webkit-details-marker {
         display: none;
       }
 
+      .toggle-panel .section-head,
       .offline-emergency .section-head {
         margin-bottom: 0;
       }
 
+      .toggle-panel[open] .section-head,
       .offline-emergency[open] .section-head {
         margin-bottom: 10px;
       }
 
-      .toggle-label::before {
+      .toggle-panel .toggle-label::before,
+      .offline-emergency .toggle-label::before {
         content: "展開";
       }
 
+      .toggle-panel[open] .toggle-label::before,
       .offline-emergency[open] .toggle-label::before {
         content: "收合";
+      }
+
+      .risk-workflow,
+      .operation-workflow {
+        display: grid;
+        gap: 12px;
+      }
+
+      .operation-panel {
+        grid-column: 1 / -1;
+      }
+
+      .status-list {
+        display: grid;
+        gap: 8px;
       }
 
       .emergency-priority {
@@ -835,7 +861,8 @@
         const text = `${link.title || ""} ${link.category || ""} ${link.note || ""}`;
         if (text.includes("津波") || text.includes("地震")) return "quake";
         if (text.includes("熊") || text.includes("クマ") || text.includes("Bears") || text.includes("Kumamap")) return "bear";
-        if (text.includes("氣象警報") || text.includes("気象") || text.includes("河川") || text.includes("雨量")) return "weather";
+        if (text.includes("運行") || text.includes("營運") || text.includes("営業") || text.includes("ロープウェー") || text.includes("Bus") || text.includes("龍泉洞")) return "operation";
+        if (text.includes("氣象警報") || text.includes("気象") || text.includes("河川") || text.includes("雨量") || text.includes("土砂")) return "weather";
         return "other";
       }
 
@@ -844,11 +871,11 @@
       }
 
       function sortQuickLinks(links) {
-        const order = { quake: 0, weather: 1, bear: 2, other: 3 };
+        const order = { quake: 0, weather: 1, bear: 2, operation: 3, other: 4 };
         return [...links].sort((a, b) => compareQuickLinks(a, b, order));
       }
 
-      function compareQuickLinks(a, b, order = { quake: 0, weather: 1, bear: 2, other: 3 }) {
+      function compareQuickLinks(a, b, order = { quake: 0, weather: 1, bear: 2, operation: 3, other: 4 }) {
         const topicDiff = order[topicForLink(a)] - order[topicForLink(b)];
         if (topicDiff !== 0) return topicDiff;
         return String(a.category || "").localeCompare(String(b.category || ""), "zh-Hant");
@@ -877,6 +904,98 @@
               </a>
             `).join("")}
           </div>
+        `;
+      }
+
+      function renderStatusItems(items, emptyText) {
+        if (!items || !items.length) return `<p class="muted">${escapeHtml(emptyText)}</p>`;
+        return `
+          <div class="status-list">
+            ${items.map((item) => `
+              <a class="jma-item" href="${encodeURI(item.url)}" target="_blank" rel="noopener">
+                <div class="scenario-title">
+                  <span class="severity ${severityClass[item.level] || "yellow"}">${labelFor(item.level)}</span>
+                  <h3>${escapeHtml(item.title)}</h3>
+                </div>
+                <p>${escapeHtml(item.summary)}</p>
+                <span class="jma-meta">${escapeHtml(item.updated || "")} / ${escapeHtml(item.source || "官方來源")}</span>
+              </a>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      function renderRiskWorkflow(region) {
+        const workflow = region.riskWorkflow;
+        if (!workflow) return "";
+        const sources = workflow.sources || [];
+        const decisions = workflow.decisions || [];
+
+        return `
+          <article class="panel" style="grid-column: 1 / -1;">
+            <div class="section-head">
+              <h2>${escapeHtml(workflow.title || "土砂災害")}</h2>
+              <span class="muted">官方危険度優先</span>
+            </div>
+            <div class="risk-workflow">
+              <p>${escapeHtml(workflow.summary)}</p>
+              <div class="bear-source-grid">
+                ${sources.map(renderQuickLink).join("")}
+              </div>
+              <section>
+                <h3>取消 / 降級判斷</h3>
+                <div class="decision-list">
+                  ${decisions.map((decision) => `
+                    <div class="decision">
+                      <span class="severity ${severityClass[decision.level] || "yellow"}">${labelFor(decision.level || "yellow")}</span>
+                      <p>${escapeHtml(decision.text)}</p>
+                    </div>
+                  `).join("")}
+                </div>
+              </section>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderOperationWorkflow(region) {
+        const workflow = region.operationWorkflow;
+        if (!workflow) return "";
+        const latest = workflow.latest;
+        const sources = workflow.sources || [];
+        const decisions = workflow.decisions || [];
+
+        return `
+          <details class="panel toggle-panel operation-panel">
+            <summary class="section-head">
+              <h2>營運狀態</h2>
+              <span class="muted"><span class="toggle-label"></span>：需要時檢視</span>
+            </summary>
+            <div class="operation-workflow">
+              <p>${escapeHtml(workflow.summary)}</p>
+              <section>
+                <div class="section-head">
+                  <h3>最新摘要</h3>
+                  <span class="muted">${escapeHtml(latest?.checkedAt || "未檢查")}</span>
+                </div>
+                ${renderStatusItems(latest?.items || [], latest?.summary || "營運摘要尚未建立。請使用下方官方來源手動確認。")}
+              </section>
+              <div class="bear-source-grid">
+                ${sources.map(renderQuickLink).join("")}
+              </div>
+              <section>
+                <h3>取消 / 降級判斷</h3>
+                <div class="decision-list">
+                  ${decisions.map((decision) => `
+                    <div class="decision">
+                      <span class="severity ${severityClass[decision.level] || "yellow"}">${labelFor(decision.level || "yellow")}</span>
+                      <p>${escapeHtml(decision.text)}</p>
+                    </div>
+                  `).join("")}
+                </div>
+              </section>
+            </div>
+          </details>
         `;
       }
 
@@ -1076,6 +1195,8 @@
             ${renderJmaSummary(region)}
           </article>
 
+          ${renderRiskWorkflow(region)}
+
           ${renderBearWorkflow(region)}
 
           ${renderStaticMaps(region)}
@@ -1094,6 +1215,8 @@
               </section>
             `).join("")}
           </article>
+
+          ${renderOperationWorkflow(region)}
         `;
       }
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-03T00:01:58+09:00",
+  "generatedAt": "2026-05-03T02:30:29+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "yellow",
@@ -160,29 +160,109 @@
         },
         {
           "title": "青森土砂",
-          "url": "https://www.pref.aomori.lg.jp/soshiki/kendo/kasensabo/dosha_keikai_itiran.html",
+          "url": "https://www.dosya-keikai.pref.aomori.jp/",
           "category": "土砂",
-          "note": "警戒情報"
-        },
-        {
-          "title": "酸湯温泉 周辺情報",
-          "url": "https://sukayu.jp/information3/",
-          "category": "現地",
-          "note": "熊 / 天候 / 周辺"
-        },
-        {
-          "title": "八甲田ロープウェー",
-          "url": "https://hakkoda-ropeway.jp/",
-          "category": "山區",
-          "note": "營運 / 天候"
-        },
-        {
-          "title": "JR Bus 奥入瀬",
-          "url": "https://www.jrbustohoku.co.jp/towadako-oirase/",
-          "category": "巴士",
-          "note": "十和田 / 奥入瀬"
+          "note": "危険度 / 雨量"
         }
       ],
+      "riskWorkflow": {
+        "title": "土砂災害",
+        "summary": "八甲田、酸湯、奥入瀬、十和田湖周邊遇大雨、濃霧或溪流增水時，優先確認青森縣土砂危険度與 JMA 警報；警戒色升高時不要進山上步道或溪流旁路線。",
+        "sources": [
+          {
+            "title": "青森土砂危険度",
+            "url": "https://www.dosya-keikai.pref.aomori.jp/",
+            "category": "土砂",
+            "note": "地圖 / 危険度"
+          },
+          {
+            "title": "青森土砂警戒一覧",
+            "url": "https://www.pref.aomori.lg.jp/soshiki/kendo/kasensabo/dosha_keikai_itiran.html",
+            "category": "土砂",
+            "note": "警戒情報一覧"
+          },
+          {
+            "title": "JMA 青森",
+            "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
+            "category": "氣象警報",
+            "note": "大雨 / 土砂"
+          }
+        ],
+        "decisions": [
+          {
+            "level": "red",
+            "text": "目的地周邊出現土砂災害警戒情報、危険或災害切迫：取消八甲田、酸湯周邊步道與奥入瀬溪流步行。"
+          },
+          {
+            "level": "yellow",
+            "text": "只有注意或大雨注意報，但視線差、溪水變混、地面鬆軟或現地人員提醒：降級為有人管理設施與短距離移動。"
+          }
+        ]
+      },
+      "operationWorkflow": {
+        "summary": "這裡只放會影響行程可不可進山的營運資訊；預設收起，需要判斷八甲田、奥入瀬或十和田移動時再展開。",
+        "sources": [
+          {
+            "title": "八甲田ロープウェー",
+            "url": "https://hakkoda-ropeway.jp/",
+            "category": "山區營運",
+            "note": "運行 / 山頂天候"
+          },
+          {
+            "title": "JR Bus 運行情報",
+            "url": "https://www.jrbustohoku.co.jp/service/",
+            "category": "巴士營運",
+            "note": "全路線公告"
+          },
+          {
+            "title": "JR Bus みずうみ / おいらせ",
+            "url": "https://www.jrbustohoku.co.jp/towadako-oirase/",
+            "category": "巴士路線",
+            "note": "青森 / 奥入瀬 / 十和田湖"
+          }
+        ],
+        "decisions": [
+          {
+            "level": "red",
+            "text": "ロープウェー終日運休、JR Bus 運休，或酸湯 / 旅館提醒不要進山：取消山上健行。"
+          },
+          {
+            "level": "yellow",
+            "text": "ロープウェー可運行但強風、視界差、山頂低溫，或巴士公告有混雜 / 遲延：保留撤退時間，不進無人步道。"
+          }
+        ],
+        "latest": {
+          "level": "red",
+          "checkedAt": "2026-05-03T02:30:28+09:00",
+          "summary": "公式營運情報 3 件を確認。",
+          "items": [
+            {
+              "level": "red",
+              "title": "現在のロープウェー運行状況",
+              "updated": "2026-04-10",
+              "source": "八甲田ロープウェー",
+              "summary": "山頂駅付近強風の為、終日運休となっております。Due to strong winds, the service is suspended all day. / 天候。 weather あめ・きり Rain・Mist。2℃。山麓。 Base Station：11℃ 。 風速。 wind 北西 N...",
+              "url": "https://hakkoda-ropeway.jp/"
+            },
+            {
+              "level": "yellow",
+              "title": "【お知らせ】ゴールデンウイーク期間中の一般路線バスの運行について",
+              "updated": "2026年04月23日 14時30分",
+              "source": "JR Bus 東北 運行情報",
+              "summary": "いつもジェイアールバス東北をご利用くださいまして、ありがとうございます。 ゴールデンウイーク期間中、下記の路線バスにおいて混雑が予想され、満席によりご希望の便にご乗車いただけない可能性がございます。 現在、乗務員不足の影響もあり、 増発便の運行については車両や人員の手配が整わない場合、運行でき...",
+              "url": "https://www.jrbustohoku.co.jp/service/"
+            },
+            {
+              "level": "yellow",
+              "title": "現在の運行情報",
+              "updated": "2026-05-03T02:30:28+09:00",
+              "source": "JR Bus 東北 運行情報",
+              "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
+              "url": "https://www.jrbustohoku.co.jp/service/"
+            }
+          ]
+        }
+      },
       "scenarios": [
         {
           "title": "八甲田周邊有熊目擊、推播或旅館提醒",
@@ -292,7 +372,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-03T00:01:57+09:00",
+          "checkedAt": "2026-05-03T02:30:26+09:00",
           "summary": "公式熊情報 4 件を確認。",
           "items": [
             {
@@ -377,16 +457,10 @@
           "note": "閉伊川 / 沿岸"
         },
         {
-          "title": "岩手県道路情報",
-          "url": "https://www.douro.com/index.shtml",
-          "category": "道路",
-          "note": "通行規制"
-        },
-        {
-          "title": "龍泉洞",
-          "url": "https://www.iwate-ryusendo.jp/",
-          "category": "營運",
-          "note": "洞窟狀態"
+          "title": "岩手土砂",
+          "url": "https://sabo.pref.iwate.jp/",
+          "category": "土砂",
+          "note": "危険度 / 雨量"
         },
         {
           "title": "宮古 避難場所",
@@ -395,6 +469,120 @@
           "note": "公式總表"
         }
       ],
+      "riskWorkflow": {
+        "title": "土砂災害",
+        "summary": "龍泉洞、岩泉、宮古內陸移動遇大雨、地震後或山區交通不穩時，優先確認岩手縣土砂災害危険度與 JMA 警報；龍泉洞是否營業放到下方營運 toggle。",
+        "sources": [
+          {
+            "title": "岩手土砂危険度",
+            "url": "https://sabo.pref.iwate.jp/",
+            "category": "土砂",
+            "note": "危険度 / 雨量"
+          },
+          {
+            "title": "JMA 岩手",
+            "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
+            "category": "氣象警報",
+            "note": "大雨 / 土砂"
+          },
+          {
+            "title": "MLIT 川の防災情報",
+            "url": "https://www.river.go.jp/",
+            "category": "雨量",
+            "note": "補助確認"
+          }
+        ],
+        "decisions": [
+          {
+            "level": "red",
+            "text": "岩泉、龍泉洞、宮古內陸側出現土砂災害警戒情報、危険或災害切迫：取消龍泉洞與山區移動。"
+          },
+          {
+            "level": "yellow",
+            "text": "只有注意或局部大雨，但接續巴士少、地震後或現地資訊不足：把龍泉洞降級為可放棄點。"
+          }
+        ]
+      },
+      "operationWorkflow": {
+        "summary": "這裡只放龍泉洞與接續巴士的營運資訊；預設收起，需要判斷是否去龍泉洞時再展開。",
+        "sources": [
+          {
+            "title": "龍泉洞",
+            "url": "https://www.iwate-ryusendo.jp/",
+            "category": "洞窟營運",
+            "note": "官方首頁"
+          },
+          {
+            "title": "龍泉洞 INFORMATION",
+            "url": "https://www.iwate-ryusendo.jp/information/",
+            "category": "洞窟公告",
+            "note": "閉洞 / 再開 / ルート"
+          },
+          {
+            "title": "JR Bus 運行情報",
+            "url": "https://www.jrbustohoku.co.jp/service/",
+            "category": "巴士營運",
+            "note": "全路線公告"
+          }
+        ],
+        "decisions": [
+          {
+            "level": "red",
+            "text": "龍泉洞閉洞、増水、觀光ルート封鎖，或接續巴士運休：取消龍泉洞。"
+          },
+          {
+            "level": "yellow",
+            "text": "龍泉洞一方通行、節慶混雜、巴士滿席 / 遲延或轉乘變脆弱：只保留有人管理的主要動線，刪掉散策。"
+          }
+        ],
+        "latest": {
+          "level": "yellow",
+          "checkedAt": "2026-05-03T02:30:29+09:00",
+          "summary": "公式營運情報 5 件を確認。",
+          "items": [
+            {
+              "level": "yellow",
+              "title": "【お知らせ】ゴールデンウイーク期間中の一般路線バスの運行について",
+              "updated": "2026年04月23日 14時30分",
+              "source": "JR Bus 東北 運行情報",
+              "summary": "いつもジェイアールバス東北をご利用くださいまして、ありがとうございます。 ゴールデンウイーク期間中、下記の路線バスにおいて混雑が予想され、満席によりご希望の便にご乗車いただけない可能性がございます。 現在、乗務員不足の影響もあり、 増発便の運行については車両や人員の手配が整わない場合、運行でき...",
+              "url": "https://www.jrbustohoku.co.jp/service/"
+            },
+            {
+              "level": "yellow",
+              "title": "龍泉洞まつり",
+              "updated": "2026/04/25",
+              "source": "龍泉洞 INFORMATION",
+              "summary": "龍泉洞まつり",
+              "url": "https://www.iwate-ryusendo.jp/event/1978/"
+            },
+            {
+              "level": "yellow",
+              "title": "５/３（日）～５/５（月）は🌸龍泉洞まつり🌸",
+              "updated": "2026/04/20",
+              "source": "龍泉洞 INFORMATION",
+              "summary": "５/３（日）～５/５（月）は🌸龍泉洞まつり🌸",
+              "url": "https://www.iwate-ryusendo.jp/information/1976/"
+            },
+            {
+              "level": "yellow",
+              "title": "4/29～5/6の観光ルートについて",
+              "updated": "2026/03/27",
+              "source": "龍泉洞 INFORMATION",
+              "summary": "4/29～5/6の観光ルートについて",
+              "url": "https://www.iwate-ryusendo.jp/information/1974/"
+            },
+            {
+              "level": "yellow",
+              "title": "現在の運行情報",
+              "updated": "2026-05-03T02:30:29+09:00",
+              "source": "JR Bus 東北 運行情報",
+              "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
+              "url": "https://www.jrbustohoku.co.jp/service/"
+            }
+          ]
+        }
+      },
       "scenarios": [
         {
           "title": "宮古沿海有明顯搖晃或津波警報",
@@ -419,6 +607,14 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
+            "updated": "2026-05-02T17:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502170033_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
             "updated": "2026-05-02T14:00:00Z",
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
@@ -431,14 +627,6 @@
             "source": "JMA 随時情報",
             "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。内陸、沿岸北部では、３日朝は霜に対する農作物の管理に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260502121606_0_VPWW53_030000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-02T12:16:05Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。内陸、沿岸北部では、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502121606_0_VPWW54_030000.xml"
           }
         ]
       },
@@ -479,7 +667,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-03T00:01:58+09:00",
+          "checkedAt": "2026-05-03T02:30:27+09:00",
           "summary": "公式熊情報 4 件を確認。",
           "items": [
             {
@@ -608,7 +796,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-05-03T00:01:55+09:00",
+    "checkedAt": "2026-05-03T02:30:25+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -616,7 +804,7 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 2310
+        "entries": 2314
       },
       {
         "id": "eqvol",
@@ -694,6 +882,14 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
+            "updated": "2026-05-02T17:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502170033_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
             "updated": "2026-05-02T14:00:00Z",
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
@@ -706,14 +902,6 @@
             "source": "JMA 随時情報",
             "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。内陸、沿岸北部では、３日朝は霜に対する農作物の管理に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260502121606_0_VPWW53_030000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-02T12:16:05Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。内陸、沿岸北部では、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502121606_0_VPWW54_030000.xml"
           }
         ]
       }
@@ -741,11 +929,11 @@
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260502140033_0_VFVO53_010000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260502170033_0_VFVO53_010000.xml"
     }
   ],
   "bear": {
-    "checkedAt": "2026-05-03T00:01:58+09:00",
+    "checkedAt": "2026-05-03T02:30:27+09:00",
     "status": "ok",
     "sources": [
       {
@@ -808,7 +996,7 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-03T00:01:57+09:00",
+        "checkedAt": "2026-05-03T02:30:26+09:00",
         "summary": "公式熊情報 4 件を確認。",
         "items": [
           {
@@ -851,7 +1039,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-05-03T00:01:58+09:00",
+        "checkedAt": "2026-05-03T02:30:27+09:00",
         "summary": "公式熊情報 4 件を確認。",
         "items": [
           {
@@ -889,6 +1077,124 @@
             "source": "岩泉町 鳥獣被害対策",
             "summary": "ツキノワグマ出没等情報マップについて",
             "url": "https://www.town.iwaizumi.lg.jp/docs/2025120800017/"
+          }
+        ]
+      }
+    }
+  },
+  "operation": {
+    "checkedAt": "2026-05-03T02:30:29+09:00",
+    "status": "ok",
+    "sources": [
+      {
+        "regionId": "aomori",
+        "id": "hakkoda-ropeway",
+        "label": "八甲田ロープウェー",
+        "url": "https://hakkoda-ropeway.jp/",
+        "status": "ok",
+        "items": 1
+      },
+      {
+        "regionId": "aomori",
+        "id": "jrbus-tohoku",
+        "label": "JR Bus 東北 運行情報",
+        "url": "https://www.jrbustohoku.co.jp/service/",
+        "status": "ok",
+        "items": 2
+      },
+      {
+        "regionId": "iwate",
+        "id": "ryusendo-info",
+        "label": "龍泉洞 INFORMATION",
+        "url": "https://www.iwate-ryusendo.jp/information/",
+        "status": "ok",
+        "items": 3
+      },
+      {
+        "regionId": "iwate",
+        "id": "jrbus-tohoku",
+        "label": "JR Bus 東北 運行情報",
+        "url": "https://www.jrbustohoku.co.jp/service/",
+        "status": "ok",
+        "items": 2
+      }
+    ],
+    "regions": {
+      "aomori": {
+        "level": "red",
+        "checkedAt": "2026-05-03T02:30:28+09:00",
+        "summary": "公式營運情報 3 件を確認。",
+        "items": [
+          {
+            "level": "red",
+            "title": "現在のロープウェー運行状況",
+            "updated": "2026-04-10",
+            "source": "八甲田ロープウェー",
+            "summary": "山頂駅付近強風の為、終日運休となっております。Due to strong winds, the service is suspended all day. / 天候。 weather あめ・きり Rain・Mist。2℃。山麓。 Base Station：11℃ 。 風速。 wind 北西 N...",
+            "url": "https://hakkoda-ropeway.jp/"
+          },
+          {
+            "level": "yellow",
+            "title": "【お知らせ】ゴールデンウイーク期間中の一般路線バスの運行について",
+            "updated": "2026年04月23日 14時30分",
+            "source": "JR Bus 東北 運行情報",
+            "summary": "いつもジェイアールバス東北をご利用くださいまして、ありがとうございます。 ゴールデンウイーク期間中、下記の路線バスにおいて混雑が予想され、満席によりご希望の便にご乗車いただけない可能性がございます。 現在、乗務員不足の影響もあり、 増発便の運行については車両や人員の手配が整わない場合、運行でき...",
+            "url": "https://www.jrbustohoku.co.jp/service/"
+          },
+          {
+            "level": "yellow",
+            "title": "現在の運行情報",
+            "updated": "2026-05-03T02:30:28+09:00",
+            "source": "JR Bus 東北 運行情報",
+            "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
+            "url": "https://www.jrbustohoku.co.jp/service/"
+          }
+        ]
+      },
+      "iwate": {
+        "level": "yellow",
+        "checkedAt": "2026-05-03T02:30:29+09:00",
+        "summary": "公式營運情報 5 件を確認。",
+        "items": [
+          {
+            "level": "yellow",
+            "title": "【お知らせ】ゴールデンウイーク期間中の一般路線バスの運行について",
+            "updated": "2026年04月23日 14時30分",
+            "source": "JR Bus 東北 運行情報",
+            "summary": "いつもジェイアールバス東北をご利用くださいまして、ありがとうございます。 ゴールデンウイーク期間中、下記の路線バスにおいて混雑が予想され、満席によりご希望の便にご乗車いただけない可能性がございます。 現在、乗務員不足の影響もあり、 増発便の運行については車両や人員の手配が整わない場合、運行でき...",
+            "url": "https://www.jrbustohoku.co.jp/service/"
+          },
+          {
+            "level": "yellow",
+            "title": "龍泉洞まつり",
+            "updated": "2026/04/25",
+            "source": "龍泉洞 INFORMATION",
+            "summary": "龍泉洞まつり",
+            "url": "https://www.iwate-ryusendo.jp/event/1978/"
+          },
+          {
+            "level": "yellow",
+            "title": "５/３（日）～５/５（月）は🌸龍泉洞まつり🌸",
+            "updated": "2026/04/20",
+            "source": "龍泉洞 INFORMATION",
+            "summary": "５/３（日）～５/５（月）は🌸龍泉洞まつり🌸",
+            "url": "https://www.iwate-ryusendo.jp/information/1976/"
+          },
+          {
+            "level": "yellow",
+            "title": "4/29～5/6の観光ルートについて",
+            "updated": "2026/03/27",
+            "source": "龍泉洞 INFORMATION",
+            "summary": "4/29～5/6の観光ルートについて",
+            "url": "https://www.iwate-ryusendo.jp/information/1974/"
+          },
+          {
+            "level": "yellow",
+            "title": "現在の運行情報",
+            "updated": "2026-05-03T02:30:29+09:00",
+            "source": "JR Bus 東北 運行情報",
+            "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
+            "url": "https://www.jrbustohoku.co.jp/service/"
           }
         ]
       }
