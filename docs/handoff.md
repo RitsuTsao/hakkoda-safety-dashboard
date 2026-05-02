@@ -46,6 +46,10 @@ Implemented:
   - Map events now use an explicit priority model: red first, then tsunami, earthquake, volcano, landslide, heavy rain / flood, storm, and snow / avalanche.
   - Low-impact dry-air / frost / agricultural advisories are kept in JMA summaries but hidden from the visual map.
   - Visual event rows expose both the human-readable JMA page and the raw XML source.
+- Visual Map v1.2:
+  - Event priority was tuned after live-data QA: bear injury and volcano remain high-attention, while routine yellow wind / wave / fog / thunder advisories no longer crowd the visual map unless the text contains stronger escalation language such as `警戒`, `警報`, or `暴風`.
+  - Yellow snow / avalanche events are hidden from the visual map outside winter months, currently December through March. Red snow events are still allowed through so an exceptional major hazard is not suppressed.
+  - Source-link policy stayed conservative: JMA-derived visual events continue to open human-readable JMA pages with the XML source available as a secondary link. More precise landslide / river / road links should be added only after live data shows a stable signal that can be mapped to the right official source.
 - Bear Info v1:
   - Aomori and Iwate region pages now render a dedicated `bearWorkflow` card.
   - The card shows official-priority bear sources, a short checking order, and compact cancel / downgrade rules.
@@ -54,7 +58,7 @@ Implemented:
 - Bear Info v1.1:
   - `scripts/update-data.mjs` now extracts official text summaries from Aomori and Iwate bear pages.
   - Region bear cards render a `最新摘要` section before the manual workflow buttons.
-  - Sources currently parsed: `くまログあおもり`, Aomori Prefecture bear warning page, Iwate Prefecture warning page, Iwate Prefecture human-injury / sighting page, and Iwaizumi Town bird / wildlife damage category listing.
+  - Sources currently parsed: `くまログあおもり`, Aomori Prefecture bear warning page, Aomori City bear information page, Sukayu Onsen surrounding-information page, Iwate Prefecture warning page, Iwate Prefecture human-injury / sighting page, and Iwaizumi Town bird / wildlife damage category listing.
   - Human-injury bear terms create a red `bear-injury` visual map event, without attempting precise map coordinates.
   - Bear summary text intentionally keeps the original Japanese source language so it can be read directly or shown to local staff.
   - A bear-injury event can appear as a red visual-map chip, but a single historical injury item should not automatically make the entire Iwate tab red unless it is relevant to the trip focus area.
@@ -83,6 +87,33 @@ Implemented:
   - `stefanzweifel/git-auto-commit-action@v7`
 
 ## Latest Completed Iteration
+
+2026-05-02: Visual Map v1.2 is in progress.
+
+- Branch: `codex/visual-map-v1-2`
+- Changed files so far:
+  - `app/data.json`
+  - `app/service-worker.js`
+  - `scripts/update-data.mjs`
+  - `docs/data-sources.md`
+  - `docs/handoff.md`
+- Scope:
+  - Hide yellow snow / avalanche visual-map events outside winter months while preserving them in regional JMA summaries.
+  - Keep red snow events visible as an emergency exception.
+  - Lower routine storm-advisory priority and hide non-escalated yellow wind / wave / fog / thunder advisories from the visual map.
+  - Keep source-link behavior conservative: human-readable JMA page first, XML second, and no new landslide / river / road parser until live source quality is clearer.
+  - Refocus Aomori quick links for the user's five-day Hakkoda / Sukayu stay: remove low-priority road / river buttons, add Aomori Prefecture LINE setup, Aomori City bear information, and Sukayu surrounding notices.
+  - Strengthen the Aomori bear workflow for hiking decisions: set up Aomori Prefecture LINE `クマ情報`, register `くまログあおもり` email notifications if useful, and confirm with Sukayu / Hakkoda operators before entering trails.
+  - Add Aomori City and Sukayu Onsen bear-related official / local pages to the automated bear-summary source list.
+- Local verification so far:
+  - `scripts/update-data.mjs` was run with network access and JMA / bear source statuses returned `ok`.
+  - Current live-data visual events are only `岩手 熊被害` and `岩手山`; May snow / avalanche, frost, dry-air, routine wind / wave advisories, and generic Aomori bear information remain in text summaries but are hidden from the visual map.
+  - After refining false-positive handling, Aomori City generic bear-information text is kept yellow and does not create a red bear-injury event by itself.
+  - Aomori bear latest summary now includes four checked sources: Aomori City, Aomori Prefecture bear warning, Sukayu Onsen surrounding notice, and `くまログあおもり`.
+  - Data assertions confirm Aomori quick links include `青森県 LINE`, `青森市 クマ情報`, and `酸湯温泉 周辺情報`, and no longer include the low-priority MLIT road button.
+  - Local preview served on `http://127.0.0.1:8000/` and `http://127.0.0.1:8001/`; Safari rendered the updated Aomori page correctly.
+  - Codex in-app browser showed `app/data.json` under the `index.html` URL during the final local preview, even though `curl` confirmed `index.html` returned `text/html`. Treat this as a Codex in-app browser / service-worker cache issue, not a PWA file issue, unless reproduced in Safari or on GitHub Pages.
+  - `app/service-worker.js` cache is bumped to `hakkoda-safety-v12` so installed PWAs refresh after deployment.
 
 2026-05-01: Data Source v2 is complete and deployed.
 

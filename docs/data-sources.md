@@ -41,7 +41,7 @@ Data Source v2 implementation:
 - Add human-readable official links first; do not automate these sources yet.
 - Keep the phone-facing quick links precise. Data Source v2 intentionally prunes duplicate / secondary buttons so the user can scan the page under stress.
 - Global quick links include JMA, Safety tips, MLIT `川の防災情報`, and JARTIC.
-- Aomori quick links include JMA, `くまログあおもり`, Aomori landslide information, MLIT river information, MLIT Tohoku road information, Hakkoda Ropeway, and JR Bus Oirase.
+- Aomori quick links include JMA, `くまログあおもり`, Aomori Prefecture LINE setup, Aomori City bear information, Aomori landslide information, Sukayu local notices, Hakkoda Ropeway, and JR Bus Oirase.
 - Iwate quick links include JMA warning / tsunami pages, Iwate Bears, Iwaizumi bear map, MLIT river information, Iwate road information, Ryusendo, and Miyako evacuation information.
 - Secondary sources such as generic prefectural portals, duplicate road pages, broad rail status pages, and auxiliary aggregator links can remain documented, but should not crowd the phone quick-link grid unless they become trip-critical.
 - These links are manual confirmation sources. They should not change region status automatically until a stable parser and signal-quality rule are designed.
@@ -59,6 +59,11 @@ Dashboard implementation:
 
 - Bear Info v1 is a manual workflow in the regional dashboard, not an automated bear feed.
 - Aomori workflow checks `くまログあおもり`, Aomori Prefecture bear notices, and local operator / hotel notices before optional auxiliary map checks.
+- For an extended Hakkoda / Sukayu stay, the Aomori bear workflow should emphasize push setup and local confirmation:
+  - Add Aomori Prefecture LINE and configure the `クマ情報` city / town settings for likely areas such as Aomori City, Towada City, and Kuroishi City.
+  - Register in `くまログあおもり` if the user wants email notifications for selected areas.
+  - Check Aomori City bear information and Sukayu / Hakkoda operator notices before hiking.
+  - Do not interpret missing map data as safety when prefecture-wide warnings are active or local staff cannot confirm current conditions.
 - Iwate workflow prioritizes the user's configured Iwate Bears LINE / App flow, then Iwaizumi Town's bear map for the Ryusendo / Iwaizumi segment.
 - Cancel / downgrade rules are intentionally short: nearby recent sightings or official/local warnings cancel walks; weaker or older signals downgrade to short, daytime, managed-facility movement.
 - Kumamap remains auxiliary and must not override official or local instructions.
@@ -69,6 +74,8 @@ Bear Info v1.1 implementation:
 - Aomori summary sources:
   - `くまログあおもり` front-page prefectural notice.
   - Aomori Prefecture `クマの出没に注意してください！`.
+  - Aomori City `クマ等の出没情報`.
+  - Sukayu Onsen surrounding-information notices when a bear-related item is posted.
 - Iwate summary sources:
   - Iwate Prefecture `ツキノワグマの出没に関する警報について`.
   - Iwate Prefecture `ツキノワグマによる人身被害状況・出没状況`.

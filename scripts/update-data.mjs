@@ -34,6 +34,18 @@ const bearSources = {
       label: "青森県 クマ情報",
       url: "https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html",
       parser: parseAomoriPrefBearPage
+    },
+    {
+      id: "aomori-city",
+      label: "青森市 クマ情報",
+      url: "https://www.city.aomori.aomori.jp/kurashi_kankyo/kankyo/1002085/1010230.html",
+      parser: parseAomoriCityBearPage
+    },
+    {
+      id: "sukayu-info",
+      label: "酸湯温泉 周辺情報",
+      url: "https://sukayu.jp/information3/",
+      parser: parseSukayuBearInfo
     }
   ],
   iwate: [
@@ -128,7 +140,7 @@ const eventProfiles = [
   },
   {
     type: "storm",
-    rank: 70,
+    rank: 66,
     icon: "⚠️",
     terms: ["暴風", "強風", "波浪", "高潮"]
   },
@@ -152,6 +164,19 @@ const lowImpactAdvisoryTerms = [
   "霜",
   "農作物",
   "火の取り扱い"
+];
+
+const winterMapMonths = new Set([12, 1, 2, 3]);
+
+const stormEscalationTerms = [
+  "警戒",
+  "警報",
+  "暴風"
+];
+
+const deescalationTerms = [
+  "おそれはなくなりました",
+  "おそれはなくなった"
 ];
 
 const bearInjuryTerms = [
@@ -284,6 +309,37 @@ function parseAomoriPrefBearPage(html, source) {
       title: title || "青森県 クマ情報",
       summary,
       updated: firstDateText(html),
+      source: source.label,
+      url: source.url
+    })
+  ];
+}
+
+function parseAomoriCityBearPage(html, source) {
+  const title = firstHtmlMatch(html, /<h1>([\s\S]*?クマ[\s\S]*?)<\/h1>/) || source.label;
+  const summary = firstHtmlMatch(html, /(青森市では、下記SNS[\s\S]*?近づかないようにしてください。)/)
+    || firstHtmlMatch(html, /<meta property="og:description" content="([^"]+)"/);
+  if (!title && !summary) return [];
+  const item = makeBearItem({
+    title,
+    summary: summary || "青森市公式 LINE、SNS、くまログで有害鳥獣情報を確認してください。",
+    updated: firstDateText(html),
+    source: source.label,
+    url: source.url
+  });
+  return [{ ...item, level: "yellow", kind: "sighting" }];
+}
+
+function parseSukayuBearInfo(html, source) {
+  const section = html.match(/<div class="info_date1">\s*(\d{4}\/\d{2}\/\d{2})\s*<\/div>\s*<div class="info_headline1"[^>]*>\s*ツキノワグマ出没情報管理システムのご案内\s*<\/div>[\s\S]*?<div class="info_txt1[^"]*">([\s\S]*?)<\/div>\s*<div class="clear_both/);
+  if (!section) return [];
+  const updated = section[1];
+  const summary = stripHtml(section[2]);
+  return [
+    makeBearItem({
+      title: "ツキノワグマ出没情報管理システムのご案内",
+      summary,
+      updated,
       source: source.label,
       url: source.url
     })
@@ -562,8 +618,37 @@ function isLowImpactAdvisory(item) {
   return item.level !== "red" && hasOnlyLowImpactTerms;
 }
 
+function monthInJapan(value) {
+  const date = value ? new Date(value) : new Date();
+  if (Number.isNaN(date.getTime())) return Number(new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Tokyo",
+    month: "numeric"
+  }).format(new Date()));
+  return Number(new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Tokyo",
+    month: "numeric"
+  }).format(date));
+}
+
+function isOutOfSeasonSnowEvent(item) {
+  if (item.level === "red") return false;
+  if (profileForItem(item).type !== "snow") return false;
+  return !winterMapMonths.has(monthInJapan(item.updated));
+}
+
+function isRoutineStormAdvisory(item) {
+  if (item.level === "red") return false;
+  const profile = profileForItem(item);
+  if (profile.type !== "storm" && profile.type !== "fog-thunder") return false;
+  const text = (item.summary || textForItem(item)).replace(/^【[^】]+】\s*/, "");
+  if (includesAny(text, deescalationTerms)) return true;
+  return !includesAny(text, stormEscalationTerms);
+}
+
 function mapPriorityForItem(item) {
   if (isLowImpactAdvisory(item)) return 0;
+  if (isOutOfSeasonSnowEvent(item)) return 0;
+  if (isRoutineStormAdvisory(item)) return 0;
   const profile = profileForItem(item);
   const levelBoost = item.level === "red" ? 1000 : item.level === "yellow" ? 100 : 0;
   return levelBoost + profile.rank;
