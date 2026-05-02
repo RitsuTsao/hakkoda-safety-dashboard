@@ -88,10 +88,13 @@ Implemented:
 
 ## Latest Completed Iteration
 
-2026-05-02: Visual Map v1.2 is in progress.
+2026-05-02: Visual Map v1.2 is complete and deployed.
 
 - Branch: `codex/visual-map-v1-2`
-- Changed files so far:
+- Merged PR: `https://github.com/RitsuTsao/hakkoda-safety-dashboard/pull/8`
+- Merge commit: `8617968 Merge pull request #8 from RitsuTsao/codex/visual-map-v1-2`
+- Live page verified: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html#aomori`
+- Changed files:
   - `app/data.json`
   - `app/service-worker.js`
   - `scripts/update-data.mjs`
@@ -105,7 +108,7 @@ Implemented:
   - Refocus Aomori quick links for the user's five-day Hakkoda / Sukayu stay: remove low-priority road / river buttons, add Aomori Prefecture LINE setup, Aomori City bear information, and Sukayu surrounding notices.
   - Strengthen the Aomori bear workflow for hiking decisions: set up Aomori Prefecture LINE `クマ情報`, register `くまログあおもり` email notifications if useful, and confirm with Sukayu / Hakkoda operators before entering trails.
   - Add Aomori City and Sukayu Onsen bear-related official / local pages to the automated bear-summary source list.
-- Local verification so far:
+- Local verification:
   - `scripts/update-data.mjs` was run with network access and JMA / bear source statuses returned `ok`.
   - Current live-data visual events are only `岩手 熊被害` and `岩手山`; May snow / avalanche, frost, dry-air, routine wind / wave advisories, and generic Aomori bear information remain in text summaries but are hidden from the visual map.
   - After refining false-positive handling, Aomori City generic bear-information text is kept yellow and does not create a red bear-injury event by itself.
@@ -114,6 +117,11 @@ Implemented:
   - Local preview served on `http://127.0.0.1:8000/` and `http://127.0.0.1:8001/`; Safari rendered the updated Aomori page correctly.
   - Codex in-app browser showed `app/data.json` under the `index.html` URL during the final local preview, even though `curl` confirmed `index.html` returned `text/html`. Treat this as a Codex in-app browser / service-worker cache issue, not a PWA file issue, unless reproduced in Safari or on GitHub Pages.
   - `app/service-worker.js` cache is bumped to `hakkoda-safety-v12` so installed PWAs refresh after deployment.
+- Post-merge verification:
+  - GitHub Pages served `hakkoda-safety-v12`.
+  - Live `app/data.json` includes Aomori quick links `青森県 LINE`, `青森市 クマ情報`, and `酸湯温泉 周辺情報`.
+  - Live Aomori bear summary includes Aomori City, Aomori Prefecture, Sukayu Onsen, and `くまログあおもり`.
+  - Live Visual Map events are `岩手 熊被害` and `岩手山`, with non-winter snow / avalanche and generic Aomori bear information hidden from the visual map.
 
 2026-05-01: Data Source v2 is complete and deployed.
 
