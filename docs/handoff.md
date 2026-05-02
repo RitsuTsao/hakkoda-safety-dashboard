@@ -95,10 +95,13 @@ Implemented:
 
 ## Latest Completed Iteration
 
-2026-05-03: Precision Sources v1 is in progress on branch `codex/precision-sources-v1`.
+2026-05-03: Precision Sources v1 is complete and deployed.
 
 - Branch: `codex/precision-sources-v1`
-- Changed files so far:
+- Merged PR: `https://github.com/RitsuTsao/hakkoda-safety-dashboard/pull/9`
+- Merge commit: `3d399cb Merge pull request #9 from RitsuTsao/codex/precision-sources-v1`
+- Live page verified: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html#aomori`
+- Changed files:
   - `app/data.json`
   - `app/index.html`
   - `app/service-worker.js`
@@ -110,7 +113,7 @@ Implemented:
   - Move Hakkoda Ropeway, JR Bus Tohoku, and Ryusendo operation checks into collapsed `營運狀態` panels so disaster information remains primary.
   - Add operation extraction for Hakkoda Ropeway status / mountain weather, JR Bus current status and route-relevant notices, and Ryusendo operation-related information notices.
   - Keep operation items out of Visual Map `criticalEvents`, even when an operation source is red, because these are trip decisions rather than disaster alerts.
-- Local verification so far:
+- Local verification:
   - `scripts/update-data.mjs` ran successfully with network access.
   - Operation source statuses returned `ok` for Hakkoda Ropeway, JR Bus Tohoku, Ryusendo INFORMATION, and JR Bus Tohoku for Iwate.
   - Aomori operation latest includes Hakkoda Ropeway as red when the official page says `終日運休`, plus JR Bus current status and GW general-route notice.
@@ -119,6 +122,12 @@ Implemented:
   - `app/data.json` parses successfully and `git diff --check` passes.
   - Local preview server is available at `http://127.0.0.1:8003/app/index.html#aomori`; HTTP checks confirm `app/index.html` returns `text/html` and `app/data.json` includes the Hakkoda suspended-operation summary.
   - Browser automation was limited in this desktop environment: Chrome was visible through Computer Use, but system `open` and Playwright browser launch were not available. Use the local preview URL or Safari / Chrome manually for final visual QA before PR.
+- Post-merge verification:
+  - GitHub Pages served `hakkoda-safety-v13`.
+  - Live `app/index.html` contains `renderRiskWorkflow`, `renderOperationWorkflow`, `土砂災害`, and `營運狀態`.
+  - Live `app/data.json` includes Aomori `riskWorkflow` and `operationWorkflow`.
+  - Live Aomori operation summary includes Hakkoda Ropeway `終日運休` as a red operation item, while operation items remain out of the Visual Map.
+  - User confirmed the deployed update on macOS and phone.
 
 2026-05-02: Visual Map v1.2 is complete and deployed.
 
