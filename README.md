@@ -39,6 +39,7 @@ Later, consider Cloudflare Pages + Workers Cron if private deployment, KV storag
 - JMA XML updater v1 fetches JMA long-term Atom feeds and summarizes relevant entries for Hakodate, Aomori, and Iwate.
 - Visual Map v1 shows high-attention events and links to human-readable JMA pages.
 - Bear information is currently handled through official/manual sources, not automated scraping.
+- Notification Layer v1 rules are being prepared: red events plus scoped immediate-class exceptions for 三區域震度5以上, 青森 / 岩手津波注意報以上, 三區域土砂災害警戒情報以上, and 熊傷人. Gmail delivery is prepared but requires GitHub Secrets.
 
 ## Safety Model
 
@@ -54,7 +55,7 @@ Use three layers:
 2. Data Source v2: add better human-readable links for landslide, road, river, and transport status.
 3. Bear Info v1: document official Aomori and Iwate bear-check workflow inside the dashboard.
 4. Offline Emergency Mode: add a compact signal-poor checklist for tsunami, landslide, road disruption, and bear reports.
-5. Notification Layer: later, add Notion Inbox or similar digest only for high-signal events.
+5. Notification Layer: configure Gmail delivery, then send only high-signal disaster events.
 
 ## Handoff
 

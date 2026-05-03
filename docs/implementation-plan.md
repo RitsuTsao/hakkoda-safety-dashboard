@@ -51,10 +51,14 @@ Acceptance criteria:
 
 Only after the dashboard is stable:
 
-- Add Notion Inbox or database update for digest-level events.
-- Add email / Telegram / LINE-style alerting only for red conditions.
+- Generate notification candidates from high-signal disaster events only.
+- Mark 三區域震度5以上地震, 青森 / 岩手津波注意報以上, 三區域土砂災害警戒情報以上, and 熊傷人 as immediate-class candidates.
+- Send selected notification candidates through Gmail after GitHub Secrets are configured.
+- Use `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO` as GitHub Secrets.
+- Keep GitHub Pages as a display layer; do not assume it can background-push by itself.
 
 Acceptance criteria:
 
 - Notifications avoid noise.
 - Every notification links back to the dashboard and official source.
+- Routine yellow events and trip-operation items do not notify.
