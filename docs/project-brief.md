@@ -1,5 +1,7 @@
 # Project Brief
 
+Project status: Version 1.0.0 is complete as of 2026-05-03.
+
 ## User Context
 
 The user is planning a trip to northern Tohoku from 2026-06-03 to 2026-06-13. The dashboard should organize safety information by region, not by daily itinerary, so the user can understand area-wide conditions during disruptions.
@@ -45,6 +47,15 @@ It should answer:
 - What did the last update say, and when was it generated?
 - What can I still read if mobile signal is poor?
 
+Version 1.0.0 provides:
+
+- A phone-first GitHub Pages PWA for Hakodate, Aomori, and Iwate.
+- Offline-readable regional summaries, quick links, and first-action emergency guidance.
+- Scheduled official-source refresh through GitHub Actions.
+- High-attention visual event chips for disaster signals.
+- Conservative bear-information summaries and official/manual workflows.
+- Gmail notification delivery for high-signal disaster events only.
+
 ## Privacy Rule
 
 Assume the GitHub Pages version may be public.
@@ -58,3 +69,5 @@ Do not include:
 - Exact room details.
 
 Include only low-sensitivity trip context and public official links.
+
+Do not include Gmail credentials, app passwords, full emergency contacts, booking data, or room details in repo files. Gmail delivery must remain configured only through GitHub repository secrets.

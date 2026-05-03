@@ -26,20 +26,24 @@ The project direction, requirements, and publication decision were reviewed and 
 
 ## Current Recommendation
 
-The current MVP runs on GitHub Pages and GitHub Actions.
+Version 1.0.0 runs on GitHub Pages and GitHub Actions.
 
 Later, consider Cloudflare Pages + Workers Cron if private deployment, KV storage, webhook notifications, or cleaner scheduled updates become important.
 
 ## Current Status
 
+- Project status: Version 1.0.0 complete.
 - Live PWA: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`
 - GitHub Pages serves the static app from `main`.
 - The phone PWA can be installed and read offline.
 - GitHub Actions updates `app/data.json` every 12 hours and can be run manually.
 - JMA XML updater v1 fetches JMA long-term Atom feeds and summarizes relevant entries for Hakodate, Aomori, and Iwate.
-- Visual Map v1 shows high-attention events and links to human-readable JMA pages.
-- Bear information is currently handled through official/manual sources, not automated scraping.
-- Notification Layer v1 rules are being prepared: red events plus scoped immediate-class exceptions for 三區域震度5以上, 青森 / 岩手津波注意報以上, 三區域土砂災害警戒情報以上, and 熊傷人. Gmail delivery is prepared but requires GitHub Secrets.
+- Visual Map v1 shows high-attention disaster events and links to human-readable official pages.
+- Bear information uses official/manual sources plus conservative official-page text extraction where stable.
+- Offline Emergency Mode v1 keeps first-action guidance readable from the app shell.
+- Data Source v2 and Precision Sources v1 keep phone links focused on official, trip-relevant checks.
+- Notification Layer v1 is live: it queues high-signal disaster notifications, sends through Gmail from GitHub Actions, and records successful delivery to avoid same-event repeats within 24 hours.
+- Gmail delivery has been verified with `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO` repository secrets.
 
 ## Safety Model
 
@@ -49,13 +53,29 @@ Use three layers:
 2. Dashboard: offline-readable regional risk summary and official quick links.
 3. Manual confirmation: hotel staff, local government pages, JMA, road and rail operators.
 
-## Next Steps
+## Version 1 Scope
 
-1. Visual Map v1.1: reduce low-impact warning noise and improve event priority.
-2. Data Source v2: add better human-readable links for landslide, road, river, and transport status.
-3. Bear Info v1: document official Aomori and Iwate bear-check workflow inside the dashboard.
-4. Offline Emergency Mode: add a compact signal-poor checklist for tsunami, landslide, road disruption, and bear reports.
-5. Notification Layer: configure Gmail delivery, then send only high-signal disaster events.
+- Phone-first regional dashboard for Hakodate, Aomori, and Iwate.
+- Offline-readable app shell, last known data, and emergency first actions.
+- Scheduled official-source refresh through GitHub Actions.
+- Visual Map event filtering for high-attention disaster signals.
+- Focused manual source links for JMA, tsunami, landslide, bear, transport, evacuation, and trip-operation checks.
+- Gmail notification delivery for high-signal disaster events only.
+
+## Operational Notes
+
+- Manual refresh: GitHub Actions -> `Update dashboard data` -> `Run workflow` on `main`.
+- Scheduled refresh: UTC `00:00` and `12:00`, currently Taiwan / Japan time `09:00` and `21:00`.
+- If Gmail notification testing is needed, check the `Send Gmail notifications` step. All three env values should display as `***`.
+- Do not commit private travel details, booking numbers, full emergency contacts, room details, or passwords.
+- After the trip, rotate or delete the Google App Password used by `GMAIL_APP_PASSWORD` if the notification channel is no longer needed.
+
+## Future Work
+
+- Monitor live data quality during scheduled runs.
+- Tune event-noise thresholds only after a clear false positive or false negative appears.
+- Consider a higher update frequency during the trip if Gmail notifications need shorter latency.
+- Consider Cloudflare Workers or another backend only if GitHub Actions cadence becomes insufficient.
 
 ## Handoff
 

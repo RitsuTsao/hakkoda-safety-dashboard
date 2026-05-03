@@ -139,7 +139,7 @@ For coastal Iwate:
 
 ## Notification Layer
 
-Notification Layer v1 is a rules layer first, not a delivery channel.
+Notification Layer v1 is live in Version 1.0.0.
 
 - Notification candidates come from high-signal disaster `criticalEvents` only.
 - Immediate-class candidates are limited to:
@@ -156,6 +156,15 @@ Delivery:
 - GitHub Pages cannot send true background push by itself.
 - Gmail is the selected first delivery channel because it matches Ritsu's existing workflow and Notion Mail can surface Gmail-linked mail.
 - GitHub Actions runs `scripts/send-notifications.mjs` after the scheduled data update.
-- Gmail delivery requires GitHub Secrets: `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO`.
+- Gmail delivery requires GitHub repository secrets: `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO`.
 - Use a Google App Password for this automation, not the normal Google account password.
+- The first successful GitHub Actions Gmail delivery was verified on 2026-05-03.
+- After successful delivery, `scripts/send-notifications.mjs` writes `deliveryStatus: "gmail-sent"`, `deliveredAt`, and `state.lastQueuedByKey` back to `app/data.json`.
+- If a secret is missing, the sender logs a safe skip and does not mark the notification delivered.
 - Telegram, Notion API, and LINE Messaging API are not part of v1 delivery.
+
+Operational checks:
+
+- In GitHub Actions logs, the `Send Gmail notifications` step should show all three env values masked as `***`.
+- If `GMAIL_APP_PASSWORD` appears blank, the repository secret name is wrong or the value is empty.
+- Do not store Gmail passwords, app passwords, recipient private details, or emergency contacts in repo files.
