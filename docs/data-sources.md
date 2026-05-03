@@ -136,3 +136,26 @@ For coastal Iwate:
 - The point diagram is intentionally approximate and is not a navigation map.
 - The dot diagram may include lightweight relative landmarks such as Miyako Station, Miyako Port, the Hei River, and high-ground direction. Keep these as orientation cues only; do not imply turn-by-turn navigation or precise coordinates.
 - In a real tsunami situation, the first action remains immediate movement to nearby high ground or an official evacuation building; the official Miyako City list and local instructions remain authoritative.
+
+## Notification Layer
+
+Notification Layer v1 is a rules layer first, not a delivery channel.
+
+- Notification candidates come from high-signal disaster `criticalEvents` only.
+- Immediate-class candidates are limited to:
+  - 三區域震度5以上地震, based on JMA seismic intensity wording such as `震度５弱`, `震度５強`, `震度６`, or `震度７` matched to Hakodate / Aomori / Iwate.
+  - 青森 / 岩手津波注意報以上, based on JMA tsunami wording `津波注意報`, `津波警報`, or `大津波警報`.
+  - 三區域土砂災害警戒情報以上, based on `土砂災害警戒情報`, `大雨特別警報（土砂災害）`, or Kiki-kuru `災害切迫`.
+  - 熊傷人, based on official bear text containing human-injury wording such as `人身被害`, `襲われ`, `負傷`, or `死亡事故`.
+- Routine yellow advisories, routine weather items, and trip-operation interruptions such as ropeway / bus / cave status should not notify.
+- Same-event digest delivery should be limited to once every 24 hours after external delivery is enabled.
+- Every candidate should link back to the dashboard-facing official source.
+
+Delivery:
+
+- GitHub Pages cannot send true background push by itself.
+- Gmail is the selected first delivery channel because it matches Ritsu's existing workflow and Notion Mail can surface Gmail-linked mail.
+- GitHub Actions runs `scripts/send-notifications.mjs` after the scheduled data update.
+- Gmail delivery requires GitHub Secrets: `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO`.
+- Use a Google App Password for this automation, not the normal Google account password.
+- Telegram, Notion API, and LINE Messaging API are not part of v1 delivery.

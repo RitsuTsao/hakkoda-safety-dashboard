@@ -518,6 +518,50 @@
         font-weight: 750;
       }
 
+      .notification-panel {
+        margin-top: 12px;
+      }
+
+      .notification-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .notification-item {
+        display: grid;
+        gap: 5px;
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .notification-item:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .notification-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .pill {
+        display: inline-flex;
+        width: fit-content;
+        padding: 3px 7px;
+        border-radius: 5px;
+        background: var(--panel-soft);
+        color: var(--ink);
+        font-size: 0.78rem;
+        font-weight: 750;
+      }
+
+      .pill.red {
+        background: #fff0ef;
+        color: var(--red);
+      }
+
       .bear-workflow {
         display: grid;
         gap: 12px;
@@ -805,6 +849,14 @@
           <div id="eventLayer" class="event-layer"></div>
         </div>
         <div id="eventList" class="event-list"></div>
+      </section>
+
+      <section class="panel notification-panel">
+        <div class="section-head">
+          <h2>通知規則</h2>
+          <span class="muted">外部通道待設定</span>
+        </div>
+        <div id="notificationPanel"></div>
       </section>
 
       <nav id="regionTabs" class="tabs" aria-label="區域"></nav>
@@ -1140,6 +1192,40 @@
         `).join("");
       }
 
+      function renderNotificationPanel() {
+        const panel = document.getElementById("notificationPanel");
+        const notifications = dashboardData.notifications;
+        if (!notifications) {
+          panel.innerHTML = "<p class=\"muted\">通知規則尚未建立。</p>";
+          return;
+        }
+
+        const queued = notifications.queued || [];
+        const candidates = notifications.candidates || [];
+        const displayItems = queued.length ? queued : candidates;
+        const channelText = notifications.deliveryStatus === "not-configured"
+          ? "Gmail 尚未由 GitHub Actions 完成寄送"
+          : "外部通道已設定";
+
+        panel.innerHTML = `
+          <div class="notification-list">
+            <p>${escapeHtml(notifications.summary)}</p>
+            <p class="muted">${escapeHtml(channelText)}。${escapeHtml(notifications.policy?.limitation || "")}</p>
+            ${displayItems.length ? displayItems.map((item) => `
+              <a class="notification-item" href="${encodeURI(item.event.url)}" target="_blank" rel="noopener">
+                <div class="notification-meta">
+                  <span class="pill red">${item.urgency === "immediate" ? "立即" : "24小時摘要"}</span>
+                  <strong>${escapeHtml(item.event.icon || "⚠️")} ${escapeHtml(item.event.label)}</strong>
+                </div>
+                <p>${escapeHtml(item.event.summary)}</p>
+                <span class="muted">${escapeHtml(item.reason)} / ${escapeHtml(item.event.source || "官方來源")}${item.cooldownActive ? " / 24小時內已列入佇列" : ""}</span>
+              </a>
+            `).join("") : "<p class=\"muted\">目前沒有事件需要通知。</p>"}
+            <p class="muted">規則：${escapeHtml(notifications.policy?.digest || "")} ${escapeHtml(notifications.policy?.immediate || "")}</p>
+          </div>
+        `;
+      }
+
       function renderTabs() {
         const tabs = document.getElementById("regionTabs");
         tabs.innerHTML = dashboardData.regions
@@ -1254,6 +1340,7 @@
           .join("");
 
         renderVisualMap();
+        renderNotificationPanel();
         renderTabs();
         renderRegion();
       }

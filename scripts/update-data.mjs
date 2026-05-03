@@ -105,6 +105,7 @@ const redTerms = [
   "大津波警報",
   "津波警報",
   "特別警報",
+  "大雨特別警報（土砂災害）",
   "土砂災害警戒情報",
   "噴火警戒レベル５",
   "噴火警戒レベル5",
@@ -116,6 +117,10 @@ const redTerms = [
   "震度7",
   "震度６",
   "震度6",
+  "震度５強",
+  "震度5強",
+  "震度５弱",
+  "震度5弱",
   "震度５",
   "震度5"
 ];
@@ -225,6 +230,32 @@ const bearWarningTerms = [
   "出没注意報",
   "警報",
   "注意報"
+];
+
+const notificationCooldownHours = 24;
+
+const notificationImmediateRules = [
+  {
+    type: "earthquake",
+    label: "三區域震度5以上地震",
+    terms: ["震度７", "震度7", "震度６", "震度6", "震度５強", "震度5強", "震度５弱", "震度5弱", "震度５", "震度5"]
+  },
+  {
+    type: "tsunami",
+    label: "青森・岩手 津波注意報以上",
+    regionIds: ["aomori", "iwate"],
+    terms: ["大津波警報", "津波警報", "津波注意報"]
+  },
+  {
+    type: "landslide",
+    label: "土砂災害警戒情報以上",
+    terms: ["大雨特別警報（土砂災害）", "土砂災害警戒情報", "災害切迫"]
+  },
+  {
+    type: "bear-injury",
+    label: "熊傷人",
+    terms: bearInjuryTerms
+  }
 ];
 
 function nowInJapan() {
@@ -563,9 +594,130 @@ function parseAtomEntries(xml, feed) {
   });
 }
 
+function intensityLabel(value = "") {
+  const normalized = String(value).trim();
+  const labels = {
+    "1": "震度１",
+    "2": "震度２",
+    "3": "震度３",
+    "4": "震度４",
+    "5-": "震度５弱",
+    "5+": "震度５強",
+    "6-": "震度６弱",
+    "6+": "震度６強",
+    "7": "震度７"
+  };
+  return labels[normalized] || (normalized ? `震度${normalized}` : "");
+}
+
+function intensityRank(value = "") {
+  const ranks = {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5-": 5,
+    "5+": 5.5,
+    "6-": 6,
+    "6+": 6.5,
+    "7": 7
+  };
+  return ranks[String(value).trim()] || 0;
+}
+
+function regionIdForEarthquakeBlock(text = "") {
+  if (/渡島|檜山|函館/.test(text)) return "hakodate";
+  if (text.includes("青森県") || text.includes("青森")) return "aomori";
+  if (text.includes("岩手県") || text.includes("岩手")) return "iwate";
+  return "";
+}
+
+function extractEarthquakeObservation(xml) {
+  const observation = xml.match(/<Observation>[\s\S]*?<\/Observation>/)?.[0] || "";
+  if (!observation) return { text: "", regions: {} };
+  const regions = {};
+
+  const prefSummaries = [...observation.matchAll(/<Pref>([\s\S]*?)<\/Pref>/g)].map(([, prefXml]) => {
+    const prefName = firstMatch(prefXml, /<Name>([\s\S]*?)<\/Name>/);
+    const prefMaxRaw = firstMatch(prefXml, /<MaxInt>([\s\S]*?)<\/MaxInt>/);
+    const prefMax = intensityLabel(prefMaxRaw);
+    const citySummaries = [...prefXml.matchAll(/<City>([\s\S]*?)<\/City>/g)]
+      .map(([, cityXml]) => {
+        const cityName = firstMatch(cityXml, /<Name>([\s\S]*?)<\/Name>/);
+        const cityMaxRaw = firstMatch(cityXml, /<MaxInt>([\s\S]*?)<\/MaxInt>/);
+        const cityMax = intensityLabel(cityMaxRaw);
+        const stationSummaries = [...cityXml.matchAll(/<IntensityStation>([\s\S]*?)<\/IntensityStation>/g)]
+          .map(([, stationXml]) => {
+            const stationName = firstMatch(stationXml, /<Name>([\s\S]*?)<\/Name>/);
+            const stationIntRaw = firstMatch(stationXml, /<Int>([\s\S]*?)<\/Int>/);
+            const stationInt = intensityLabel(stationIntRaw);
+            const regionId = regionIdForEarthquakeBlock(`${prefName} ${cityName} ${stationName}`);
+            if (regionId) {
+              regions[regionId] = Math.max(regions[regionId] || 0, intensityRank(stationIntRaw), intensityRank(cityMaxRaw), intensityRank(prefMaxRaw));
+            }
+            return [stationName, stationInt].filter(Boolean).join(" ");
+          })
+          .filter(Boolean)
+          .slice(0, 8)
+          .join("、");
+        return [cityName, cityMax, stationSummaries].filter(Boolean).join(" ");
+      })
+      .filter(Boolean)
+      .slice(0, 8)
+      .join("。");
+    return [prefName, prefMax, citySummaries].filter(Boolean).join(" ");
+  });
+
+  return {
+    text: prefSummaries.filter(Boolean).join("。"),
+    regions
+  };
+}
+
+function shouldFetchLinkedJmaXml(entry) {
+  const text = `${entry.title || ""} ${entry.content || ""}`;
+  return /震源・震度|各地の震度|震度速報|津波警報|津波注意報|津波情報|土砂災害警戒情報/.test(text);
+}
+
+async function enrichJmaEntries(entries) {
+  const enriched = [];
+  let fetched = 0;
+
+  for (const entry of entries) {
+    if (fetched >= 80 || !entry.url || !shouldFetchLinkedJmaXml(entry)) {
+      enriched.push(entry);
+      continue;
+    }
+
+    try {
+      const xml = await fetchText(entry.url);
+      fetched += 1;
+      const earthquakeObservation = extractEarthquakeObservation(xml);
+      const xmlText = stripTags(xml);
+      enriched.push({
+        ...entry,
+        hasSeismicObservation: Boolean(earthquakeObservation.text),
+        seismicRegions: earthquakeObservation.regions,
+        maxSeismicIntensity: Math.max(0, ...Object.values(earthquakeObservation.regions)),
+        content: compactText([entry.content, earthquakeObservation.text, xmlText].filter(Boolean).join(" "), 1200)
+      });
+    } catch {
+      enriched.push(entry);
+    }
+  }
+
+  return enriched;
+}
+
 function classifyEntry(entry) {
   const titleText = entry.title || "";
   const contentText = entry.content || "";
+
+  if (entry.hasSeismicObservation) {
+    if (entry.maxSeismicIntensity >= 5) return "red";
+    if (entry.maxSeismicIntensity >= 4) return "yellow";
+    return "green";
+  }
 
   // JMA generic titles often contain words like "特別警報・警報・注意報".
   // Red classification must come from the actual content, not the generic title.
@@ -575,6 +727,9 @@ function classifyEntry(entry) {
 }
 
 function entryMatchesRegion(entry, regionId) {
+  if (entry.hasSeismicObservation) {
+    return (entry.seismicRegions[regionId] || 0) >= 4;
+  }
   const text = `${entry.title} ${entry.content} ${entry.author}`;
   return regionKeywords[regionId].some((keyword) => text.includes(keyword));
 }
@@ -614,7 +769,7 @@ async function fetchJmaSummaries() {
   for (const feed of jmaFeeds) {
     try {
       const xml = await fetchText(feed.url);
-      const entries = parseAtomEntries(xml, feed);
+      const entries = await enrichJmaEntries(parseAtomEntries(xml, feed));
       feedResults.push({
         id: feed.id,
         label: feed.label,
@@ -963,6 +1118,84 @@ function buildCriticalEvents(regions) {
     .slice(0, 6);
 }
 
+function notificationKeyForEvent(event) {
+  const summary = (event.summary || "")
+    .replace(/[０-９0-9]+日/g, "")
+    .replace(/[０-９0-9]+時/g, "")
+    .replace(/\s+/g, "");
+  return `${event.regionId}:${event.type}:${event.label}:${summary.slice(0, 90)}`;
+}
+
+function immediateRuleForEvent(event) {
+  const text = `${event.label || ""} ${event.summary || ""}`;
+  return notificationImmediateRules.find((rule) => {
+    if (event.type !== rule.type) return false;
+    if (rule.regionIds && !rule.regionIds.includes(event.regionId)) return false;
+    return includesAny(text, rule.terms);
+  });
+}
+
+function hoursSince(value, nowMs) {
+  const parsed = Date.parse(value || "");
+  if (Number.isNaN(parsed)) return Number.POSITIVE_INFINITY;
+  return (nowMs - parsed) / (60 * 60 * 1000);
+}
+
+function buildNotificationLayer(criticalEvents, existingNotifications = {}) {
+  const now = nowInJapan();
+  const nowMs = Date.parse(now);
+  const previousQueued = existingNotifications.deliveryStatus === "gmail-sent"
+    ? existingNotifications.state?.lastQueuedByKey || {}
+    : {};
+  const candidates = criticalEvents
+    .map((event) => ({
+      event,
+      rule: immediateRuleForEvent(event)
+    }))
+    .filter(({ event, rule }) => event.level === "red" || rule)
+    .map((event) => {
+      const key = notificationKeyForEvent(event.event);
+      const lastQueuedAt = previousQueued[key];
+      const hours = hoursSince(lastQueuedAt, nowMs);
+      const cooldownActive = hours < notificationCooldownHours;
+      return {
+        key,
+        urgency: event.rule ? "immediate" : "digest",
+        reason: event.rule ? event.rule.label : "紅色事件 24 小時摘要",
+        cooldownHours: notificationCooldownHours,
+        cooldownActive,
+        lastQueuedAt: lastQueuedAt || null,
+        event: event.event
+      };
+    });
+
+  const queued = candidates.filter((candidate) => {
+    if (candidate.urgency === "immediate") return !candidate.lastQueuedAt;
+    return !candidate.cooldownActive;
+  });
+
+  return {
+    checkedAt: now,
+    deliveryStatus: "not-configured",
+    recommendedChannel: "Gmail SMTP after GitHub Secrets are configured",
+    summary: candidates.length
+      ? `目前符合通知規則的事件 ${candidates.length} 件；本次可送出 ${queued.length} 件。`
+      : "目前沒有符合通知規則的紅色事件。",
+    policy: {
+      digest: "只通知紅色事件；同一事件每 24 小時最多一次。",
+      immediate: "三區域震度5以上、青森/岩手津波注意報以上、三區域土砂災害警戒情報以上、熊傷人可列為立即推送。",
+      quiet: "黃色事件、營運異常、例行注意報不推送，避免噪音。",
+      limitation: "GitHub Pages 本身不能主動背景推播；目前選擇由 GitHub Actions 透過 Gmail 寄信。"
+    },
+    candidates,
+    queued,
+    suppressedCount: candidates.length - queued.length,
+    state: {
+      lastQueuedByKey: previousQueued
+    }
+  };
+}
+
 async function main() {
   const existing = JSON.parse(await readFile(dataPath, "utf8"));
   const jma = await fetchJmaSummaries();
@@ -1000,6 +1233,9 @@ async function main() {
       ? "JMA XML 部分 feed 抓取失敗，請手動確認官方頁。"
       : "JMA XML 抓取失敗，請手動確認官方頁。";
 
+  const criticalEvents = buildCriticalEvents(regions);
+  const notifications = buildNotificationLayer(criticalEvents, existing.notifications);
+
   const updated = {
     ...existing,
     generatedAt: nowInJapan(),
@@ -1007,7 +1243,8 @@ async function main() {
     jma,
     bear,
     operation,
-    criticalEvents: buildCriticalEvents(regions),
+    criticalEvents,
+    notifications,
     overall: {
       ...existing.overall,
       level,
