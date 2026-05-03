@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-03T02:30:29+09:00",
+  "generatedAt": "2026-05-03T11:07:29+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "yellow",
@@ -97,28 +97,28 @@
         "summary": "JMA 近期相關電文 3 件。",
         "items": [
           {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-02T08:10:41Z",
+            "level": "green",
+            "title": "地方気象情報",
+            "updated": "2026-05-03T01:38:50Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502081042_0_VPWW53_017000.xml"
+            "summary": "【雪に関する北海道地方気象情報】北海道地方は、オホーツク海側を中心に４日昼過ぎから５日にかけて湿った雪が降り積雪状態となる所があるでしょう。積雪や路面の凍結による交通障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503013850_0_VPCJ50_016000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-02T08:10:41Z",
+            "updated": "2026-05-03T00:46:26Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502081042_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、３日夕方から濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503004626_0_VPWW54_017000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-02T01:12:05Z",
+            "updated": "2026-05-03T00:46:26Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２日夕方まで強風や高波に、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502011206_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、３日夕方から濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503004626_0_VPWW53_017000.xml"
           }
         ]
       }
@@ -232,18 +232,10 @@
           }
         ],
         "latest": {
-          "level": "red",
-          "checkedAt": "2026-05-03T02:30:28+09:00",
+          "level": "yellow",
+          "checkedAt": "2026-05-03T11:07:27+09:00",
           "summary": "公式營運情報 3 件を確認。",
           "items": [
-            {
-              "level": "red",
-              "title": "現在のロープウェー運行状況",
-              "updated": "2026-04-10",
-              "source": "八甲田ロープウェー",
-              "summary": "山頂駅付近強風の為、終日運休となっております。Due to strong winds, the service is suspended all day. / 天候。 weather あめ・きり Rain・Mist。2℃。山麓。 Base Station：11℃ 。 風速。 wind 北西 N...",
-              "url": "https://hakkoda-ropeway.jp/"
-            },
             {
               "level": "yellow",
               "title": "【お知らせ】ゴールデンウイーク期間中の一般路線バスの運行について",
@@ -255,10 +247,18 @@
             {
               "level": "yellow",
               "title": "現在の運行情報",
-              "updated": "2026-05-03T02:30:28+09:00",
+              "updated": "2026-05-03T11:07:27+09:00",
               "source": "JR Bus 東北 運行情報",
               "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
               "url": "https://www.jrbustohoku.co.jp/service/"
+            },
+            {
+              "level": "yellow",
+              "title": "現在のロープウェー運行状況",
+              "updated": "2026-04-10",
+              "source": "八甲田ロープウェー",
+              "summary": "Ropeway Operation / 天候。 weather くもり Cloudy。6.0℃。山麓。 Base Station：15.5℃ 。 風速。 wind 南西 SW・25ｍ/s 。 積雪。 snow depth 100 cm 。 降雪。 new snowfall 0 cm 。 視界。...",
+              "url": "https://hakkoda-ropeway.jp/"
             }
           ]
         }
@@ -287,26 +287,26 @@
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-02T11:26:15Z",
+            "updated": "2026-05-03T00:51:47Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502112615_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、３日夕方から濃霧による視程障害に注意してください。津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503005148_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-02T11:26:15Z",
+            "updated": "2026-05-03T00:51:47Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502112615_0_VPWW54_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、３日夕方から濃霧による視程障害に注意してください。津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503005148_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
-            "title": "府県気象情報",
-            "updated": "2026-05-02T07:14:42Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-02T21:22:42Z",
             "source": "JMA 随時情報",
-            "summary": "【暴風に関する青森県気象情報】三八上北の陸上では、暴風のおそれはなくなりましたが、２日夜のはじめ頃にかけて、西よりの強風に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502071443_0_VPFJ50_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502212243_0_VPWW53_020000.xml"
           }
         ]
       },
@@ -372,8 +372,8 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-03T02:30:26+09:00",
-          "summary": "公式熊情報 4 件を確認。",
+          "checkedAt": "2026-05-03T11:07:21+09:00",
+          "summary": "公式熊情報 3 件を確認。",
           "items": [
             {
               "level": "yellow",
@@ -392,15 +392,6 @@
               "source": "青森県 クマ情報",
               "summary": "直近５日間の出没件数が15件を上回ったため、ツキノワグマ出没警報を発表します。 。 １ 期間。 令和８年4月20日（月）～令和8年11月30日（月）。 。 ２ 区域。 県内全域。 。 ３ 県民の皆様へのお願い。 ・ クマの出没状況に気を配り、出没が相次いでいる場所には近づかないようにしてくださ...",
               "url": "https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html"
-            },
-            {
-              "level": "yellow",
-              "kind": "warning",
-              "title": "ツキノワグマ出没情報管理システムのご案内",
-              "updated": "2026/04/29",
-              "source": "酸湯温泉 周辺情報",
-              "summary": "青森県内全域で今年度もツキノワグマ出没警報が発表されています。（期間：令和８年４月２０日㈪～１１月３０日㈪）酸ヶ湯周辺での目撃情報は出ておりませんが、お客様に安心してご滞在いただくため、青森県で管理している 「ツキノワグマ出没情報管理システム」 のご利用をおすすめしております。本システムでは、...",
-              "url": "https://sukayu.jp/information3/"
             },
             {
               "level": "yellow",
@@ -537,7 +528,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-03T02:30:29+09:00",
+          "checkedAt": "2026-05-03T11:07:29+09:00",
           "summary": "公式營運情報 5 件を確認。",
           "items": [
             {
@@ -575,7 +566,7 @@
             {
               "level": "yellow",
               "title": "現在の運行情報",
-              "updated": "2026-05-03T02:30:29+09:00",
+              "updated": "2026-05-03T11:07:29+09:00",
               "source": "JR Bus 東北 運行情報",
               "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
               "url": "https://www.jrbustohoku.co.jp/service/"
@@ -607,26 +598,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-02T17:00:00Z",
+            "updated": "2026-05-03T02:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502170033_0_VFVO53_010000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-05-02T14:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502140033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日２１時から２４時までは火口から北方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503020033_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-02T12:16:05Z",
+            "updated": "2026-05-03T00:48:25Z",
             "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。内陸、沿岸北部では、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502121606_0_VPWW53_030000.xml"
+            "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503004826_0_VPWW53_030000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-03T00:48:25Z",
+            "source": "JMA 随時情報",
+            "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503004826_0_VPWW54_030000.xml"
           }
         ]
       },
@@ -667,7 +658,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-03T02:30:27+09:00",
+          "checkedAt": "2026-05-03T11:07:24+09:00",
           "summary": "公式熊情報 4 件を確認。",
           "items": [
             {
@@ -796,7 +787,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-05-03T02:30:25+09:00",
+    "checkedAt": "2026-05-03T11:07:17+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -804,14 +795,14 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 2314
+        "entries": 2298
       },
       {
         "id": "eqvol",
         "label": "JMA 地震火山情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml",
         "status": "ok",
-        "entries": 514
+        "entries": 513
       }
     ],
     "regions": {
@@ -820,28 +811,28 @@
         "summary": "JMA 近期相關電文 3 件。",
         "items": [
           {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-02T08:10:41Z",
+            "level": "green",
+            "title": "地方気象情報",
+            "updated": "2026-05-03T01:38:50Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502081042_0_VPWW53_017000.xml"
+            "summary": "【雪に関する北海道地方気象情報】北海道地方は、オホーツク海側を中心に４日昼過ぎから５日にかけて湿った雪が降り積雪状態となる所があるでしょう。積雪や路面の凍結による交通障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503013850_0_VPCJ50_016000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-02T08:10:41Z",
+            "updated": "2026-05-03T00:46:26Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502081042_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、３日夕方から濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503004626_0_VPWW54_017000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-02T01:12:05Z",
+            "updated": "2026-05-03T00:46:26Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２日夕方まで強風や高波に、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502011206_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、３日夕方から濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503004626_0_VPWW53_017000.xml"
           }
         ]
       },
@@ -852,26 +843,26 @@
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-02T11:26:15Z",
+            "updated": "2026-05-03T00:51:47Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502112615_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、３日夕方から濃霧による視程障害に注意してください。津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503005148_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-02T11:26:15Z",
+            "updated": "2026-05-03T00:51:47Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502112615_0_VPWW54_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、３日夕方から濃霧による視程障害に注意してください。津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503005148_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
-            "title": "府県気象情報",
-            "updated": "2026-05-02T07:14:42Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-02T21:22:42Z",
             "source": "JMA 随時情報",
-            "summary": "【暴風に関する青森県気象情報】三八上北の陸上では、暴風のおそれはなくなりましたが、２日夜のはじめ頃にかけて、西よりの強風に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502071443_0_VPFJ50_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、三八上北では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502212243_0_VPWW53_020000.xml"
           }
         ]
       },
@@ -882,26 +873,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-02T17:00:00Z",
+            "updated": "2026-05-03T02:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502170033_0_VFVO53_010000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-05-02T14:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502140033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日２１時から２４時までは火口から北方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503020033_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-02T12:16:05Z",
+            "updated": "2026-05-03T00:48:25Z",
             "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。内陸、沿岸北部では、３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260502121606_0_VPWW53_030000.xml"
+            "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503004826_0_VPWW53_030000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-03T00:48:25Z",
+            "source": "JMA 随時情報",
+            "summary": "【岩手県気象警報・注意報】内陸では、３日まで空気の乾燥した状態が続くため、火の取り扱いに、ここしばらくなだれに注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260503004826_0_VPWW54_030000.xml"
           }
         ]
       }
@@ -924,16 +915,16 @@
       "level": "yellow",
       "icon": "⚠️",
       "label": "岩手山",
-      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３日２１時から２４時までは火口から北方向に降灰が予想されます。",
       "source": "JMA 地震火山情報",
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260502170033_0_VFVO53_010000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260503020033_0_VFVO53_010000.xml"
     }
   ],
   "bear": {
-    "checkedAt": "2026-05-03T02:30:27+09:00",
+    "checkedAt": "2026-05-03T11:07:24+09:00",
     "status": "ok",
     "sources": [
       {
@@ -966,7 +957,7 @@
         "label": "酸湯温泉 周辺情報",
         "url": "https://sukayu.jp/information3/",
         "status": "ok",
-        "items": 1
+        "items": 0
       },
       {
         "regionId": "iwate",
@@ -996,8 +987,8 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-03T02:30:26+09:00",
-        "summary": "公式熊情報 4 件を確認。",
+        "checkedAt": "2026-05-03T11:07:21+09:00",
+        "summary": "公式熊情報 3 件を確認。",
         "items": [
           {
             "level": "yellow",
@@ -1020,15 +1011,6 @@
           {
             "level": "yellow",
             "kind": "warning",
-            "title": "ツキノワグマ出没情報管理システムのご案内",
-            "updated": "2026/04/29",
-            "source": "酸湯温泉 周辺情報",
-            "summary": "青森県内全域で今年度もツキノワグマ出没警報が発表されています。（期間：令和８年４月２０日㈪～１１月３０日㈪）酸ヶ湯周辺での目撃情報は出ておりませんが、お客様に安心してご滞在いただくため、青森県で管理している 「ツキノワグマ出没情報管理システム」 のご利用をおすすめしております。本システムでは、...",
-            "url": "https://sukayu.jp/information3/"
-          },
-          {
-            "level": "yellow",
-            "kind": "warning",
             "title": "ツキノワグマ出没警報を発表中です。",
             "updated": "2026-04-20 16:48:00",
             "source": "くまログあおもり",
@@ -1039,7 +1021,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-05-03T02:30:27+09:00",
+        "checkedAt": "2026-05-03T11:07:24+09:00",
         "summary": "公式熊情報 4 件を確認。",
         "items": [
           {
@@ -1083,7 +1065,7 @@
     }
   },
   "operation": {
-    "checkedAt": "2026-05-03T02:30:29+09:00",
+    "checkedAt": "2026-05-03T11:07:29+09:00",
     "status": "ok",
     "sources": [
       {
@@ -1121,18 +1103,10 @@
     ],
     "regions": {
       "aomori": {
-        "level": "red",
-        "checkedAt": "2026-05-03T02:30:28+09:00",
+        "level": "yellow",
+        "checkedAt": "2026-05-03T11:07:27+09:00",
         "summary": "公式營運情報 3 件を確認。",
         "items": [
-          {
-            "level": "red",
-            "title": "現在のロープウェー運行状況",
-            "updated": "2026-04-10",
-            "source": "八甲田ロープウェー",
-            "summary": "山頂駅付近強風の為、終日運休となっております。Due to strong winds, the service is suspended all day. / 天候。 weather あめ・きり Rain・Mist。2℃。山麓。 Base Station：11℃ 。 風速。 wind 北西 N...",
-            "url": "https://hakkoda-ropeway.jp/"
-          },
           {
             "level": "yellow",
             "title": "【お知らせ】ゴールデンウイーク期間中の一般路線バスの運行について",
@@ -1144,16 +1118,24 @@
           {
             "level": "yellow",
             "title": "現在の運行情報",
-            "updated": "2026-05-03T02:30:28+09:00",
+            "updated": "2026-05-03T11:07:27+09:00",
             "source": "JR Bus 東北 運行情報",
             "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
             "url": "https://www.jrbustohoku.co.jp/service/"
+          },
+          {
+            "level": "yellow",
+            "title": "現在のロープウェー運行状況",
+            "updated": "2026-04-10",
+            "source": "八甲田ロープウェー",
+            "summary": "Ropeway Operation / 天候。 weather くもり Cloudy。6.0℃。山麓。 Base Station：15.5℃ 。 風速。 wind 南西 SW・25ｍ/s 。 積雪。 snow depth 100 cm 。 降雪。 new snowfall 0 cm 。 視界。...",
+            "url": "https://hakkoda-ropeway.jp/"
           }
         ]
       },
       "iwate": {
         "level": "yellow",
-        "checkedAt": "2026-05-03T02:30:29+09:00",
+        "checkedAt": "2026-05-03T11:07:29+09:00",
         "summary": "公式營運情報 5 件を確認。",
         "items": [
           {
@@ -1191,7 +1173,7 @@
           {
             "level": "yellow",
             "title": "現在の運行情報",
-            "updated": "2026-05-03T02:30:29+09:00",
+            "updated": "2026-05-03T11:07:29+09:00",
             "source": "JR Bus 東北 運行情報",
             "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
             "url": "https://www.jrbustohoku.co.jp/service/"
