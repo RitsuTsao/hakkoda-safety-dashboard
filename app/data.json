@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-03T17:43:12+09:00",
+  "generatedAt": "2026-05-03T17:47:38+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "yellow",
@@ -233,7 +233,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-03T17:43:11+09:00",
+          "checkedAt": "2026-05-03T17:47:36+09:00",
           "summary": "公式營運情報 3 件を確認。",
           "items": [
             {
@@ -255,7 +255,7 @@
             {
               "level": "yellow",
               "title": "現在の運行情報",
-              "updated": "2026-05-03T17:43:11+09:00",
+              "updated": "2026-05-03T17:47:36+09:00",
               "source": "JR Bus 東北 運行情報",
               "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
               "url": "https://www.jrbustohoku.co.jp/service/"
@@ -372,7 +372,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-03T17:43:09+09:00",
+          "checkedAt": "2026-05-03T17:47:32+09:00",
           "summary": "公式熊情報 3 件を確認。",
           "items": [
             {
@@ -528,7 +528,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-03T17:43:12+09:00",
+          "checkedAt": "2026-05-03T17:47:38+09:00",
           "summary": "公式營運情報 5 件を確認。",
           "items": [
             {
@@ -566,7 +566,7 @@
             {
               "level": "yellow",
               "title": "現在の運行情報",
-              "updated": "2026-05-03T17:43:12+09:00",
+              "updated": "2026-05-03T17:47:38+09:00",
               "source": "JR Bus 東北 運行情報",
               "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
               "url": "https://www.jrbustohoku.co.jp/service/"
@@ -658,7 +658,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-03T17:43:10+09:00",
+          "checkedAt": "2026-05-03T17:47:34+09:00",
           "summary": "公式熊情報 4 件を確認。",
           "items": [
             {
@@ -787,7 +787,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-05-03T17:43:08+09:00",
+    "checkedAt": "2026-05-03T17:47:28+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -936,7 +936,7 @@
     }
   ],
   "bear": {
-    "checkedAt": "2026-05-03T17:43:10+09:00",
+    "checkedAt": "2026-05-03T17:47:34+09:00",
     "status": "ok",
     "sources": [
       {
@@ -999,7 +999,7 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-03T17:43:09+09:00",
+        "checkedAt": "2026-05-03T17:47:32+09:00",
         "summary": "公式熊情報 3 件を確認。",
         "items": [
           {
@@ -1033,7 +1033,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-05-03T17:43:10+09:00",
+        "checkedAt": "2026-05-03T17:47:34+09:00",
         "summary": "公式熊情報 4 件を確認。",
         "items": [
           {
@@ -1077,7 +1077,7 @@
     }
   },
   "operation": {
-    "checkedAt": "2026-05-03T17:43:12+09:00",
+    "checkedAt": "2026-05-03T17:47:38+09:00",
     "status": "ok",
     "sources": [
       {
@@ -1116,7 +1116,7 @@
     "regions": {
       "aomori": {
         "level": "red",
-        "checkedAt": "2026-05-03T17:43:11+09:00",
+        "checkedAt": "2026-05-03T17:47:36+09:00",
         "summary": "公式營運情報 3 件を確認。",
         "items": [
           {
@@ -1138,7 +1138,7 @@
           {
             "level": "yellow",
             "title": "現在の運行情報",
-            "updated": "2026-05-03T17:43:11+09:00",
+            "updated": "2026-05-03T17:47:36+09:00",
             "source": "JR Bus 東北 運行情報",
             "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
             "url": "https://www.jrbustohoku.co.jp/service/"
@@ -1147,7 +1147,7 @@
       },
       "iwate": {
         "level": "yellow",
-        "checkedAt": "2026-05-03T17:43:12+09:00",
+        "checkedAt": "2026-05-03T17:47:38+09:00",
         "summary": "公式營運情報 5 件を確認。",
         "items": [
           {
@@ -1185,7 +1185,7 @@
           {
             "level": "yellow",
             "title": "現在の運行情報",
-            "updated": "2026-05-03T17:43:12+09:00",
+            "updated": "2026-05-03T17:47:38+09:00",
             "source": "JR Bus 東北 運行情報",
             "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
             "url": "https://www.jrbustohoku.co.jp/service/"
@@ -1195,7 +1195,7 @@
     }
   },
   "notifications": {
-    "checkedAt": "2026-05-03T17:43:12+09:00",
+    "checkedAt": "2026-05-03T17:47:38+09:00",
     "deliveryStatus": "not-configured",
     "recommendedChannel": "Gmail SMTP after GitHub Secrets are configured",
     "summary": "目前符合通知規則的事件 1 件；本次可送出 1 件。",
