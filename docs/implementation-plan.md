@@ -46,6 +46,7 @@ Implemented scope:
 - JMA XML feed summaries.
 - Human-readable official JMA links for visual events.
 - Bear source manual workflows plus conservative official-page summaries.
+- Aomori `くまログあおもり` previous-day count and Sukayu / Hakkoda activity-area bear rules.
 - Trip-operation panels for Hakkoda Ropeway, JR Bus Tohoku, and Ryusendo.
 - Landslide / debris-flow official manual-check panels.
 
@@ -54,12 +55,13 @@ Implemented scope:
 - Complete.
 
 - Generates notification candidates from high-signal disaster events only.
-- Marks 三區域震度5以上地震, 青森 / 岩手津波注意報以上, 三區域土砂災害警戒情報以上, and 熊傷人 as immediate-class candidates.
+- Marks 三區域震度5以上地震, 青森 / 岩手津波注意報以上, 三區域土砂災害警戒情報以上, 熊傷人, 青森前日熊情報超過15件, and 酸湯・八甲田山活動圈熊情報 as immediate-class candidates.
 - Sends selected notification candidates through Gmail after GitHub Secrets are configured.
 - Uses `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO` as GitHub repository secrets.
 - Keeps GitHub Pages as a display layer; GitHub Pages itself does not background-push.
 - `scripts/send-notifications.mjs` records successful Gmail delivery in `app/data.json`.
 - Same-event delivery is limited by the stored 24-hour state.
+- Iwate bear-injury dedupe keeps older summary-based keys and newer source-level keys compatible to avoid repeating the same long-running source page.
 
 Acceptance criteria:
 

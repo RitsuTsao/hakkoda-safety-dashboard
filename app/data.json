@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-16T22:05:03+09:00",
+  "generatedAt": "2026-05-17T01:37:32+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
-    "level": "yellow",
-    "message": "JMA XML 已更新或部分更新。請把本頁當作官方連結與離線判斷卡。",
+    "level": "red",
+    "message": "JMA XML 摘要偵測到紅色層級項目。請立刻開官方連結確認。",
     "notes": [
       "JMA XML 長期 feed 已更新。",
       "手機即時警報以 Safety tips、Yahoo! 防災速報、JMA 與現地指示為準。",
@@ -126,7 +126,7 @@
     {
       "id": "aomori",
       "title": "青森",
-      "level": "yellow",
+      "level": "red",
       "guidance": "涵蓋弘前、大鰐、青森、酸湯、八甲田、奧入瀨、十和田、八戶。重點是熊、豪雨土砂、山區健行與營運狀態。",
       "focus": [
         "八甲田與酸湯周邊停留期間，即使天氣好，也要同時確認熊推播、旅館公告、ロープウェー與巴士營運。",
@@ -233,13 +233,13 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-16T22:05:01+09:00",
+          "checkedAt": "2026-05-17T01:37:31+09:00",
           "summary": "公式營運情報 2 件を確認。",
           "items": [
             {
               "level": "yellow",
               "title": "現在の運行情報",
-              "updated": "2026-05-16T22:05:01+09:00",
+              "updated": "2026-05-17T01:37:31+09:00",
               "source": "JR Bus 東北 運行情報",
               "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
               "url": "https://www.jrbustohoku.co.jp/service/"
@@ -363,27 +363,134 @@
           }
         ],
         "latest": {
-          "level": "yellow",
-          "checkedAt": "2026-05-16T22:04:55+09:00",
-          "summary": "公式熊情報 3 件を確認。",
+          "level": "red",
+          "checkedAt": "2026-05-17T01:37:29+09:00",
+          "summary": "くまログあおもり 2026-05-16 の熊情報 36 件。",
+          "kumalog": {
+            "checkedAt": "2026-05-17T01:37:28+09:00",
+            "status": "ok",
+            "date": "2026-05-16",
+            "count": 36,
+            "threshold": 15,
+            "hakkodaFocusTerms": [
+              "八甲田",
+              "酸ヶ湯",
+              "酸湯",
+              "毛無岱",
+              "田茂萢",
+              "城ヶ倉",
+              "睡蓮沼",
+              "ロープウェー"
+            ],
+            "hakkodaCount": 0,
+            "injuryCount": 0,
+            "level": "red",
+            "summary": "くまログあおもり 2026-05-16 の熊情報 36 件。",
+            "items": [
+              {
+                "level": "red",
+                "kind": "kumalog-alert",
+                "title": "くまログあおもり 前日熊情報",
+                "updated": "2026-05-16 23:59:59",
+                "source": "くまログあおもり",
+                "summary": "前一日 2026-05-16 の熊情報が 36 件で、基準 15 件を超過。",
+                "url": "https://kumalog-aomori.info/",
+                "kumalogDate": "2026-05-16",
+                "kumalogCount": 36
+              },
+              {
+                "level": "yellow",
+                "kind": "sighting",
+                "title": "目撃: 青森市 〒030-0802 青森県青森市本町１２",
+                "updated": "2026-05-16 23:42:00",
+                "source": "くまログあおもり",
+                "summary": "ツキノワグマ 目撃 / こわかった",
+                "url": "https://kumalog-aomori.info/",
+                "kumalogId": 8647
+              },
+              {
+                "level": "yellow",
+                "kind": "sighting",
+                "title": "目撃: 青森市 〒030-0943 青森県青森市幸畑１",
+                "updated": "2026-05-16 22:10:00",
+                "source": "くまログあおもり",
+                "summary": "ツキノワグマ 目撃 / 親子クマ青森大学付近で目撃",
+                "url": "https://kumalog-aomori.info/",
+                "kumalogId": 8645
+              },
+              {
+                "level": "yellow",
+                "kind": "sighting",
+                "title": "目撃: 青森市 〒038-0042 青森県青森市新城７３９",
+                "updated": "2026-05-16 21:31:00",
+                "source": "くまログあおもり",
+                "summary": "ツキノワグマ 目撃 / 旧ロックマンの旧道クマが歩いている 西部市民センターか津軽新城駅方向へ向かったと思う",
+                "url": "https://kumalog-aomori.info/",
+                "kumalogId": 8643
+              },
+              {
+                "level": "yellow",
+                "kind": "sighting",
+                "title": "目撃: 青森市 〒030-0847 青森県青森市東大野１２",
+                "updated": "2026-05-16 21:10:00",
+                "source": "くまログあおもり",
+                "summary": "ツキノワグマ 目撃",
+                "url": "https://kumalog-aomori.info/",
+                "kumalogId": 8646
+              }
+            ]
+          },
           "items": [
             {
-              "level": "yellow",
-              "kind": "sighting",
-              "title": "クマ等の出没情報",
-              "updated": "2026年5月12日",
-              "source": "青森市 クマ情報",
-              "summary": "青森市では、下記SNS・市公式LINEにおいて有害鳥獣に関する情報を発信していますので、ご参照ください。 青森県のクマ出没情報管理システム「くまログあおもり」では1件ごとに出没マップなどの詳細を確認できますので、こちらもご活用ください。 青森県クマ出没情報管理システム「くまログあおもり」 （外...",
-              "url": "https://www.city.aomori.aomori.jp/kurashi_kankyo/kankyo/1002085/1010230.html"
+              "level": "red",
+              "kind": "kumalog-alert",
+              "title": "くまログあおもり 前日熊情報",
+              "updated": "2026-05-16 23:59:59",
+              "source": "くまログあおもり",
+              "summary": "前一日 2026-05-16 の熊情報が 36 件で、基準 15 件を超過。",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogDate": "2026-05-16",
+              "kumalogCount": 36
             },
             {
               "level": "yellow",
-              "kind": "warning",
-              "title": "クマの出没に注意してください！",
-              "updated": "2026年4月21日",
-              "source": "青森県 クマ情報",
-              "summary": "直近５日間の出没件数が15件を上回ったため、ツキノワグマ出没警報を発表します。 。 １ 期間。 令和８年4月20日（月）～令和8年11月30日（月）。 。 ２ 区域。 県内全域。 。 ３ 県民の皆様へのお願い。 ・ クマの出没状況に気を配り、出没が相次いでいる場所には近づかないようにしてくださ...",
-              "url": "https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html"
+              "kind": "sighting",
+              "title": "目撃: 青森市 〒030-0802 青森県青森市本町１２",
+              "updated": "2026-05-16 23:42:00",
+              "source": "くまログあおもり",
+              "summary": "ツキノワグマ 目撃 / こわかった",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogId": 8647
+            },
+            {
+              "level": "yellow",
+              "kind": "sighting",
+              "title": "目撃: 青森市 〒030-0943 青森県青森市幸畑１",
+              "updated": "2026-05-16 22:10:00",
+              "source": "くまログあおもり",
+              "summary": "ツキノワグマ 目撃 / 親子クマ青森大学付近で目撃",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogId": 8645
+            },
+            {
+              "level": "yellow",
+              "kind": "sighting",
+              "title": "目撃: 青森市 〒038-0042 青森県青森市新城７３９",
+              "updated": "2026-05-16 21:31:00",
+              "source": "くまログあおもり",
+              "summary": "ツキノワグマ 目撃 / 旧ロックマンの旧道クマが歩いている 西部市民センターか津軽新城駅方向へ向かったと思う",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogId": 8643
+            },
+            {
+              "level": "yellow",
+              "kind": "sighting",
+              "title": "目撃: 青森市 〒030-0847 青森県青森市東大野１２",
+              "updated": "2026-05-16 21:10:00",
+              "source": "くまログあおもり",
+              "summary": "ツキノワグマ 目撃",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogId": 8646
             },
             {
               "level": "yellow",
@@ -401,7 +508,7 @@
     {
       "id": "iwate",
       "title": "岩手",
-      "level": "yellow",
+      "level": "red",
       "guidance": "涵蓋龍泉洞、岩泉、宮古、淨土之濱、花卷。重點是地震後交通、土砂、熊出沒、龍泉洞營運、宮古沿海津波與花卷返程。",
       "focus": [
         "岩手熊資訊以官方 Bears LINE 推播與岩泉町地圖為優先。",
@@ -520,7 +627,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-16T22:05:03+09:00",
+          "checkedAt": "2026-05-17T01:37:32+09:00",
           "summary": "公式營運情報 4 件を確認。",
           "items": [
             {
@@ -550,7 +657,7 @@
             {
               "level": "yellow",
               "title": "現在の運行情報",
-              "updated": "2026-05-16T22:05:03+09:00",
+              "updated": "2026-05-17T01:37:32+09:00",
               "source": "JR Bus 東北 運行情報",
               "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
               "url": "https://www.jrbustohoku.co.jp/service/"
@@ -582,6 +689,14 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
+            "updated": "2026-05-16T14:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516140033_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
             "updated": "2026-05-16T11:00:00Z",
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１６日２１時から２４時までは火口から北東方向、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
@@ -594,14 +709,6 @@
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１６日２１時から２４時までは火口から北東方向、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260516080033_0_VFVO53_010000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-16T06:10:39Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、ここしばらく空気の乾燥した状態が続くため、火の取り扱いに注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516061039_0_VPWW54_030000.xml"
           }
         ]
       },
@@ -642,8 +749,8 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-16T22:04:58+09:00",
-          "summary": "公式熊情報 4 件を確認。",
+          "checkedAt": "2026-05-17T01:37:30+09:00",
+          "summary": "公式熊情報 5 件を確認。",
           "items": [
             {
               "level": "red",
@@ -680,6 +787,15 @@
               "source": "岩泉町 鳥獣被害対策",
               "summary": "ツキノワグマ出没等情報マップについて",
               "url": "https://www.town.iwaizumi.lg.jp/docs/2025120800017/"
+            },
+            {
+              "level": "yellow",
+              "kind": "warning",
+              "title": "ツキノワグマの出没に関する警報の発表について",
+              "updated": "2025年08月22日",
+              "source": "岩泉町 鳥獣被害対策",
+              "summary": "ツキノワグマの出没に関する警報の発表について",
+              "url": "https://www.town.iwaizumi.lg.jp/docs/2025070700030/"
             }
           ]
         }
@@ -771,7 +887,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-05-16T22:04:50+09:00",
+    "checkedAt": "2026-05-17T01:37:27+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -786,7 +902,7 @@
         "label": "JMA 地震火山情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml",
         "status": "ok",
-        "entries": 517
+        "entries": 514
       }
     ],
     "regions": {
@@ -857,6 +973,14 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
+            "updated": "2026-05-16T14:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516140033_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
             "updated": "2026-05-16T11:00:00Z",
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１６日２１時から２４時までは火口から北東方向、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
@@ -869,20 +993,24 @@
             "source": "JMA 地震火山情報",
             "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１６日２１時から２４時までは火口から北東方向、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260516080033_0_VFVO53_010000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-16T06:10:39Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、ここしばらく空気の乾燥した状態が続くため、火の取り扱いに注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516061039_0_VPWW54_030000.xml"
           }
         ]
       }
     }
   },
   "criticalEvents": [
+    {
+      "regionId": "aomori",
+      "level": "red",
+      "icon": "🐻",
+      "label": "青森 熊情報多発",
+      "summary": "2026-05-16 のくまログあおもり熊情報が 36 件で、基準 15 件を超過。",
+      "source": "くまログあおもり",
+      "type": "aomori-bear-volume",
+      "priority": 1092,
+      "url": "https://kumalog-aomori.info/",
+      "notificationKey": "aomori:aomori-bear-volume:2026-05-16"
+    },
     {
       "regionId": "iwate",
       "level": "red",
@@ -892,19 +1020,20 @@
       "source": "岩手県 人身被害",
       "type": "bear-injury",
       "priority": 1088,
-      "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1056087.html"
+      "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1056087.html",
+      "notificationKey": "iwate:bear-injury:https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1056087.html"
     },
     {
       "regionId": "iwate",
       "level": "yellow",
       "icon": "⚠️",
       "label": "岩手山",
-      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１６日２１時から２４時までは火口から北東方向、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
+      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
       "source": "JMA 地震火山情報",
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260516110033_0_VFVO53_010000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260516140033_0_VFVO53_010000.xml"
     },
     {
       "regionId": "aomori",
@@ -920,9 +1049,17 @@
     }
   ],
   "bear": {
-    "checkedAt": "2026-05-16T22:04:58+09:00",
+    "checkedAt": "2026-05-17T01:37:30+09:00",
     "status": "ok",
     "sources": [
+      {
+        "regionId": "aomori",
+        "id": "kumalog-sightings",
+        "label": "くまログあおもり 出没情報",
+        "url": "https://kumalog-aomori.info/",
+        "status": "ok",
+        "items": 36
+      },
       {
         "regionId": "aomori",
         "id": "kumalog-news",
@@ -982,27 +1119,134 @@
     ],
     "regions": {
       "aomori": {
-        "level": "yellow",
-        "checkedAt": "2026-05-16T22:04:55+09:00",
-        "summary": "公式熊情報 3 件を確認。",
+        "level": "red",
+        "checkedAt": "2026-05-17T01:37:29+09:00",
+        "summary": "くまログあおもり 2026-05-16 の熊情報 36 件。",
+        "kumalog": {
+          "checkedAt": "2026-05-17T01:37:28+09:00",
+          "status": "ok",
+          "date": "2026-05-16",
+          "count": 36,
+          "threshold": 15,
+          "hakkodaFocusTerms": [
+            "八甲田",
+            "酸ヶ湯",
+            "酸湯",
+            "毛無岱",
+            "田茂萢",
+            "城ヶ倉",
+            "睡蓮沼",
+            "ロープウェー"
+          ],
+          "hakkodaCount": 0,
+          "injuryCount": 0,
+          "level": "red",
+          "summary": "くまログあおもり 2026-05-16 の熊情報 36 件。",
+          "items": [
+            {
+              "level": "red",
+              "kind": "kumalog-alert",
+              "title": "くまログあおもり 前日熊情報",
+              "updated": "2026-05-16 23:59:59",
+              "source": "くまログあおもり",
+              "summary": "前一日 2026-05-16 の熊情報が 36 件で、基準 15 件を超過。",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogDate": "2026-05-16",
+              "kumalogCount": 36
+            },
+            {
+              "level": "yellow",
+              "kind": "sighting",
+              "title": "目撃: 青森市 〒030-0802 青森県青森市本町１２",
+              "updated": "2026-05-16 23:42:00",
+              "source": "くまログあおもり",
+              "summary": "ツキノワグマ 目撃 / こわかった",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogId": 8647
+            },
+            {
+              "level": "yellow",
+              "kind": "sighting",
+              "title": "目撃: 青森市 〒030-0943 青森県青森市幸畑１",
+              "updated": "2026-05-16 22:10:00",
+              "source": "くまログあおもり",
+              "summary": "ツキノワグマ 目撃 / 親子クマ青森大学付近で目撃",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogId": 8645
+            },
+            {
+              "level": "yellow",
+              "kind": "sighting",
+              "title": "目撃: 青森市 〒038-0042 青森県青森市新城７３９",
+              "updated": "2026-05-16 21:31:00",
+              "source": "くまログあおもり",
+              "summary": "ツキノワグマ 目撃 / 旧ロックマンの旧道クマが歩いている 西部市民センターか津軽新城駅方向へ向かったと思う",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogId": 8643
+            },
+            {
+              "level": "yellow",
+              "kind": "sighting",
+              "title": "目撃: 青森市 〒030-0847 青森県青森市東大野１２",
+              "updated": "2026-05-16 21:10:00",
+              "source": "くまログあおもり",
+              "summary": "ツキノワグマ 目撃",
+              "url": "https://kumalog-aomori.info/",
+              "kumalogId": 8646
+            }
+          ]
+        },
         "items": [
           {
-            "level": "yellow",
-            "kind": "sighting",
-            "title": "クマ等の出没情報",
-            "updated": "2026年5月12日",
-            "source": "青森市 クマ情報",
-            "summary": "青森市では、下記SNS・市公式LINEにおいて有害鳥獣に関する情報を発信していますので、ご参照ください。 青森県のクマ出没情報管理システム「くまログあおもり」では1件ごとに出没マップなどの詳細を確認できますので、こちらもご活用ください。 青森県クマ出没情報管理システム「くまログあおもり」 （外...",
-            "url": "https://www.city.aomori.aomori.jp/kurashi_kankyo/kankyo/1002085/1010230.html"
+            "level": "red",
+            "kind": "kumalog-alert",
+            "title": "くまログあおもり 前日熊情報",
+            "updated": "2026-05-16 23:59:59",
+            "source": "くまログあおもり",
+            "summary": "前一日 2026-05-16 の熊情報が 36 件で、基準 15 件を超過。",
+            "url": "https://kumalog-aomori.info/",
+            "kumalogDate": "2026-05-16",
+            "kumalogCount": 36
           },
           {
             "level": "yellow",
-            "kind": "warning",
-            "title": "クマの出没に注意してください！",
-            "updated": "2026年4月21日",
-            "source": "青森県 クマ情報",
-            "summary": "直近５日間の出没件数が15件を上回ったため、ツキノワグマ出没警報を発表します。 。 １ 期間。 令和８年4月20日（月）～令和8年11月30日（月）。 。 ２ 区域。 県内全域。 。 ３ 県民の皆様へのお願い。 ・ クマの出没状況に気を配り、出没が相次いでいる場所には近づかないようにしてくださ...",
-            "url": "https://www.pref.aomori.lg.jp/soshiki/kankyo/shizen/kuma_cyuui.html"
+            "kind": "sighting",
+            "title": "目撃: 青森市 〒030-0802 青森県青森市本町１２",
+            "updated": "2026-05-16 23:42:00",
+            "source": "くまログあおもり",
+            "summary": "ツキノワグマ 目撃 / こわかった",
+            "url": "https://kumalog-aomori.info/",
+            "kumalogId": 8647
+          },
+          {
+            "level": "yellow",
+            "kind": "sighting",
+            "title": "目撃: 青森市 〒030-0943 青森県青森市幸畑１",
+            "updated": "2026-05-16 22:10:00",
+            "source": "くまログあおもり",
+            "summary": "ツキノワグマ 目撃 / 親子クマ青森大学付近で目撃",
+            "url": "https://kumalog-aomori.info/",
+            "kumalogId": 8645
+          },
+          {
+            "level": "yellow",
+            "kind": "sighting",
+            "title": "目撃: 青森市 〒038-0042 青森県青森市新城７３９",
+            "updated": "2026-05-16 21:31:00",
+            "source": "くまログあおもり",
+            "summary": "ツキノワグマ 目撃 / 旧ロックマンの旧道クマが歩いている 西部市民センターか津軽新城駅方向へ向かったと思う",
+            "url": "https://kumalog-aomori.info/",
+            "kumalogId": 8643
+          },
+          {
+            "level": "yellow",
+            "kind": "sighting",
+            "title": "目撃: 青森市 〒030-0847 青森県青森市東大野１２",
+            "updated": "2026-05-16 21:10:00",
+            "source": "くまログあおもり",
+            "summary": "ツキノワグマ 目撃",
+            "url": "https://kumalog-aomori.info/",
+            "kumalogId": 8646
           },
           {
             "level": "yellow",
@@ -1017,8 +1261,8 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-05-16T22:04:58+09:00",
-        "summary": "公式熊情報 4 件を確認。",
+        "checkedAt": "2026-05-17T01:37:30+09:00",
+        "summary": "公式熊情報 5 件を確認。",
         "items": [
           {
             "level": "red",
@@ -1055,13 +1299,22 @@
             "source": "岩泉町 鳥獣被害対策",
             "summary": "ツキノワグマ出没等情報マップについて",
             "url": "https://www.town.iwaizumi.lg.jp/docs/2025120800017/"
+          },
+          {
+            "level": "yellow",
+            "kind": "warning",
+            "title": "ツキノワグマの出没に関する警報の発表について",
+            "updated": "2025年08月22日",
+            "source": "岩泉町 鳥獣被害対策",
+            "summary": "ツキノワグマの出没に関する警報の発表について",
+            "url": "https://www.town.iwaizumi.lg.jp/docs/2025070700030/"
           }
         ]
       }
     }
   },
   "operation": {
-    "checkedAt": "2026-05-16T22:05:03+09:00",
+    "checkedAt": "2026-05-17T01:37:32+09:00",
     "status": "ok",
     "sources": [
       {
@@ -1100,13 +1353,13 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-16T22:05:01+09:00",
+        "checkedAt": "2026-05-17T01:37:31+09:00",
         "summary": "公式營運情報 2 件を確認。",
         "items": [
           {
             "level": "yellow",
             "title": "現在の運行情報",
-            "updated": "2026-05-16T22:05:01+09:00",
+            "updated": "2026-05-17T01:37:31+09:00",
             "source": "JR Bus 東北 運行情報",
             "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
             "url": "https://www.jrbustohoku.co.jp/service/"
@@ -1123,7 +1376,7 @@
       },
       "iwate": {
         "level": "yellow",
-        "checkedAt": "2026-05-16T22:05:03+09:00",
+        "checkedAt": "2026-05-17T01:37:32+09:00",
         "summary": "公式營運情報 4 件を確認。",
         "items": [
           {
@@ -1153,7 +1406,7 @@
           {
             "level": "yellow",
             "title": "現在の運行情報",
-            "updated": "2026-05-16T22:05:03+09:00",
+            "updated": "2026-05-17T01:37:32+09:00",
             "source": "JR Bus 東北 運行情報",
             "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
             "url": "https://www.jrbustohoku.co.jp/service/"
@@ -1163,10 +1416,10 @@
     }
   },
   "notifications": {
-    "checkedAt": "2026-05-16T22:05:03+09:00",
-    "deliveryStatus": "gmail-sent",
+    "checkedAt": "2026-05-17T01:37:32+09:00",
+    "deliveryStatus": "not-configured",
     "recommendedChannel": "Gmail SMTP after GitHub Secrets are configured",
-    "summary": "目前符合通知規則的事件 1 件；本次可送出 1 件。",
+    "summary": "目前符合通知規則的事件 2 件；本次可送出 1 件。",
     "policy": {
       "digest": "只通知紅色事件；同一事件每 24 小時最多一次。",
       "immediate": "三區域震度5以上、青森/岩手津波注意報以上、三區域土砂災害警戒情報以上、熊傷人可列為立即推送。",
@@ -1175,12 +1428,32 @@
     },
     "candidates": [
       {
-        "key": "iwate:bear-injury:岩手 熊被害:令和8年4月から5月までに、3件3名の人身被害が発生しています。クマの出没に十分に注意を払い、クマを目撃した場合は速やかに市町村または警察へ連絡してください。",
+        "key": "aomori:aomori-bear-volume:2026-05-16",
         "urgency": "immediate",
-        "reason": "熊傷人",
+        "reason": "青森前日熊情報超過15件",
         "cooldownHours": 24,
         "cooldownActive": false,
         "lastQueuedAt": null,
+        "event": {
+          "regionId": "aomori",
+          "level": "red",
+          "icon": "🐻",
+          "label": "青森 熊情報多発",
+          "summary": "2026-05-16 のくまログあおもり熊情報が 36 件で、基準 15 件を超過。",
+          "source": "くまログあおもり",
+          "type": "aomori-bear-volume",
+          "priority": 1092,
+          "url": "https://kumalog-aomori.info/",
+          "notificationKey": "aomori:aomori-bear-volume:2026-05-16"
+        }
+      },
+      {
+        "key": "iwate:bear-injury:https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1056087.html",
+        "urgency": "immediate",
+        "reason": "熊傷人",
+        "cooldownHours": 24,
+        "cooldownActive": true,
+        "lastQueuedAt": "2026-05-16T22:05:05+09:00",
         "event": {
           "regionId": "iwate",
           "level": "red",
@@ -1190,37 +1463,38 @@
           "source": "岩手県 人身被害",
           "type": "bear-injury",
           "priority": 1088,
-          "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1056087.html"
+          "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1056087.html",
+          "notificationKey": "iwate:bear-injury:https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1056087.html"
         }
       }
     ],
     "queued": [
       {
-        "key": "iwate:bear-injury:岩手 熊被害:令和8年4月から5月までに、3件3名の人身被害が発生しています。クマの出没に十分に注意を払い、クマを目撃した場合は速やかに市町村または警察へ連絡してください。",
+        "key": "aomori:aomori-bear-volume:2026-05-16",
         "urgency": "immediate",
-        "reason": "熊傷人",
+        "reason": "青森前日熊情報超過15件",
         "cooldownHours": 24,
         "cooldownActive": false,
         "lastQueuedAt": null,
         "event": {
-          "regionId": "iwate",
+          "regionId": "aomori",
           "level": "red",
           "icon": "🐻",
-          "label": "岩手 熊被害",
-          "summary": "令和8年4月1日から5月7日までに、3件3名の人身被害が発生しています。クマの出没に十分に注意を払い、クマを目撃した場合は速やかに市町村または警察へ連絡してください。",
-          "source": "岩手県 人身被害",
-          "type": "bear-injury",
-          "priority": 1088,
-          "url": "https://www.pref.iwate.jp/kurashikankyou/shizen/yasei/1049881/1056087.html"
+          "label": "青森 熊情報多発",
+          "summary": "2026-05-16 のくまログあおもり熊情報が 36 件で、基準 15 件を超過。",
+          "source": "くまログあおもり",
+          "type": "aomori-bear-volume",
+          "priority": 1092,
+          "url": "https://kumalog-aomori.info/",
+          "notificationKey": "aomori:aomori-bear-volume:2026-05-16"
         }
       }
     ],
-    "suppressedCount": 0,
+    "suppressedCount": 1,
     "state": {
       "lastQueuedByKey": {
         "iwate:bear-injury:岩手 熊被害:令和8年4月から5月までに、3件3名の人身被害が発生しています。クマの出没に十分に注意を払い、クマを目撃した場合は速やかに市町村または警察へ連絡してください。": "2026-05-16T22:05:05+09:00"
       }
-    },
-    "deliveredAt": "2026-05-16T22:05:05+09:00"
+    }
   }
 }

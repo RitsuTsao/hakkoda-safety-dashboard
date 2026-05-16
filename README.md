@@ -39,10 +39,11 @@ Later, consider Cloudflare Pages + Workers Cron if private deployment, KV storag
 - GitHub Actions updates `app/data.json` every 12 hours and can be run manually.
 - JMA XML updater v1 fetches JMA long-term Atom feeds and summarizes relevant entries for Hakodate, Aomori, and Iwate.
 - Visual Map v1 shows high-attention disaster events and links to human-readable official pages.
-- Bear information uses official/manual sources plus conservative official-page text extraction where stable.
+- Bear information uses `くまログあおもり` as the primary Aomori source, with official/manual sources and conservative text extraction where stable.
 - Offline Emergency Mode v1 keeps first-action guidance readable from the app shell.
 - Data Source v2 and Precision Sources v1 keep phone links focused on official, trip-relevant checks.
 - Notification Layer v1 is live: it queues high-signal disaster notifications, sends through Gmail from GitHub Actions, and records successful delivery to avoid same-event repeats within 24 hours.
+- Data Source Update 03.1 adds Aomori `くまログあおもり` previous-day and Hakkoda-focus bear rules, and stabilizes long-running Iwate bear-injury dedupe.
 - Gmail delivery has been verified with `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO` repository secrets.
 
 ## Safety Model

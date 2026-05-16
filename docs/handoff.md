@@ -99,6 +99,13 @@ Implemented:
   - Gmail delivery uses repository secrets `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO`.
   - Successful delivery writes `deliveryStatus: "gmail-sent"`, `deliveredAt`, and 24-hour same-event state back to `app/data.json`.
   - `app/service-worker.js` cache is bumped to `hakkoda-safety-v14`.
+- Data Source Update 03.1:
+  - Aomori bear information now treats `くまログあおもり` sightings JSON as the primary automated source.
+  - The updater checks the complete previous Japan-time day and marks Aomori red when `ツキノワグマ` records exceed 15.
+  - The updater also marks Aomori red when the source text matches the Sukayu / Hakkoda activity-area terms: `八甲田`, `酸ヶ湯`, `酸湯`, `毛無岱`, `田茂萢`, `城ヶ倉`, `睡蓮沼`, `ロープウェー`.
+  - Do not use exact map coordinates in this PWA. `くまログあおもり` records are converted into HTML summaries and grid-map event chips only.
+  - Do not use broad terms such as `青森` or `荒川`, and do not use `国道103` for the Hakkoda-focus rule unless Ritsu changes the trip scope.
+  - Notification dedupe now preserves existing state across data refreshes and recognizes older Iwate bear-injury keys so the same long-running prefectural injury page is not mailed every day.
 
 ## Version 1 Status
 
@@ -120,7 +127,24 @@ Implemented:
   - `GMAIL_APP_PASSWORD` must be the exact secret name; common typo was `GMAIL_APP_PASSWARD`.
   - `ALERT_EMAIL_TO` must end in the letter `O`, not zero.
   - Do not paste Gmail app passwords into chat or repo files.
-  - After travel, rotate or delete the Google App Password and repository secret if no longer needed.
+- After travel, rotate or delete the Google App Password and repository secret if no longer needed.
+
+## Latest In-Progress Iteration
+
+2026-05-17: Data Source Update 03.1 is in progress locally.
+
+- Scope:
+  - Make Aomori bear automation primary-source `くまログあおもり`.
+  - Add previous-day Japan-time count rule: over 15 `ツキノワグマ` records means red.
+  - Add Sukayu / Hakkoda activity-area term rule using only the approved terms listed above.
+  - Keep all PWA maps non-geospatial and HTML/grid based.
+  - Stabilize Iwate bear-injury notification dedupe.
+- Local verification so far:
+  - `node --check scripts/update-data.mjs`
+  - `node --check scripts/send-notifications.mjs`
+  - `node scripts/update-data.mjs`
+  - The 2026-05-16 `くまログあおもり` check returned 35 Aomori bear records, so Aomori generated a red `青森 熊情報多発` event.
+  - The current Iwate long-running bear-injury page remains visible as a candidate but is not queued because the older sent key is recognized.
 
 ## Latest Completed Iteration
 

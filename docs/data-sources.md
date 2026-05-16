@@ -91,6 +91,15 @@ Bear Info v1.1 implementation:
 - A red bear event is added to the visual map only when an official text item contains human-injury style terms such as `人身被害`, `襲われ`, or `死亡事故`.
 - This is still text extraction, not a precise geospatial map. If an official page layout changes, the dashboard should show manual links and the parsing should be adjusted.
 
+Data Source Update 03.1 implementation:
+
+- Aomori bear information now treats `くまログあおもり` as the primary automated source.
+- The updater reads the public `くまログあおもり` sightings JSON for the complete previous day in Japan time.
+- The dashboard does not use exact map coordinates for its own map. It converts the source fields into HTML summaries and visual-map event chips only.
+- Aomori bear level becomes red when the previous full Japan-time day has more than 15 `ツキノワグマ` records.
+- Aomori bear level also becomes red when `くまログあおもり` text matches the Sukayu / Hakkoda activity area terms: `八甲田`, `酸ヶ湯`, `酸湯`, `毛無岱`, `田茂萢`, `城ヶ倉`, `睡蓮沼`, `ロープウェー`.
+- Do not use broad terms such as `青森` or `荒川`, and do not use `国道103` for this rule unless the trip scope is changed later.
+
 Iwate implementation notes:
 
 - `Bears（ベアーズ）` is a good manual source, but currently should not be treated as a clean automated API.
@@ -147,9 +156,12 @@ Notification Layer v1 is live in Version 1.0.0.
   - 青森 / 岩手津波注意報以上, based on JMA tsunami wording `津波注意報`, `津波警報`, or `大津波警報`.
   - 三區域土砂災害警戒情報以上, based on `土砂災害警戒情報`, `大雨特別警報（土砂災害）`, or Kiki-kuru `災害切迫`.
   - 熊傷人, based on official bear text containing human-injury wording such as `人身被害`, `襲われ`, `負傷`, or `死亡事故`.
+  - 青森前日熊情報超過15件, based on `くまログあおもり` previous-day count in Japan time.
+  - 酸湯・八甲田山活動圈熊情報, based on the explicit 03.1 Hakkoda-focus term list above.
 - Routine yellow advisories, routine weather items, and trip-operation interruptions such as ropeway / bus / cave status should not notify.
 - Same-event digest delivery should be limited to once every 24 hours after external delivery is enabled.
 - Every candidate should link back to the dashboard-facing official source.
+- Iwate bear-injury dedupe uses a stable source-level key and also recognizes older summary-based keys, so the same long-running prefectural injury page is not sent every day.
 
 Delivery:
 

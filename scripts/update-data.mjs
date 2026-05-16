@@ -232,6 +232,19 @@ const bearWarningTerms = [
   "注意報"
 ];
 
+const kumalogSightingsUrl = "https://kumalog-aomori.info/api/ver1/sightings/post_list_external";
+const aomoriKumalogVolumeThreshold = 15;
+const hakkodaFocusTerms = [
+  "八甲田",
+  "酸ヶ湯",
+  "酸湯",
+  "毛無岱",
+  "田茂萢",
+  "城ヶ倉",
+  "睡蓮沼",
+  "ロープウェー"
+];
+
 const notificationCooldownHours = 24;
 
 const notificationImmediateRules = [
@@ -255,6 +268,18 @@ const notificationImmediateRules = [
     type: "bear-injury",
     label: "熊傷人",
     terms: bearInjuryTerms
+  },
+  {
+    type: "aomori-bear-volume",
+    label: "青森前日熊情報超過15件",
+    regionIds: ["aomori"],
+    terms: ["熊情報"]
+  },
+  {
+    type: "aomori-hakkoda-bear",
+    label: "酸湯・八甲田山活動圈熊情報",
+    regionIds: ["aomori"],
+    terms: ["酸湯", "八甲田", "活動圈"]
   }
 ];
 
@@ -271,6 +296,27 @@ function nowInJapan() {
     hour12: false
   });
   return `${formatter.format(date).replace(" ", "T")}+09:00`;
+}
+
+function formatDateInJapan(date) {
+  return new Intl.DateTimeFormat("sv-SE", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(date);
+}
+
+function previousFullDayInJapan(date = new Date()) {
+  const today = formatDateInJapan(date);
+  const todayStart = new Date(`${today}T00:00:00+09:00`);
+  const previousStart = new Date(todayStart.getTime() - 24 * 60 * 60 * 1000);
+  const previousDate = formatDateInJapan(previousStart);
+  return {
+    date: previousDate,
+    startdate: previousDate,
+    enddate: previousDate
+  };
 }
 
 function decodeXml(value = "") {
@@ -342,6 +388,23 @@ function makeBearItem({ title, summary, updated, source, url }) {
     source,
     summary: compactText(summary || title || "公式ページで熊関連情報を確認してください。"),
     url
+  };
+}
+
+function makeKumalogSightingItem(item, level = "yellow") {
+  const infoType = item.info_type_masters?.info_type_name || "出没情報";
+  const species = item.animal_species_masters?.animal_species_name || "ツキノワグマ";
+  const location = [item.municipality_name, item.address].filter(Boolean).join(" ");
+  const condition = item.sighting_condition ? ` / ${item.sighting_condition}` : "";
+  return {
+    level,
+    kind: level === "red" ? "sighting-alert" : "sighting",
+    title: compactText(`${infoType}: ${location || "青森県内"}`, 86),
+    updated: item.sighting_datetime,
+    source: "くまログあおもり",
+    summary: compactText(`${species} ${infoType}${condition}`, 150),
+    url: "https://kumalog-aomori.info/",
+    kumalogId: item.id
   };
 }
 
@@ -762,6 +825,10 @@ async function fetchText(url) {
   return response.text();
 }
 
+async function fetchJson(url) {
+  return JSON.parse(await fetchText(url));
+}
+
 async function fetchJmaSummaries() {
   const feedResults = [];
   const allEntries = [];
@@ -817,12 +884,112 @@ async function fetchJmaSummaries() {
   };
 }
 
+function isKumalogBearSighting(item) {
+  return item.animal_species_id === 1 || item.animal_species_masters?.animal_species_name === "ツキノワグマ";
+}
+
+function textForKumalogSighting(item) {
+  return [
+    item.address,
+    item.municipality_name,
+    item.sighting_condition,
+    item.info_type_masters?.info_type_name
+  ].filter(Boolean).join(" ");
+}
+
+function isHakkodaFocusSighting(item) {
+  return includesAny(textForKumalogSighting(item), hakkodaFocusTerms);
+}
+
+async function fetchAomoriKumalogSightings() {
+  const previousDay = previousFullDayInJapan();
+  const url = new URL(kumalogSightingsUrl);
+  url.searchParams.append("filter[startdate]", previousDay.startdate);
+  url.searchParams.append("filter[enddate]", previousDay.enddate);
+  url.searchParams.append("filter[animal_species_ids][]", "1");
+
+  const data = await fetchJson(url);
+  const bearSightings = (data.result || []).filter(isKumalogBearSighting);
+  const hakkodaSightings = bearSightings.filter(isHakkodaFocusSighting);
+  const injurySightings = bearSightings.filter((item) => item.info_type_masters?.info_type_name?.includes("人身被害"));
+  const redReasons = [];
+
+  if (bearSightings.length > aomoriKumalogVolumeThreshold) {
+    redReasons.push(`前一日 ${previousDay.date} の熊情報が ${bearSightings.length} 件で、基準 ${aomoriKumalogVolumeThreshold} 件を超過。`);
+  }
+  if (hakkodaSightings.length) {
+    redReasons.push(`酸湯・八甲田山活動圈の字詞に ${hakkodaSightings.length} 件命中。`);
+  }
+  if (injurySightings.length) {
+    redReasons.push(`人身被害情報 ${injurySightings.length} 件。`);
+  }
+
+  const headlineItems = [];
+  if (redReasons.length) {
+    headlineItems.push({
+      level: "red",
+      kind: "kumalog-alert",
+      title: "くまログあおもり 前日熊情報",
+      updated: `${previousDay.date} 23:59:59`,
+      source: "くまログあおもり",
+      summary: redReasons.join(" "),
+      url: "https://kumalog-aomori.info/",
+      kumalogDate: previousDay.date,
+      kumalogCount: bearSightings.length
+    });
+  }
+
+  const items = headlineItems
+    .concat(hakkodaSightings.slice(0, 3).map((item) => makeKumalogSightingItem(item, "red")))
+    .concat(bearSightings.slice(0, 4).map((item) => makeKumalogSightingItem(item)));
+
+  return {
+    checkedAt: nowInJapan(),
+    status: "ok",
+    date: previousDay.date,
+    count: bearSightings.length,
+    threshold: aomoriKumalogVolumeThreshold,
+    hakkodaFocusTerms,
+    hakkodaCount: hakkodaSightings.length,
+    injuryCount: injurySightings.length,
+    level: redReasons.length ? "red" : bearSightings.length ? "yellow" : "green",
+    summary: bearSightings.length
+      ? `くまログあおもり ${previousDay.date} の熊情報 ${bearSightings.length} 件。`
+      : `くまログあおもり ${previousDay.date} の熊情報は 0 件。`,
+    items
+  };
+}
+
 async function fetchBearSummaries() {
   const byRegion = {};
   const sourceResults = [];
+  let aomoriKumalogSightings = null;
+
+  try {
+    aomoriKumalogSightings = await fetchAomoriKumalogSightings();
+    sourceResults.push({
+      regionId: "aomori",
+      id: "kumalog-sightings",
+      label: "くまログあおもり 出没情報",
+      url: "https://kumalog-aomori.info/",
+      status: "ok",
+      items: aomoriKumalogSightings.count
+    });
+  } catch (error) {
+    sourceResults.push({
+      regionId: "aomori",
+      id: "kumalog-sightings",
+      label: "くまログあおもり 出没情報",
+      url: "https://kumalog-aomori.info/",
+      status: "failed",
+      error: error.message
+    });
+  }
 
   for (const [regionId, sources] of Object.entries(bearSources)) {
-    const items = [];
+    const items = regionId === "aomori" && aomoriKumalogSightings
+      ? [...aomoriKumalogSightings.items]
+      : [];
 
     for (const source of sources) {
       try {
@@ -851,17 +1018,22 @@ async function fetchBearSummaries() {
 
     const sortedItems = items
       .sort((a, b) => {
+        if (a.source === "くまログあおもり" && b.source !== "くまログあおもり") return -1;
+        if (b.source === "くまログあおもり" && a.source !== "くまログあおもり") return 1;
         if (a.level !== b.level) return a.level === "red" ? -1 : b.level === "red" ? 1 : 0;
         return String(b.updated || "").localeCompare(String(a.updated || ""));
       })
-      .slice(0, 4);
+      .slice(0, 6);
 
     byRegion[regionId] = {
       level: sortedItems.length ? highestLevel(sortedItems) : "yellow",
       checkedAt: nowInJapan(),
       summary: sortedItems.length
-        ? `公式熊情報 ${sortedItems.length} 件を確認。`
+        ? regionId === "aomori" && aomoriKumalogSightings
+          ? aomoriKumalogSightings.summary
+          : `公式熊情報 ${sortedItems.length} 件を確認。`
         : "公式熊情報を自動抽出できませんでした。手動で公式リンクを確認してください。",
+      kumalog: regionId === "aomori" ? aomoriKumalogSightings : undefined,
       items: sortedItems
     };
   }
@@ -946,6 +1118,7 @@ function mergeRegionLevels(region, jmaRegion, jmaStatus) {
 
 function mergeBearLevel(level, bearRegion) {
   if (!bearRegion) return level;
+  if (bearRegion.level === "red") return "red";
   if (bearRegion.level === "yellow" && level !== "red") return "yellow";
   return level;
 }
@@ -1054,11 +1227,44 @@ function normalizedEventKey(regionId, item) {
 function buildBearCriticalEvents(regions) {
   return regions.flatMap((region) => {
     const items = region.bearWorkflow?.latest?.items || [];
+    const kumalog = region.bearWorkflow?.latest?.kumalog;
+    const kumalogEvents = region.id === "aomori" && kumalog?.level === "red"
+      ? [
+          ...(kumalog.count > kumalog.threshold
+            ? [{
+                regionId: region.id,
+                level: "red",
+                icon: "🐻",
+                label: `${region.title} 熊情報多発`,
+                summary: `${kumalog.date} のくまログあおもり熊情報が ${kumalog.count} 件で、基準 ${kumalog.threshold} 件を超過。`,
+                source: "くまログあおもり",
+                type: "aomori-bear-volume",
+                priority: 1092,
+                url: "https://kumalog-aomori.info/",
+                notificationKey: `aomori:aomori-bear-volume:${kumalog.date}`
+              }]
+            : []),
+          ...(kumalog.hakkodaCount > 0
+            ? [{
+                regionId: region.id,
+                level: "red",
+                icon: "🐻",
+                label: `${region.title} 八甲田熊情報`,
+                summary: `酸湯・八甲田山活動圈の字詞に ${kumalog.hakkodaCount} 件命中。対象字詞: ${kumalog.hakkodaFocusTerms.join("、")}。`,
+                source: "くまログあおもり",
+                type: "aomori-hakkoda-bear",
+                priority: 1094,
+                url: "https://kumalog-aomori.info/",
+                notificationKey: `aomori:aomori-hakkoda-bear:${kumalog.date}:${kumalog.hakkodaCount}`
+              }]
+            : [])
+        ]
+      : [];
     const injuryItems = items.filter((item) => item.level === "red" && item.kind === "human-injury");
     const preferred = injuryItems.find((item) => item.source?.includes("人身被害"))
       || injuryItems.find((item) => item.title.includes("発生"))
       || injuryItems[0];
-    return (preferred ? [preferred] : [])
+    const injuryEvents = (preferred ? [preferred] : [])
       .map((item) => ({
         regionId: region.id,
         level: "red",
@@ -1068,8 +1274,12 @@ function buildBearCriticalEvents(regions) {
         source: item.source || "公式熊情報",
         type: "bear-injury",
         priority: 1088,
-        url: item.url
+        url: item.url,
+        notificationKey: item.kumalogId
+          ? `${region.id}:bear-injury:kumalog:${item.kumalogId}`
+          : `${region.id}:bear-injury:${item.url || item.source || "official"}`
       }));
+    return kumalogEvents.concat(injuryEvents);
   });
 }
 
@@ -1119,6 +1329,8 @@ function buildCriticalEvents(regions) {
 }
 
 function notificationKeyForEvent(event) {
+  if (event.notificationKey) return event.notificationKey;
+  if (event.type === "bear-injury" && event.url) return `${event.regionId}:${event.type}:${event.url}`;
   const summary = (event.summary || "")
     .replace(/[０-９0-9]+日/g, "")
     .replace(/[０-９0-9]+時/g, "")
@@ -1141,12 +1353,21 @@ function hoursSince(value, nowMs) {
   return (nowMs - parsed) / (60 * 60 * 1000);
 }
 
+function lastQueuedAtForEvent(event, key, previousQueued) {
+  if (previousQueued[key]) return previousQueued[key];
+  if (event.type !== "bear-injury") return null;
+
+  const legacyPrefix = `${event.regionId}:bear-injury:`;
+  return Object.entries(previousQueued)
+    .filter(([previousKey]) => previousKey.startsWith(legacyPrefix))
+    .map(([, value]) => value)
+    .sort((a, b) => Date.parse(b || 0) - Date.parse(a || 0))[0] || null;
+}
+
 function buildNotificationLayer(criticalEvents, existingNotifications = {}) {
   const now = nowInJapan();
   const nowMs = Date.parse(now);
-  const previousQueued = existingNotifications.deliveryStatus === "gmail-sent"
-    ? existingNotifications.state?.lastQueuedByKey || {}
-    : {};
+  const previousQueued = existingNotifications.state?.lastQueuedByKey || {};
   const candidates = criticalEvents
     .map((event) => ({
       event,
@@ -1155,7 +1376,7 @@ function buildNotificationLayer(criticalEvents, existingNotifications = {}) {
     .filter(({ event, rule }) => event.level === "red" || rule)
     .map((event) => {
       const key = notificationKeyForEvent(event.event);
-      const lastQueuedAt = previousQueued[key];
+      const lastQueuedAt = lastQueuedAtForEvent(event.event, key, previousQueued);
       const hours = hoursSince(lastQueuedAt, nowMs);
       const cooldownActive = hours < notificationCooldownHours;
       return {

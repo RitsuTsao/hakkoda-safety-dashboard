@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased - Data Source Update 03.1
+
+- Makes Aomori bear automation use `くまログあおもり` sightings as the primary source.
+- Adds a red Aomori bear rule when the previous full Japan-time day has more than 15 `ツキノワグマ` records.
+- Adds a red Sukayu / Hakkoda activity-area rule using the approved term list only.
+- Keeps PWA map output as HTML / grid-map presentation without exact map coordinates.
+- Stabilizes Iwate bear-injury notification dedupe for long-running official source pages.
+
 ## Version 1.0.0 - 2026-05-03
 
 First complete operational version of the Hakkoda Safety Dashboard.
