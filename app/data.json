@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T01:37:32+09:00",
+  "generatedAt": "2026-05-17T11:26:55+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "red",
@@ -99,26 +99,26 @@
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-16T00:45:41Z",
+            "updated": "2026-05-17T00:42:42Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１７日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516004541_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517004243_0_VPWW53_017000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-16T00:45:41Z",
+            "updated": "2026-05-17T00:42:42Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１７日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516004541_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517004243_0_VPWW54_017000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-15T06:30:25Z",
+            "updated": "2026-05-16T18:45:54Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１５日夜のはじめ頃から濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260515063026_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１７日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516184554_0_VPWW53_017000.xml"
           }
         ]
       }
@@ -233,13 +233,13 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-17T01:37:31+09:00",
+          "checkedAt": "2026-05-17T11:26:53+09:00",
           "summary": "公式營運情報 2 件を確認。",
           "items": [
             {
               "level": "yellow",
               "title": "現在の運行情報",
-              "updated": "2026-05-17T01:37:31+09:00",
+              "updated": "2026-05-17T11:26:53+09:00",
               "source": "JR Bus 東北 運行情報",
               "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
               "url": "https://www.jrbustohoku.co.jp/service/"
@@ -279,26 +279,26 @@
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-16T11:02:16Z",
+            "updated": "2026-05-17T00:48:45Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】注意報を解除します。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516110217_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、１８日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517004846_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-16T11:02:16Z",
+            "updated": "2026-05-17T00:48:45Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】注意報を解除します。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516110217_0_VPWW54_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、１８日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517004846_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-16T01:07:23Z",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-16T18:50:48Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、１６日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516010724_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、１７日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516185048_0_VPWW54_020000.xml"
           }
         ]
       },
@@ -364,10 +364,10 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-17T01:37:29+09:00",
+          "checkedAt": "2026-05-17T11:26:46+09:00",
           "summary": "くまログあおもり 2026-05-16 の熊情報 36 件。",
           "kumalog": {
-            "checkedAt": "2026-05-17T01:37:28+09:00",
+            "checkedAt": "2026-05-17T11:26:42+09:00",
             "status": "ok",
             "date": "2026-05-16",
             "count": 36,
@@ -627,7 +627,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-17T01:37:32+09:00",
+          "checkedAt": "2026-05-17T11:26:55+09:00",
           "summary": "公式營運情報 4 件を確認。",
           "items": [
             {
@@ -657,7 +657,7 @@
             {
               "level": "yellow",
               "title": "現在の運行情報",
-              "updated": "2026-05-17T01:37:32+09:00",
+              "updated": "2026-05-17T11:26:55+09:00",
               "source": "JR Bus 東北 運行情報",
               "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
               "url": "https://www.jrbustohoku.co.jp/service/"
@@ -689,26 +689,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-16T14:00:00Z",
+            "updated": "2026-05-17T02:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516140033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日２１時から２４時までは火口から南東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517020034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-16T11:00:00Z",
+            "updated": "2026-05-16T23:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１６日２１時から２４時までは火口から北東方向、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516110033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向、１７日２１時から２４時までは火口から南東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516230033_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-16T08:00:00Z",
+            "updated": "2026-05-16T20:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１６日２１時から２４時までは火口から北東方向、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516080033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向、１７日２１時から２４時までは火口から南東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516200034_0_VFVO53_010000.xml"
           }
         ]
       },
@@ -749,7 +749,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-17T01:37:30+09:00",
+          "checkedAt": "2026-05-17T11:26:49+09:00",
           "summary": "公式熊情報 5 件を確認。",
           "items": [
             {
@@ -887,7 +887,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-05-17T01:37:27+09:00",
+    "checkedAt": "2026-05-17T11:26:41+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -895,14 +895,14 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 1830
+        "entries": 1801
       },
       {
         "id": "eqvol",
         "label": "JMA 地震火山情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml",
         "status": "ok",
-        "entries": 514
+        "entries": 512
       }
     ],
     "regions": {
@@ -913,26 +913,26 @@
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-16T00:45:41Z",
+            "updated": "2026-05-17T00:42:42Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１７日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516004541_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517004243_0_VPWW53_017000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-16T00:45:41Z",
+            "updated": "2026-05-17T00:42:42Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１７日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516004541_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517004243_0_VPWW54_017000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-15T06:30:25Z",
+            "updated": "2026-05-16T18:45:54Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１５日夜のはじめ頃から濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260515063026_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、１７日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516184554_0_VPWW53_017000.xml"
           }
         ]
       },
@@ -943,26 +943,26 @@
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-16T11:02:16Z",
+            "updated": "2026-05-17T00:48:45Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】注意報を解除します。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516110217_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、１８日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517004846_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-16T11:02:16Z",
+            "updated": "2026-05-17T00:48:45Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】注意報を解除します。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516110217_0_VPWW54_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、１８日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517004846_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-16T01:07:23Z",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-16T18:50:48Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、１６日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516010724_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】津軽、下北では、１７日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516185048_0_VPWW54_020000.xml"
           }
         ]
       },
@@ -973,26 +973,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-16T14:00:00Z",
+            "updated": "2026-05-17T02:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516140033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日２１時から２４時までは火口から南東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260517020034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-16T11:00:00Z",
+            "updated": "2026-05-16T23:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１６日２１時から２４時までは火口から北東方向、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516110033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向、１７日２１時から２４時までは火口から南東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516230033_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-16T08:00:00Z",
+            "updated": "2026-05-16T20:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１６日２１時から２４時までは火口から北東方向、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516080033_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向、１７日２１時から２４時までは火口から南東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260516200034_0_VFVO53_010000.xml"
           }
         ]
       }
@@ -1028,28 +1028,16 @@
       "level": "yellow",
       "icon": "⚠️",
       "label": "岩手山",
-      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日０９時から１２時までは火口から東方向に降灰が予想されます。",
+      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、１７日２１時から２４時までは火口から南東方向に降灰が予想されます。",
       "source": "JMA 地震火山情報",
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260516140033_0_VFVO53_010000.xml"
-    },
-    {
-      "regionId": "aomori",
-      "level": "yellow",
-      "icon": "⚠️",
-      "label": "青森",
-      "summary": "【青森県気象警報・注意報】注意報を解除します。",
-      "source": "JMA 随時情報",
-      "type": "other",
-      "priority": 130,
-      "url": "https://www.jma.go.jp/bosai/map.html#contents=warning",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260516110217_0_VPWW53_020000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260517020034_0_VFVO53_010000.xml"
     }
   ],
   "bear": {
-    "checkedAt": "2026-05-17T01:37:30+09:00",
+    "checkedAt": "2026-05-17T11:26:49+09:00",
     "status": "ok",
     "sources": [
       {
@@ -1120,10 +1108,10 @@
     "regions": {
       "aomori": {
         "level": "red",
-        "checkedAt": "2026-05-17T01:37:29+09:00",
+        "checkedAt": "2026-05-17T11:26:46+09:00",
         "summary": "くまログあおもり 2026-05-16 の熊情報 36 件。",
         "kumalog": {
-          "checkedAt": "2026-05-17T01:37:28+09:00",
+          "checkedAt": "2026-05-17T11:26:42+09:00",
           "status": "ok",
           "date": "2026-05-16",
           "count": 36,
@@ -1261,7 +1249,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-05-17T01:37:30+09:00",
+        "checkedAt": "2026-05-17T11:26:49+09:00",
         "summary": "公式熊情報 5 件を確認。",
         "items": [
           {
@@ -1314,7 +1302,7 @@
     }
   },
   "operation": {
-    "checkedAt": "2026-05-17T01:37:32+09:00",
+    "checkedAt": "2026-05-17T11:26:55+09:00",
     "status": "ok",
     "sources": [
       {
@@ -1353,13 +1341,13 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-17T01:37:31+09:00",
+        "checkedAt": "2026-05-17T11:26:53+09:00",
         "summary": "公式營運情報 2 件を確認。",
         "items": [
           {
             "level": "yellow",
             "title": "現在の運行情報",
-            "updated": "2026-05-17T01:37:31+09:00",
+            "updated": "2026-05-17T11:26:53+09:00",
             "source": "JR Bus 東北 運行情報",
             "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
             "url": "https://www.jrbustohoku.co.jp/service/"
@@ -1376,7 +1364,7 @@
       },
       "iwate": {
         "level": "yellow",
-        "checkedAt": "2026-05-17T01:37:32+09:00",
+        "checkedAt": "2026-05-17T11:26:55+09:00",
         "summary": "公式營運情報 4 件を確認。",
         "items": [
           {
@@ -1406,7 +1394,7 @@
           {
             "level": "yellow",
             "title": "現在の運行情報",
-            "updated": "2026-05-17T01:37:32+09:00",
+            "updated": "2026-05-17T11:26:55+09:00",
             "source": "JR Bus 東北 運行情報",
             "summary": "平常の出発を予定しています。 なお、道路状況や天候等の急変により、遅延が発生する場合があります。",
             "url": "https://www.jrbustohoku.co.jp/service/"
@@ -1416,8 +1404,8 @@
     }
   },
   "notifications": {
-    "checkedAt": "2026-05-17T01:37:32+09:00",
-    "deliveryStatus": "not-configured",
+    "checkedAt": "2026-05-17T11:26:55+09:00",
+    "deliveryStatus": "gmail-sent",
     "recommendedChannel": "Gmail SMTP after GitHub Secrets are configured",
     "summary": "目前符合通知規則的事件 2 件；本次可送出 1 件。",
     "policy": {
@@ -1493,8 +1481,10 @@
     "suppressedCount": 1,
     "state": {
       "lastQueuedByKey": {
-        "iwate:bear-injury:岩手 熊被害:令和8年4月から5月までに、3件3名の人身被害が発生しています。クマの出没に十分に注意を払い、クマを目撃した場合は速やかに市町村または警察へ連絡してください。": "2026-05-16T22:05:05+09:00"
+        "iwate:bear-injury:岩手 熊被害:令和8年4月から5月までに、3件3名の人身被害が発生しています。クマの出没に十分に注意を払い、クマを目撃した場合は速やかに市町村または警察へ連絡してください。": "2026-05-16T22:05:05+09:00",
+        "aomori:aomori-bear-volume:2026-05-16": "2026-05-17T11:26:56+09:00"
       }
-    }
+    },
+    "deliveredAt": "2026-05-17T11:26:56+09:00"
   }
 }
