@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T11:39:29+09:00",
+  "generatedAt": "2026-05-22T23:23:40+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "red",
@@ -114,11 +114,11 @@
           },
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
+            "title": "気象警報・注意報（Ｈ２７）",
             "updated": "2026-05-21T01:03:14Z",
             "source": "JMA 随時情報",
             "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、２２日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260521010315_0_VPWW53_017000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260521010315_0_VPWW54_017000.xml"
           }
         ]
       }
@@ -233,18 +233,9 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-22T11:39:16+09:00",
-          "summary": "公式營運情報 1 件を確認。",
-          "items": [
-            {
-              "level": "yellow",
-              "title": "現在のロープウェー運行状況",
-              "updated": "2026-04-10",
-              "source": "八甲田ロープウェー",
-              "summary": "Ropeway Operation / 天候。 weather 。 風速。 wind 。 。 視界。 visibility * 。",
-              "url": "https://hakkoda-ropeway.jp/"
-            }
-          ]
+          "checkedAt": "2026-05-22T23:23:28+09:00",
+          "summary": "公式營運情報を自動抽出できませんでした。手動で公式リンクを確認してください。",
+          "items": []
         }
       },
       "scenarios": [
@@ -286,11 +277,11 @@
           },
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
+            "title": "気象警報・注意報（Ｈ２７）",
             "updated": "2026-05-21T19:06:12Z",
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、濃霧による視程障害に注意してください。津軽では、空気の乾燥した状態が続くため、火の取り扱いに注意してください。下北、三八上北では、低温に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260521190613_0_VPWW53_020000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260521190613_0_VPWW54_020000.xml"
           }
         ]
       },
@@ -356,10 +347,10 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-22T11:39:02+09:00",
+          "checkedAt": "2026-05-22T23:23:04+09:00",
           "summary": "くまログあおもり 2026-05-21 の熊情報 2 件。",
           "kumalog": {
-            "checkedAt": "2026-05-22T11:38:57+09:00",
+            "checkedAt": "2026-05-22T23:23:00+09:00",
             "status": "ok",
             "date": "2026-05-21",
             "count": 2,
@@ -575,7 +566,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-22T11:39:29+09:00",
+          "checkedAt": "2026-05-22T23:23:40+09:00",
           "summary": "公式營運情報 3 件を確認。",
           "items": [
             {
@@ -628,27 +619,27 @@
         "items": [
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-22T02:30:06Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、２３日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。岩手県では、２３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522023007_0_VPWW53_030000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-22T02:30:06Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、２３日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。岩手県では、２３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522023007_0_VPWW54_030000.xml"
+            "title": "降灰予報（定時）",
+            "updated": "2026-05-22T14:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２３日０９時から１２時までは火口から北西方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522140034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-22T02:00:00Z",
+            "updated": "2026-05-22T11:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２２日２１時から２４時までは火口から西方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522020034_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２２日２１時から２４時までは火口から西方向、２３日０９時から１２時までは火口から北西方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522110034_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-05-22T08:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２２日２１時から２４時までは火口から西方向、２３日０９時から１２時までは火口から北西方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522080034_0_VFVO53_010000.xml"
           }
         ]
       },
@@ -689,7 +680,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-22T11:39:05+09:00",
+          "checkedAt": "2026-05-22T23:23:07+09:00",
           "summary": "公式熊情報 5 件を確認。",
           "items": [
             {
@@ -827,7 +818,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-05-22T11:38:56+09:00",
+    "checkedAt": "2026-05-22T23:22:59+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -835,14 +826,14 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 1583
+        "entries": 1609
       },
       {
         "id": "eqvol",
         "label": "JMA 地震火山情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml",
         "status": "ok",
-        "entries": 459
+        "entries": 444
       }
     ],
     "regions": {
@@ -868,11 +859,11 @@
           },
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
+            "title": "気象警報・注意報（Ｈ２７）",
             "updated": "2026-05-21T01:03:14Z",
             "source": "JMA 随時情報",
             "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、２２日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260521010315_0_VPWW53_017000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260521010315_0_VPWW54_017000.xml"
           }
         ]
       },
@@ -898,11 +889,11 @@
           },
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
+            "title": "気象警報・注意報（Ｈ２７）",
             "updated": "2026-05-21T19:06:12Z",
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、濃霧による視程障害に注意してください。津軽では、空気の乾燥した状態が続くため、火の取り扱いに注意してください。下北、三八上北では、低温に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260521190613_0_VPWW53_020000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260521190613_0_VPWW54_020000.xml"
           }
         ]
       },
@@ -912,27 +903,27 @@
         "items": [
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-22T02:30:06Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、２３日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。岩手県では、２３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522023007_0_VPWW53_030000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-22T02:30:06Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】内陸では、２３日まで空気の乾燥した状態が続くため、火の取り扱いに注意してください。岩手県では、２３日朝は霜に対する農作物の管理に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522023007_0_VPWW54_030000.xml"
+            "title": "降灰予報（定時）",
+            "updated": "2026-05-22T14:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２３日０９時から１２時までは火口から北西方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522140034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-22T02:00:00Z",
+            "updated": "2026-05-22T11:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２２日２１時から２４時までは火口から西方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522020034_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２２日２１時から２４時までは火口から西方向、２３日０９時から１２時までは火口から北西方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522110034_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-05-22T08:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２２日２１時から２４時までは火口から西方向、２３日０９時から１２時までは火口から北西方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260522080034_0_VFVO53_010000.xml"
           }
         ]
       }
@@ -956,12 +947,12 @@
       "level": "yellow",
       "icon": "⚠️",
       "label": "岩手山",
-      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２２日２１時から２４時までは火口から西方向に降灰が予想されます。",
+      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２３日０９時から１２時までは火口から北西方向に降灰が予想されます。",
       "source": "JMA 地震火山情報",
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260522020034_0_VFVO53_010000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260522140034_0_VFVO53_010000.xml"
     },
     {
       "regionId": "hakodate",
@@ -977,7 +968,7 @@
     }
   ],
   "bear": {
-    "checkedAt": "2026-05-22T11:39:05+09:00",
+    "checkedAt": "2026-05-22T23:23:07+09:00",
     "status": "ok",
     "sources": [
       {
@@ -1048,10 +1039,10 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-22T11:39:02+09:00",
+        "checkedAt": "2026-05-22T23:23:04+09:00",
         "summary": "くまログあおもり 2026-05-21 の熊情報 2 件。",
         "kumalog": {
-          "checkedAt": "2026-05-22T11:38:57+09:00",
+          "checkedAt": "2026-05-22T23:23:00+09:00",
           "status": "ok",
           "date": "2026-05-21",
           "count": 2,
@@ -1145,7 +1136,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-05-22T11:39:05+09:00",
+        "checkedAt": "2026-05-22T23:23:07+09:00",
         "summary": "公式熊情報 5 件を確認。",
         "items": [
           {
@@ -1198,7 +1189,7 @@
     }
   },
   "operation": {
-    "checkedAt": "2026-05-22T11:39:29+09:00",
+    "checkedAt": "2026-05-22T23:23:40+09:00",
     "status": "partial",
     "sources": [
       {
@@ -1206,8 +1197,8 @@
         "id": "hakkoda-ropeway",
         "label": "八甲田ロープウェー",
         "url": "https://hakkoda-ropeway.jp/",
-        "status": "ok",
-        "items": 1
+        "status": "failed",
+        "error": "fetch failed"
       },
       {
         "regionId": "aomori",
@@ -1237,22 +1228,13 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-22T11:39:16+09:00",
-        "summary": "公式營運情報 1 件を確認。",
-        "items": [
-          {
-            "level": "yellow",
-            "title": "現在のロープウェー運行状況",
-            "updated": "2026-04-10",
-            "source": "八甲田ロープウェー",
-            "summary": "Ropeway Operation / 天候。 weather 。 風速。 wind 。 。 視界。 visibility * 。",
-            "url": "https://hakkoda-ropeway.jp/"
-          }
-        ]
+        "checkedAt": "2026-05-22T23:23:28+09:00",
+        "summary": "公式營運情報を自動抽出できませんでした。手動で公式リンクを確認してください。",
+        "items": []
       },
       "iwate": {
         "level": "yellow",
-        "checkedAt": "2026-05-22T11:39:29+09:00",
+        "checkedAt": "2026-05-22T23:23:40+09:00",
         "summary": "公式營運情報 3 件を確認。",
         "items": [
           {
@@ -1284,7 +1266,7 @@
     }
   },
   "notifications": {
-    "checkedAt": "2026-05-22T11:39:29+09:00",
+    "checkedAt": "2026-05-22T23:23:40+09:00",
     "deliveryStatus": "not-configured",
     "recommendedChannel": "Gmail SMTP after GitHub Secrets are configured",
     "summary": "目前符合通知規則的事件 1 件；本次可送出 0 件。",
