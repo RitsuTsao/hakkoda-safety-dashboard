@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T23:39:21+09:00",
+  "generatedAt": "2026-05-26T11:32:43+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "red",
@@ -99,26 +99,26 @@
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-26T01:05:15Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526010516_0_VPWW54_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-26T01:05:15Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526010516_0_VPWW53_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
             "updated": "2026-05-25T06:46:51Z",
             "source": "JMA 随時情報",
             "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日昼前まで濃霧による視程障害に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260525064651_0_VPWW54_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-25T06:46:51Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525064651_0_VPWW53_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-25T01:01:01Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525010102_0_VPWW53_017000.xml"
           }
         ]
       }
@@ -233,7 +233,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-25T23:39:09+09:00",
+          "checkedAt": "2026-05-26T11:32:31+09:00",
           "summary": "公式營運情報 1 件を確認。",
           "items": [
             {
@@ -270,11 +270,19 @@
         "items": [
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-25T12:27:09Z",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-26T00:57:28Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、２６日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525122709_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】青森県では、２７日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526005729_0_VPWW54_020000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-26T00:57:28Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】青森県では、２７日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526005729_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
@@ -283,14 +291,6 @@
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、２６日昼前まで濃霧による視程障害に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260525122709_0_VPWW54_020000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-25T06:44:13Z",
-            "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、下北では２６日昼前まで、三八上北では２５日夜遅くから２６日昼前まで、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525064414_0_VPWW54_020000.xml"
           }
         ]
       },
@@ -356,13 +356,13 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-25T23:38:54+09:00",
-          "summary": "くまログあおもり 2026-05-24 の熊情報 6 件。",
+          "checkedAt": "2026-05-26T11:32:16+09:00",
+          "summary": "くまログあおもり 2026-05-25 の熊情報 9 件。",
           "kumalog": {
-            "checkedAt": "2026-05-25T23:38:50+09:00",
+            "checkedAt": "2026-05-26T11:32:12+09:00",
             "status": "ok",
-            "date": "2026-05-24",
-            "count": 6,
+            "date": "2026-05-25",
+            "count": 9,
             "threshold": 15,
             "hakkodaFocusTerms": [
               "八甲田",
@@ -377,47 +377,47 @@
             "hakkodaCount": 0,
             "injuryCount": 0,
             "level": "yellow",
-            "summary": "くまログあおもり 2026-05-24 の熊情報 6 件。",
+            "summary": "くまログあおもり 2026-05-25 の熊情報 9 件。",
             "items": [
               {
                 "level": "yellow",
                 "kind": "sighting",
-                "title": "目撃: 弘前市 〒036-8233 青森県弘前市原ケ平山中433-3",
-                "updated": "2026-05-24 20:00:00",
+                "title": "目撃: つがる市 〒038-3282 青森県つがる市木造筒木坂１５−９０",
+                "updated": "2026-05-25 21:45:00",
                 "source": "くまログあおもり",
-                "summary": "ツキノワグマ 目撃 / テニスコート駐車場に大人のクマ１頭が出没したもの。",
+                "summary": "ツキノワグマ 目撃 / 体長1メートルくらいの熊1頭が県道から東方向に走り去ったもの。",
                 "url": "https://kumalog-aomori.info/",
-                "kumalogId": 8951
+                "kumalogId": 8966
               },
               {
                 "level": "yellow",
                 "kind": "sighting",
-                "title": "目撃: 青森市 〒030-0145 青森県青森市金浜１１３−２",
-                "updated": "2026-05-24 16:57:00",
+                "title": "目撃: 平川市 〒036-0114 青森県平川市町居５−１４",
+                "updated": "2026-05-25 19:00:00",
                 "source": "くまログあおもり",
-                "summary": "ツキノワグマ 目撃 / 小型犬ぐらいの小熊が1頭で歩いていたこちらを視認した後に田んぼの方に逃げていった",
+                "summary": "ツキノワグマ 目撃 / クマらしき動物を見かけた。 【平川市発信】",
                 "url": "https://kumalog-aomori.info/",
-                "kumalogId": 8950
+                "kumalogId": 8969
               },
               {
                 "level": "yellow",
                 "kind": "sighting",
-                "title": "目撃: 三沢市 〒033-0022 青森県三沢市三沢１５８",
-                "updated": "2026-05-24 14:30:00",
+                "title": "目撃: 青森市 〒038-0045 青森県青森市鶴ケ坂５４",
+                "updated": "2026-05-25 18:03:00",
                 "source": "くまログあおもり",
-                "summary": "ツキノワグマ 目撃 / １頭が歩いていた",
+                "summary": "ツキノワグマ 目撃 / 青森から弘前方面へ車を運転中、東側のガードレールの外側で体長約1.5ｍのクマ１頭を目撃。車道には出ていない。",
                 "url": "https://kumalog-aomori.info/",
-                "kumalogId": 8949
+                "kumalogId": 8965
               },
               {
                 "level": "yellow",
                 "kind": "sighting",
-                "title": "痕跡(その他): 五所川原市 〒037-0002 青森県五所川原市大字飯詰字石田144",
-                "updated": "2026-05-24 12:00:00",
+                "title": "目撃: 平川市 〒036-0203 青森県平川市新屋町１５−１",
+                "updated": "2026-05-25 17:00:00",
                 "source": "くまログあおもり",
-                "summary": "ツキノワグマ 痕跡(その他) / 園地周辺にてクマのものと思われるフンを確認",
+                "summary": "ツキノワグマ 目撃 / テニスコート方面へ走っていった。 【平川市発信】",
                 "url": "https://kumalog-aomori.info/",
-                "kumalogId": 8963
+                "kumalogId": 8968
               }
             ]
           },
@@ -425,42 +425,42 @@
             {
               "level": "yellow",
               "kind": "sighting",
-              "title": "目撃: 弘前市 〒036-8233 青森県弘前市原ケ平山中433-3",
-              "updated": "2026-05-24 20:00:00",
+              "title": "目撃: つがる市 〒038-3282 青森県つがる市木造筒木坂１５−９０",
+              "updated": "2026-05-25 21:45:00",
               "source": "くまログあおもり",
-              "summary": "ツキノワグマ 目撃 / テニスコート駐車場に大人のクマ１頭が出没したもの。",
+              "summary": "ツキノワグマ 目撃 / 体長1メートルくらいの熊1頭が県道から東方向に走り去ったもの。",
               "url": "https://kumalog-aomori.info/",
-              "kumalogId": 8951
+              "kumalogId": 8966
             },
             {
               "level": "yellow",
               "kind": "sighting",
-              "title": "目撃: 青森市 〒030-0145 青森県青森市金浜１１３−２",
-              "updated": "2026-05-24 16:57:00",
+              "title": "目撃: 平川市 〒036-0114 青森県平川市町居５−１４",
+              "updated": "2026-05-25 19:00:00",
               "source": "くまログあおもり",
-              "summary": "ツキノワグマ 目撃 / 小型犬ぐらいの小熊が1頭で歩いていたこちらを視認した後に田んぼの方に逃げていった",
+              "summary": "ツキノワグマ 目撃 / クマらしき動物を見かけた。 【平川市発信】",
               "url": "https://kumalog-aomori.info/",
-              "kumalogId": 8950
+              "kumalogId": 8969
             },
             {
               "level": "yellow",
               "kind": "sighting",
-              "title": "目撃: 三沢市 〒033-0022 青森県三沢市三沢１５８",
-              "updated": "2026-05-24 14:30:00",
+              "title": "目撃: 青森市 〒038-0045 青森県青森市鶴ケ坂５４",
+              "updated": "2026-05-25 18:03:00",
               "source": "くまログあおもり",
-              "summary": "ツキノワグマ 目撃 / １頭が歩いていた",
+              "summary": "ツキノワグマ 目撃 / 青森から弘前方面へ車を運転中、東側のガードレールの外側で体長約1.5ｍのクマ１頭を目撃。車道には出ていない。",
               "url": "https://kumalog-aomori.info/",
-              "kumalogId": 8949
+              "kumalogId": 8965
             },
             {
               "level": "yellow",
               "kind": "sighting",
-              "title": "痕跡(その他): 五所川原市 〒037-0002 青森県五所川原市大字飯詰字石田144",
-              "updated": "2026-05-24 12:00:00",
+              "title": "目撃: 平川市 〒036-0203 青森県平川市新屋町１５−１",
+              "updated": "2026-05-25 17:00:00",
               "source": "くまログあおもり",
-              "summary": "ツキノワグマ 痕跡(その他) / 園地周辺にてクマのものと思われるフンを確認",
+              "summary": "ツキノワグマ 目撃 / テニスコート方面へ走っていった。 【平川市発信】",
               "url": "https://kumalog-aomori.info/",
-              "kumalogId": 8963
+              "kumalogId": 8968
             },
             {
               "level": "yellow",
@@ -606,7 +606,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-25T23:39:21+09:00",
+          "checkedAt": "2026-05-26T11:32:43+09:00",
           "summary": "公式營運情報 3 件を確認。",
           "items": [
             {
@@ -660,26 +660,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-25T14:00:00Z",
+            "updated": "2026-05-26T02:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２６日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525140034_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２６日２１時から２４時までは火口から北方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526020034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-05-25T11:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北方向、２６日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525110033_0_VFVO53_010000.xml"
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-26T00:53:28Z",
+            "source": "JMA 随時情報",
+            "summary": "【岩手県気象警報・注意報】内陸、沿岸北部では、強風に注意してください。沿岸北部、沿岸南部では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526005329_0_VPWW54_030000.xml"
           },
           {
             "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-05-25T08:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北方向、２６日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525080034_0_VFVO53_010000.xml"
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-26T00:53:28Z",
+            "source": "JMA 随時情報",
+            "summary": "【岩手県気象警報・注意報】内陸、沿岸北部では、強風に注意してください。沿岸北部、沿岸南部では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526005329_0_VPWW53_030000.xml"
           }
         ]
       },
@@ -720,7 +720,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-25T23:38:57+09:00",
+          "checkedAt": "2026-05-26T11:32:19+09:00",
           "summary": "公式熊情報 5 件を確認。",
           "items": [
             {
@@ -858,7 +858,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-05-25T23:38:49+09:00",
+    "checkedAt": "2026-05-26T11:32:11+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -866,14 +866,14 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 1734
+        "entries": 1752
       },
       {
         "id": "eqvol",
         "label": "JMA 地震火山情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml",
         "status": "ok",
-        "entries": 413
+        "entries": 409
       }
     ],
     "regions": {
@@ -884,26 +884,26 @@
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-26T01:05:15Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526010516_0_VPWW54_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-26T01:05:15Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526010516_0_VPWW53_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
             "updated": "2026-05-25T06:46:51Z",
             "source": "JMA 随時情報",
             "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日昼前まで濃霧による視程障害に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260525064651_0_VPWW54_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-25T06:46:51Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525064651_0_VPWW53_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-25T01:01:01Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島、檜山地方では、２６日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525010102_0_VPWW53_017000.xml"
           }
         ]
       },
@@ -913,11 +913,19 @@
         "items": [
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-25T12:27:09Z",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-26T00:57:28Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、２６日昼前まで濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525122709_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】青森県では、２７日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526005729_0_VPWW54_020000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-26T00:57:28Z",
+            "source": "JMA 随時情報",
+            "summary": "【青森県気象警報・注意報】青森県では、２７日昼前まで濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526005729_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
@@ -926,14 +934,6 @@
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、２６日昼前まで濃霧による視程障害に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260525122709_0_VPWW54_020000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-25T06:44:13Z",
-            "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】津軽、下北では２６日昼前まで、三八上北では２５日夜遅くから２６日昼前まで、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525064414_0_VPWW54_020000.xml"
           }
         ]
       },
@@ -944,26 +944,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-25T14:00:00Z",
+            "updated": "2026-05-26T02:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２６日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525140034_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２６日２１時から２４時までは火口から北方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526020034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-05-25T11:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北方向、２６日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525110033_0_VFVO53_010000.xml"
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-26T00:53:28Z",
+            "source": "JMA 随時情報",
+            "summary": "【岩手県気象警報・注意報】内陸、沿岸北部では、強風に注意してください。沿岸北部、沿岸南部では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526005329_0_VPWW54_030000.xml"
           },
           {
             "level": "yellow",
-            "title": "降灰予報（定時）",
-            "updated": "2026-05-25T08:00:00Z",
-            "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２５日２１時から２４時までは火口から北方向、２６日０９時から１２時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260525080034_0_VFVO53_010000.xml"
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-26T00:53:28Z",
+            "source": "JMA 随時情報",
+            "summary": "【岩手県気象警報・注意報】内陸、沿岸北部では、強風に注意してください。沿岸北部、沿岸南部では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260526005329_0_VPWW53_030000.xml"
           }
         ]
       }
@@ -987,16 +987,16 @@
       "level": "yellow",
       "icon": "⚠️",
       "label": "岩手山",
-      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２６日０９時から１２時までは火口から北方向に降灰が予想されます。",
+      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２６日２１時から２４時までは火口から北方向に降灰が予想されます。",
       "source": "JMA 地震火山情報",
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260525140034_0_VFVO53_010000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260526020034_0_VFVO53_010000.xml"
     }
   ],
   "bear": {
-    "checkedAt": "2026-05-25T23:38:57+09:00",
+    "checkedAt": "2026-05-26T11:32:19+09:00",
     "status": "ok",
     "sources": [
       {
@@ -1005,7 +1005,7 @@
         "label": "くまログあおもり 出没情報",
         "url": "https://kumalog-aomori.info/",
         "status": "ok",
-        "items": 6
+        "items": 9
       },
       {
         "regionId": "aomori",
@@ -1067,13 +1067,13 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-25T23:38:54+09:00",
-        "summary": "くまログあおもり 2026-05-24 の熊情報 6 件。",
+        "checkedAt": "2026-05-26T11:32:16+09:00",
+        "summary": "くまログあおもり 2026-05-25 の熊情報 9 件。",
         "kumalog": {
-          "checkedAt": "2026-05-25T23:38:50+09:00",
+          "checkedAt": "2026-05-26T11:32:12+09:00",
           "status": "ok",
-          "date": "2026-05-24",
-          "count": 6,
+          "date": "2026-05-25",
+          "count": 9,
           "threshold": 15,
           "hakkodaFocusTerms": [
             "八甲田",
@@ -1088,47 +1088,47 @@
           "hakkodaCount": 0,
           "injuryCount": 0,
           "level": "yellow",
-          "summary": "くまログあおもり 2026-05-24 の熊情報 6 件。",
+          "summary": "くまログあおもり 2026-05-25 の熊情報 9 件。",
           "items": [
             {
               "level": "yellow",
               "kind": "sighting",
-              "title": "目撃: 弘前市 〒036-8233 青森県弘前市原ケ平山中433-3",
-              "updated": "2026-05-24 20:00:00",
+              "title": "目撃: つがる市 〒038-3282 青森県つがる市木造筒木坂１５−９０",
+              "updated": "2026-05-25 21:45:00",
               "source": "くまログあおもり",
-              "summary": "ツキノワグマ 目撃 / テニスコート駐車場に大人のクマ１頭が出没したもの。",
+              "summary": "ツキノワグマ 目撃 / 体長1メートルくらいの熊1頭が県道から東方向に走り去ったもの。",
               "url": "https://kumalog-aomori.info/",
-              "kumalogId": 8951
+              "kumalogId": 8966
             },
             {
               "level": "yellow",
               "kind": "sighting",
-              "title": "目撃: 青森市 〒030-0145 青森県青森市金浜１１３−２",
-              "updated": "2026-05-24 16:57:00",
+              "title": "目撃: 平川市 〒036-0114 青森県平川市町居５−１４",
+              "updated": "2026-05-25 19:00:00",
               "source": "くまログあおもり",
-              "summary": "ツキノワグマ 目撃 / 小型犬ぐらいの小熊が1頭で歩いていたこちらを視認した後に田んぼの方に逃げていった",
+              "summary": "ツキノワグマ 目撃 / クマらしき動物を見かけた。 【平川市発信】",
               "url": "https://kumalog-aomori.info/",
-              "kumalogId": 8950
+              "kumalogId": 8969
             },
             {
               "level": "yellow",
               "kind": "sighting",
-              "title": "目撃: 三沢市 〒033-0022 青森県三沢市三沢１５８",
-              "updated": "2026-05-24 14:30:00",
+              "title": "目撃: 青森市 〒038-0045 青森県青森市鶴ケ坂５４",
+              "updated": "2026-05-25 18:03:00",
               "source": "くまログあおもり",
-              "summary": "ツキノワグマ 目撃 / １頭が歩いていた",
+              "summary": "ツキノワグマ 目撃 / 青森から弘前方面へ車を運転中、東側のガードレールの外側で体長約1.5ｍのクマ１頭を目撃。車道には出ていない。",
               "url": "https://kumalog-aomori.info/",
-              "kumalogId": 8949
+              "kumalogId": 8965
             },
             {
               "level": "yellow",
               "kind": "sighting",
-              "title": "痕跡(その他): 五所川原市 〒037-0002 青森県五所川原市大字飯詰字石田144",
-              "updated": "2026-05-24 12:00:00",
+              "title": "目撃: 平川市 〒036-0203 青森県平川市新屋町１５−１",
+              "updated": "2026-05-25 17:00:00",
               "source": "くまログあおもり",
-              "summary": "ツキノワグマ 痕跡(その他) / 園地周辺にてクマのものと思われるフンを確認",
+              "summary": "ツキノワグマ 目撃 / テニスコート方面へ走っていった。 【平川市発信】",
               "url": "https://kumalog-aomori.info/",
-              "kumalogId": 8963
+              "kumalogId": 8968
             }
           ]
         },
@@ -1136,42 +1136,42 @@
           {
             "level": "yellow",
             "kind": "sighting",
-            "title": "目撃: 弘前市 〒036-8233 青森県弘前市原ケ平山中433-3",
-            "updated": "2026-05-24 20:00:00",
+            "title": "目撃: つがる市 〒038-3282 青森県つがる市木造筒木坂１５−９０",
+            "updated": "2026-05-25 21:45:00",
             "source": "くまログあおもり",
-            "summary": "ツキノワグマ 目撃 / テニスコート駐車場に大人のクマ１頭が出没したもの。",
+            "summary": "ツキノワグマ 目撃 / 体長1メートルくらいの熊1頭が県道から東方向に走り去ったもの。",
             "url": "https://kumalog-aomori.info/",
-            "kumalogId": 8951
+            "kumalogId": 8966
           },
           {
             "level": "yellow",
             "kind": "sighting",
-            "title": "目撃: 青森市 〒030-0145 青森県青森市金浜１１３−２",
-            "updated": "2026-05-24 16:57:00",
+            "title": "目撃: 平川市 〒036-0114 青森県平川市町居５−１４",
+            "updated": "2026-05-25 19:00:00",
             "source": "くまログあおもり",
-            "summary": "ツキノワグマ 目撃 / 小型犬ぐらいの小熊が1頭で歩いていたこちらを視認した後に田んぼの方に逃げていった",
+            "summary": "ツキノワグマ 目撃 / クマらしき動物を見かけた。 【平川市発信】",
             "url": "https://kumalog-aomori.info/",
-            "kumalogId": 8950
+            "kumalogId": 8969
           },
           {
             "level": "yellow",
             "kind": "sighting",
-            "title": "目撃: 三沢市 〒033-0022 青森県三沢市三沢１５８",
-            "updated": "2026-05-24 14:30:00",
+            "title": "目撃: 青森市 〒038-0045 青森県青森市鶴ケ坂５４",
+            "updated": "2026-05-25 18:03:00",
             "source": "くまログあおもり",
-            "summary": "ツキノワグマ 目撃 / １頭が歩いていた",
+            "summary": "ツキノワグマ 目撃 / 青森から弘前方面へ車を運転中、東側のガードレールの外側で体長約1.5ｍのクマ１頭を目撃。車道には出ていない。",
             "url": "https://kumalog-aomori.info/",
-            "kumalogId": 8949
+            "kumalogId": 8965
           },
           {
             "level": "yellow",
             "kind": "sighting",
-            "title": "痕跡(その他): 五所川原市 〒037-0002 青森県五所川原市大字飯詰字石田144",
-            "updated": "2026-05-24 12:00:00",
+            "title": "目撃: 平川市 〒036-0203 青森県平川市新屋町１５−１",
+            "updated": "2026-05-25 17:00:00",
             "source": "くまログあおもり",
-            "summary": "ツキノワグマ 痕跡(その他) / 園地周辺にてクマのものと思われるフンを確認",
+            "summary": "ツキノワグマ 目撃 / テニスコート方面へ走っていった。 【平川市発信】",
             "url": "https://kumalog-aomori.info/",
-            "kumalogId": 8963
+            "kumalogId": 8968
           },
           {
             "level": "yellow",
@@ -1195,7 +1195,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-05-25T23:38:57+09:00",
+        "checkedAt": "2026-05-26T11:32:19+09:00",
         "summary": "公式熊情報 5 件を確認。",
         "items": [
           {
@@ -1248,7 +1248,7 @@
     }
   },
   "operation": {
-    "checkedAt": "2026-05-25T23:39:21+09:00",
+    "checkedAt": "2026-05-26T11:32:43+09:00",
     "status": "partial",
     "sources": [
       {
@@ -1287,7 +1287,7 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-25T23:39:09+09:00",
+        "checkedAt": "2026-05-26T11:32:31+09:00",
         "summary": "公式營運情報 1 件を確認。",
         "items": [
           {
@@ -1302,7 +1302,7 @@
       },
       "iwate": {
         "level": "yellow",
-        "checkedAt": "2026-05-25T23:39:21+09:00",
+        "checkedAt": "2026-05-26T11:32:43+09:00",
         "summary": "公式營運情報 3 件を確認。",
         "items": [
           {
@@ -1334,7 +1334,7 @@
     }
   },
   "notifications": {
-    "checkedAt": "2026-05-25T23:39:21+09:00",
+    "checkedAt": "2026-05-26T11:32:43+09:00",
     "deliveryStatus": "not-configured",
     "recommendedChannel": "Gmail SMTP after GitHub Secrets are configured",
     "summary": "目前符合通知規則的事件 1 件；本次可送出 0 件。",
