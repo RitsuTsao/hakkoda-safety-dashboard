@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T11:33:42+09:00",
+  "generatedAt": "2026-05-29T23:45:46+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "red",
@@ -99,26 +99,26 @@
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-29T01:57:47Z",
+            "updated": "2026-05-29T13:57:33Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や濃霧による視程障害に注意してください。渡島地方では、高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015748_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や竜巻などの激しい突風、落雷に注意してください。渡島地方では、高波に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529135734_0_VPWW54_017000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-29T01:57:47Z",
+            "updated": "2026-05-29T13:57:33Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や濃霧による視程障害に注意してください。渡島地方では、高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015748_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や竜巻などの激しい突風、落雷に注意してください。渡島地方では、高波に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529135734_0_VPWW53_017000.xml"
           },
           {
             "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-29T01:03:34Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-29T07:57:43Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や濃霧による視程障害に注意してください。渡島地方では、高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529010335_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や竜巻などの激しい突風、落雷に注意してください。渡島地方では、高波に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529075745_0_VPWW53_017000.xml"
           }
         ]
       }
@@ -233,7 +233,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-29T11:33:30+09:00",
+          "checkedAt": "2026-05-29T23:45:33+09:00",
           "summary": "公式營運情報 1 件を確認。",
           "items": [
             {
@@ -271,26 +271,26 @@
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-29T01:57:48Z",
+            "updated": "2026-05-29T13:57:34Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、強風や高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015750_0_VPWW54_020000.xml"
+            "summary": "【青森県気象警報・注意報】青森県では、強風や高波、竜巻などの激しい突風、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529135735_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-29T01:57:48Z",
+            "updated": "2026-05-29T13:57:34Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、強風や高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015750_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】青森県では、強風や高波、竜巻などの激しい突風、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529135735_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-29T01:16:34Z",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-29T07:57:45Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、強風や高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529011636_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】青森県では、強風や高波、竜巻などの激しい突風、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529075747_0_VPWW54_020000.xml"
           }
         ]
       },
@@ -356,13 +356,13 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-29T11:33:14+09:00",
-          "summary": "くまログあおもり 2026-05-28 の熊情報 12 件。",
+          "checkedAt": "2026-05-29T23:45:17+09:00",
+          "summary": "くまログあおもり 2026-05-28 の熊情報 13 件。",
           "kumalog": {
-            "checkedAt": "2026-05-29T11:33:10+09:00",
+            "checkedAt": "2026-05-29T23:45:12+09:00",
             "status": "ok",
             "date": "2026-05-28",
-            "count": 12,
+            "count": 13,
             "threshold": 15,
             "hakkodaFocusTerms": [
               "八甲田",
@@ -377,7 +377,7 @@
             "hakkodaCount": 0,
             "injuryCount": 0,
             "level": "yellow",
-            "summary": "くまログあおもり 2026-05-28 の熊情報 12 件。",
+            "summary": "くまログあおもり 2026-05-28 の熊情報 13 件。",
             "items": [
               {
                 "level": "yellow",
@@ -606,7 +606,7 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-05-29T11:33:42+09:00",
+          "checkedAt": "2026-05-29T23:45:46+09:00",
           "summary": "公式營運情報 3 件を確認。",
           "items": [
             {
@@ -660,26 +660,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-29T02:00:00Z",
+            "updated": "2026-05-29T14:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２９日２１時から２４時までは火口から東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529020034_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３０日０９時から１２時までは火口から東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529140034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-29T01:57:51Z",
+            "updated": "2026-05-29T11:06:44Z",
             "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】岩手県では、強風に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015753_0_VPWW53_030000.xml"
+            "summary": "【岩手県気象警報・注意報】岩手県では、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529110645_0_VPWW53_030000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-29T01:57:51Z",
+            "updated": "2026-05-29T11:06:44Z",
             "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】岩手県では、強風に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015753_0_VPWW54_030000.xml"
+            "summary": "【岩手県気象警報・注意報】岩手県では、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529110645_0_VPWW54_030000.xml"
           }
         ]
       },
@@ -720,7 +720,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-05-29T11:33:17+09:00",
+          "checkedAt": "2026-05-29T23:45:20+09:00",
           "summary": "公式熊情報 5 件を確認。",
           "items": [
             {
@@ -858,7 +858,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-05-29T11:33:09+09:00",
+    "checkedAt": "2026-05-29T23:45:11+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -866,7 +866,7 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 2033
+        "entries": 2248
       },
       {
         "id": "eqvol",
@@ -884,26 +884,26 @@
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-29T01:57:47Z",
+            "updated": "2026-05-29T13:57:33Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や濃霧による視程障害に注意してください。渡島地方では、高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015748_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や竜巻などの激しい突風、落雷に注意してください。渡島地方では、高波に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529135734_0_VPWW54_017000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-29T01:57:47Z",
+            "updated": "2026-05-29T13:57:33Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や濃霧による視程障害に注意してください。渡島地方では、高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015748_0_VPWW53_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や竜巻などの激しい突風、落雷に注意してください。渡島地方では、高波に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529135734_0_VPWW53_017000.xml"
           },
           {
             "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-29T01:03:34Z",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-05-29T07:57:43Z",
             "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や濃霧による視程障害に注意してください。渡島地方では、高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529010335_0_VPWW54_017000.xml"
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島・檜山地方では、強風や竜巻などの激しい突風、落雷に注意してください。渡島地方では、高波に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529075745_0_VPWW53_017000.xml"
           }
         ]
       },
@@ -914,26 +914,26 @@
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-29T01:57:48Z",
+            "updated": "2026-05-29T13:57:34Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、強風や高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015750_0_VPWW54_020000.xml"
+            "summary": "【青森県気象警報・注意報】青森県では、強風や高波、竜巻などの激しい突風、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529135735_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-29T01:57:48Z",
+            "updated": "2026-05-29T13:57:34Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、強風や高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015750_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】青森県では、強風や高波、竜巻などの激しい突風、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529135735_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-29T01:16:34Z",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-05-29T07:57:45Z",
             "source": "JMA 随時情報",
-            "summary": "【青森県気象警報・注意報】青森県では、強風や高波に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529011636_0_VPWW53_020000.xml"
+            "summary": "【青森県気象警報・注意報】青森県では、強風や高波、竜巻などの激しい突風、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529075747_0_VPWW54_020000.xml"
           }
         ]
       },
@@ -944,26 +944,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-05-29T02:00:00Z",
+            "updated": "2026-05-29T14:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２９日２１時から２４時までは火口から東方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529020034_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３０日０９時から１２時までは火口から東方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529140034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-05-29T01:57:51Z",
+            "updated": "2026-05-29T11:06:44Z",
             "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】岩手県では、強風に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015753_0_VPWW53_030000.xml"
+            "summary": "【岩手県気象警報・注意報】岩手県では、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529110645_0_VPWW53_030000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-05-29T01:57:51Z",
+            "updated": "2026-05-29T11:06:44Z",
             "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】岩手県では、強風に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529015753_0_VPWW54_030000.xml"
+            "summary": "【岩手県気象警報・注意報】岩手県では、落雷に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260529110645_0_VPWW54_030000.xml"
           }
         ]
       }
@@ -987,16 +987,16 @@
       "level": "yellow",
       "icon": "⚠️",
       "label": "岩手山",
-      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、２９日２１時から２４時までは火口から東方向に降灰が予想されます。",
+      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、３０日０９時から１２時までは火口から東方向に降灰が予想されます。",
       "source": "JMA 地震火山情報",
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260529020034_0_VFVO53_010000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260529140034_0_VFVO53_010000.xml"
     }
   ],
   "bear": {
-    "checkedAt": "2026-05-29T11:33:17+09:00",
+    "checkedAt": "2026-05-29T23:45:20+09:00",
     "status": "ok",
     "sources": [
       {
@@ -1005,7 +1005,7 @@
         "label": "くまログあおもり 出没情報",
         "url": "https://kumalog-aomori.info/",
         "status": "ok",
-        "items": 12
+        "items": 13
       },
       {
         "regionId": "aomori",
@@ -1067,13 +1067,13 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-29T11:33:14+09:00",
-        "summary": "くまログあおもり 2026-05-28 の熊情報 12 件。",
+        "checkedAt": "2026-05-29T23:45:17+09:00",
+        "summary": "くまログあおもり 2026-05-28 の熊情報 13 件。",
         "kumalog": {
-          "checkedAt": "2026-05-29T11:33:10+09:00",
+          "checkedAt": "2026-05-29T23:45:12+09:00",
           "status": "ok",
           "date": "2026-05-28",
-          "count": 12,
+          "count": 13,
           "threshold": 15,
           "hakkodaFocusTerms": [
             "八甲田",
@@ -1088,7 +1088,7 @@
           "hakkodaCount": 0,
           "injuryCount": 0,
           "level": "yellow",
-          "summary": "くまログあおもり 2026-05-28 の熊情報 12 件。",
+          "summary": "くまログあおもり 2026-05-28 の熊情報 13 件。",
           "items": [
             {
               "level": "yellow",
@@ -1195,7 +1195,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-05-29T11:33:17+09:00",
+        "checkedAt": "2026-05-29T23:45:20+09:00",
         "summary": "公式熊情報 5 件を確認。",
         "items": [
           {
@@ -1248,7 +1248,7 @@
     }
   },
   "operation": {
-    "checkedAt": "2026-05-29T11:33:42+09:00",
+    "checkedAt": "2026-05-29T23:45:46+09:00",
     "status": "partial",
     "sources": [
       {
@@ -1287,7 +1287,7 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-05-29T11:33:30+09:00",
+        "checkedAt": "2026-05-29T23:45:33+09:00",
         "summary": "公式營運情報 1 件を確認。",
         "items": [
           {
@@ -1302,7 +1302,7 @@
       },
       "iwate": {
         "level": "yellow",
-        "checkedAt": "2026-05-29T11:33:42+09:00",
+        "checkedAt": "2026-05-29T23:45:46+09:00",
         "summary": "公式營運情報 3 件を確認。",
         "items": [
           {
@@ -1334,7 +1334,7 @@
     }
   },
   "notifications": {
-    "checkedAt": "2026-05-29T11:33:42+09:00",
+    "checkedAt": "2026-05-29T23:45:46+09:00",
     "deliveryStatus": "not-configured",
     "recommendedChannel": "Gmail SMTP after GitHub Secrets are configured",
     "summary": "目前符合通知規則的事件 1 件；本次可送出 0 件。",
