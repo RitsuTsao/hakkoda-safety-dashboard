@@ -28,6 +28,41 @@ Implementation notes:
 - JMA states that XML distribution may stop or be delayed during maintenance or other circumstances, and users are responsible for how they use the public XML data.
 - The updater is decision support, not an emergency alert substitute.
 
+## Experimental Weather Simulation
+
+Mountain Weather Simulation v0.1 is a personal experimental module, not an official forecast.
+
+Automated sources:
+
+- JMA forecast JSON for Hakodate / Oshima-Hiyama, Aomori, and Iwate.
+- JMA AMeDAS latest observation map for nearby stations, where available.
+
+Modeled trip locations:
+
+- Hakodate.
+- Hirosaki and Owani Onsen.
+- Sukayu Onsen, Hakkoda Ropeway summit park, Kenashitai, and Hakkoda Odake.
+- Oirase trail and Towada Shrine.
+- Hachinohe.
+- Ryusendo / Iwaizumi.
+- Miyako / Jodogahama.
+- Hanamaki and Tono.
+
+Parameters:
+
+- Forecast weather text, precipitation probability, wind text, wave text when available.
+- Recent AMeDAS temperature, humidity, 1h / 3h / 24h rainfall, wind direction, and wind speed when available.
+- Approximate site altitude and terrain profile.
+- Simplified altitude correction: about -0.6 C per 100m climb from the baseline forecast / observation point.
+- Terrain weighting for exposed mountain, summit, wetland boardwalk, gorge, lakeside / forest, coast, inland basin, and foothill profiles.
+
+Policy:
+
+- Show only low / medium / high personal-risk hints and one short Chinese reason per 12 / 24 / 48 / 72 hour horizon.
+- Keep this module separate from official JMA XML summaries, Visual Map critical events, and Gmail notifications.
+- Do not use precise coordinate maps.
+- If JMA forecast or AMeDAS data fails, keep manual official links useful and mark source status instead of treating the simulation as authoritative.
+
 ## Rain, Rivers, Landslides
 
 - MLIT `川の防災情報`.

@@ -44,6 +44,7 @@ Later, consider Cloudflare Pages + Workers Cron if private deployment, KV storag
 - Data Source v2 and Precision Sources v1 keep phone links focused on official, trip-relevant checks.
 - Notification Layer v1 is live: it queues high-signal disaster notifications, sends through Gmail from GitHub Actions, and records successful delivery to avoid same-event repeats within 24 hours.
 - Data Source Update 03.1 adds Aomori `くまログあおもり` previous-day and Hakkoda-focus bear rules, and stabilizes long-running Iwate bear-injury dedupe.
+- Mountain Weather Simulation v0.1 adds an experimental personal weather-risk module for fixed trip locations, using JMA forecast data, AMeDAS observations, approximate altitude, and terrain weighting. It is not an official forecast and does not feed notifications.
 - Gmail delivery has been verified with `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO` repository secrets.
 
 ## Safety Model
@@ -62,6 +63,7 @@ Use three layers:
 - Visual Map event filtering for high-attention disaster signals.
 - Focused manual source links for JMA, tsunami, landslide, bear, transport, evacuation, and trip-operation checks.
 - Gmail notification delivery for high-signal disaster events only.
+- Experimental personal weather simulation for 12 / 24 / 48 / 72 hour low / medium / high risk hints by fixed location.
 
 ## Operational Notes
 

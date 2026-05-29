@@ -106,13 +106,21 @@ Implemented:
   - Do not use exact map coordinates in this PWA. `くまログあおもり` records are converted into HTML summaries and grid-map event chips only.
   - Do not use broad terms such as `青森` or `荒川`, and do not use `国道103` for the Hakkoda-focus rule unless Ritsu changes the trip scope.
   - Notification dedupe now preserves existing state across data refreshes and recognizes older Iwate bear-injury keys so the same long-running prefectural injury page is not mailed every day.
+- Mountain Weather Simulation v0.1:
+  - `scripts/update-data.mjs` now creates `weatherRisk` in `app/data.json`.
+  - The module uses JMA forecast JSON, JMA AMeDAS latest observations, approximate altitude, and terrain weighting to create personal experimental 12 / 24 / 48 / 72 hour weather-risk hints.
+  - Fixed locations include Hakodate, Hirosaki, Owani Onsen, Sukayu Onsen, Hakkoda Ropeway summit park, Kenashitai, Hakkoda Odake, Oirase trail, Towada Shrine, Hachinohe, Ryusendo / Iwaizumi, Miyako / Jodogahama, Hanamaki, and Tono.
+  - The model uses a simple lapse-rate correction of about -0.6 C per 100m and terrain profiles such as exposed mountain, summit, wetland boardwalk, gorge, lakeside / forest, coast, inland basin, and foothill.
+  - This is explicitly personal simulation, not official forecast. It must not feed `criticalEvents`, Visual Map priority, or Gmail notification candidates.
+  - `app/index.html` renders a `天氣模擬` panel with low / medium / high labels and a clear disclaimer.
+  - `app/service-worker.js` cache is bumped to `hakkoda-safety-v15` so installed PWAs refresh after the UI change.
 
 ## Version 1 Status
 
 2026-05-03: Version 1.0.0 is complete.
 
 - Live page: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`
-- Current service worker cache: `hakkoda-safety-v14`
+- Current service worker cache: `hakkoda-safety-v15`
 - Current delivery channel: GitHub Actions -> Gmail SMTP
 - Verified notification delivery:
   - GitHub Actions `Send Gmail notifications` logged `Sent 1 Gmail notification(s).`

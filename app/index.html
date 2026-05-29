@@ -522,6 +522,137 @@
         margin-top: 12px;
       }
 
+      .weather-risk-panel {
+        margin-top: 12px;
+      }
+
+      .weather-risk-panel summary {
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .weather-risk-panel summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .weather-risk-panel .section-head {
+        margin-bottom: 0;
+      }
+
+      .weather-risk-panel[open] .section-head {
+        margin-bottom: 10px;
+      }
+
+      .weather-module-toggle::before {
+        content: "展開";
+      }
+
+      .weather-risk-panel[open] .weather-module-toggle::before {
+        content: "收合";
+      }
+
+      .weather-risk-disclaimer {
+        display: grid;
+        gap: 6px;
+        margin-bottom: 12px;
+        padding: 10px;
+        border: 1px solid #d39a27;
+        border-radius: 8px;
+        background: #fff8e5;
+      }
+
+      .weather-location-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .weather-location {
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .weather-location:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .weather-location summary {
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .weather-location summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .weather-location-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .weather-location-title {
+        display: grid;
+        gap: 3px;
+      }
+
+      .weather-location-toggle {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 750;
+      }
+
+      .weather-location-toggle::before {
+        content: "展開";
+      }
+
+      .weather-location[open] .weather-location-toggle::before {
+        content: "收合";
+      }
+
+      .weather-horizons {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      @media (min-width: 760px) {
+        .weather-horizons {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+
+      .weather-horizon {
+        display: grid;
+        gap: 5px;
+        min-height: 132px;
+        padding: 9px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .weather-horizon .scenario-title {
+        align-items: flex-start;
+      }
+
+      .weather-horizon strong {
+        font-size: 0.92rem;
+      }
+
+      .weather-metrics {
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+
+      .weather-risk-types {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
       .notification-list {
         display: grid;
         gap: 8px;
@@ -859,6 +990,14 @@
         <div id="notificationPanel"></div>
       </section>
 
+      <details class="panel weather-risk-panel">
+        <summary class="section-head">
+          <h2>天氣模擬</h2>
+          <span class="muted">個人實驗 / <span class="weather-module-toggle"></span></span>
+        </summary>
+        <div id="weatherRiskPanel"></div>
+      </details>
+
       <nav id="regionTabs" class="tabs" aria-label="區域"></nav>
 
       <section id="regionPanel" class="grid region-layout"></section>
@@ -886,6 +1025,12 @@
         if (level === "green") return "綠";
         if (level === "red") return "紅";
         return "黃";
+      }
+
+      function weatherLabelFor(level) {
+        if (level === "green") return "低";
+        if (level === "red") return "高";
+        return "中";
       }
 
       function escapeHtml(value) {
@@ -1226,6 +1371,76 @@
         `;
       }
 
+      function formatMetric(value, unit) {
+        if (value === null || value === undefined || value === "") return "缺";
+        return `${value}${unit}`;
+      }
+
+      function renderWeatherRiskPanel() {
+        const panel = document.getElementById("weatherRiskPanel");
+        const weatherRisk = dashboardData.weatherRisk;
+        if (!weatherRisk) {
+          panel.innerHTML = "<p class=\"muted\">天氣模擬尚未建立。</p>";
+          return;
+        }
+
+        const sourceStatus = (weatherRisk.sources || [])
+          .map((source) => `${source.label}: ${source.status}`)
+          .join(" / ");
+
+        panel.innerHTML = `
+          <div class="weather-risk-disclaimer">
+            <strong>個人模擬，不是官方預報。</strong>
+            <p>${escapeHtml(weatherRisk.disclaimer || "")}</p>
+            <p class="muted">${escapeHtml(weatherRisk.model?.summary || "")}</p>
+            <p class="muted">更新：${escapeHtml(weatherRisk.checkedAt || "")} / ${escapeHtml(sourceStatus)}</p>
+          </div>
+          <div class="weather-location-list">
+            ${(weatherRisk.locations || []).map((location) => `
+              <details class="weather-location">
+                <summary>
+                  <div class="weather-location-head">
+                    <div class="weather-location-title">
+                      <h3>${escapeHtml(location.title)}</h3>
+                      <p class="muted">約 ${escapeHtml(location.approximateAltitudeM)}m / ${escapeHtml((location.terrain || []).join("、"))}</p>
+                    </div>
+                    <div class="status-line">
+                      <span class="badge ${badgeClass[location.level] || "yellow"}">${weatherLabelFor(location.level)}</span>
+                      <span class="weather-location-toggle"></span>
+                    </div>
+                  </div>
+                </summary>
+                <div class="weather-horizons">
+                  ${(location.horizons || []).map((horizon) => {
+                    const riskTypes = (horizon.risks || [])
+                      .filter((risk) => risk.level !== "green")
+                      .slice(0, 4);
+                    return `
+                      <section class="weather-horizon">
+                        <div class="scenario-title">
+                          <span class="severity ${severityClass[horizon.level] || "yellow"}">${weatherLabelFor(horizon.level)}</span>
+                          <strong>${horizon.horizonHours}h</strong>
+                        </div>
+                        <p>${escapeHtml(horizon.reason)}</p>
+                        <div class="weather-risk-types">
+                          ${riskTypes.length ? riskTypes.map((risk) => `<span class="pill ${risk.level === "red" ? "red" : ""}">${escapeHtml(risk.type)}</span>`).join("") : "<span class=\"pill\">低風險</span>"}
+                        </div>
+                        <p class="weather-metrics">
+                          氣溫 ${escapeHtml(formatMetric(horizon.metrics?.simulatedTempC, "°C"))} /
+                          雨 ${escapeHtml(formatMetric(horizon.metrics?.precipitationProbabilityPct, "%"))} /
+                          風 ${escapeHtml(formatMetric(horizon.metrics?.observedWindSpeedMs, "m/s"))} /
+                          濕 ${escapeHtml(formatMetric(horizon.metrics?.humidityPct, "%"))}
+                        </p>
+                      </section>
+                    `;
+                  }).join("")}
+                </div>
+              </details>
+            `).join("")}
+          </div>
+        `;
+      }
+
       function renderTabs() {
         const tabs = document.getElementById("regionTabs");
         tabs.innerHTML = dashboardData.regions
@@ -1314,6 +1529,7 @@
 
       async function loadData() {
         const response = await fetch("./data.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`data.json HTTP ${response.status}`);
         dashboardData = await response.json();
         activeRegionId = location.hash.replace("#", "") || dashboardData.regions[0].id;
 
@@ -1341,17 +1557,57 @@
 
         renderVisualMap();
         renderNotificationPanel();
+        renderWeatherRiskPanel();
         renderTabs();
         renderRegion();
       }
 
-      if ("serviceWorker" in navigator) {
+      function renderDataLoadError(error) {
+        const isFileUrl = location.protocol === "file:";
+        const message = isFileUrl
+          ? "目前是用檔案方式開啟，瀏覽器通常會阻擋 data.json，所以動態內容無法載入。請改用 http://127.0.0.1:8001/app/index.html 或 GitHub Pages。"
+          : "資料讀取失敗。若在線，請重新整理；若仍失敗，請直接開官方來源確認。";
+
+        const overallPanel = document.getElementById("overallPanel");
+        overallPanel.classList.add("stale");
+        const badge = document.getElementById("overallBadge");
+        badge.className = "badge yellow";
+        badge.textContent = "待查";
+        document.getElementById("overallText").textContent = message;
+        document.getElementById("updated").textContent = `資料未載入：${error?.message || "未知錯誤"}`;
+        document.getElementById("summary").innerHTML = [
+          "這不是官方警報狀態；請以 JMA、Safety tips、Yahoo! 防災、旅館與現地指示為準。",
+          isFileUrl ? "本 PWA 需要透過本機伺服器或 GitHub Pages 讀取 data.json，不能可靠地直接用 file:// 開啟。" : "若本機預覽伺服器停止，請重新啟動後再開 localhost 頁面。"
+        ].map((note) => `<li>${escapeHtml(note)}</li>`).join("");
+
+        document.getElementById("urgentLinks").innerHTML = [
+          {
+            title: "JMA 防災情報",
+            url: "https://www.jma.go.jp/bosai/",
+            category: "官方",
+            note: "氣象 / 地震 / 津波"
+          },
+          {
+            title: "Safety tips",
+            url: "https://www.jnto.go.jp/safety-tips/eng/app.html",
+            category: "官方 App",
+            note: "訪日旅客"
+          }
+        ].map(renderQuickLink).join("");
+
+        document.getElementById("eventLayer").innerHTML = "";
+        document.getElementById("eventList").innerHTML = "<p class=\"muted\">資料未載入，態勢圖暫停顯示。</p>";
+        document.getElementById("notificationPanel").innerHTML = "<p class=\"muted\">資料未載入，通知規則暫停顯示。</p>";
+        document.getElementById("weatherRiskPanel").innerHTML = "<p class=\"muted\">資料未載入，天氣模擬暫停顯示。</p>";
+        document.getElementById("regionTabs").innerHTML = "";
+        document.getElementById("regionPanel").innerHTML = "<article class=\"panel\"><h2>區域資料未載入</h2><p>請改用本機預覽網址或 GitHub Pages，或直接開官方來源確認。</p></article>";
+      }
+
+      if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
         navigator.serviceWorker.register("./service-worker.js");
       }
 
-      loadData().catch(() => {
-        document.getElementById("updated").textContent = "資料讀取失敗。若離線，請稍後再開；若在線，請重新整理。";
-      });
+      loadData().catch(renderDataLoadError);
     </script>
   </body>
 </html>

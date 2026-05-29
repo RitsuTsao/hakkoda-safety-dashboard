@@ -101,6 +101,228 @@ const operationSources = {
   ]
 };
 
+const weatherForecastSources = {
+  hakodate: {
+    id: "017000",
+    label: "JMA 函館地方気象台",
+    url: "https://www.jma.go.jp/bosai/forecast/data/forecast/017000.json"
+  },
+  aomori: {
+    id: "020000",
+    label: "JMA 青森地方気象台",
+    url: "https://www.jma.go.jp/bosai/forecast/data/forecast/020000.json"
+  },
+  iwate: {
+    id: "030000",
+    label: "JMA 盛岡地方気象台",
+    url: "https://www.jma.go.jp/bosai/forecast/data/forecast/030000.json"
+  }
+};
+
+const amedasLatestTimeUrl = "https://www.jma.go.jp/bosai/amedas/data/latest_time.txt";
+
+const weatherRiskLocations = [
+  {
+    id: "hakodate",
+    title: "函館",
+    regionId: "hakodate",
+    forecastSourceId: "hakodate",
+    forecastArea: "渡島地方",
+    weeklyArea: "渡島・檜山地方",
+    tempArea: "函館",
+    amedasId: "23232",
+    altitudeM: 20,
+    baselineAltitudeM: 35,
+    profile: "coast",
+    terrain: ["沿岸", "城市"]
+  },
+  {
+    id: "hirosaki",
+    title: "弘前",
+    regionId: "aomori",
+    forecastSourceId: "aomori",
+    forecastArea: "津軽",
+    weeklyArea: "津軽",
+    tempArea: "弘前",
+    amedasId: "31461",
+    altitudeM: 40,
+    baselineAltitudeM: 30,
+    profile: "inland",
+    terrain: ["內陸", "城市"]
+  },
+  {
+    id: "owani-onsen",
+    title: "大鰐溫泉",
+    regionId: "aomori",
+    forecastSourceId: "aomori",
+    forecastArea: "津軽",
+    weeklyArea: "津軽",
+    tempArea: "弘前",
+    amedasId: "31461",
+    altitudeM: 80,
+    baselineAltitudeM: 30,
+    profile: "foothill",
+    terrain: ["山麓", "溫泉地"]
+  },
+  {
+    id: "sukayu-onsen",
+    title: "酸湯溫泉旅館",
+    regionId: "aomori",
+    forecastSourceId: "aomori",
+    forecastArea: "津軽",
+    weeklyArea: "津軽",
+    tempArea: "青森",
+    amedasId: "31482",
+    altitudeM: 890,
+    baselineAltitudeM: 3,
+    profile: "mountain-base",
+    terrain: ["山區", "高海拔", "住宿基地"]
+  },
+  {
+    id: "hakkoda-ropeway-park",
+    title: "八甲田纜車山頂公園",
+    regionId: "aomori",
+    forecastSourceId: "aomori",
+    forecastArea: "津軽",
+    weeklyArea: "津軽",
+    tempArea: "青森",
+    amedasId: "31482",
+    altitudeM: 1320,
+    baselineAltitudeM: 3,
+    profile: "exposed-mountain",
+    terrain: ["山區", "高海拔", "曝露地形", "纜車"]
+  },
+  {
+    id: "kenashitai",
+    title: "毛無岱",
+    regionId: "aomori",
+    forecastSourceId: "aomori",
+    forecastArea: "津軽",
+    weeklyArea: "津軽",
+    tempArea: "青森",
+    amedasId: "31482",
+    altitudeM: 1050,
+    baselineAltitudeM: 3,
+    profile: "wetland-boardwalk",
+    terrain: ["山區", "濕地", "木道"]
+  },
+  {
+    id: "hakkoda-odake",
+    title: "八甲田山大岳",
+    regionId: "aomori",
+    forecastSourceId: "aomori",
+    forecastArea: "津軽",
+    weeklyArea: "津軽",
+    tempArea: "青森",
+    amedasId: "31482",
+    altitudeM: 1585,
+    baselineAltitudeM: 3,
+    profile: "summit",
+    terrain: ["山區", "高海拔", "稜線", "曝露地形"]
+  },
+  {
+    id: "oirase-trail",
+    title: "奧入瀨步道",
+    regionId: "aomori",
+    forecastSourceId: "aomori",
+    forecastArea: "三八上北",
+    weeklyArea: "下北・三八上北",
+    tempArea: "八戸",
+    amedasId: "31586",
+    altitudeM: 300,
+    baselineAltitudeM: 27,
+    profile: "gorge",
+    terrain: ["溪谷", "步道", "水邊"]
+  },
+  {
+    id: "towada-jinja",
+    title: "十和田神社",
+    regionId: "aomori",
+    forecastSourceId: "aomori",
+    forecastArea: "三八上北",
+    weeklyArea: "下北・三八上北",
+    tempArea: "八戸",
+    amedasId: "31662",
+    altitudeM: 410,
+    baselineAltitudeM: 27,
+    profile: "lakeside-forest",
+    terrain: ["湖畔", "森林", "山區"]
+  },
+  {
+    id: "hachinohe",
+    title: "八戶",
+    regionId: "aomori",
+    forecastSourceId: "aomori",
+    forecastArea: "三八上北",
+    weeklyArea: "下北・三八上北",
+    tempArea: "八戸",
+    amedasId: "31602",
+    altitudeM: 25,
+    baselineAltitudeM: 27,
+    profile: "coast",
+    terrain: ["沿岸", "城市"]
+  },
+  {
+    id: "ryusendo-iwaizumi",
+    title: "龍泉洞／岩泉",
+    regionId: "iwate",
+    forecastSourceId: "iwate",
+    forecastArea: "沿岸北部",
+    weeklyArea: "沿岸",
+    tempArea: "宮古",
+    amedasId: "33326",
+    altitudeM: 160,
+    baselineAltitudeM: 43,
+    profile: "karst-gorge",
+    terrain: ["洞穴", "溪谷", "山區"]
+  },
+  {
+    id: "miyako-jodogahama",
+    title: "宮古／淨土之濱",
+    regionId: "iwate",
+    forecastSourceId: "iwate",
+    forecastArea: "沿岸北部",
+    weeklyArea: "沿岸",
+    tempArea: "宮古",
+    amedasId: "33472",
+    altitudeM: 10,
+    baselineAltitudeM: 43,
+    profile: "coast",
+    terrain: ["沿岸", "海邊"]
+  },
+  {
+    id: "hanamaki",
+    title: "花卷",
+    regionId: "iwate",
+    forecastSourceId: "iwate",
+    forecastArea: "内陸",
+    weeklyArea: "内陸",
+    tempArea: "盛岡",
+    amedasId: "33576",
+    altitudeM: 90,
+    baselineAltitudeM: 155,
+    profile: "inland",
+    terrain: ["內陸", "城市"]
+  },
+  {
+    id: "tono",
+    title: "遠野",
+    regionId: "iwate",
+    forecastSourceId: "iwate",
+    forecastArea: "内陸",
+    weeklyArea: "内陸",
+    tempArea: "盛岡",
+    amedasId: "33671",
+    altitudeM: 275,
+    baselineAltitudeM: 155,
+    profile: "inland-basin",
+    terrain: ["內陸", "盆地", "山間"]
+  }
+];
+
+const weatherRiskHorizons = [12, 24, 48, 72];
+const altitudeLapseRateCPerM = 0.006;
+
 const redTerms = [
   "大津波警報",
   "津波警報",
@@ -1108,6 +1330,379 @@ async function fetchOperationSummaries() {
   };
 }
 
+function numericValue(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : null;
+}
+
+function qualityValue(entry) {
+  if (!Array.isArray(entry)) return null;
+  if (entry.length < 2) return numericValue(entry[0]);
+  return entry[1] === 0 ? numericValue(entry[0]) : null;
+}
+
+function formatAmedasTimestamp(value) {
+  return String(value || "")
+    .replace(/[-:]/g, "")
+    .replace("T", "")
+    .replace("+0900", "")
+    .replace("+09", "")
+    .slice(0, 14);
+}
+
+function windDirectionLabel(value) {
+  const labels = ["北", "北北東", "北東", "東北東", "東", "東南東", "南東", "南南東", "南", "南南西", "南西", "西南西", "西", "西北西", "北西", "北北西"];
+  const index = Number(value);
+  if (!Number.isFinite(index) || index < 1 || index > 16) return "";
+  return labels[index - 1];
+}
+
+function timeDistanceMs(a, b) {
+  const aMs = Date.parse(a || "");
+  const bMs = Date.parse(b || "");
+  if (Number.isNaN(aMs) || Number.isNaN(bMs)) return Number.POSITIVE_INFINITY;
+  return Math.abs(aMs - bMs);
+}
+
+function nearestIndex(timeDefines = [], targetTime) {
+  if (!timeDefines.length) return 0;
+  return timeDefines
+    .map((time, index) => ({ index, distance: timeDistanceMs(time, targetTime) }))
+    .sort((a, b) => a.distance - b.distance)[0].index;
+}
+
+function areaByName(timeSeries = [], areaName) {
+  for (const series of timeSeries) {
+    const area = series.areas?.find((candidate) => candidate.area?.name === areaName);
+    if (area) return { series, area };
+  }
+  return null;
+}
+
+function maxPopInWindow(series, area, startTime, targetTime) {
+  const startMs = Date.parse(startTime || "");
+  const targetMs = Date.parse(targetTime);
+  const candidates = (series.timeDefines || [])
+    .map((time, index) => ({ time, value: numericValue(area.pops?.[index]) }))
+    .filter((item) => {
+      const itemMs = Date.parse(item.time || "");
+      return item.value !== null && itemMs >= startMs && itemMs <= targetMs;
+    });
+  if (!candidates.length) {
+    const index = nearestIndex(series.timeDefines || [], targetTime);
+    return numericValue(area.pops?.[index]);
+  }
+  return Math.max(...candidates.map((item) => item.value));
+}
+
+function shortForecastForLocation(forecast, location, targetTime, horizonHours) {
+  const primary = forecast?.[0];
+  const weekly = forecast?.[1];
+  if (!primary) return null;
+  const targetMs = Date.parse(targetTime);
+  const windowStartTime = new Date(targetMs - 12 * 60 * 60 * 1000).toISOString();
+
+  const weatherSeries = areaByName(primary.timeSeries || [], location.forecastArea);
+  const popSeries = (primary.timeSeries || [])
+    .map((series) => ({
+      series,
+      area: series.areas?.find((area) => area.area?.name === location.forecastArea)
+    }))
+    .find((match) => match.area?.pops);
+  const tempSeries = (primary.timeSeries || [])
+    .map((series) => ({
+      series,
+      area: series.areas?.find((area) => area.area?.name === location.tempArea)
+    }))
+    .find((match) => match.area?.temps);
+  const weeklyWeather = weekly ? areaByName(weekly.timeSeries || [], location.weeklyArea || location.forecastArea) : null;
+  const weeklyTemp = weekly
+    ? (weekly.timeSeries || [])
+      .map((series) => ({
+        series,
+        area: series.areas?.find((area) => area.area?.name === location.tempArea)
+      }))
+      .find((match) => match.area?.tempsMax || match.area?.tempsMin)
+    : null;
+
+  const useWeekly = horizonHours > 48 && weeklyWeather;
+  const weatherIndex = useWeekly
+    ? nearestIndex(weeklyWeather.series.timeDefines || [], targetTime)
+    : nearestIndex(weatherSeries?.series.timeDefines || [], targetTime);
+  const weatherArea = useWeekly ? weeklyWeather.area : weatherSeries?.area;
+  const weatherText = weatherArea?.weathers?.[weatherIndex] || "";
+  const windText = weatherArea?.winds?.[weatherIndex] || "";
+  const waveText = weatherArea?.waves?.[weatherIndex] || "";
+  const weeklyPop = useWeekly ? numericValue(weatherArea?.pops?.[weatherIndex]) : null;
+  const pop = useWeekly ? weeklyPop : (popSeries ? maxPopInWindow(popSeries.series, popSeries.area, windowStartTime, targetTime) : null);
+
+  const tempIndex = tempSeries ? nearestIndex(tempSeries.series.timeDefines || [], targetTime) : 0;
+  const shortTemp = numericValue(tempSeries?.area?.temps?.[tempIndex]);
+  const weeklyTempIndex = weeklyTemp ? nearestIndex(weeklyTemp.series.timeDefines || [], targetTime) : 0;
+  const weeklyTempMax = numericValue(weeklyTemp?.area?.tempsMax?.[weeklyTempIndex]);
+  const weeklyTempMin = numericValue(weeklyTemp?.area?.tempsMin?.[weeklyTempIndex]);
+  const baseTemp = useWeekly && weeklyTempMax !== null && weeklyTempMin !== null
+    ? (weeklyTempMax + weeklyTempMin) / 2
+    : shortTemp;
+
+  return {
+    reportDatetime: primary.reportDatetime,
+    targetTime,
+    horizonHours,
+    weatherText,
+    windText,
+    waveText,
+    precipitationProbability: pop,
+    baseTempC: baseTemp,
+    sourceArea: weatherArea?.area?.name || location.forecastArea,
+    tempArea: tempSeries?.area?.area?.name || weeklyTemp?.area?.area?.name || location.tempArea
+  };
+}
+
+async function fetchAmedasSnapshot() {
+  const latestTimeText = (await fetchText(amedasLatestTimeUrl)).trim();
+  const timestamp = formatAmedasTimestamp(latestTimeText);
+  const url = `https://www.jma.go.jp/bosai/amedas/data/map/${timestamp}.json`;
+  const data = await fetchJson(url);
+  return { checkedAt: latestTimeText, url, data };
+}
+
+function observationForLocation(location, amedasSnapshot) {
+  const raw = amedasSnapshot?.data?.[location.amedasId];
+  if (!raw) return null;
+  const windDirection = qualityValue(raw.windDirection);
+  return {
+    stationId: location.amedasId,
+    checkedAt: amedasSnapshot.checkedAt,
+    tempC: qualityValue(raw.temp),
+    humidityPct: qualityValue(raw.humidity),
+    precipitation1hMm: qualityValue(raw.precipitation1h),
+    precipitation3hMm: qualityValue(raw.precipitation3h),
+    precipitation24hMm: qualityValue(raw.precipitation24h),
+    windSpeedMs: qualityValue(raw.wind),
+    windDirection: windDirectionLabel(windDirection)
+  };
+}
+
+function simulatedTemp(baseTempC, observation, location) {
+  const base = baseTempC ?? observation?.tempC;
+  if (base === null || base === undefined) return null;
+  const delta = (location.altitudeM - location.baselineAltitudeM) * altitudeLapseRateCPerM;
+  return Math.round((base - delta) * 10) / 10;
+}
+
+function levelFromScore(score) {
+  if (score >= 5) return "red";
+  if (score >= 2) return "yellow";
+  return "green";
+}
+
+function riskItem(type, score, reason) {
+  return { type, level: levelFromScore(score), reason };
+}
+
+function profileMatches(location, profiles) {
+  return profiles.includes(location.profile);
+}
+
+function buildWeatherRiskForHorizon(location, forecast, observation, targetTime, horizonHours) {
+  const simTempC = simulatedTemp(forecast?.baseTempC, observation, location);
+  const text = `${forecast?.weatherText || ""} ${forecast?.windText || ""} ${forecast?.waveText || ""}`;
+  const pop = forecast?.precipitationProbability ?? null;
+  const windSpeed = observation?.windSpeedMs ?? null;
+  const humidity = observation?.humidityPct ?? null;
+  const rain3h = observation?.precipitation3hMm ?? null;
+  const rain24h = observation?.precipitation24hMm ?? null;
+  const isMountain = profileMatches(location, ["foothill", "mountain-base", "exposed-mountain", "wetland-boardwalk", "summit", "gorge", "lakeside-forest", "karst-gorge", "inland-basin"]);
+  const isExposed = profileMatches(location, ["exposed-mountain", "summit"]);
+  const isWetTrail = profileMatches(location, ["wetland-boardwalk", "gorge", "karst-gorge"]);
+  const isCoastal = profileMatches(location, ["coast"]);
+  const hasRainText = /雨|大雨|降水/.test(text);
+  const hasThunderText = /雷/.test(text);
+  const hasFogText = /霧|濃霧/.test(text);
+  const hasStrongWindText = /強く|強風|暴風|やや強く/.test(text);
+  const hasHighWaveText = /２．５メートル|３メートル|4メートル|４メートル/.test(text);
+
+  let rainScore = 0;
+  if (pop !== null && pop >= 70) rainScore += 2;
+  else if (pop !== null && pop >= 40) rainScore += 1;
+  if (hasRainText) rainScore += 1;
+  if (rain3h !== null && rain3h >= 5) rainScore += 1;
+  if (rain24h !== null && rain24h >= 30) rainScore += 1;
+
+  let windScore = 0;
+  if (hasStrongWindText) windScore += 1;
+  if (windSpeed !== null && windSpeed >= 8) windScore += 2;
+  else if (windSpeed !== null && windSpeed >= 5) windScore += 1;
+  if (isExposed && (hasStrongWindText || (windSpeed !== null && windSpeed >= 3))) windScore += 2;
+
+  let coldScore = 0;
+  if (simTempC !== null && simTempC <= 5) coldScore += 2;
+  else if (simTempC !== null && simTempC <= 10 && isMountain) coldScore += 1;
+  if (humidity !== null && humidity >= 90 && simTempC !== null && simTempC <= 12 && isMountain) coldScore += 1;
+  if (hasFogText && isMountain) coldScore += 1;
+
+  let heatScore = 0;
+  if (simTempC !== null && simTempC >= 30) heatScore += 2;
+  else if (simTempC !== null && simTempC >= 26 && humidity !== null && humidity >= 80) heatScore += 1;
+
+  const thunderScore = hasThunderText ? 3 : 0;
+
+  let mountainScore = 0;
+  if (isMountain && rainScore >= 2) mountainScore += 2;
+  if (isMountain && windScore >= 2) mountainScore += 1;
+  if (isMountain && coldScore >= 1) mountainScore += 1;
+  if (isWetTrail && rain24h !== null && rain24h >= 20) mountainScore += 2;
+  if (isExposed && thunderScore > 0) mountainScore += 2;
+
+  let coastalScore = 0;
+  if (isCoastal && (hasHighWaveText || hasStrongWindText)) coastalScore += 2;
+  if (isCoastal && rainScore >= 2) coastalScore += 1;
+
+  let transportScore = 0;
+  if (rainScore >= 3) transportScore += 1;
+  if (windScore >= 3) transportScore += 1;
+  if (mountainScore >= 3 || coastalScore >= 3) transportScore += 1;
+  if (hasThunderText) transportScore += 1;
+
+  const risks = [
+    riskItem("雨", rainScore, pop !== null ? `降雨機率約 ${pop}%` : hasRainText ? "預報文字含雨" : "雨訊號弱"),
+    riskItem("風", windScore, windSpeed !== null ? `近況風速 ${windSpeed}m/s${observation?.windDirection ? `（${observation.windDirection}）` : ""}` : "使用 JMA 風文字判斷"),
+    riskItem("低溫", coldScore, simTempC !== null ? `海拔修正後約 ${simTempC}°C` : "缺少可用氣溫"),
+    riskItem("熱", heatScore, simTempC !== null ? `海拔修正後約 ${simTempC}°C` : "缺少可用氣溫"),
+    riskItem("雷", thunderScore, hasThunderText ? "JMA 文字含雷" : "未見雷字樣"),
+    riskItem("山區不利", mountainScore, isMountain ? "依地形、雨風低溫加權" : "非山區地點"),
+    riskItem("沿岸不利", coastalScore, isCoastal ? "依風浪雨加權" : "非沿岸地點"),
+    riskItem("交通不利", transportScore, "依雨、風、雷、山區/沿岸條件加權")
+  ];
+
+  const level = highestLevel(risks);
+  const highSignals = risks.filter((item) => item.level === "red").map((item) => item.type);
+  const mediumSignals = risks.filter((item) => item.level === "yellow").map((item) => item.type);
+  const primarySignals = highSignals.length ? highSignals : mediumSignals;
+  const reasonParts = [];
+  if (simTempC !== null) reasonParts.push(`海拔修正後約 ${simTempC}°C`);
+  if (pop !== null) reasonParts.push(`降雨機率 ${pop}%`);
+  if (windSpeed !== null) reasonParts.push(`近況風速 ${windSpeed}m/s`);
+  if (humidity !== null) reasonParts.push(`濕度 ${humidity}%`);
+  if (rain24h !== null) reasonParts.push(`24h雨量 ${rain24h}mm`);
+  const reason = primarySignals.length
+    ? `${reasonParts.join("，")}；${primarySignals.join("、")}需保守。`
+    : `${reasonParts.join("，")}；暫無明顯模擬加權訊號。`;
+
+  return {
+    horizonHours,
+    targetTime,
+    level,
+    reason,
+    metrics: {
+      forecastWeather: forecast?.weatherText || "",
+      forecastWind: forecast?.windText || "",
+      forecastWave: forecast?.waveText || "",
+      precipitationProbabilityPct: pop,
+      baseTempC: forecast?.baseTempC ?? null,
+      simulatedTempC: simTempC,
+      humidityPct: humidity ?? null,
+      observedRain1hMm: observation?.precipitation1hMm ?? null,
+      observedRain3hMm: rain3h ?? null,
+      observedRain24hMm: rain24h ?? null,
+      observedWindSpeedMs: windSpeed ?? null,
+      observedWindDirection: observation?.windDirection || ""
+    },
+    risks
+  };
+}
+
+function buildWeatherLocation(location, forecasts, amedasSnapshot) {
+  const forecast = forecasts[location.forecastSourceId];
+  const observation = observationForLocation(location, amedasSnapshot);
+  const nowMs = Date.now();
+  const horizons = weatherRiskHorizons.map((horizonHours) => {
+    const targetTime = new Date(nowMs + horizonHours * 60 * 60 * 1000).toISOString();
+    const horizonForecast = shortForecastForLocation(forecast?.data, location, targetTime, horizonHours);
+    return buildWeatherRiskForHorizon(location, horizonForecast, observation, targetTime, horizonHours);
+  });
+
+  return {
+    id: location.id,
+    title: location.title,
+    regionId: location.regionId,
+    approximateAltitudeM: location.altitudeM,
+    terrain: location.terrain,
+    profile: location.profile,
+    sourceArea: location.forecastArea,
+    amedasStationId: location.amedasId,
+    observation,
+    level: highestLevel(horizons),
+    horizons
+  };
+}
+
+async function fetchWeatherRiskSimulation() {
+  const forecasts = {};
+  const sources = [];
+
+  for (const [id, source] of Object.entries(weatherForecastSources)) {
+    try {
+      const data = await fetchJson(source.url);
+      forecasts[id] = { source, data };
+      sources.push({
+        id,
+        label: source.label,
+        url: source.url,
+        status: "ok",
+        reportDatetime: data[0]?.reportDatetime || ""
+      });
+    } catch (error) {
+      sources.push({
+        id,
+        label: source.label,
+        url: source.url,
+        status: "failed",
+        error: error.message
+      });
+    }
+  }
+
+  let amedasSnapshot = null;
+  try {
+    amedasSnapshot = await fetchAmedasSnapshot();
+    sources.push({
+      id: "amedas",
+      label: "JMA AMeDAS 最新観測",
+      url: amedasSnapshot.url,
+      status: "ok",
+      reportDatetime: amedasSnapshot.checkedAt
+    });
+  } catch (error) {
+    sources.push({
+      id: "amedas",
+      label: "JMA AMeDAS 最新観測",
+      url: amedasLatestTimeUrl,
+      status: "failed",
+      error: error.message
+    });
+  }
+
+  const locations = weatherRiskLocations.map((location) => buildWeatherLocation(location, forecasts, amedasSnapshot));
+  const failedCount = sources.filter((source) => source.status === "failed").length;
+
+  return {
+    version: "mountain-weather-simulation-v0.1",
+    checkedAt: nowInJapan(),
+    status: failedCount === 0 ? "ok" : failedCount === sources.length ? "failed" : "partial",
+    disclaimer: "個人模擬，不是官方預報。此區用 JMA 區域資料、AMeDAS 近況、海拔與地形修正估算；山區實況可能差很多，安全判斷請以 JMA、旅館、纜車、交通與現地人員為準。",
+    model: {
+      summary: "以 JMA 區域預報為基底，套用每升高 100m 約降溫 0.6°C、山區曝露、濕地木道、溪谷、湖畔與沿岸加權。",
+      lapseRateCPer100m: 0.6,
+      horizonsHours: weatherRiskHorizons,
+      riskTypes: ["雨", "風", "低溫", "熱", "雷", "山區不利", "沿岸不利", "交通不利"]
+    },
+    sources,
+    locations
+  };
+}
+
 function mergeRegionLevels(region, jmaRegion, jmaStatus) {
   if (jmaStatus !== "ok" && jmaStatus !== "partial") return "yellow";
   if (!jmaRegion) return region.level || "yellow";
@@ -1422,6 +2017,7 @@ async function main() {
   const jma = await fetchJmaSummaries();
   const bear = await fetchBearSummaries();
   const operation = await fetchOperationSummaries();
+  const weatherRisk = await fetchWeatherRiskSimulation();
 
   const regions = existing.regions.map((region) => {
     const jmaRegion = jma.regions[region.id];
@@ -1464,6 +2060,7 @@ async function main() {
     jma,
     bear,
     operation,
+    weatherRisk,
     criticalEvents,
     notifications,
     overall: {
