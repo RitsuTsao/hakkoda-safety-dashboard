@@ -2,6 +2,7 @@
 
 ## Unreleased - Final PWA cleanup
 
+- Fixes 48 / 72 hour weather simulation metrics so expired short-range JMA values are not reused. Longer horizons now use available JMA weekly representative-area temperature and precipitation data.
 - Adds Mountain Weather Simulation v0.1 with JMA forecast data, AMeDAS observations, approximate altitude correction, terrain weighting, and 12 / 24 / 48 / 72 hour personal-risk hints.
 - Keeps the experimental weather module separate from official alerts, Visual Map events, and Gmail notifications.
 - Collapses the full weather module by default, with a second collapsed layer for each fixed location.

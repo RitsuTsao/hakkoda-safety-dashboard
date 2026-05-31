@@ -144,6 +144,7 @@ const weatherRiskLocations = [
     forecastArea: "津軽",
     weeklyArea: "津軽",
     tempArea: "弘前",
+    weeklyTempArea: "青森",
     amedasId: "31461",
     altitudeM: 40,
     baselineAltitudeM: 30,
@@ -158,6 +159,7 @@ const weatherRiskLocations = [
     forecastArea: "津軽",
     weeklyArea: "津軽",
     tempArea: "弘前",
+    weeklyTempArea: "青森",
     amedasId: "31461",
     altitudeM: 80,
     baselineAltitudeM: 30,
@@ -1420,29 +1422,33 @@ function shortForecastForLocation(forecast, location, targetTime, horizonHours) 
     ? (weekly.timeSeries || [])
       .map((series) => ({
         series,
-        area: series.areas?.find((area) => area.area?.name === location.tempArea)
+        area: series.areas?.find((area) => area.area?.name === (location.weeklyTempArea || location.tempArea))
       }))
       .find((match) => match.area?.tempsMax || match.area?.tempsMin)
     : null;
 
-  const useWeekly = horizonHours > 48 && weeklyWeather;
-  const weatherIndex = useWeekly
+  const useWeeklyWeather = horizonHours > 48 && weeklyWeather;
+  const useWeeklyMetrics = horizonHours >= 48;
+  const weatherIndex = useWeeklyWeather
     ? nearestIndex(weeklyWeather.series.timeDefines || [], targetTime)
     : nearestIndex(weatherSeries?.series.timeDefines || [], targetTime);
-  const weatherArea = useWeekly ? weeklyWeather.area : weatherSeries?.area;
+  const weatherArea = useWeeklyWeather ? weeklyWeather.area : weatherSeries?.area;
   const weatherText = weatherArea?.weathers?.[weatherIndex] || "";
   const windText = weatherArea?.winds?.[weatherIndex] || "";
   const waveText = weatherArea?.waves?.[weatherIndex] || "";
-  const weeklyPop = useWeekly ? numericValue(weatherArea?.pops?.[weatherIndex]) : null;
-  const pop = useWeekly ? weeklyPop : (popSeries ? maxPopInWindow(popSeries.series, popSeries.area, windowStartTime, targetTime) : null);
+  const weeklyWeatherIndex = weeklyWeather ? nearestIndex(weeklyWeather.series.timeDefines || [], targetTime) : 0;
+  const weeklyPop = numericValue(weeklyWeather?.area?.pops?.[weeklyWeatherIndex]);
+  const pop = useWeeklyMetrics ? weeklyPop : (popSeries ? maxPopInWindow(popSeries.series, popSeries.area, windowStartTime, targetTime) : null);
 
   const tempIndex = tempSeries ? nearestIndex(tempSeries.series.timeDefines || [], targetTime) : 0;
   const shortTemp = numericValue(tempSeries?.area?.temps?.[tempIndex]);
   const weeklyTempIndex = weeklyTemp ? nearestIndex(weeklyTemp.series.timeDefines || [], targetTime) : 0;
   const weeklyTempMax = numericValue(weeklyTemp?.area?.tempsMax?.[weeklyTempIndex]);
   const weeklyTempMin = numericValue(weeklyTemp?.area?.tempsMin?.[weeklyTempIndex]);
-  const baseTemp = useWeekly && weeklyTempMax !== null && weeklyTempMin !== null
-    ? (weeklyTempMax + weeklyTempMin) / 2
+  const baseTemp = useWeeklyMetrics
+    ? weeklyTempMax !== null && weeklyTempMin !== null
+      ? (weeklyTempMax + weeklyTempMin) / 2
+      : null
     : shortTemp;
 
   return {
