@@ -195,6 +195,7 @@ Notification Layer v1 is live in Version 1.0.0.
   - 酸湯・八甲田山活動圈熊情報, based on the explicit 03.1 Hakkoda-focus term list above.
 - Routine yellow advisories, routine weather items, and trip-operation interruptions such as ropeway / bus / cave status should not notify.
 - Same-event digest delivery should be limited to once every 24 hours after external delivery is enabled.
+- Same-source immediate events are suppressed after the first successful delivery, so a long-running official page does not send the same alert every day.
 - Every candidate should link back to the dashboard-facing official source.
 - Iwate bear-injury dedupe uses a stable source-level key and also recognizes older summary-based keys, so the same long-running prefectural injury page is not sent every day.
 

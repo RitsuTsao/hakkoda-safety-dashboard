@@ -112,15 +112,15 @@ Implemented:
   - Fixed locations include Hakodate, Hirosaki, Owani Onsen, Sukayu Onsen, Hakkoda Ropeway summit park, Kenashitai, Hakkoda Odake, Oirase trail, Towada Shrine, Hachinohe, Ryusendo / Iwaizumi, Miyako / Jodogahama, Hanamaki, and Tono.
   - The model uses a simple lapse-rate correction of about -0.6 C per 100m and terrain profiles such as exposed mountain, summit, wetland boardwalk, gorge, lakeside / forest, coast, inland basin, and foothill.
   - This is explicitly personal simulation, not official forecast. It must not feed `criticalEvents`, Visual Map priority, or Gmail notification candidates.
-  - `app/index.html` renders a `天氣模擬` panel with low / medium / high labels and a clear disclaimer.
-  - `app/service-worker.js` cache is bumped to `hakkoda-safety-v15` so installed PWAs refresh after the UI change.
+  - `app/index.html` renders a collapsed-by-default `天氣模擬` panel with low / medium / high labels and a clear disclaimer. Opening it shows 14 location rows, which are also collapsed by default.
+  - `app/service-worker.js` cache is bumped to `hakkoda-safety-v16` so installed PWAs refresh after the final UI cleanup.
 
 ## Version 1 Status
 
 2026-05-03: Version 1.0.0 is complete.
 
 - Live page: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`
-- Current service worker cache: `hakkoda-safety-v15`
+- Current service worker cache: `hakkoda-safety-v16`
 - Current delivery channel: GitHub Actions -> Gmail SMTP
 - Verified notification delivery:
   - GitHub Actions `Send Gmail notifications` logged `Sent 1 Gmail notification(s).`
@@ -369,7 +369,7 @@ Updater behavior:
 1. Version 1 live QA.
    - Watch several scheduled runs after Version 1.0.0.
    - Confirm `deliveryStatus` remains sensible and same-event notifications do not repeat inside 24 hours.
-   - Confirm the installed phone PWA refreshes to service worker `hakkoda-safety-v14`.
+   - Confirm the installed phone PWA refreshes to service worker `hakkoda-safety-v16`.
 
 2. Continue Visual Map QA and refinements.
    - Confirm the priority model with live data during a few scheduled updates.
@@ -412,6 +412,6 @@ Before making further changes, a new Codex session should check:
 - `scripts/update-data.mjs` contains `buildNotificationLayer`.
 - `scripts/send-notifications.mjs` exists and safely skips when Gmail secrets are absent.
 - `.github/workflows/update-data.yml` uses Node 24-compatible action versions.
-- `app/service-worker.js` cache version is current enough to force PWA refresh after UI changes. Current Version 1.0.0 cache version: `hakkoda-safety-v14`.
+- `app/service-worker.js` cache version is current enough to force PWA refresh after UI changes. Current cache version: `hakkoda-safety-v16`.
 - GitHub Actions `Send Gmail notifications` can read `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `ALERT_EMAIL_TO` as repository secrets.
 - The live site still opens on desktop and phone.

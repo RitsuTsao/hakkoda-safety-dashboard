@@ -10,7 +10,7 @@ Status: Version 1.0.0 is complete as of 2026-05-03.
 
 Acceptance criteria:
 
-- Opens from GitHub Pages and as a local static app.
+- Opens from GitHub Pages and from a local HTTP preview server. Direct `file://` opening is not supported because browsers may block `data.json`.
 - Shows last update time, green / yellow / red state, and official links by region.
 - Can cache shell and `data.json` for offline reading.
 

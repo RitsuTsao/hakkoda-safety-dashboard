@@ -69,6 +69,7 @@ Use three layers:
 
 - Manual refresh: GitHub Actions -> `Update dashboard data` -> `Run workflow` on `main`.
 - Scheduled refresh: UTC `00:00` and `12:00`, currently Taiwan / Japan time `09:00` and `21:00`.
+- Local preview must use an HTTP server. Opening `app/index.html` directly with `file://` may block dynamic `data.json` loading.
 - If Gmail notification testing is needed, check the `Send Gmail notifications` step. All three env values should display as `***`.
 - Do not commit private travel details, booking numbers, full emergency contacts, room details, or passwords.
 - After the trip, rotate or delete the Google App Password used by `GMAIL_APP_PASSWORD` if the notification channel is no longer needed.

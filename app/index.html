@@ -985,7 +985,7 @@
       <section class="panel notification-panel">
         <div class="section-head">
           <h2>通知規則</h2>
-          <span class="muted">外部通道待設定</span>
+          <span class="muted">GitHub Actions / Gmail</span>
         </div>
         <div id="notificationPanel"></div>
       </section>
@@ -1348,24 +1348,27 @@
         const queued = notifications.queued || [];
         const candidates = notifications.candidates || [];
         const displayItems = queued.length ? queued : candidates;
-        const channelText = notifications.deliveryStatus === "not-configured"
-          ? "Gmail 尚未由 GitHub Actions 完成寄送"
-          : "外部通道已設定";
+        const channelText = notifications.deliveryStatus === "gmail-sent"
+          ? `本次已透過 Gmail 寄送${notifications.deliveredAt ? `（${notifications.deliveredAt}）` : ""}`
+          : "Gmail 由 GitHub Actions 處理；本次沒有新的寄送紀錄";
 
         panel.innerHTML = `
           <div class="notification-list">
             <p>${escapeHtml(notifications.summary)}</p>
             <p class="muted">${escapeHtml(channelText)}。${escapeHtml(notifications.policy?.limitation || "")}</p>
-            ${displayItems.length ? displayItems.map((item) => `
+            ${displayItems.length ? displayItems.map((item) => {
+              const queuedNow = queued.some((queuedItem) => queuedItem.key === item.key);
+              return `
               <a class="notification-item" href="${encodeURI(item.event.url)}" target="_blank" rel="noopener">
                 <div class="notification-meta">
-                  <span class="pill red">${item.urgency === "immediate" ? "立即" : "24小時摘要"}</span>
+                  <span class="pill ${queuedNow ? "red" : ""}">${queuedNow ? (item.urgency === "immediate" ? "立即" : "24小時摘要") : "已抑制"}</span>
                   <strong>${escapeHtml(item.event.icon || "⚠️")} ${escapeHtml(item.event.label)}</strong>
                 </div>
                 <p>${escapeHtml(item.event.summary)}</p>
-                <span class="muted">${escapeHtml(item.reason)} / ${escapeHtml(item.event.source || "官方來源")}${item.cooldownActive ? " / 24小時內已列入佇列" : ""}</span>
+                <span class="muted">${escapeHtml(item.reason)} / ${escapeHtml(item.event.source || "官方來源")}${item.suppressionReason ? ` / ${escapeHtml(item.suppressionReason)}` : ""}</span>
               </a>
-            `).join("") : "<p class=\"muted\">目前沒有事件需要通知。</p>"}
+            `;
+            }).join("") : "<p class=\"muted\">目前沒有事件需要通知。</p>"}
             <p class="muted">規則：${escapeHtml(notifications.policy?.digest || "")} ${escapeHtml(notifications.policy?.immediate || "")}</p>
           </div>
         `;
@@ -1565,7 +1568,7 @@
       function renderDataLoadError(error) {
         const isFileUrl = location.protocol === "file:";
         const message = isFileUrl
-          ? "目前是用檔案方式開啟，瀏覽器通常會阻擋 data.json，所以動態內容無法載入。請改用 http://127.0.0.1:8001/app/index.html 或 GitHub Pages。"
+          ? "目前是用檔案方式開啟，瀏覽器通常會阻擋 data.json，所以動態內容無法載入。請改用本機 localhost 預覽網址或 GitHub Pages。"
           : "資料讀取失敗。若在線，請重新整理；若仍失敗，請直接開官方來源確認。";
 
         const overallPanel = document.getElementById("overallPanel");

@@ -1974,6 +1974,11 @@ function buildNotificationLayer(criticalEvents, existingNotifications = {}) {
       const lastQueuedAt = lastQueuedAtForEvent(event.event, key, previousQueued);
       const hours = hoursSince(lastQueuedAt, nowMs);
       const cooldownActive = hours < notificationCooldownHours;
+      const suppressionReason = event.rule && lastQueuedAt
+        ? "同一立即事件已寄送過，不重複寄送。"
+        : cooldownActive
+          ? "同一事件在 24 小時內已寄送。"
+          : "";
       return {
         key,
         urgency: event.rule ? "immediate" : "digest",
@@ -1981,6 +1986,7 @@ function buildNotificationLayer(criticalEvents, existingNotifications = {}) {
         cooldownHours: notificationCooldownHours,
         cooldownActive,
         lastQueuedAt: lastQueuedAt || null,
+        suppressionReason,
         event: event.event
       };
     });
@@ -1992,14 +1998,15 @@ function buildNotificationLayer(criticalEvents, existingNotifications = {}) {
 
   return {
     checkedAt: now,
-    deliveryStatus: "not-configured",
-    recommendedChannel: "Gmail SMTP after GitHub Secrets are configured",
+    deliveryStatus: existingNotifications.deliveryStatus === "gmail-sent" ? "gmail-ready" : "gmail-actions",
+    deliveredAt: existingNotifications.deliveredAt || null,
+    recommendedChannel: "GitHub Actions Gmail SMTP",
     summary: candidates.length
       ? `目前符合通知規則的事件 ${candidates.length} 件；本次可送出 ${queued.length} 件。`
       : "目前沒有符合通知規則的紅色事件。",
     policy: {
-      digest: "只通知紅色事件；同一事件每 24 小時最多一次。",
-      immediate: "三區域震度5以上、青森/岩手津波注意報以上、三區域土砂災害警戒情報以上、熊傷人可列為立即推送。",
+      digest: "只通知紅色事件；摘要型事件同一事件每 24 小時最多一次。",
+      immediate: "三區域震度5以上、青森/岩手津波注意報以上、三區域土砂災害警戒情報以上、熊傷人可列為立即推送；同一立即事件寄送後不重複寄送。",
       quiet: "黃色事件、營運異常、例行注意報不推送，避免噪音。",
       limitation: "GitHub Pages 本身不能主動背景推播；目前選擇由 GitHub Actions 透過 Gmail 寄信。"
     },
