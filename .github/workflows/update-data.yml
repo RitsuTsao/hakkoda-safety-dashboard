@@ -23,13 +23,6 @@ jobs:
       - name: Update data
         run: node scripts/update-data.mjs
 
-      - name: Send Gmail notifications
-        run: node scripts/send-notifications.mjs
-        env:
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
-
       - name: Commit updated data
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
