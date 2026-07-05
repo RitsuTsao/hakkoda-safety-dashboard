@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T11:23:53+09:00",
+  "generatedAt": "2026-07-05T22:14:39+09:00",
   "sourceMode": "JMA XML updater v1; JMA XML 長期 feed 已更新。",
   "overall": {
     "level": "red",
@@ -98,27 +98,27 @@
         "items": [
           {
             "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-07-05T07:57:35Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075736_0_VPWW54_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-07-05T07:57:35Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075737_0_VPWW53_017000.xml"
+          },
+          {
+            "level": "yellow",
             "title": "気象特別警報・警報・注意報",
             "updated": "2026-07-05T01:57:36Z",
             "source": "JMA 随時情報",
             "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015737_0_VPWW53_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-07-05T01:57:36Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015737_0_VPWW54_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-07-04T19:57:44Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260704195745_0_VPWW53_017000.xml"
           }
         ]
       }
@@ -233,9 +233,18 @@
         ],
         "latest": {
           "level": "yellow",
-          "checkedAt": "2026-07-05T11:23:39+09:00",
-          "summary": "公式營運情報を自動抽出できませんでした。手動で公式リンクを確認してください。",
-          "items": []
+          "checkedAt": "2026-07-05T22:14:24+09:00",
+          "summary": "公式營運情報 1 件を確認。",
+          "items": [
+            {
+              "level": "yellow",
+              "title": "現在のロープウェー運行状況",
+              "updated": "2026-07-01",
+              "source": "八甲田ロープウェー",
+              "summary": "Ropeway Operation",
+              "url": "https://hakkoda-ropeway.jp/"
+            }
+          ]
         }
       },
       "scenarios": [
@@ -262,26 +271,26 @@
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-07-05T01:57:37Z",
+            "updated": "2026-07-05T07:57:36Z",
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015738_0_VPWW53_020000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075738_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-07-05T01:57:37Z",
+            "updated": "2026-07-05T07:57:36Z",
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015738_0_VPWW54_020000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075738_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-07-05T01:06:59Z",
+            "updated": "2026-07-05T01:57:37Z",
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705010700_0_VPWW53_020000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015738_0_VPWW53_020000.xml"
           }
         ]
       },
@@ -347,10 +356,10 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-07-05T11:23:15+09:00",
+          "checkedAt": "2026-07-05T22:14:10+09:00",
           "summary": "くまログあおもり 2026-07-04 の熊情報 6 件。",
           "kumalog": {
-            "checkedAt": "2026-07-05T11:23:10+09:00",
+            "checkedAt": "2026-07-05T22:14:05+09:00",
             "status": "ok",
             "date": "2026-07-04",
             "count": 6,
@@ -597,7 +606,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-07-05T11:23:51+09:00",
+          "checkedAt": "2026-07-05T22:14:37+09:00",
           "summary": "公式營運情報 3 件を確認。",
           "items": [
             {
@@ -651,26 +660,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-07-05T02:00:00Z",
+            "updated": "2026-07-05T11:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、５日２１時から２４時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705020034_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、５日２１時から２４時までは火口から北西方向、６日０９時から１２時までは火口から北方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705110033_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-07-05T08:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、５日２１時から２４時までは火口から北西方向、６日０９時から１２時までは火口から北方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705080034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-07-05T01:57:38Z",
+            "updated": "2026-07-05T07:57:38Z",
             "source": "JMA 随時情報",
             "summary": "【岩手県気象警報・注意報】沿岸北部、沿岸南部では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015739_0_VPWW54_030000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-07-05T01:57:38Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】沿岸北部、沿岸南部では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015739_0_VPWW53_030000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075739_0_VPWW54_030000.xml"
           }
         ]
       },
@@ -711,7 +720,7 @@
         ],
         "latest": {
           "level": "red",
-          "checkedAt": "2026-07-05T11:23:18+09:00",
+          "checkedAt": "2026-07-05T22:14:12+09:00",
           "summary": "公式熊情報 5 件を確認。",
           "items": [
             {
@@ -849,7 +858,7 @@
     }
   ],
   "jma": {
-    "checkedAt": "2026-07-05T11:23:09+09:00",
+    "checkedAt": "2026-07-05T22:14:04+09:00",
     "status": "ok",
     "feeds": [
       {
@@ -857,7 +866,7 @@
         "label": "JMA 随時情報",
         "url": "https://www.data.jma.go.jp/developer/xml/feed/extra_l.xml",
         "status": "ok",
-        "entries": 6774
+        "entries": 6918
       },
       {
         "id": "eqvol",
@@ -874,27 +883,27 @@
         "items": [
           {
             "level": "yellow",
+            "title": "気象警報・注意報（Ｈ２７）",
+            "updated": "2026-07-05T07:57:35Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075736_0_VPWW54_017000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "気象特別警報・警報・注意報",
+            "updated": "2026-07-05T07:57:35Z",
+            "source": "JMA 随時情報",
+            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075737_0_VPWW53_017000.xml"
+          },
+          {
+            "level": "yellow",
             "title": "気象特別警報・警報・注意報",
             "updated": "2026-07-05T01:57:36Z",
             "source": "JMA 随時情報",
             "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
             "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015737_0_VPWW53_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-07-05T01:57:36Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015737_0_VPWW54_017000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-07-04T19:57:44Z",
-            "source": "JMA 随時情報",
-            "summary": "【渡島・檜山地方気象警報・注意報】渡島地方では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260704195745_0_VPWW53_017000.xml"
           }
         ]
       },
@@ -905,26 +914,26 @@
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-07-05T01:57:37Z",
+            "updated": "2026-07-05T07:57:36Z",
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015738_0_VPWW53_020000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075738_0_VPWW53_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-07-05T01:57:37Z",
+            "updated": "2026-07-05T07:57:36Z",
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015738_0_VPWW54_020000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075738_0_VPWW54_020000.xml"
           },
           {
             "level": "yellow",
             "title": "気象特別警報・警報・注意報",
-            "updated": "2026-07-05T01:06:59Z",
+            "updated": "2026-07-05T01:57:37Z",
             "source": "JMA 随時情報",
             "summary": "【青森県気象警報・注意報】青森県では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705010700_0_VPWW53_020000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015738_0_VPWW53_020000.xml"
           }
         ]
       },
@@ -935,26 +944,26 @@
           {
             "level": "yellow",
             "title": "降灰予報（定時）",
-            "updated": "2026-07-05T02:00:00Z",
+            "updated": "2026-07-05T11:00:00Z",
             "source": "JMA 地震火山情報",
-            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、５日２１時から２４時までは火口から北方向に降灰が予想されます。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705020034_0_VFVO53_010000.xml"
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、５日２１時から２４時までは火口から北西方向、６日０９時から１２時までは火口から北方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705110033_0_VFVO53_010000.xml"
+          },
+          {
+            "level": "yellow",
+            "title": "降灰予報（定時）",
+            "updated": "2026-07-05T08:00:00Z",
+            "source": "JMA 地震火山情報",
+            "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、５日２１時から２４時までは火口から北西方向、６日０９時から１２時までは火口から北方向に降灰が予想されます。",
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705080034_0_VFVO53_010000.xml"
           },
           {
             "level": "yellow",
             "title": "気象警報・注意報（Ｈ２７）",
-            "updated": "2026-07-05T01:57:38Z",
+            "updated": "2026-07-05T07:57:38Z",
             "source": "JMA 随時情報",
             "summary": "【岩手県気象警報・注意報】沿岸北部、沿岸南部では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015739_0_VPWW54_030000.xml"
-          },
-          {
-            "level": "yellow",
-            "title": "気象特別警報・警報・注意報",
-            "updated": "2026-07-05T01:57:38Z",
-            "source": "JMA 随時情報",
-            "summary": "【岩手県気象警報・注意報】沿岸北部、沿岸南部では、濃霧による視程障害に注意してください。",
-            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705015739_0_VPWW53_030000.xml"
+            "url": "https://www.data.jma.go.jp/developer/xml/data/20260705075739_0_VPWW54_030000.xml"
           }
         ]
       }
@@ -990,16 +999,16 @@
       "level": "yellow",
       "icon": "⚠️",
       "label": "岩手山",
-      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、５日２１時から２４時までは火口から北方向に降灰が予想されます。",
+      "summary": "【火山名 岩手山 降灰予報（定時）】 現在、岩手山は噴火警戒レベル２（火口周辺規制）です。岩手山で噴火が発生した場合には、５日２１時から２４時までは火口から北西方向、６日０９時から１２時までは火口から北方向に降灰が予想されます。",
       "source": "JMA 地震火山情報",
       "type": "volcano",
       "priority": 190,
       "url": "https://www.jma.go.jp/bosai/map.html#contents=volcano",
-      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260705020034_0_VFVO53_010000.xml"
+      "xmlUrl": "https://www.data.jma.go.jp/developer/xml/data/20260705110033_0_VFVO53_010000.xml"
     }
   ],
   "bear": {
-    "checkedAt": "2026-07-05T11:23:18+09:00",
+    "checkedAt": "2026-07-05T22:14:12+09:00",
     "status": "ok",
     "sources": [
       {
@@ -1070,10 +1079,10 @@
     "regions": {
       "aomori": {
         "level": "red",
-        "checkedAt": "2026-07-05T11:23:15+09:00",
+        "checkedAt": "2026-07-05T22:14:10+09:00",
         "summary": "くまログあおもり 2026-07-04 の熊情報 6 件。",
         "kumalog": {
-          "checkedAt": "2026-07-05T11:23:10+09:00",
+          "checkedAt": "2026-07-05T22:14:05+09:00",
           "status": "ok",
           "date": "2026-07-04",
           "count": 6,
@@ -1198,7 +1207,7 @@
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-07-05T11:23:18+09:00",
+        "checkedAt": "2026-07-05T22:14:12+09:00",
         "summary": "公式熊情報 5 件を確認。",
         "items": [
           {
@@ -1251,7 +1260,7 @@
     }
   },
   "operation": {
-    "checkedAt": "2026-07-05T11:23:51+09:00",
+    "checkedAt": "2026-07-05T22:14:37+09:00",
     "status": "partial",
     "sources": [
       {
@@ -1259,8 +1268,8 @@
         "id": "hakkoda-ropeway",
         "label": "八甲田ロープウェー",
         "url": "https://hakkoda-ropeway.jp/",
-        "status": "failed",
-        "error": "fetch failed"
+        "status": "ok",
+        "items": 1
       },
       {
         "regionId": "aomori",
@@ -1290,13 +1299,22 @@
     "regions": {
       "aomori": {
         "level": "yellow",
-        "checkedAt": "2026-07-05T11:23:39+09:00",
-        "summary": "公式營運情報を自動抽出できませんでした。手動で公式リンクを確認してください。",
-        "items": []
+        "checkedAt": "2026-07-05T22:14:24+09:00",
+        "summary": "公式營運情報 1 件を確認。",
+        "items": [
+          {
+            "level": "yellow",
+            "title": "現在のロープウェー運行状況",
+            "updated": "2026-07-01",
+            "source": "八甲田ロープウェー",
+            "summary": "Ropeway Operation",
+            "url": "https://hakkoda-ropeway.jp/"
+          }
+        ]
       },
       "iwate": {
         "level": "red",
-        "checkedAt": "2026-07-05T11:23:51+09:00",
+        "checkedAt": "2026-07-05T22:14:37+09:00",
         "summary": "公式營運情報 3 件を確認。",
         "items": [
           {
@@ -1328,7 +1346,7 @@
     }
   },
   "notifications": {
-    "checkedAt": "2026-07-05T11:23:53+09:00",
+    "checkedAt": "2026-07-05T22:14:39+09:00",
     "deliveryStatus": "gmail-actions",
     "deliveredAt": "2026-06-06T11:29:40+09:00",
     "recommendedChannel": "GitHub Actions Gmail SMTP",
@@ -1420,7 +1438,7 @@
   },
   "weatherRisk": {
     "version": "mountain-weather-simulation-v0.1",
-    "checkedAt": "2026-07-05T11:23:53+09:00",
+    "checkedAt": "2026-07-05T22:14:39+09:00",
     "status": "ok",
     "disclaimer": "個人模擬，不是官方預報。此區用 JMA 區域資料、AMeDAS 近況、海拔與地形修正估算；山區實況可能差很多，安全判斷請以 JMA、旅館、纜車、交通與現地人員為準。",
     "model": {
@@ -1449,28 +1467,28 @@
         "label": "JMA 函館地方気象台",
         "url": "https://www.jma.go.jp/bosai/forecast/data/forecast/017000.json",
         "status": "ok",
-        "reportDatetime": "2026-07-05T11:00:00+09:00"
+        "reportDatetime": "2026-07-05T17:00:00+09:00"
       },
       {
         "id": "aomori",
         "label": "JMA 青森地方気象台",
         "url": "https://www.jma.go.jp/bosai/forecast/data/forecast/020000.json",
         "status": "ok",
-        "reportDatetime": "2026-07-05T11:00:00+09:00"
+        "reportDatetime": "2026-07-05T17:00:00+09:00"
       },
       {
         "id": "iwate",
         "label": "JMA 盛岡地方気象台",
         "url": "https://www.jma.go.jp/bosai/forecast/data/forecast/030000.json",
         "status": "ok",
-        "reportDatetime": "2026-07-05T11:00:00+09:00"
+        "reportDatetime": "2026-07-05T17:00:00+09:00"
       },
       {
         "id": "amedas",
         "label": "JMA AMeDAS 最新観測",
-        "url": "https://www.jma.go.jp/bosai/amedas/data/map/20260705111000.json",
+        "url": "https://www.jma.go.jp/bosai/amedas/data/map/20260705220000.json",
         "status": "ok",
-        "reportDatetime": "2026-07-05T11:10:00+09:00"
+        "reportDatetime": "2026-07-05T22:00:00+09:00"
       }
     ],
     "locations": [
@@ -1488,35 +1506,35 @@
         "amedasStationId": "23232",
         "observation": {
           "stationId": "23232",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 20.4,
-          "humidityPct": 80,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 19,
+          "humidityPct": 89,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 6.1,
-          "windDirection": "東"
+          "windSpeedMs": 5,
+          "windDirection": "東北東"
         },
         "level": "yellow",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.306Z",
+            "targetTime": "2026-07-06T01:14:39.287Z",
             "level": "yellow",
-            "reason": "海拔修正後約 18.1°C，降雨機率 10%，近況風速 6.1m/s，濕度 80%，24h雨量 0mm；風、沿岸不利需保守。",
+            "reason": "海拔修正後約 23.1°C，降雨機率 10%，近況風速 5m/s，濕度 89%，24h雨量 0mm；風、沿岸不利需保守。",
             "metrics": {
               "forecastWeather": "くもり　所により　昼前　まで　霧",
               "forecastWind": "東の風　海上　では　南東の風　やや強く",
               "forecastWave": "１．５メートル",
               "precipitationProbabilityPct": 10,
-              "baseTempC": 18,
-              "simulatedTempC": 18.1,
-              "humidityPct": 80,
+              "baseTempC": 23,
+              "simulatedTempC": 23.1,
+              "humidityPct": 89,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 6.1,
-              "observedWindDirection": "東"
+              "observedWindSpeedMs": 5,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
@@ -1527,17 +1545,17 @@
               {
                 "type": "風",
                 "level": "yellow",
-                "reason": "近況風速 6.1m/s（東）"
+                "reason": "近況風速 5m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 18.1°C"
+                "reason": "海拔修正後約 23.1°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 18.1°C"
+                "reason": "海拔修正後約 23.1°C"
               },
               {
                 "type": "雷",
@@ -1563,22 +1581,22 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.306Z",
-            "level": "yellow",
-            "reason": "海拔修正後約 24.1°C，降雨機率 10%，近況風速 6.1m/s，濕度 80%，24h雨量 0mm；風、沿岸不利需保守。",
+            "targetTime": "2026-07-06T13:14:39.287Z",
+            "level": "green",
+            "reason": "海拔修正後約 23.1°C，降雨機率 10%，近況風速 5m/s，濕度 89%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　所により　昼前　まで　霧",
-              "forecastWind": "東の風　海上　では　南東の風　やや強く",
+              "forecastWeather": "くもり",
+              "forecastWind": "東の風",
               "forecastWave": "１．５メートル",
               "precipitationProbabilityPct": 10,
-              "baseTempC": 24,
-              "simulatedTempC": 24.1,
-              "humidityPct": 80,
+              "baseTempC": 23,
+              "simulatedTempC": 23.1,
+              "humidityPct": 89,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 6.1,
-              "observedWindDirection": "東"
+              "observedWindSpeedMs": 5,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
@@ -1588,18 +1606,18 @@
               },
               {
                 "type": "風",
-                "level": "yellow",
-                "reason": "近況風速 6.1m/s（東）"
+                "level": "green",
+                "reason": "近況風速 5m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 24.1°C"
+                "reason": "海拔修正後約 23.1°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 24.1°C"
+                "reason": "海拔修正後約 23.1°C"
               },
               {
                 "type": "雷",
@@ -1613,7 +1631,7 @@
               },
               {
                 "type": "沿岸不利",
-                "level": "yellow",
+                "level": "green",
                 "reason": "依風浪雨加權"
               },
               {
@@ -1625,43 +1643,43 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.306Z",
+            "targetTime": "2026-07-07T13:14:39.287Z",
             "level": "green",
-            "reason": "海拔修正後約 22.1°C，降雨機率 20%，近況風速 6.1m/s，濕度 80%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 20.6°C，降雨機率 40%，近況風速 5m/s，濕度 89%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "くもり",
               "forecastWind": "東の風",
               "forecastWave": "１．５メートル",
-              "precipitationProbabilityPct": 20,
-              "baseTempC": 22,
-              "simulatedTempC": 22.1,
-              "humidityPct": 80,
+              "precipitationProbabilityPct": 40,
+              "baseTempC": 20.5,
+              "simulatedTempC": 20.6,
+              "humidityPct": 89,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 6.1,
-              "observedWindDirection": "東"
+              "observedWindSpeedMs": 5,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 20%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 6.1m/s（東）"
+                "reason": "近況風速 5m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 22.1°C"
+                "reason": "海拔修正後約 20.6°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 22.1°C"
+                "reason": "海拔修正後約 20.6°C"
               },
               {
                 "type": "雷",
@@ -1687,33 +1705,33 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.306Z",
+            "targetTime": "2026-07-08T13:14:39.287Z",
             "level": "green",
-            "reason": "海拔修正後約 20.6°C，降雨機率 40%，近況風速 6.1m/s，濕度 80%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 20.6°C，降雨機率 50%，近況風速 5m/s，濕度 89%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
+              "precipitationProbabilityPct": 50,
               "baseTempC": 20.5,
               "simulatedTempC": 20.6,
-              "humidityPct": 80,
+              "humidityPct": 89,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 6.1,
-              "observedWindDirection": "東"
+              "observedWindSpeedMs": 5,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 6.1m/s（東）"
+                "reason": "近況風速 5m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -1763,56 +1781,56 @@
         "amedasStationId": "31461",
         "observation": {
           "stationId": "31461",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 25.8,
-          "humidityPct": 69,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 19.5,
+          "humidityPct": 97,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2.2,
+          "windSpeedMs": 1.7,
           "windDirection": "北北東"
         },
         "level": "green",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.308Z",
+            "targetTime": "2026-07-06T01:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 18.9°C，降雨機率 10%，近況風速 2.2m/s，濕度 69%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 29.9°C，降雨機率 0%，近況風速 1.7m/s，濕度 97%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　朝晩　くもり　所により　昼前　まで　霧",
+              "forecastWind": "南東の風　後　北東の風　海上　では　東の風　やや強く",
               "forecastWave": "１メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 19,
-              "simulatedTempC": 18.9,
-              "humidityPct": 69,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 30,
+              "simulatedTempC": 29.9,
+              "humidityPct": 97,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.2,
+              "observedWindSpeedMs": 1.7,
               "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.2m/s（北北東）"
+                "reason": "近況風速 1.7m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 18.9°C"
+                "reason": "海拔修正後約 29.9°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 18.9°C"
+                "reason": "海拔修正後約 29.9°C"
               },
               {
                 "type": "雷",
@@ -1838,21 +1856,21 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.308Z",
+            "targetTime": "2026-07-06T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 28.9°C，降雨機率 10%，近況風速 2.2m/s，濕度 69%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 29.9°C，降雨機率 10%，近況風速 1.7m/s，濕度 97%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　時々　くもり",
+              "forecastWind": "北の風",
               "forecastWave": "１メートル",
               "precipitationProbabilityPct": 10,
-              "baseTempC": 29,
-              "simulatedTempC": 28.9,
-              "humidityPct": 69,
+              "baseTempC": 30,
+              "simulatedTempC": 29.9,
+              "humidityPct": 97,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.2,
+              "observedWindSpeedMs": 1.7,
               "observedWindDirection": "北北東"
             },
             "risks": [
@@ -1864,17 +1882,17 @@
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.2m/s（北北東）"
+                "reason": "近況風速 1.7m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 28.9°C"
+                "reason": "海拔修正後約 29.9°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 28.9°C"
+                "reason": "海拔修正後約 29.9°C"
               },
               {
                 "type": "雷",
@@ -1900,33 +1918,33 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.308Z",
+            "targetTime": "2026-07-07T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 23.4°C，降雨機率 20%，近況風速 2.2m/s，濕度 69%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 23.4°C，降雨機率 40%，近況風速 1.7m/s，濕度 97%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "晴れ　時々　くもり",
               "forecastWind": "北の風",
-              "forecastWave": "０．５メートル",
-              "precipitationProbabilityPct": 20,
+              "forecastWave": "１メートル",
+              "precipitationProbabilityPct": 40,
               "baseTempC": 23.5,
               "simulatedTempC": 23.4,
-              "humidityPct": 69,
+              "humidityPct": 97,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.2,
+              "observedWindSpeedMs": 1.7,
               "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 20%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.2m/s（北北東）"
+                "reason": "近況風速 1.7m/s（北北東）"
               },
               {
                 "type": "低溫",
@@ -1962,43 +1980,43 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.308Z",
+            "targetTime": "2026-07-08T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 23.4°C，降雨機率 40%，近況風速 2.2m/s，濕度 69%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 22.4°C，降雨機率 50%，近況風速 1.7m/s，濕度 97%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
-              "baseTempC": 23.5,
-              "simulatedTempC": 23.4,
-              "humidityPct": 69,
+              "precipitationProbabilityPct": 50,
+              "baseTempC": 22.5,
+              "simulatedTempC": 22.4,
+              "humidityPct": 97,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.2,
+              "observedWindSpeedMs": 1.7,
               "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.2m/s（北北東）"
+                "reason": "近況風速 1.7m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 23.4°C"
+                "reason": "海拔修正後約 22.4°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 23.4°C"
+                "reason": "海拔修正後約 22.4°C"
               },
               {
                 "type": "雷",
@@ -2038,56 +2056,56 @@
         "amedasStationId": "31461",
         "observation": {
           "stationId": "31461",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 25.8,
-          "humidityPct": 69,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 19.5,
+          "humidityPct": 97,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2.2,
+          "windSpeedMs": 1.7,
           "windDirection": "北北東"
         },
         "level": "green",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.308Z",
+            "targetTime": "2026-07-06T01:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 18.7°C，降雨機率 10%，近況風速 2.2m/s，濕度 69%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 29.7°C，降雨機率 0%，近況風速 1.7m/s，濕度 97%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　朝晩　くもり　所により　昼前　まで　霧",
+              "forecastWind": "南東の風　後　北東の風　海上　では　東の風　やや強く",
               "forecastWave": "１メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 19,
-              "simulatedTempC": 18.7,
-              "humidityPct": 69,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 30,
+              "simulatedTempC": 29.7,
+              "humidityPct": 97,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.2,
+              "observedWindSpeedMs": 1.7,
               "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.2m/s（北北東）"
+                "reason": "近況風速 1.7m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 18.7°C"
+                "reason": "海拔修正後約 29.7°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 18.7°C"
+                "reason": "海拔修正後約 29.7°C"
               },
               {
                 "type": "雷",
@@ -2113,21 +2131,21 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.308Z",
+            "targetTime": "2026-07-06T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 28.7°C，降雨機率 10%，近況風速 2.2m/s，濕度 69%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 29.7°C，降雨機率 10%，近況風速 1.7m/s，濕度 97%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　時々　くもり",
+              "forecastWind": "北の風",
               "forecastWave": "１メートル",
               "precipitationProbabilityPct": 10,
-              "baseTempC": 29,
-              "simulatedTempC": 28.7,
-              "humidityPct": 69,
+              "baseTempC": 30,
+              "simulatedTempC": 29.7,
+              "humidityPct": 97,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.2,
+              "observedWindSpeedMs": 1.7,
               "observedWindDirection": "北北東"
             },
             "risks": [
@@ -2139,17 +2157,17 @@
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.2m/s（北北東）"
+                "reason": "近況風速 1.7m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 28.7°C"
+                "reason": "海拔修正後約 29.7°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 28.7°C"
+                "reason": "海拔修正後約 29.7°C"
               },
               {
                 "type": "雷",
@@ -2175,33 +2193,33 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.308Z",
+            "targetTime": "2026-07-07T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 23.2°C，降雨機率 20%，近況風速 2.2m/s，濕度 69%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 23.2°C，降雨機率 40%，近況風速 1.7m/s，濕度 97%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "晴れ　時々　くもり",
               "forecastWind": "北の風",
-              "forecastWave": "０．５メートル",
-              "precipitationProbabilityPct": 20,
+              "forecastWave": "１メートル",
+              "precipitationProbabilityPct": 40,
               "baseTempC": 23.5,
               "simulatedTempC": 23.2,
-              "humidityPct": 69,
+              "humidityPct": 97,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.2,
+              "observedWindSpeedMs": 1.7,
               "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 20%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.2m/s（北北東）"
+                "reason": "近況風速 1.7m/s（北北東）"
               },
               {
                 "type": "低溫",
@@ -2237,43 +2255,43 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.308Z",
+            "targetTime": "2026-07-08T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 23.2°C，降雨機率 40%，近況風速 2.2m/s，濕度 69%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 22.2°C，降雨機率 50%，近況風速 1.7m/s，濕度 97%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
-              "baseTempC": 23.5,
-              "simulatedTempC": 23.2,
-              "humidityPct": 69,
+              "precipitationProbabilityPct": 50,
+              "baseTempC": 22.5,
+              "simulatedTempC": 22.2,
+              "humidityPct": 97,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.2,
+              "observedWindSpeedMs": 1.7,
               "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.2m/s（北北東）"
+                "reason": "近況風速 1.7m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 23.2°C"
+                "reason": "海拔修正後約 22.2°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 23.2°C"
+                "reason": "海拔修正後約 22.2°C"
               },
               {
                 "type": "雷",
@@ -2314,56 +2332,56 @@
         "amedasStationId": "31482",
         "observation": {
           "stationId": "31482",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 22.7,
-          "humidityPct": 71,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 17.2,
+          "humidityPct": 85,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2.3,
-          "windDirection": "西南西"
+          "windSpeedMs": 1.3,
+          "windDirection": "東北東"
         },
         "level": "green",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.309Z",
+            "targetTime": "2026-07-06T01:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 14.7°C，降雨機率 10%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 21.7°C，降雨機率 0%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　朝晩　くもり　所により　昼前　まで　霧",
+              "forecastWind": "南東の風　後　北東の風　海上　では　東の風　やや強く",
               "forecastWave": "１メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 20,
-              "simulatedTempC": 14.7,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 27,
+              "simulatedTempC": 21.7,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 14.7°C"
+                "reason": "海拔修正後約 21.7°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 14.7°C"
+                "reason": "海拔修正後約 21.7°C"
               },
               {
                 "type": "雷",
@@ -2389,22 +2407,22 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.309Z",
+            "targetTime": "2026-07-06T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 21.7°C，降雨機率 10%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 21.7°C，降雨機率 10%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　時々　くもり",
+              "forecastWind": "北の風",
               "forecastWave": "１メートル",
               "precipitationProbabilityPct": 10,
               "baseTempC": 27,
               "simulatedTempC": 21.7,
-              "humidityPct": 71,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
@@ -2415,7 +2433,7 @@
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -2451,33 +2469,33 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.309Z",
+            "targetTime": "2026-07-07T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 18.2°C，降雨機率 20%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 18.2°C，降雨機率 40%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "晴れ　時々　くもり",
               "forecastWind": "北の風",
-              "forecastWave": "０．５メートル",
-              "precipitationProbabilityPct": 20,
+              "forecastWave": "１メートル",
+              "precipitationProbabilityPct": 40,
               "baseTempC": 23.5,
               "simulatedTempC": 18.2,
-              "humidityPct": 71,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 20%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -2513,43 +2531,43 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.309Z",
+            "targetTime": "2026-07-08T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 18.2°C，降雨機率 40%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 17.2°C，降雨機率 50%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
-              "baseTempC": 23.5,
-              "simulatedTempC": 18.2,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 50,
+              "baseTempC": 22.5,
+              "simulatedTempC": 17.2,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 18.2°C"
+                "reason": "海拔修正後約 17.2°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 18.2°C"
+                "reason": "海拔修正後約 17.2°C"
               },
               {
                 "type": "雷",
@@ -2591,56 +2609,56 @@
         "amedasStationId": "31482",
         "observation": {
           "stationId": "31482",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 22.7,
-          "humidityPct": 71,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 17.2,
+          "humidityPct": 85,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2.3,
-          "windDirection": "西南西"
+          "windSpeedMs": 1.3,
+          "windDirection": "東北東"
         },
         "level": "yellow",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.309Z",
+            "targetTime": "2026-07-06T01:14:39.289Z",
             "level": "yellow",
-            "reason": "海拔修正後約 12.1°C，降雨機率 10%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；風需保守。",
+            "reason": "海拔修正後約 19.1°C，降雨機率 0%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；風、山區不利需保守。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　朝晩　くもり　所により　昼前　まで　霧",
+              "forecastWind": "南東の風　後　北東の風　海上　では　東の風　やや強く",
               "forecastWave": "１メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 20,
-              "simulatedTempC": 12.1,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 27,
+              "simulatedTempC": 19.1,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "yellow",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 12.1°C"
+                "reason": "海拔修正後約 19.1°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 12.1°C"
+                "reason": "海拔修正後約 19.1°C"
               },
               {
                 "type": "雷",
@@ -2649,7 +2667,7 @@
               },
               {
                 "type": "山區不利",
-                "level": "green",
+                "level": "yellow",
                 "reason": "依地形、雨風低溫加權"
               },
               {
@@ -2666,22 +2684,22 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.309Z",
-            "level": "yellow",
-            "reason": "海拔修正後約 19.1°C，降雨機率 10%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；風需保守。",
+            "targetTime": "2026-07-06T13:14:39.289Z",
+            "level": "green",
+            "reason": "海拔修正後約 19.1°C，降雨機率 10%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　時々　くもり",
+              "forecastWind": "北の風",
               "forecastWave": "１メートル",
               "precipitationProbabilityPct": 10,
               "baseTempC": 27,
               "simulatedTempC": 19.1,
-              "humidityPct": 71,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
@@ -2691,8 +2709,8 @@
               },
               {
                 "type": "風",
-                "level": "yellow",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "level": "green",
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -2728,33 +2746,33 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.309Z",
+            "targetTime": "2026-07-07T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 15.6°C，降雨機率 20%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 15.6°C，降雨機率 40%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "晴れ　時々　くもり",
               "forecastWind": "北の風",
-              "forecastWave": "０．５メートル",
-              "precipitationProbabilityPct": 20,
+              "forecastWave": "１メートル",
+              "precipitationProbabilityPct": 40,
               "baseTempC": 23.5,
               "simulatedTempC": 15.6,
-              "humidityPct": 71,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 20%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -2790,43 +2808,43 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.309Z",
+            "targetTime": "2026-07-08T13:14:39.289Z",
             "level": "green",
-            "reason": "海拔修正後約 15.6°C，降雨機率 40%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 14.6°C，降雨機率 50%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
-              "baseTempC": 23.5,
-              "simulatedTempC": 15.6,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 50,
+              "baseTempC": 22.5,
+              "simulatedTempC": 14.6,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 15.6°C"
+                "reason": "海拔修正後約 14.6°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 15.6°C"
+                "reason": "海拔修正後約 14.6°C"
               },
               {
                 "type": "雷",
@@ -2867,56 +2885,56 @@
         "amedasStationId": "31482",
         "observation": {
           "stationId": "31482",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 22.7,
-          "humidityPct": 71,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 17.2,
+          "humidityPct": 85,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2.3,
-          "windDirection": "西南西"
+          "windSpeedMs": 1.3,
+          "windDirection": "東北東"
         },
         "level": "green",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.309Z",
+            "targetTime": "2026-07-06T01:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 13.7°C，降雨機率 10%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 20.7°C，降雨機率 0%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　朝晩　くもり　所により　昼前　まで　霧",
+              "forecastWind": "南東の風　後　北東の風　海上　では　東の風　やや強く",
               "forecastWave": "１メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 20,
-              "simulatedTempC": 13.7,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 27,
+              "simulatedTempC": 20.7,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 13.7°C"
+                "reason": "海拔修正後約 20.7°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 13.7°C"
+                "reason": "海拔修正後約 20.7°C"
               },
               {
                 "type": "雷",
@@ -2942,22 +2960,22 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.309Z",
+            "targetTime": "2026-07-06T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 20.7°C，降雨機率 10%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 20.7°C，降雨機率 10%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　時々　くもり",
+              "forecastWind": "北の風",
               "forecastWave": "１メートル",
               "precipitationProbabilityPct": 10,
               "baseTempC": 27,
               "simulatedTempC": 20.7,
-              "humidityPct": 71,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
@@ -2968,7 +2986,7 @@
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -3004,33 +3022,33 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.309Z",
+            "targetTime": "2026-07-07T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 17.2°C，降雨機率 20%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 17.2°C，降雨機率 40%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "晴れ　時々　くもり",
               "forecastWind": "北の風",
-              "forecastWave": "０．５メートル",
-              "precipitationProbabilityPct": 20,
+              "forecastWave": "１メートル",
+              "precipitationProbabilityPct": 40,
               "baseTempC": 23.5,
               "simulatedTempC": 17.2,
-              "humidityPct": 71,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 20%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -3066,43 +3084,43 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.309Z",
+            "targetTime": "2026-07-08T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 17.2°C，降雨機率 40%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 16.2°C，降雨機率 50%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
-              "baseTempC": 23.5,
-              "simulatedTempC": 17.2,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 50,
+              "baseTempC": 22.5,
+              "simulatedTempC": 16.2,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 17.2°C"
+                "reason": "海拔修正後約 16.2°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 17.2°C"
+                "reason": "海拔修正後約 16.2°C"
               },
               {
                 "type": "雷",
@@ -3144,56 +3162,56 @@
         "amedasStationId": "31482",
         "observation": {
           "stationId": "31482",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 22.7,
-          "humidityPct": 71,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 17.2,
+          "humidityPct": 85,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2.3,
-          "windDirection": "西南西"
+          "windSpeedMs": 1.3,
+          "windDirection": "東北東"
         },
         "level": "yellow",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.309Z",
+            "targetTime": "2026-07-06T01:14:39.290Z",
             "level": "yellow",
-            "reason": "海拔修正後約 10.5°C，降雨機率 10%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；風需保守。",
+            "reason": "海拔修正後約 17.5°C，降雨機率 0%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；風、山區不利需保守。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　朝晩　くもり　所により　昼前　まで　霧",
+              "forecastWind": "南東の風　後　北東の風　海上　では　東の風　やや強く",
               "forecastWave": "１メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 20,
-              "simulatedTempC": 10.5,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 27,
+              "simulatedTempC": 17.5,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "yellow",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 10.5°C"
+                "reason": "海拔修正後約 17.5°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 10.5°C"
+                "reason": "海拔修正後約 17.5°C"
               },
               {
                 "type": "雷",
@@ -3202,7 +3220,7 @@
               },
               {
                 "type": "山區不利",
-                "level": "green",
+                "level": "yellow",
                 "reason": "依地形、雨風低溫加權"
               },
               {
@@ -3219,22 +3237,22 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.309Z",
-            "level": "yellow",
-            "reason": "海拔修正後約 17.5°C，降雨機率 10%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；風需保守。",
+            "targetTime": "2026-07-06T13:14:39.290Z",
+            "level": "green",
+            "reason": "海拔修正後約 17.5°C，降雨機率 10%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　昼過ぎ　まで　時々　晴れ　所により　夕方　から　夜のはじめ頃　雨",
-              "forecastWind": "東の風　後　北の風　海上　では　東の風　やや強く",
+              "forecastWeather": "晴れ　時々　くもり",
+              "forecastWind": "北の風",
               "forecastWave": "１メートル",
               "precipitationProbabilityPct": 10,
               "baseTempC": 27,
               "simulatedTempC": 17.5,
-              "humidityPct": 71,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
@@ -3244,8 +3262,8 @@
               },
               {
                 "type": "風",
-                "level": "yellow",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "level": "green",
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -3281,33 +3299,33 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.309Z",
+            "targetTime": "2026-07-07T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 14°C，降雨機率 20%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 14°C，降雨機率 40%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "晴れ　時々　くもり",
               "forecastWind": "北の風",
-              "forecastWave": "０．５メートル",
-              "precipitationProbabilityPct": 20,
+              "forecastWave": "１メートル",
+              "precipitationProbabilityPct": 40,
               "baseTempC": 23.5,
               "simulatedTempC": 14,
-              "humidityPct": 71,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 20%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -3343,43 +3361,43 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.309Z",
+            "targetTime": "2026-07-08T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 14°C，降雨機率 40%，近況風速 2.3m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 13°C，降雨機率 50%，近況風速 1.3m/s，濕度 85%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
-              "baseTempC": 23.5,
-              "simulatedTempC": 14,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 50,
+              "baseTempC": 22.5,
+              "simulatedTempC": 13,
+              "humidityPct": 85,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "西南西"
+              "observedWindSpeedMs": 1.3,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（西南西）"
+                "reason": "近況風速 1.3m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 14°C"
+                "reason": "海拔修正後約 13°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 14°C"
+                "reason": "海拔修正後約 13°C"
               },
               {
                 "type": "雷",
@@ -3420,56 +3438,56 @@
         "amedasStationId": "31586",
         "observation": {
           "stationId": "31586",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 24.2,
-          "humidityPct": 76,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 19,
+          "humidityPct": 95,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2.4,
-          "windDirection": "北東"
+          "windSpeedMs": 1.5,
+          "windDirection": "北北東"
         },
         "level": "green",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.310Z",
+            "targetTime": "2026-07-06T01:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 17.4°C，降雨機率 10%，近況風速 2.4m/s，濕度 76%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 25.4°C，降雨機率 0%，近況風速 1.5m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　所により　昼前　まで　霧",
-              "forecastWind": "南東の風　後　東の風　海上　では　南東の風　やや強く",
+              "forecastWeather": "くもり　昼前　から　夕方　晴れ　所により　昼前　まで　霧",
+              "forecastWind": "南東の風　海上　では　南東の風　やや強く",
               "forecastWave": "１．５メートル　後　２メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 19,
-              "simulatedTempC": 17.4,
-              "humidityPct": 76,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 27,
+              "simulatedTempC": 25.4,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.4,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 1.5,
+              "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.4m/s（北東）"
+                "reason": "近況風速 1.5m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 17.4°C"
+                "reason": "海拔修正後約 25.4°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 17.4°C"
+                "reason": "海拔修正後約 25.4°C"
               },
               {
                 "type": "雷",
@@ -3495,22 +3513,22 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.310Z",
+            "targetTime": "2026-07-06T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 25.4°C，降雨機率 10%，近況風速 2.4m/s，濕度 76%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 25.4°C，降雨機率 10%，近況風速 1.5m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　所により　昼前　まで　霧",
-              "forecastWind": "南東の風　後　東の風　海上　では　南東の風　やや強く",
-              "forecastWave": "１．５メートル　後　２メートル",
+              "forecastWeather": "くもり　時々　晴れ",
+              "forecastWind": "東の風",
+              "forecastWave": "１．５メートル",
               "precipitationProbabilityPct": 10,
               "baseTempC": 27,
               "simulatedTempC": 25.4,
-              "humidityPct": 76,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.4,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 1.5,
+              "observedWindDirection": "北北東"
             },
             "risks": [
               {
@@ -3521,7 +3539,7 @@
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.4m/s（北東）"
+                "reason": "近況風速 1.5m/s（北北東）"
               },
               {
                 "type": "低溫",
@@ -3557,43 +3575,43 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.310Z",
+            "targetTime": "2026-07-07T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 19.9°C，降雨機率 30%，近況風速 2.4m/s，濕度 76%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 20.9°C，降雨機率 40%，近況風速 1.5m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "くもり　時々　晴れ",
               "forecastWind": "東の風",
               "forecastWave": "１．５メートル",
-              "precipitationProbabilityPct": 30,
-              "baseTempC": 21.5,
-              "simulatedTempC": 19.9,
-              "humidityPct": 76,
+              "precipitationProbabilityPct": 40,
+              "baseTempC": 22.5,
+              "simulatedTempC": 20.9,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.4,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 1.5,
+              "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 30%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.4m/s（北東）"
+                "reason": "近況風速 1.5m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 19.9°C"
+                "reason": "海拔修正後約 20.9°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 19.9°C"
+                "reason": "海拔修正後約 20.9°C"
               },
               {
                 "type": "雷",
@@ -3619,33 +3637,33 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.310Z",
+            "targetTime": "2026-07-08T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 20.9°C，降雨機率 40%，近況風速 2.4m/s，濕度 76%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 20.9°C，降雨機率 50%，近況風速 1.5m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
+              "precipitationProbabilityPct": 50,
               "baseTempC": 22.5,
               "simulatedTempC": 20.9,
-              "humidityPct": 76,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.4,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 1.5,
+              "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.4m/s（北東）"
+                "reason": "近況風速 1.5m/s（北北東）"
               },
               {
                 "type": "低溫",
@@ -3696,56 +3714,56 @@
         "amedasStationId": "31662",
         "observation": {
           "stationId": "31662",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 23.3,
-          "humidityPct": 71,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 17.3,
+          "humidityPct": 95,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2,
-          "windDirection": "南西"
+          "windSpeedMs": 0.7,
+          "windDirection": "東北東"
         },
         "level": "green",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.310Z",
+            "targetTime": "2026-07-06T01:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 16.7°C，降雨機率 10%，近況風速 2m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 24.7°C，降雨機率 0%，近況風速 0.7m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　所により　昼前　まで　霧",
-              "forecastWind": "南東の風　後　東の風　海上　では　南東の風　やや強く",
+              "forecastWeather": "くもり　昼前　から　夕方　晴れ　所により　昼前　まで　霧",
+              "forecastWind": "南東の風　海上　では　南東の風　やや強く",
               "forecastWave": "１．５メートル　後　２メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 19,
-              "simulatedTempC": 16.7,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 27,
+              "simulatedTempC": 24.7,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2,
-              "observedWindDirection": "南西"
+              "observedWindSpeedMs": 0.7,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2m/s（南西）"
+                "reason": "近況風速 0.7m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 16.7°C"
+                "reason": "海拔修正後約 24.7°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 16.7°C"
+                "reason": "海拔修正後約 24.7°C"
               },
               {
                 "type": "雷",
@@ -3771,22 +3789,22 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.310Z",
+            "targetTime": "2026-07-06T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 24.7°C，降雨機率 10%，近況風速 2m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 24.7°C，降雨機率 10%，近況風速 0.7m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　所により　昼前　まで　霧",
-              "forecastWind": "南東の風　後　東の風　海上　では　南東の風　やや強く",
-              "forecastWave": "１．５メートル　後　２メートル",
+              "forecastWeather": "くもり　時々　晴れ",
+              "forecastWind": "東の風",
+              "forecastWave": "１．５メートル",
               "precipitationProbabilityPct": 10,
               "baseTempC": 27,
               "simulatedTempC": 24.7,
-              "humidityPct": 71,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2,
-              "observedWindDirection": "南西"
+              "observedWindSpeedMs": 0.7,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
@@ -3797,7 +3815,7 @@
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2m/s（南西）"
+                "reason": "近況風速 0.7m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -3833,43 +3851,43 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.310Z",
+            "targetTime": "2026-07-07T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 19.2°C，降雨機率 30%，近況風速 2m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 20.2°C，降雨機率 40%，近況風速 0.7m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "くもり　時々　晴れ",
               "forecastWind": "東の風",
               "forecastWave": "１．５メートル",
-              "precipitationProbabilityPct": 30,
-              "baseTempC": 21.5,
-              "simulatedTempC": 19.2,
-              "humidityPct": 71,
+              "precipitationProbabilityPct": 40,
+              "baseTempC": 22.5,
+              "simulatedTempC": 20.2,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2,
-              "observedWindDirection": "南西"
+              "observedWindSpeedMs": 0.7,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 30%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2m/s（南西）"
+                "reason": "近況風速 0.7m/s（東北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 19.2°C"
+                "reason": "海拔修正後約 20.2°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 19.2°C"
+                "reason": "海拔修正後約 20.2°C"
               },
               {
                 "type": "雷",
@@ -3895,33 +3913,33 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.310Z",
+            "targetTime": "2026-07-08T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 20.2°C，降雨機率 40%，近況風速 2m/s，濕度 71%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 20.2°C，降雨機率 50%，近況風速 0.7m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
+              "precipitationProbabilityPct": 50,
               "baseTempC": 22.5,
               "simulatedTempC": 20.2,
-              "humidityPct": 71,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2,
-              "observedWindDirection": "南西"
+              "observedWindSpeedMs": 0.7,
+              "observedWindDirection": "東北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2m/s（南西）"
+                "reason": "近況風速 0.7m/s（東北東）"
               },
               {
                 "type": "低溫",
@@ -3971,56 +3989,56 @@
         "amedasStationId": "31602",
         "observation": {
           "stationId": "31602",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 23.7,
-          "humidityPct": 74,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 19.6,
+          "humidityPct": 94,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 4.3,
-          "windDirection": "北東"
+          "windSpeedMs": 3.1,
+          "windDirection": "東"
         },
         "level": "yellow",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.310Z",
+            "targetTime": "2026-07-06T01:14:39.290Z",
             "level": "yellow",
-            "reason": "海拔修正後約 19°C，降雨機率 10%，近況風速 4.3m/s，濕度 74%，24h雨量 0mm；沿岸不利需保守。",
+            "reason": "海拔修正後約 27°C，降雨機率 0%，近況風速 3.1m/s，濕度 94%，24h雨量 0mm；沿岸不利需保守。",
             "metrics": {
-              "forecastWeather": "くもり　所により　昼前　まで　霧",
-              "forecastWind": "南東の風　後　東の風　海上　では　南東の風　やや強く",
+              "forecastWeather": "くもり　昼前　から　夕方　晴れ　所により　昼前　まで　霧",
+              "forecastWind": "南東の風　海上　では　南東の風　やや強く",
               "forecastWave": "１．５メートル　後　２メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 19,
-              "simulatedTempC": 19,
-              "humidityPct": 74,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 27,
+              "simulatedTempC": 27,
+              "humidityPct": 94,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 4.3,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 3.1,
+              "observedWindDirection": "東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 4.3m/s（北東）"
+                "reason": "近況風速 3.1m/s（東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 19°C"
+                "reason": "海拔修正後約 27°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 19°C"
+                "reason": "海拔修正後約 27°C"
               },
               {
                 "type": "雷",
@@ -4046,22 +4064,22 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.310Z",
-            "level": "yellow",
-            "reason": "海拔修正後約 27°C，降雨機率 10%，近況風速 4.3m/s，濕度 74%，24h雨量 0mm；沿岸不利需保守。",
+            "targetTime": "2026-07-06T13:14:39.290Z",
+            "level": "green",
+            "reason": "海拔修正後約 27°C，降雨機率 10%，近況風速 3.1m/s，濕度 94%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　所により　昼前　まで　霧",
-              "forecastWind": "南東の風　後　東の風　海上　では　南東の風　やや強く",
-              "forecastWave": "１．５メートル　後　２メートル",
+              "forecastWeather": "くもり　時々　晴れ",
+              "forecastWind": "東の風",
+              "forecastWave": "１．５メートル",
               "precipitationProbabilityPct": 10,
               "baseTempC": 27,
               "simulatedTempC": 27,
-              "humidityPct": 74,
+              "humidityPct": 94,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 4.3,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 3.1,
+              "observedWindDirection": "東"
             },
             "risks": [
               {
@@ -4072,7 +4090,7 @@
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 4.3m/s（北東）"
+                "reason": "近況風速 3.1m/s（東）"
               },
               {
                 "type": "低溫",
@@ -4096,7 +4114,7 @@
               },
               {
                 "type": "沿岸不利",
-                "level": "yellow",
+                "level": "green",
                 "reason": "依風浪雨加權"
               },
               {
@@ -4108,43 +4126,43 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.310Z",
+            "targetTime": "2026-07-07T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 21.5°C，降雨機率 30%，近況風速 4.3m/s，濕度 74%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 22.5°C，降雨機率 40%，近況風速 3.1m/s，濕度 94%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "くもり　時々　晴れ",
               "forecastWind": "東の風",
               "forecastWave": "１．５メートル",
-              "precipitationProbabilityPct": 30,
-              "baseTempC": 21.5,
-              "simulatedTempC": 21.5,
-              "humidityPct": 74,
+              "precipitationProbabilityPct": 40,
+              "baseTempC": 22.5,
+              "simulatedTempC": 22.5,
+              "humidityPct": 94,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 4.3,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 3.1,
+              "observedWindDirection": "東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 30%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 4.3m/s（北東）"
+                "reason": "近況風速 3.1m/s（東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 21.5°C"
+                "reason": "海拔修正後約 22.5°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 21.5°C"
+                "reason": "海拔修正後約 22.5°C"
               },
               {
                 "type": "雷",
@@ -4170,33 +4188,33 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.310Z",
+            "targetTime": "2026-07-08T13:14:39.290Z",
             "level": "green",
-            "reason": "海拔修正後約 22.5°C，降雨機率 40%，近況風速 4.3m/s，濕度 74%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 22.5°C，降雨機率 50%，近況風速 3.1m/s，濕度 94%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
+              "precipitationProbabilityPct": 50,
               "baseTempC": 22.5,
               "simulatedTempC": 22.5,
-              "humidityPct": 74,
+              "humidityPct": 94,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 4.3,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 3.1,
+              "observedWindDirection": "東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 4.3m/s（北東）"
+                "reason": "近況風速 3.1m/s（東）"
               },
               {
                 "type": "低溫",
@@ -4247,56 +4265,56 @@
         "amedasStationId": "33326",
         "observation": {
           "stationId": "33326",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 24.7,
-          "humidityPct": 75,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 18.8,
+          "humidityPct": 100,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 3.6,
-          "windDirection": "北東"
+          "windSpeedMs": 0.4,
+          "windDirection": "北"
         },
         "level": "green",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.310Z",
+            "targetTime": "2026-07-06T01:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 16.3°C，降雨機率 10%，近況風速 3.6m/s，濕度 75%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 25.3°C，降雨機率 0%，近況風速 0.4m/s，濕度 100%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　夜　晴れ　海上　では　昼前　まで　霧",
+              "forecastWeather": "くもり　時々　晴れ　海上　では　昼前　まで　霧",
               "forecastWind": "南東の風　海上　では　南東の風　やや強く",
-              "forecastWave": "１メートル　後　１．５メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 17,
-              "simulatedTempC": 16.3,
-              "humidityPct": 75,
+              "forecastWave": "１．５メートル　後　２メートル",
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 26,
+              "simulatedTempC": 25.3,
+              "humidityPct": 100,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 3.6,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 0.4,
+              "observedWindDirection": "北"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 3.6m/s（北東）"
+                "reason": "近況風速 0.4m/s（北）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 16.3°C"
+                "reason": "海拔修正後約 25.3°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 16.3°C"
+                "reason": "海拔修正後約 25.3°C"
               },
               {
                 "type": "雷",
@@ -4322,43 +4340,43 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.310Z",
+            "targetTime": "2026-07-06T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 26.3°C，降雨機率 10%，近況風速 3.6m/s，濕度 75%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 25.3°C，降雨機率 0%，近況風速 0.4m/s，濕度 100%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　夜　晴れ　海上　では　昼前　まで　霧",
-              "forecastWind": "南東の風　海上　では　南東の風　やや強く",
-              "forecastWave": "１メートル　後　１．５メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 27,
-              "simulatedTempC": 26.3,
-              "humidityPct": 75,
+              "forecastWeather": "くもり　時々　晴れ",
+              "forecastWind": "東の風",
+              "forecastWave": "１．５メートル",
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 26,
+              "simulatedTempC": 25.3,
+              "humidityPct": 100,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 3.6,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 0.4,
+              "observedWindDirection": "北"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 3.6m/s（北東）"
+                "reason": "近況風速 0.4m/s（北）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 26.3°C"
+                "reason": "海拔修正後約 25.3°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 26.3°C"
+                "reason": "海拔修正後約 25.3°C"
               },
               {
                 "type": "雷",
@@ -4384,43 +4402,43 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.310Z",
+            "targetTime": "2026-07-07T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 20.3°C，降雨機率 30%，近況風速 3.6m/s，濕度 75%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 20.8°C，降雨機率 40%，近況風速 0.4m/s，濕度 100%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "くもり　時々　晴れ",
               "forecastWind": "東の風",
               "forecastWave": "１．５メートル",
-              "precipitationProbabilityPct": 30,
-              "baseTempC": 21,
-              "simulatedTempC": 20.3,
-              "humidityPct": 75,
+              "precipitationProbabilityPct": 40,
+              "baseTempC": 21.5,
+              "simulatedTempC": 20.8,
+              "humidityPct": 100,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 3.6,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 0.4,
+              "observedWindDirection": "北"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 30%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 3.6m/s（北東）"
+                "reason": "近況風速 0.4m/s（北）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 20.3°C"
+                "reason": "海拔修正後約 20.8°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 20.3°C"
+                "reason": "海拔修正後約 20.8°C"
               },
               {
                 "type": "雷",
@@ -4446,43 +4464,43 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.310Z",
+            "targetTime": "2026-07-08T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 20.8°C，降雨機率 40%，近況風速 3.6m/s，濕度 75%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 21.8°C，降雨機率 50%，近況風速 0.4m/s，濕度 100%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
-              "baseTempC": 21.5,
-              "simulatedTempC": 20.8,
-              "humidityPct": 75,
+              "precipitationProbabilityPct": 50,
+              "baseTempC": 22.5,
+              "simulatedTempC": 21.8,
+              "humidityPct": 100,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 3.6,
-              "observedWindDirection": "北東"
+              "observedWindSpeedMs": 0.4,
+              "observedWindDirection": "北"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 3.6m/s（北東）"
+                "reason": "近況風速 0.4m/s（北）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 20.8°C"
+                "reason": "海拔修正後約 21.8°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 20.8°C"
+                "reason": "海拔修正後約 21.8°C"
               },
               {
                 "type": "雷",
@@ -4522,56 +4540,56 @@
         "amedasStationId": "33472",
         "observation": {
           "stationId": "33472",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 23.8,
-          "humidityPct": 76,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 19.7,
+          "humidityPct": 95,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2.3,
-          "windDirection": "南南東"
+          "windSpeedMs": 0.7,
+          "windDirection": "南東"
         },
         "level": "yellow",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.310Z",
+            "targetTime": "2026-07-06T01:14:39.291Z",
             "level": "yellow",
-            "reason": "海拔修正後約 17.2°C，降雨機率 10%，近況風速 2.3m/s，濕度 76%，24h雨量 0mm；沿岸不利需保守。",
+            "reason": "海拔修正後約 26.2°C，降雨機率 0%，近況風速 0.7m/s，濕度 95%，24h雨量 0mm；沿岸不利需保守。",
             "metrics": {
-              "forecastWeather": "くもり　夜　晴れ　海上　では　昼前　まで　霧",
+              "forecastWeather": "くもり　時々　晴れ　海上　では　昼前　まで　霧",
               "forecastWind": "南東の風　海上　では　南東の風　やや強く",
-              "forecastWave": "１メートル　後　１．５メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 17,
-              "simulatedTempC": 17.2,
-              "humidityPct": 76,
+              "forecastWave": "１．５メートル　後　２メートル",
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 26,
+              "simulatedTempC": 26.2,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "南南東"
+              "observedWindSpeedMs": 0.7,
+              "observedWindDirection": "南東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（南南東）"
+                "reason": "近況風速 0.7m/s（南東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 17.2°C"
+                "reason": "海拔修正後約 26.2°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 17.2°C"
+                "reason": "海拔修正後約 26.2°C"
               },
               {
                 "type": "雷",
@@ -4597,43 +4615,43 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.310Z",
-            "level": "yellow",
-            "reason": "海拔修正後約 27.2°C，降雨機率 10%，近況風速 2.3m/s，濕度 76%，24h雨量 0mm；沿岸不利需保守。",
+            "targetTime": "2026-07-06T13:14:39.291Z",
+            "level": "green",
+            "reason": "海拔修正後約 26.2°C，降雨機率 0%，近況風速 0.7m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　夜　晴れ　海上　では　昼前　まで　霧",
-              "forecastWind": "南東の風　海上　では　南東の風　やや強く",
-              "forecastWave": "１メートル　後　１．５メートル",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 27,
-              "simulatedTempC": 27.2,
-              "humidityPct": 76,
+              "forecastWeather": "くもり　時々　晴れ",
+              "forecastWind": "東の風",
+              "forecastWave": "１．５メートル",
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 26,
+              "simulatedTempC": 26.2,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "南南東"
+              "observedWindSpeedMs": 0.7,
+              "observedWindDirection": "南東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（南南東）"
+                "reason": "近況風速 0.7m/s（南東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 27.2°C"
+                "reason": "海拔修正後約 26.2°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 27.2°C"
+                "reason": "海拔修正後約 26.2°C"
               },
               {
                 "type": "雷",
@@ -4647,7 +4665,7 @@
               },
               {
                 "type": "沿岸不利",
-                "level": "yellow",
+                "level": "green",
                 "reason": "依風浪雨加權"
               },
               {
@@ -4659,43 +4677,43 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.310Z",
+            "targetTime": "2026-07-07T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 21.2°C，降雨機率 30%，近況風速 2.3m/s，濕度 76%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 21.7°C，降雨機率 40%，近況風速 0.7m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "くもり　時々　晴れ",
               "forecastWind": "東の風",
               "forecastWave": "１．５メートル",
-              "precipitationProbabilityPct": 30,
-              "baseTempC": 21,
-              "simulatedTempC": 21.2,
-              "humidityPct": 76,
+              "precipitationProbabilityPct": 40,
+              "baseTempC": 21.5,
+              "simulatedTempC": 21.7,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "南南東"
+              "observedWindSpeedMs": 0.7,
+              "observedWindDirection": "南東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 30%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（南南東）"
+                "reason": "近況風速 0.7m/s（南東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 21.2°C"
+                "reason": "海拔修正後約 21.7°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 21.2°C"
+                "reason": "海拔修正後約 21.7°C"
               },
               {
                 "type": "雷",
@@ -4721,43 +4739,43 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.310Z",
+            "targetTime": "2026-07-08T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 21.7°C，降雨機率 40%，近況風速 2.3m/s，濕度 76%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 22.7°C，降雨機率 50%，近況風速 0.7m/s，濕度 95%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
-              "baseTempC": 21.5,
-              "simulatedTempC": 21.7,
-              "humidityPct": 76,
+              "precipitationProbabilityPct": 50,
+              "baseTempC": 22.5,
+              "simulatedTempC": 22.7,
+              "humidityPct": 95,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.3,
-              "observedWindDirection": "南南東"
+              "observedWindSpeedMs": 0.7,
+              "observedWindDirection": "南東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.3m/s（南南東）"
+                "reason": "近況風速 0.7m/s（南東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 21.7°C"
+                "reason": "海拔修正後約 22.7°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 21.7°C"
+                "reason": "海拔修正後約 22.7°C"
               },
               {
                 "type": "雷",
@@ -4797,56 +4815,56 @@
         "amedasStationId": "33576",
         "observation": {
           "stationId": "33576",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 23.5,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 21.3,
           "humidityPct": null,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 1.6,
-          "windDirection": "南南西"
+          "windSpeedMs": 1.7,
+          "windDirection": "南東"
         },
         "level": "green",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.310Z",
+            "targetTime": "2026-07-06T01:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 20.4°C，降雨機率 10%，近況風速 1.6m/s，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 26.4°C，降雨機率 0%，近況風速 1.7m/s，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　夜　晴れ",
+              "forecastWeather": "くもり",
               "forecastWind": "南の風",
               "forecastWave": "",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 20,
-              "simulatedTempC": 20.4,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 26,
+              "simulatedTempC": 26.4,
               "humidityPct": null,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 1.6,
-              "observedWindDirection": "南南西"
+              "observedWindSpeedMs": 1.7,
+              "observedWindDirection": "南東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 1.6m/s（南南西）"
+                "reason": "近況風速 1.7m/s（南東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 20.4°C"
+                "reason": "海拔修正後約 26.4°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 20.4°C"
+                "reason": "海拔修正後約 26.4°C"
               },
               {
                 "type": "雷",
@@ -4872,11 +4890,11 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.310Z",
+            "targetTime": "2026-07-06T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 26.4°C，降雨機率 10%，近況風速 1.6m/s，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 26.4°C，降雨機率 10%，近況風速 1.7m/s，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　夜　晴れ",
+              "forecastWeather": "くもり　時々　晴れ",
               "forecastWind": "南の風",
               "forecastWave": "",
               "precipitationProbabilityPct": 10,
@@ -4886,8 +4904,8 @@
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 1.6,
-              "observedWindDirection": "南南西"
+              "observedWindSpeedMs": 1.7,
+              "observedWindDirection": "南東"
             },
             "risks": [
               {
@@ -4898,7 +4916,7 @@
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 1.6m/s（南南西）"
+                "reason": "近況風速 1.7m/s（南東）"
               },
               {
                 "type": "低溫",
@@ -4934,43 +4952,43 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.310Z",
+            "targetTime": "2026-07-07T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 22.4°C，降雨機率 30%，近況風速 1.6m/s，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 23.9°C，降雨機率 40%，近況風速 1.7m/s，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "くもり　時々　晴れ",
               "forecastWind": "南の風",
               "forecastWave": "",
-              "precipitationProbabilityPct": 30,
-              "baseTempC": 22,
-              "simulatedTempC": 22.4,
+              "precipitationProbabilityPct": 40,
+              "baseTempC": 23.5,
+              "simulatedTempC": 23.9,
               "humidityPct": null,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 1.6,
-              "observedWindDirection": "南南西"
+              "observedWindSpeedMs": 1.7,
+              "observedWindDirection": "南東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 30%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 1.6m/s（南南西）"
+                "reason": "近況風速 1.7m/s（南東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 22.4°C"
+                "reason": "海拔修正後約 23.9°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 22.4°C"
+                "reason": "海拔修正後約 23.9°C"
               },
               {
                 "type": "雷",
@@ -4996,33 +5014,33 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.310Z",
+            "targetTime": "2026-07-08T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 23.9°C，降雨機率 40%，近況風速 1.6m/s，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 23.9°C，降雨機率 50%，近況風速 1.7m/s，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
+              "precipitationProbabilityPct": 50,
               "baseTempC": 23.5,
               "simulatedTempC": 23.9,
               "humidityPct": null,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 1.6,
-              "observedWindDirection": "南南西"
+              "observedWindSpeedMs": 1.7,
+              "observedWindDirection": "南東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 1.6m/s（南南西）"
+                "reason": "近況風速 1.7m/s（南東）"
               },
               {
                 "type": "低溫",
@@ -5073,56 +5091,56 @@
         "amedasStationId": "33671",
         "observation": {
           "stationId": "33671",
-          "checkedAt": "2026-07-05T11:10:00+09:00",
-          "tempC": 21.9,
-          "humidityPct": 81,
+          "checkedAt": "2026-07-05T22:00:00+09:00",
+          "tempC": 19.5,
+          "humidityPct": 100,
           "precipitation1hMm": 0,
           "precipitation3hMm": 0,
           "precipitation24hMm": 0,
-          "windSpeedMs": 2.6,
-          "windDirection": "東南東"
+          "windSpeedMs": 1.1,
+          "windDirection": "北北東"
         },
         "level": "green",
         "horizons": [
           {
             "horizonHours": 12,
-            "targetTime": "2026-07-05T14:23:53.310Z",
+            "targetTime": "2026-07-06T01:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 19.3°C，降雨機率 10%，近況風速 2.6m/s，濕度 81%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 25.3°C，降雨機率 0%，近況風速 1.1m/s，濕度 100%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　夜　晴れ",
+              "forecastWeather": "くもり",
               "forecastWind": "南の風",
               "forecastWave": "",
-              "precipitationProbabilityPct": 10,
-              "baseTempC": 20,
-              "simulatedTempC": 19.3,
-              "humidityPct": 81,
+              "precipitationProbabilityPct": 0,
+              "baseTempC": 26,
+              "simulatedTempC": 25.3,
+              "humidityPct": 100,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.6,
-              "observedWindDirection": "東南東"
+              "observedWindSpeedMs": 1.1,
+              "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 10%"
+                "reason": "降雨機率約 0%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.6m/s（東南東）"
+                "reason": "近況風速 1.1m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 19.3°C"
+                "reason": "海拔修正後約 25.3°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 19.3°C"
+                "reason": "海拔修正後約 25.3°C"
               },
               {
                 "type": "雷",
@@ -5148,22 +5166,22 @@
           },
           {
             "horizonHours": 24,
-            "targetTime": "2026-07-06T02:23:53.310Z",
+            "targetTime": "2026-07-06T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 25.3°C，降雨機率 10%，近況風速 2.6m/s，濕度 81%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 25.3°C，降雨機率 10%，近況風速 1.1m/s，濕度 100%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
-              "forecastWeather": "くもり　夜　晴れ",
+              "forecastWeather": "くもり　時々　晴れ",
               "forecastWind": "南の風",
               "forecastWave": "",
               "precipitationProbabilityPct": 10,
               "baseTempC": 26,
               "simulatedTempC": 25.3,
-              "humidityPct": 81,
+              "humidityPct": 100,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.6,
-              "observedWindDirection": "東南東"
+              "observedWindSpeedMs": 1.1,
+              "observedWindDirection": "北北東"
             },
             "risks": [
               {
@@ -5174,7 +5192,7 @@
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.6m/s（東南東）"
+                "reason": "近況風速 1.1m/s（北北東）"
               },
               {
                 "type": "低溫",
@@ -5210,43 +5228,43 @@
           },
           {
             "horizonHours": 48,
-            "targetTime": "2026-07-07T02:23:53.310Z",
+            "targetTime": "2026-07-07T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 21.3°C，降雨機率 30%，近況風速 2.6m/s，濕度 81%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 22.8°C，降雨機率 40%，近況風速 1.1m/s，濕度 100%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "くもり　時々　晴れ",
               "forecastWind": "南の風",
               "forecastWave": "",
-              "precipitationProbabilityPct": 30,
-              "baseTempC": 22,
-              "simulatedTempC": 21.3,
-              "humidityPct": 81,
+              "precipitationProbabilityPct": 40,
+              "baseTempC": 23.5,
+              "simulatedTempC": 22.8,
+              "humidityPct": 100,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.6,
-              "observedWindDirection": "東南東"
+              "observedWindSpeedMs": 1.1,
+              "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 30%"
+                "reason": "降雨機率約 40%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.6m/s（東南東）"
+                "reason": "近況風速 1.1m/s（北北東）"
               },
               {
                 "type": "低溫",
                 "level": "green",
-                "reason": "海拔修正後約 21.3°C"
+                "reason": "海拔修正後約 22.8°C"
               },
               {
                 "type": "熱",
                 "level": "green",
-                "reason": "海拔修正後約 21.3°C"
+                "reason": "海拔修正後約 22.8°C"
               },
               {
                 "type": "雷",
@@ -5272,33 +5290,33 @@
           },
           {
             "horizonHours": 72,
-            "targetTime": "2026-07-08T02:23:53.310Z",
+            "targetTime": "2026-07-08T13:14:39.291Z",
             "level": "green",
-            "reason": "海拔修正後約 22.8°C，降雨機率 40%，近況風速 2.6m/s，濕度 81%，24h雨量 0mm；暫無明顯模擬加權訊號。",
+            "reason": "海拔修正後約 22.8°C，降雨機率 50%，近況風速 1.1m/s，濕度 100%，24h雨量 0mm；暫無明顯模擬加權訊號。",
             "metrics": {
               "forecastWeather": "",
               "forecastWind": "",
               "forecastWave": "",
-              "precipitationProbabilityPct": 40,
+              "precipitationProbabilityPct": 50,
               "baseTempC": 23.5,
               "simulatedTempC": 22.8,
-              "humidityPct": 81,
+              "humidityPct": 100,
               "observedRain1hMm": 0,
               "observedRain3hMm": 0,
               "observedRain24hMm": 0,
-              "observedWindSpeedMs": 2.6,
-              "observedWindDirection": "東南東"
+              "observedWindSpeedMs": 1.1,
+              "observedWindDirection": "北北東"
             },
             "risks": [
               {
                 "type": "雨",
                 "level": "green",
-                "reason": "降雨機率約 40%"
+                "reason": "降雨機率約 50%"
               },
               {
                 "type": "風",
                 "level": "green",
-                "reason": "近況風速 2.6m/s（東南東）"
+                "reason": "近況風速 1.1m/s（北北東）"
               },
               {
                 "type": "低溫",
