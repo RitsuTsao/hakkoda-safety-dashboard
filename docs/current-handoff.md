@@ -8,11 +8,18 @@ Scope: One-time handoff packet for `hakkoda-safety-dashboard`
 
 - Project: Hakkoda Safety Dashboard
 - Handoff created: 2026-07-04
-- Last updated: 2026-07-04
+- Last updated: 2026-09-13
 - Prepared by: Codex
 - Prepared from: `docs/project-brief.md`, `README.md`, `docs/handoff.md`, workflow file, service worker, `app/data.json`, and current repo status
 - Target tool / agent: ChatGPT, Sakana Fugu, Codex, or another AI agent
 - Status: `draft`
+
+## Workspace Consolidation
+
+- Canonical local workspace: `/Users/rthesage/Documents/New project 3`.
+- The earlier workspace at `/Users/rthesage/Documents/Codex/2026-04-25/notion-plugin-notion-openai-curated-hi` was reviewed before consolidation.
+- Its four uncommitted changes were either byte-identical to the canonical workflow or superseded by later Version 1.0.0 implementation and documentation; no legacy file should overwrite the canonical workspace.
+- A complete archive of the legacy workspace, including Git history and uncommitted changes, was verified before the old local copy was removed.
 
 ## 1. Handoff Purpose
 
@@ -114,4 +121,3 @@ If returning work, include:
 - What was verified versus left untested.
 - Any assumptions about future reuse or product positioning.
 - Any decision Ritsu must confirm before implementation.
-

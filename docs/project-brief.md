@@ -20,7 +20,7 @@ Use labels only where they add value:
 - Main workspace / repo / folder: `/Users/rthesage/Documents/New project 3`
 - GitHub repo: `https://github.com/RitsuTsao/hakkoda-safety-dashboard`
 - Live page: `https://ritsutsao.github.io/hakkoda-safety-dashboard/app/index.html`
-- Last reviewed: 2026-07-04
+- Last reviewed: 2026-09-13
 - Last updated by: Codex
 - Last update perspective: repo implementation status and cross-agent handoff orientation
 - Update basis: current repo inspection, existing docs, app data, workflow file, and prior Ritsu-confirmed scope decisions
@@ -161,6 +161,7 @@ Only record durable decisions future agents are likely to incorrectly reopen or 
 | 2026-06-27 | Gmail auto-delivery is intentionally disabled after the trip. | `Confirmed` | Workflow no longer calls `scripts/send-notifications.mjs`; notification candidates remain visible as rule explanations. |
 | 2026-06-27 | Do not debug Gmail SMTP credentials as a default path for this project. | `Confirmed` | If delivery is needed later, Ritsu must explicitly reopen scope. |
 | 2026-06-27 | Best expansion framing is template-based travel-safety decision support, not broad public safety authority. | `Inferred` | Based on prior strategy discussion; confirm with Ritsu before product expansion. |
+| 2026-09-13 | `/Users/rthesage/Documents/New project 3` is the sole canonical local workspace. | `Confirmed` | Ritsu approved consolidation after the legacy workspace was reviewed and backed up. |
 
 ## 12. Open Questions
 
